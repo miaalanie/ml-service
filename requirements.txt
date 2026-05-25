@@ -1,7 +1,7 @@
-fastapi
-uvicorn
-sentence-transformers
-scikit-learn
-numpy
-beautifulsoup4
-pydantic
+fastapi==0.111.0
+uvicorn==0.29.0
+sentence-transformers==3.0.1
+scikit-learn==1.4.2
+numpy==1.26.4
+beautifulsoup4==4.12.3
+pydantic==2.7.1

@@ -1,9 +1,9 @@
 ### Test Home
-GET http://127.0.0.1:8027
+GET http://127.0.0.1:8001
 
 
 ### Test Match Endpoint
-POST http://127.0.0.1:8027/match
+POST http://127.0.0.1:8001/match
 Content-Type: application/json
 
 {
@@ -437,4 +437,94 @@ Content-Type: application/json
 ]
 }
 
+### Test Match Endpoint
+POST http://127.0.0.1:8001/match
+Content-Type: application/json
 
+{
+  "pelamar": {
+    "id": 1,
+    "namalengkap": "Budi Santoso",
+    "deskripsidiri": "Fresh graduate informatika yang tertarik pada backend development dan data analysis",
+
+    "skills": [
+      {
+        "namaskill": "Python",
+        "keterangan": "Sangat Baik"
+      },
+      {
+        "namaskill": "Laravel",
+        "keterangan": "Baik"
+      },
+      {
+        "namaskill": "MySQL",
+        "keterangan": "Baik"
+      }
+    ],
+
+    "pendidikans": [
+      {
+        "kategori": "D4/S1",
+        "jurusan": "Teknik Informatika",
+        "tahunawal": 2020,
+        "tahunselesai": 2024
+      }
+    ],
+
+    "pengalamans": [
+      {
+        "posisi": "Backend Developer Intern",
+        "tahunawal": 2023,
+        "tahunselesai": 2024,
+        "aktif": 0
+      }
+    ]
+  },
+
+  "lowongans": [
+    {
+      "id": 70,
+      "namalowongan": "Backend Developer Laravel",
+      "deskripsi": "Mencari kandidat yang menguasai Laravel, REST API, MySQL, dan Git untuk pengembangan sistem backend.",
+
+      "kategori": {
+        "id": 10,
+        "nama": "Software Engineer"
+      },
+
+      "kategorilokasi": "Dalam Negeri",
+      "gaji_awal": 7000000,
+      "gaji_akhir": 10000000
+    },
+
+    {
+      "id": 71,
+      "namalowongan": "Data Analyst",
+      "deskripsi": "Mengolah data menggunakan Python, SQL, dan membuat dashboard analitik.",
+
+      "kategori": {
+        "id": 11,
+        "nama": "Data Analyst"
+      },
+
+      "kategorilokasi": "Dalam Negeri",
+      "gaji_awal": 6000000,
+      "gaji_akhir": 9000000
+    },
+
+    {
+      "id": 72,
+      "namalowongan": "Sales Executive",
+      "deskripsi": "Bertanggung jawab terhadap penjualan produk dan menjaga hubungan dengan customer.",
+
+      "kategori": {
+        "id": 12,
+        "nama": "Sales"
+      },
+
+      "kategorilokasi": "Dalam Negeri",
+      "gaji_awal": 4000000,
+      "gaji_akhir": 7000000
+    }
+  ]
+}

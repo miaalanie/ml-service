@@ -78,3 +78,10 @@ class LowonganSchema(BaseModel):
 class MatchRequestSchema(BaseModel):
     pelamar: PelamarSchema
     lowongans: List[LowonganSchema]
+
+# ============================================================
+# SCHEMA UNTUK RANKING PELAMAR PER LOWONGAN
+# ============================================================
+class RankApplicantsRequestSchema(BaseModel):
+    lowongan: LowonganSchema          # 1 loker yang sedang dibuka
+    pelamars: List[PelamarSchema]     # list semua pelamar yang apply

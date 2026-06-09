@@ -6,19 +6,6 @@ from .reasoning import ReasoningService
 
 
 class RankerService:
-    """
-    Service untuk ranking pelamar yang apply ke satu lowongan.
-
-    Flow:
-      1. Encode lowongan → job_vec (sekali saja)
-      2. Encode semua pelamar → batch encoding (efisien)
-      3. Hitung S1-S4 per pelamar
-      4. Weighted final score
-      5. Generate tags + reasons
-      6. Sort descending → tambah rank number
-      7. Return hasil lengkap
-    """
-
     def __init__(self):
         self.embedding_service = EmbeddingService()
 
@@ -34,16 +21,12 @@ class RankerService:
                 'namalowongan': lowongan.namalowongan,
                 'ranked_applicants': []
             }
-
-        # ============================================================
-        # STEP 1 — ENCODE LOWONGAN (sekali, reuse untuk semua pelamar)
-        # ============================================================
+        
+        # STEP 1 — ENCODE LOWONGAN (sekali, reuse untuk semua pelamar
         lowongan_text = TextPreprocessor.build_lowongan_text(lowongan)
         job_vec = self.embedding_service.encode(lowongan_text)
 
-        # ============================================================
-        # STEP 2 — ENCODE SEMUA PELAMAR (batch untuk efisiensi)
-        # ============================================================
+        # STEP 2 — ENCODE SEMUA PELAMAR (batch untuk efisiensi
         pelamar_texts = [
             TextPreprocessor.build_pelamar_text(p)
             for p in pelamars
@@ -55,56 +38,42 @@ class RankerService:
         for i, pelamar in enumerate(pelamars):
             pelamar_vec = pelamar_vecs[i]
 
-            # ========================================================
             # STEP 3 — S1: SEMANTIC SCORE
-            # ========================================================
             semantic = ScoringService.semantic_similarity(
                 pelamar_vec, job_vec
             )
 
-            # ========================================================
             # STEP 4 — S2: SKILL SCORE
-            # ========================================================
             skill = ScoringService.skill_score(
                 pelamar.skills,
                 job_vec,
                 self.embedding_service
             )
 
-            # ========================================================
             # STEP 5 — S3: EDUCATION SCORE
-            # ========================================================
             edu = ScoringService.education_score(
                 pelamar.pendidikans,
                 job_vec,
                 self.embedding_service
             )
 
-            # ========================================================
             # STEP 6 — S4: EXPERIENCE SCORE
-            # ========================================================
             exp = ScoringService.experience_score(
                 pelamar.pengalamans,
                 job_vec,
                 self.embedding_service
             )
 
-            # ========================================================
             # STEP 7 — FINAL WEIGHTED SCORE
             # w = [0.50, 0.10, 0.15, 0.25] dari ablation study
-            # ========================================================
             final = ScoringService.final_score(semantic, skill, edu, exp)
 
-            # ========================================================
             # STEP 8 — CLASSIFY & LABEL
-            # ========================================================
             label      = ScoringService.classify(final)
             color      = ScoringService.determine_color(final)
             percentage = ScoringService.percentage(final)
 
-            # ========================================================
             # STEP 9 — EXPLAINABILITY
-            # ========================================================
             scores_dict = {
                 'semantic': semantic,
                 'skill':    skill,
@@ -145,10 +114,7 @@ class RankerService:
                 'tags':    tags,
                 'reasons': reasons,
             })
-
-        # ============================================================
-        # STEP 10 — SORT DESCENDING + ASSIGN RANK
-        # ============================================================
+        # STEP 10 — SORT DESCENDING + ASSIGN RAN
         results.sort(key=lambda x: x['final_score'], reverse=True)
 
         for idx, r in enumerate(results):

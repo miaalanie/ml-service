@@ -3,19 +3,7 @@ from .scoring import SKILL_THRESHOLD, PROFICIENCY_WEIGHT, _edu_level_from_str
 
 
 class ReasoningService:
-    """
-    Explainability layer.
-
-    Tujuan: beri penjelasan konkret kenapa suatu loker direkomendasikan.
-    Pendekatan: post-hoc explanation dari score yang sudah dihitung.
-
-    Referensi: Explainable AI (XAI) — Zhang & Chen (2018)
-    """
-
-    # ============================================================
-    # GENERATE TAGS
-    # Tag per komponen: skill match, pendidikan, pengalaman
-    # ============================================================
+    # GENERATE TAGS Tag per komponen: skill match, pendidikan, pengalaman
     @staticmethod
     def generate_tags(
         pelamar,
@@ -101,10 +89,7 @@ class ReasoningService:
 
         return tags
 
-    # ============================================================
-    # GENERATE REASONS
-    # Penjelasan tekstual kenapa loker ini direkomendasikan
-    # ============================================================
+    # GENERATE REASONS Penjelasan tekstual kenapa loker ini direkomendasikan
     @staticmethod
     def generate_reasons(
         pelamar,

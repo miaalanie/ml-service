@@ -528,3 +528,363 @@ Content-Type: application/json
     }
   ]
 }
+
+
+2026-06-08 22:47:09,812 | INFO | Payload:
+{
+  "lowongan": {
+    "id": 14,
+    "namalowongan": "Staf Penjualan / Merchandiser",
+    "deskripsi": 
+    "<p><strong>Tanggung Jawab Pekerjaan:</strong></p>
+        <ul>
+            <li>Mengembangkan pelanggan baru sekaligus menjaga hubungan dengan pelanggan yang sudah ada untuk meningkatkan kepuasan dan loyalitas;</li>
+            <li>Bertanggung jawab atas analisis kebutuhan sampel, pengembangan desain, serta pengelolaan penawaran harga;</li>
+            <li>Mengawasi pelaksanaan produksi dan mengendalikan seluruh proses pesanan;</li><li>Mengoordinasikan jadwal produksi;</li>
+            <li>Melakukan evaluasi terhadap standar pengujian produk;</li><li>Memantau dan menelusuri perkembangan pesanan;</li>
+            <li>Menjaga komunikasi yang efektif dengan tim internal dan pelanggan.</li>
+        </ul>
+    <p><strong>Kualifikasi Pekerjaan:</strong></p>
+        <ul>
+            <li>Fasih berbahasa Mandarin, Inggris, dan Indonesia, baik lisan maupun tulisan;</li>
+            <li>Memiliki kemampuan administrasi dan tindak lanjut pesanan yang baik;</li>
+            <li>Mampu bekerja secara teliti serta menangani banyak tugas (multitasking);</li>
+            <li>Terbuka untuk lulusan baru (fresh graduate);</li>
+            <li>Memiliki pengalaman di bidang penjualan, merchandising, penanganan pelanggan, atau manajemen pesanan menjadi nilai tambah.</li>
+        </ul>",
+    "kategori": {
+      "id": 21,
+      "nama": "Sales / Account Executive"
+    },
+    "kategorilokasi": "Dalam Negeri",
+    "gaji_awal": 15000000.0,
+    "gaji_akhir": 20000000.0,
+    "perusahaan_nama": "TalentLink Indonesia",
+    "perusahaan_logo": "company_logos/wQS3KsQr4JP0ucrsFnDGL6hnSMfCorRgrxgnf1Eo.png"
+  },
+  "pelamars": [
+    {
+      "id": 138,
+      "namalengkap": "Muhamad Fadhil",
+      "deskripsidiri": null,
+      "skills": [
+        {
+          "namaskill": "Microsoft Office/Google Workspace",
+          "keterangan": "Sangat Baik"
+        },
+        {
+          "namaskill": "Kepemimpinan",
+          "keterangan": "Baik"
+        },
+        {
+          "namaskill": "Komunikasi Efektif",
+          "keterangan": "Sangat Baik"
+        },
+        {
+          "namaskill": "Problem Solving",
+          "keterangan": "Baik"
+        },
+        {
+          "namaskill": "Berpikir Kritis",
+          "keterangan": "Baik"
+        },
+        {
+          "namaskill": "Adaptasi",
+          "keterangan": "Sangat Baik"
+        },
+        {
+          "namaskill": "Kerja Sama Tim",
+          "keterangan": "Baik"
+        },
+        {
+          "namaskill": "Inisiatif",
+          "keterangan": "Baik"
+        }
+      ],
+      "pendidikans": [
+        {
+          "kategori": "SD",
+          "jurusan": "-",
+          "tahunawal": 2008,
+          "tahunselesai": 2014
+        },
+        {
+          "kategori": "SMP",
+          "jurusan": "-",
+          "tahunawal": 2014,
+          "tahunselesai": 2017
+        },
+        {
+          "kategori": "SMA/SMK",
+          "jurusan": "IPS",
+          "tahunawal": 2017,
+          "tahunselesai": 2020
+        },
+        {
+          "kategori": "D4/S1",
+          "jurusan": "Manajemen",
+          "tahunawal": 2020,
+          "tahunselesai": 2024
+        }
+      ],
+      "pengalamans": [
+        {
+          "posisi": "Sales Underwriter",
+          "tahunawal": 2025,
+          "tahunselesai": 2025,
+          "aktif": 1
+        }
+      ]
+    },
+    {
+      "id": 488,
+      "namalengkap": "Diva Nurfitrianti Azizah",
+      "deskripsidiri": null,
+      "skills": [
+        {
+          "namaskill": "Microsoft Office, word, exel, powerpoint",
+          "keterangan": "Baik"
+        }
+      ],
+      "pendidikans": [
+        {
+          "kategori": "D4/S1",
+          "jurusan": "Manajemen Agribisnis",
+          "tahunawal": 2021,
+          "tahunselesai": 2018
+        }
+      ],
+      "pengalamans": []
+    },
+    {
+      "id": 901,
+      "namalengkap": "Sinta maulani",
+      "deskripsidiri": null,
+      "skills": [
+        {
+          "namaskill": "kasir & keamanan security",
+          "keterangan": "Baik"
+        }
+      ],
+      "pendidikans": [
+        {
+          "kategori": "SMA/SMK",
+          "jurusan": "IPS",
+          "tahunawal": 2003,
+          "tahunselesai": 2006
+        }
+      ],
+      "pengalamans": [
+        {
+          "posisi": "staff admin & security",
+          "tahunawal": 2024,
+          "tahunselesai": 2025,
+          "aktif": 1
+        }
+      ]
+    },
+    {
+      "id": 648,
+      "namalengkap": "Devit ali suherman",
+      "deskripsidiri": null,
+      "skills": [
+        {
+          "namaskill": "Microsoft excell, microsoft word",
+          "keterangan": "Baik"
+        }
+      ],
+      "pendidikans": [
+        {
+          "kategori": "D4/S1",
+          "jurusan": "ILMU PEMERINTAHAN",
+          "tahunawal": 2011,
+          "tahunselesai": 2014
+        }
+      ],
+      "pengalamans": [
+        {
+          "posisi": "Field Collection",
+          "tahunawal": 2015,
+          "tahunselesai": 2025,
+          "aktif": 1
+        }
+      ]
+    }
+  ]
+}
+2026-06-08 22:47:09,819 | INFO | Lowongan: Staf Penjualan / Merchandiser
+2026-06-08 22:47:09,819 | INFO | Lowongan ID: 14
+2026-06-08 22:47:09,819 | INFO | Jumlah pelamar: 4
+Batches: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  1.51it/s]
+Batches: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 22.95it/s]
+Batches: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 23.13it/s]
+Batches: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 25.10it/s]
+Batches: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 20.87it/s]
+Batches: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 22.14it/s]
+Batches: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 20.29it/s]
+Batches: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  9.24it/s]
+Batches: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  7.04it/s]
+Batches: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  9.77it/s]
+Batches: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 24.88it/s]
+Batches: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 27.25it/s]
+Batches: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 24.53it/s]
+Batches: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 30.31it/s]
+Batches: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 42.36it/s]
+Batches: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 21.12it/s]
+Batches: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 14.35it/s]
+Batches: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  9.88it/s]
+Batches: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 27.27it/s]
+2026-06-08 22:47:12,086 | INFO | ========== /rank-applicants RESPONSE ==========
+2026-06-08 22:47:12,086 | INFO | Response:
+{
+  "success": true,
+  "total": 4,
+  "lowongan_id": 14,
+  "namalowongan": "Staf Penjualan / Merchandiser",
+  "ranked_applicants": [
+    {
+      "pelamar_id": 138,
+      "namalengkap": "Muhamad Fadhil",
+      "match_percentage": 53,
+      "label": "Cukup Cocok",
+      "color": "yellow",
+      "final_score": 0.5317,
+      "semantic_score": 0.6217,
+      "skill_score": 0.3704,
+      "education_score": 0.4888,
+      "experience_score": 0.4421,
+      "tags": [
+        {
+          "type": "success",
+          "text": "Microsoft Office/Google Workspace sesuai"
+        },
+        {
+          "type": "success",
+          "text": "Kepemimpinan sesuai"
+        },
+        {
+          "type": "success",
+          "text": "Kerja Sama Tim sesuai"
+        },
+        {
+          "type": "success",
+          "text": "Pendidikan D4/S1"
+        },
+        {
+          "type": "success",
+          "text": "Pengalaman ±0 tahun"
+        }
+      ],
+      "reasons": [
+        "Memiliki skill yang relevan: Microsoft Office/Google Workspace (Sangat Baik), Kepemimpinan (Baik), Kerja Sama Tim (Baik)",
+        "Pendidikan terakhir D4/S1 jurusan Manajemen",
+        "Memiliki pengalaman sebagai: Sales Underwriter",
+        "Profil secara keseluruhan cukup sesuai dengan deskripsi lowongan (kecocokan semantik 62%)"
+      ],
+      "rank": 1
+    },
+    {
+      "pelamar_id": 488,
+      "namalengkap": "Diva Nurfitrianti Azizah",
+      "match_percentage": 38,
+      "label": "Kurang Cocok",
+      "color": "red",
+      "final_score": 0.381,
+      "semantic_score": 0.3931,
+      "skill_score": 1.0,
+      "education_score": 0.3964,
+      "experience_score": 0.1,
+      "tags": [
+        {
+          "type": "success",
+          "text": "Microsoft Office, word, exel, powerpoint sesuai"
+        },
+        {
+          "type": "success",
+          "text": "Pendidikan D4/S1"
+        },
+        {
+          "type": "warning",
+          "text": "Belum ada pengalaman kerja"
+        }
+      ],
+      "reasons": [
+        "Memiliki skill yang relevan: Microsoft Office, word, exel, powerpoint (Baik)",
+        "Pendidikan terakhir D4/S1 jurusan Manajemen Agribisnis",
+        "Belum memiliki pengalaman kerja"
+      ],
+      "rank": 2
+    },
+    {
+      "pelamar_id": 901,
+      "namalengkap": "Sinta maulani",
+      "match_percentage": 36,
+      "label": "Kurang Cocok",
+      "color": "red",
+      "final_score": 0.3601,
+      "semantic_score": 0.4122,
+      "skill_score": 0.0,
+      "education_score": 0.2132,
+      "experience_score": 0.4882,
+      "tags": [
+        {
+          "type": "danger",
+          "text": "Skill tidak sesuai dengan loker"
+        },
+        {
+          "type": "warning",
+          "text": "Pendidikan SMA/SMK"
+        },
+        {
+          "type": "success",
+          "text": "Pengalaman ±1 tahun"
+        }
+      ],
+      "reasons": [
+        "Tidak ditemukan skill yang langsung cocok dengan deskripsi lowongan ini",
+        "Pendidikan terakhir SMA/SMK jurusan IPS",
+        "Memiliki pengalaman sebagai: staff admin & security"
+      ],
+      "rank": 3
+    },
+    {
+      "pelamar_id": 648,
+      "namalengkap": "Devit ali suherman",
+      "match_percentage": 34,
+      "label": "Kurang Cocok",
+      "color": "red",
+      "final_score": 0.335,
+      "semantic_score": 0.3752,
+      "skill_score": 0.0,
+      "education_score": 0.3257,
+      "experience_score": 0.3941,
+      "tags": [
+        {
+          "type": "danger",
+          "text": "Skill tidak sesuai dengan loker"
+        },
+        {
+          "type": "success",
+          "text": "Pendidikan D4/S1"
+        },
+        {
+          "type": "success",
+          "text": "Pengalaman ±10 tahun"
+        }
+      ],
+      "reasons": [
+        "Tidak ditemukan skill yang langsung cocok dengan deskripsi lowongan ini",
+        "Pendidikan terakhir D4/S1 jurusan ILMU PEMERINTAHAN",
+        "Memiliki pengalaman sebagai: Field Collection"
+      ],
+      "rank": 4
+    }
+  ]
+}
+2026-06-08 22:47:12,086 | INFO | Total hasil ranking: 4
+2026-06-08 22:47:12,086 | INFO | ========== TOP 10 ==========
+2026-06-08 22:47:12,086 | INFO | Rank #1 | Pelamar ID=138 | Nama=Muhamad Fadhil | Score=0.5317 | Semantic=0.6217 | Skill=0.3704 | Edu=0.4888 | Exp=0.4421
+2026-06-08 22:47:12,086 | INFO | Rank #2 | Pelamar ID=488 | Nama=Diva Nurfitrianti Azizah | Score=0.3810 | Semantic=0.3931 | Skill=1.0000 | Edu=0.3964 | Exp=0.1000
+2026-06-08 22:47:12,086 | INFO | Rank #3 | Pelamar ID=901 | Nama=Sinta maulani | Score=0.3601 | Semantic=0.4122 | Skill=0.0000 | Edu=0.2132 | Exp=0.4882
+2026-06-08 22:47:12,086 | INFO | Rank #4 | Pelamar ID=648 | Nama=Devit ali suherman | Score=0.3350 | Semantic=0.3752 | Skill=0.0000 | Edu=0.3257 | Exp=0.3941
+2026-06-08 22:47:12,086 | INFO | ========== REQUEST SELESAI ==========

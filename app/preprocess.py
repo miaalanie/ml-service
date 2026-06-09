@@ -5,11 +5,7 @@ from bs4 import BeautifulSoup
 
 class TextPreprocessor:
 
-    # ============================================================
     # STEP 1 — HTML Stripping
-    # Deskripsi loker dari rich text editor mengandung HTML tags
-    # Tags bukan makna semantik → harus dihapus sebelum embedding
-    # ============================================================
     @staticmethod
     def clean_html(text: str) -> str:
         if not text:
@@ -17,25 +13,14 @@ class TextPreprocessor:
         soup = BeautifulSoup(str(text), "html.parser")
         return soup.get_text(separator=" ")
 
-    # ============================================================
+
     # STEP 2 — Unicode Normalization
-    # Teks dari berbagai device bisa punya representasi unicode
-    # berbeda tapi terlihat sama (NFC vs NFD)
-    # NFKC: kompatibilitas + komposisi → standarisasi
-    # ============================================================
     @staticmethod
     def normalize_unicode(text: str) -> str:
         return unicodedata.normalize("NFKC", str(text))
 
-    # ============================================================
     # STEP 3 — Lowercasing
-    # Supaya "Python" == "python" == "PYTHON"
-    # ============================================================
-
-    # ============================================================
     # STEP 4 — Whitespace Normalization
-    # HTML stripping sering meninggalkan whitespace berlebih
-    # ============================================================
     @staticmethod
     def normalize_text(text: str) -> str:
         if not text:
@@ -45,18 +30,7 @@ class TextPreprocessor:
         text = re.sub(r'\s+', ' ', text)
         return text.strip()
 
-    # ============================================================
     # STEP 5 — Structured Representation
-    # Semua field pelamar digabung dengan section headers
-    # Landasan: transformer bekerja lebih baik dengan konteks
-    # terstruktur (Reimers & Gurevych, 2019 — SBERT)
-    #
-    # Sesuai data real dari Colab:
-    # - skills: pakai skills_raw (nama skill saja)
-    # - pendidikan: kategori + jurusan
-    # - pengalaman: posisi saja (tidak ada field deskripsi di DB)
-    # - deskripsidiri: sering kosong, di-skip kalau null
-    # ============================================================
     @staticmethod
     def build_pelamar_text(pelamar) -> str:
         parts = []
@@ -77,8 +51,6 @@ class TextPreprocessor:
             )
 
         # Pendidikan tertinggi saja
-        # Landasan: pendidikan tertinggi = representasi kompetensi
-        # akademik terkini; jenjang bawah sudah 'included'
         if pelamar.pendidikans:
             edu_tertinggi = TextPreprocessor._get_pendidikan_tertinggi(
                 pelamar.pendidikans
@@ -102,9 +74,7 @@ class TextPreprocessor:
 
         return TextPreprocessor.normalize_text(" ".join(parts))
 
-    # ============================================================
     # Build teks lowongan untuk embedding
-    # ============================================================
     @staticmethod
     def build_lowongan_text(lowongan) -> str:
         parts = []
@@ -128,11 +98,6 @@ class TextPreprocessor:
 
         return TextPreprocessor.normalize_text(" ".join(parts))
 
-    # ============================================================
-    # Helper: ambil pendidikan tertinggi
-    # Sesuai temuan Colab: DB simpan 'SMA/SMK', 'D4/S1' dst
-    # Pakai LIKE-based check (str contains) bukan exact match
-    # ============================================================
     @staticmethod
     def _get_pendidikan_tertinggi(pendidikans):
         if not pendidikans:

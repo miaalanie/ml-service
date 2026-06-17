@@ -3,7 +3,7 @@ from .preprocess import TextPreprocessor
 from .embedding import EmbeddingService
 from .scoring import ScoringService
 from .reasoning import ReasoningService
-
+from .description_parser import DescriptionParser
 
 class RankerService:
     def __init__(self):
@@ -25,6 +25,8 @@ class RankerService:
         # STEP 1 — ENCODE LOWONGAN (sekali, reuse untuk semua pelamar
         lowongan_text = TextPreprocessor.build_lowongan_text(lowongan)
         job_vec = self.embedding_service.encode(lowongan_text)
+        parsed_desc = ReasoningService.parse_lowongan(lowongan)
+        hard_req    = parsed_desc['hard_requirements']
 
         # STEP 2 — ENCODE SEMUA PELAMAR (batch untuk efisiensi
         pelamar_texts = [
@@ -81,19 +83,18 @@ class RankerService:
                 'exp':      exp,
             }
 
+            biodata_flags = ReasoningService.build_biodata_flags(pelamar, hard_req)
+
             tags = ReasoningService.generate_tags(
-                pelamar,
-                job_vec,
-                self.embedding_service,
-                final
+                pelamar, job_vec, self.embedding_service, final,
+                parsed_desc=parsed_desc,
+                biodata_flags=biodata_flags
             )
 
             reasons = ReasoningService.generate_reasons(
-                pelamar,
-                lowongan,
-                job_vec,
-                self.embedding_service,
-                scores_dict
+                pelamar, lowongan, job_vec, self.embedding_service, scores_dict,
+                parsed_desc=parsed_desc,
+                biodata_flags=biodata_flags
             )
 
             results.append({

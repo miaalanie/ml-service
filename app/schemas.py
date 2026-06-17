@@ -33,6 +33,8 @@ class PelamarSchema(BaseModel):
     id: int
     namalengkap: str
     deskripsidiri: Optional[str] = None   # sering kosong di data real
+    tanggallahir: Optional[str] = None    
+    jeniskelamin: Optional[str] = None
     skills: List[SkillSchema] = []
     pendidikans: List[PendidikanSchema] = []
     pengalamans: List[PengalamanSchema] = []

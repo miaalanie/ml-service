@@ -149,7 +149,7 @@ class ScoringService:
 
             # Duration weight (cap 5 tahun)
             durasi = max(thn_akhir - thn_awal, 0)
-            dur_w  = min(durasi / 5.0, 1.0)
+            dur_w  = min(durasi / 5.0, 1.0) if durasi > 0 else 0.2
 
             # Recency weight (exponential decay)
             berlalu = max(CURRENT_YEAR - thn_akhir, 0)
@@ -179,8 +179,10 @@ class ScoringService:
     # CLASSIFY — Label kecocokan
     @staticmethod
     def classify(score: float) -> str:
-        if score >= 0.55:
+        if score >= 0.80:
             return 'Sangat Cocok'
+        if score >= 0.55:
+            return 'Cocok'
         if score >= 0.40:
             return 'Cukup Cocok'
         return 'Kurang Cocok'

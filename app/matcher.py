@@ -2,7 +2,7 @@ from .preprocess import TextPreprocessor
 from .embedding import EmbeddingService
 from .scoring import ScoringService
 from .reasoning import ReasoningService
-
+from .description_parser import DescriptionParser
 
 class MatcherService:
 
@@ -41,6 +41,9 @@ class MatcherService:
         for i, lowongan in enumerate(lowongans):
 
             job_vec       = lowongan_vecs[i]
+            parsed_desc   = ReasoningService.parse_lowongan(lowongan)
+            hard_req      = parsed_desc['hard_requirements']
+            biodata_flags = ReasoningService.build_biodata_flags(pelamar, hard_req)
 
             # STEP 4 — S1: SEMANTIC SCORE Cosine similarity profil pelamar vs lowongan secara holistik
             semantic = ScoringService.semantic_similarity(
@@ -87,19 +90,16 @@ class MatcherService:
                 'exp':      exp,
             }
 
-            tags = ReasoningService.generate_tags(
-                pelamar,
-                job_vec,
-                self.embedding_service,
-                final
+            tags = ReasoningService.generate_tags_rekomendasi(
+                pelamar, job_vec, self.embedding_service,
+                parsed_desc=parsed_desc,
+                biodata_flags=biodata_flags
             )
-
+            
             reasons = ReasoningService.generate_reasons(
-                pelamar,
-                lowongan,
-                job_vec,
-                self.embedding_service,
-                scores_dict
+                pelamar, lowongan, job_vec, self.embedding_service, scores_dict,
+                parsed_desc=parsed_desc,
+                biodata_flags=biodata_flags
             )
 
             results.append({

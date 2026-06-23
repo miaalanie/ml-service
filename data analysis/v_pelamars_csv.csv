@@ -1,0 +1,972 @@
+"idpelamar","namalengkap","jeniskelamin","usia","skills_text","jumlah_skill","avg_skill_level","pendidikan_tertinggi","edu_level_int","jurusan_tertinggi","jumlah_pengalaman","total_bulan_exp","posisi_text","perusahaan_text","sedang_bekerja"
+"2","Lia","Perempuan","5","Microsoft Excel","1","3","D4/S1","7","Teknik Informatika",,,,,
+"3","Fathir Galih Alamsyah","Laki-laki","18","Instalasi Listrik, Maintenance","1","3","SMA/SMK","3","Teknik Instalasi Tenaga Listrik","1","17","Magang","PT. Amankzia Kinan Montelis","1"
+"4","Rifki Muh Sopiandi","Laki-laki","26","Exel, Wor, PPT, Sap R3","1","4","SMA/SMK","3","TKJ","1","101","Team Leader Dept Continues Improvement","PT Tirta Fresindo Jaya","1"
+"5","Nisrina Meilani","Perempuan","22","Microsoft Windows","1","1","SMA/SMK","3","Farmasi","1","17","Operator Produksi","PT Cosmo Technology","1"
+"6","Andi kusnadi","Laki-laki","27","Mengoperasikan mesin stamping","1","3","SMA/SMK","3","Teknik otomotif sepeda motor","1","77","Operator produksi","PT. Mersifarma tirmaku mercusana","1"
+"7","Phina Putri Amalia","Perempuan","24","3D Vista Virtual Tour; B. Inggris; Figma; Google Cloud Platform; Mandarin; Microsoft office","6","2.6667","D4/S1","7","Teknik Informatika",,,,,
+"8","Vina Afriliani","Perempuan","24","Mesin Edc dan Pembukuan Kas Kecil; Microsoft Word/Microsoft Excel/Microsoft Power Point","2","4","SMA/SMK","3","Administrasi Perkantoran","3","17","Cleaning Service; Kasir","PT Dana Purna Investama; PT Ratu Sapta Pesona; HRG Culinary Hotel The Bountie","1"
+"9","Utari Permatasari","Perempuan","23","Administrasi; Komunikasi; Microsoft Office; Problem solving","4","2.75","D4/S1","7","Ilmu Administrasi Publik",,,,,
+"10","REGY GLASIO C.PRATAMA","Laki-laki","20","Mengoperasikan mesin cnc/forklift","1","2","SMA/SMK","3","Teknik mesin","1","17","Operator produksi","PT karya dua raksa","1"
+"11","M.SAMSUL FIKRI","Laki-laki","18","Desain gerfis Corel draw and Canva; Editing video cap cut; Excel; Host live; Publik spcking","5","2.6","SMA/SMK","3","Desain Komunikasi Visual","1","41","Magang","Hasproperti","1"
+"12","Aldi Hermawan","Laki-laki","18","Microsoft office","1","3","SMA/SMK","3","Teknik komputer dan jaringan",,,,,
+"13","RIFKI RAMADHAN","Laki-laki","24","Input data di Ms Exsel, mengisi laporan harian di sistem ERP/SAP","1","2","SMA/SMK","3","IPS","2","82","Pelayan di Swalayan; Operator produksi","PDNS; PT IWIP","1"
+"14","U. Mulki Jaelani","Laki-laki","19","Pemasarab Digital/Affiliate","1","3","SMA/SMK","3","BDP (Bisnis Daring dan Pemasaran",,,,,
+"15","Riki Ruhendi","Laki-laki","35","misroscof exsel meguasi mesin pembuatan sepatu","1","2","SMA/SMK","3","TEKNIK BANGUNAN","1","149","tim member c","pt pratama abadi industri jx","1"
+"16","Eira Anggraeni","Perempuan","23","Admin","1","3","SMA/SMK","3","IPA","1","29","Staff Admin","Koperasi Simpan Pinjam","1"
+"17","Fitria Dewi Kusumah","Perempuan","24","Komunikasi, manage waktu, kerja sama team/individu; Ms. Office","2","3","D4/S1","7","Administrasi Publik","1","65","Assisten Admin","PT. Fresh On Time Seafood","1"
+"18","ROI FADLI","Laki-laki","20","mekanik; Memiliki kemampuan komunikasi dengan baik Memiliki Keinginan untuk belajar dan berkembang Pekerja keras & Cekatan Management Waktu Mampu bekerja individu maupun Team","2","3","SMA/SMK","3","ILMU PENGETAHUAN SOSIAL",,,,,
+"19","Armansyah","Laki-laki","24","Machining(permesinan)/ mengoperasikan mesin CNC, membaca dan memahami gambar teknik, perawatan dasar mesin.","1","3","SMA/SMK","3","Teknik mesin","1","77","Operator produksi (machining)","PT Astra Honda Motor","1"
+"20","Ferry Pebriansyah","Laki-laki","25","Microsoft office All","1","3","D4/S1","7","Pendidikan Ekonomi","1","17","kurir","PT GLOBAL JET EXPRESS/ J&T","1"
+"21","Muhammad Ali Marwan","Laki-laki","23","Administrasi; Canva; Document Filling; Entry Data; Google Workspace; Komunikasi Efektif; Microsoft Excel; Microsoft Outlook; Microsoft Word; Problem Solving; Time Management; Typing 10","12","2.9167","D4/S1","7","Pendidikan Sejarah","2","29","Tim Kreatif; Asisten Pendata Koleksi(Magang)","Info SMI Media; Museum Kebangkitan Nasional","1"
+"22","Uus dani","Laki-laki","37","Otomotif","1","2","SMA/SMK","3","Otomotif","1","197","Operator produksi","Pt.glostar indonesia 2","1"
+"23","RAJA ZEMI ALDERA","Laki-laki","27","Microsoft office","1","2","D3","6","Teknik Komputer","1","17","Crew Store","PT Sumber Alfaria Trijaya","1"
+"24","Aditya Dwi Permana","Laki-laki","24","Microsoft Word, Excel, PowePoint, Design, Editing","1","3","SMA/SMK","3","IPS","1","65","Staff Ekspedisi","KGXpress & logistic Sukabumi","1"
+"25","Nandy Andrean Putra","Laki-laki","29","CNC Machining; Las; Microsoft Excell; Pengiriman Barang; Stamping; Warehouse","6","3.6667","SMA/SMK","3","Teknik Kendaraan Ringan","4","356","Warehouse Operator; Kurir; Operator Produksi Cnc Machining; Operator Produksi Stamping","PT. Sinar Jernih Suksesindo; PT. Sirkulasi Kompas Gramedia Xpress; PT. TD Automotive Compressor Indonesia; PT. Dharma Polimetal","1"
+"26","CICILIA LIVIE AS","Perempuan","22","Editing; Microsoft Excel; Microsoft Word; Programming","4","2.5","D4/S1","7","S1 Pendidikan Teknologi Informasi","3","135","Admin Gudang; Administrasi Keuangan; Admin Purchasing","PT Nadera Jaya; PD Gari Pratama Indosuka","1"
+"27","M ERVAN WILDANNY","Laki-laki","21","Bisa bekerjasama dengan tim","1","3","SMA/SMK","3","Bisnis daring dan pemasaran","1","41","Cashier","Motashi shoes care","1"
+"28","Rivan Ardiansyah","Laki-laki","21","Microsoft Excel","1","3","SMA/SMK","3","IPS","1","29","Frontliner","PT Talenta Packaging Industri","1"
+"29","Wildan Ramadhan Sopwan","Laki-laki","34","instalation windows; microsoft office; solved troubleshoot hardware and sofetware","3","2.6667","D3","6","Manajemen informatika","2","173","Relationshif Officer; Tekhnisi","PT.Garena Indonesia","1"
+"30","win bella ranggayoni","Laki-laki","34","masak + las","1","3","SMA/SMK","3","tataboga","1","125","comiis","anwar almadinah movenick hotel","1"
+"31","Aden Hardiansyah","Laki-laki","19","Saya adalah lulusan baru dibidang teknik kendaraan ringan dengan kemampuan memperbaiki dan merawat mesin.","1","2","SMA/SMK","3","Teknik kendaraan ringan",,,,,
+"32","MOH BAGUS RAJABI","Laki-laki","19","komputer","1","2","SMA/SMK","3","Ilmu Pengetahuan Sosial",,,,,
+"33","Eneng Shinta","Perempuan","27","Event Planning; Graphic Design : Canva; Microsoft Office : Word, Excel & Power Point; Strategic Planning; System Administration; Video Editing  : CapCut","6","3","D4/S1","7","Manajemen","3","101","Asisten; Pramu Layanan Administrasi; Sales Consultan Master dan Penanggungjawab Stok","Yayasan Adi Rasa Mandiri Eka Dharma; Badan Pengelolaan Keuangan dan Pendapatan Daerah Kota Sukabumi; CV Rabbani Asysa","1"
+"34","DAUD ZABAL THORIQ ASSALAM","Laki-laki","24","Excel","1","3","D4/S1","7","Teknik Industri",,,,,
+"35","Asshiddiqie Putra Alif","Laki-laki","23","Design Grafis; Editor Vidio","2","3.5","D4/S1","7","Ilmu Komunikasi",,,,,
+"36","Nia","Perempuan","17","Konfigurasi jaringan; Microsoft office","2","3","SMA/SMK","3","Teknik Komputer dan Jaringan",,,,,
+"37","Hermawan Bayu Adji","Laki-laki","34","Adminstratif; Kepemimpinan; Microsoft Excel; Problem Solving","4","3.25","D4/S1","7","Pendidikan Teknik Elektro","1","89","Pgs. Assistant Manager Operasional","PT. Bringin Gigantara Cabang Sukabumi","1"
+"38","Randika eka putra","Laki-laki","28","Mesin CNC; Mesin samping","2","3","SMA/SMK","3","Teknik listrik","1","113","Operator produksi","PT otic's Indonesia","1"
+"39","Muhamad Firdaus Alamsyah","Laki-laki","20","MEMBACA GAMBAR TEKNIK; MEMGOPRASIKAN MESIN PRODUKSI; MENGGUNAKAN ALAT UKUR PERSISI; PENGOPRASIAN MESIN BUBUT DAN FRAIS","5","2.8","SMA/SMK","3","TEKNIK MESIN","1","17","OPERATOR PRODUKSI","PT PORTO FOOD INDONESIA","1"
+"40","Putri winata","Perempuan","23","Microsoft Excel, Microsoft Word, Data Entry, Pengolahan Data Dasar, Administrasi, pengarsipan dokumen, basic IT Support","1","3","D4/S1","7","Informatika",,,,,
+"41","anugrah maulana Satriaji","Laki-laki","29","Mechanical engineer","1","3","D3","6","Teknik mesin","1","17","Maintenance engineering","PT akasha wira internasional","1"
+"42","Rival prayogi Saputra","Laki-laki","24","Microsoft world","1","3","SMA/SMK","3","Ips","1","77","Helper gudang","Sentral cargo","1"
+"43","M IRZAM SYAPUTRA","Laki-laki","21","Teknik dan Bisnis Sepeda Motor.","1","2","SMA/SMK","3","OTOMOTIF","3","70","Crew; DAILY WORKER; KARYAWAN GUDANG","KULINER TAHU BASO; GUDANG SHOOPE EXPRESS SUKARAJA; HOME CENTER","1"
+"44","rifky cahya panghegar","Laki-laki","21","editing","1","1","SMA/SMK","3","multimedia","1","17","operator","PT supra natami utama","1"
+"45","Rizki Adriansyah","Laki-laki","22","Teknisi Wifi","1","3","SMA/SMK","3","Bisnis Daring Dan Pemasaran","1","17","Teknisi Wifi","PT Anugerah Tirta Persada","1"
+"46","AMIRA AULIA","Perempuan","23","AutoCAD 2D & 3D; Bahasa inggris; Creative thinking; Desain Interior & Eksterior; Detail oriented & responsible; Good communication & Customer service; MS Office; POS System & Data Administrasi; problem solving; Teamwork & Individual work capability; Time management","11","3.5455","SMA/SMK","3","Teknik Desain Permodelan dan Informasi Bangunan","1","41","Staff Admin & Beauty Consultant","Witribeautystore","1"
+"47","Kirani Novia Nawanti","Perempuan","23","communication; Customer Service; Microsoft Office; spreadsheet","4","4","D4/S1","7","Ilmu Hukum","1","77","administrasi pendaftaran","Klinik Drg Ratih","1"
+"48","Angga Permana Sidik","Laki-laki","30","Ms. Word, Excell, ppt","1","3","D4/S1","7","Manajemen","1","101","Sekretaris Desa","Pemerintahan Desa Padabeunghar","1"
+"49","Nabila Tasya Menggala Putri","Perempuan","23","Microsoft Excel; Microsoft Office; Microsoft Power Point; Microsoft Word","4","4","D4/S1","7","Manajeman",,,,,
+"50","Lukman Hakim","Laki-laki","21","Microsoft Office","1","2","SMA/SMK","3","IPA","1","17","Helper teknisi","Prima maju mapan","1"
+"51","samirah","Perempuan","0","Data Scient","1","4","S2","8","Sistem Informasi",,,,,
+"52","Annida Handayani","Perempuan","20","Microsoft word, Microsoft office, Microsoft Excel","1","3","SMA/SMK","3","Otomatisasi Tata Kelola Perkantoran","1","29","Admin","BriLink Intan Fadh","1"
+"53","Filah Nurmawan maulana Akbar","Laki-laki","24","3D modelling; Desain grafis; Microsoft office","3","2.6667","SMA/SMK","3","Animasi","1","77","Oprator Produksi (Machining)","PT ASTRA HONDA MOTOR","1"
+"54","Iswandi","Laki-laki","24","Microsoft word, Excel, speaking","1","2","D3","6","Manajemen informatika",,,,,
+"55","MUHAYAN","Laki-laki","21","Bisa bekerja baik dengan tim","1","2","SMA/SMK","3","TEKNIK KENDARAAN RINGAN","1","29","Pelayanan","Rental ps dan rumah makan","1"
+"56","Nebila Hasanah","Perempuan","19","Menjahit","1","3","SMA/SMK","3","Tata Busana",,,,,
+"57","Muhammad Arief Rahmat Akbar","Laki-laki","30","Microsof Office; Sistem Accuarte; SIstem SAP","3","2.6667","D3","6","Teknik Elektro","6","257","Coordinator Warehouse; Supervisor Warehouse; Supervisor HCGA; Staff General Afffair; Admin General Affair; Ipc Validasi","PT. Nayue Biotech Indonesia; PT. Ayara Beauty Indonesia; PT Kino Indonesia Tbk; PT. Kino Indoensia Tbk; PT. Kino Indonesia Tbk; PT. MERSI FARMA TM","1"
+"58","Muhamad Risman Maulana","Laki-laki","30","Administrasi; Microsoft Excel; Microsoft Word","3","3","D4/S1","7","Pendidikan Agama Islam","1","101","IT Support ATM Operation","PT Anugrah Karya Abadi (Penempatan Bank Mandiri Jakarta)","1"
+"59","Abdul Rohman","Laki-laki","24","Teknisi, mengoperasikan sistem komputer perbaikan, IT","1","3","SMA/SMK","3","Teknik Komputer dan Jaringan",,,,,
+"60","Algi Alghifari","Laki-laki","23","Microsoft Excel,Frontend Programmer,Microsoft Word,Komunikasi,Canva","1","4","D3","6","Teknik Komputer",,,,,
+"61","sintya nurlatifah","Perempuan","26","Excel/ Office","1","3","D4/S1","7","Pendidikan Ekonomi","1","53","SPG","PT Wings Sukabumi","1"
+"62","Aulia Hermayanti","Perempuan","22","Administrasi; Manajemen; Mirosoft Excel; Pelayanan","4","3","D3","6","Manajemen Informatika","3","29","Staf Operasional Produksi; Staf; AdminKeuangan(MasaBakti)","UMKM; Kelurahan(Magang); PondokPesantrenPASTAWA","1"
+"63","Serti Saraswati","Perempuan","19","Microsoft office","1","2","SMA/SMK","3","Teknik Komputer dan Jaringan","1","17","Operator produksi","PT Cosmo Technology Indonesia","1"
+"64","Zahra jamil Fauziah","Perempuan","19","Microsoft Word/Excel","1","3","SMA/SMK","3","Agribisnis Perikanan","1","17","Operator Produksi","PT COSMO TECHNOLOGY","1"
+"65","Afriandi Ependi","Laki-laki","26","Menyanyi, MC, Pidato; public speaking, kerja team, bisa memasak, nyanyi","2","2.5","SMA/SMK","3","IPA","1","41","karyawan","kebab adi","1"
+"66","Moch. Rival Umar Alrasyid","Laki-laki","25","Arcgis; Microsoft Office","2","3","D4/S1","7","Perencanaan Wilayah & Kota","1","29","Asisten Tenaga Ahli Perencana","PT. HAB Karya Konsultan","1"
+"67","AFZAL MUHAMMAD SULTAN","Laki-laki","21","pembuatan kopi/penanganan mesin kopi.komunikasi.EXCEL","1","3","SMA/SMK","3","ilmu pengetahuan sosial","3","87","service crew; crew store; crew","WARUNK WOW; PT fajar mitra indah; PT.securindo packatama indonesia","1"
+"68","Shendi Triana","Laki-laki","21","Editing; Exel; Mekanik kendaraan ringan; Operator forklift","4","2.75","SMA/SMK","3","Teknik Komputer dan Jaringan","1","41","Staff gudang","Wisma Kedoya 59","1"
+"69","MUHAMAD IKMAL MAULANA MAJID","Laki-laki","21","Service kendaraan perbaikan mesin pergantian sparepart sepeda motor","1","3","SMA/SMK","3","Teknik sepeda motor","1","41","Mekanik","Astra motor Sukabumi","1"
+"70","Muhammad Safrudin Jaelani","Laki-laki","24","Mengoperasikan mesin CNC","1","4","SMA/SMK","3","Teknik Listrik","1","77","Operator Produksi","PT Astra Honda Motor","1"
+"71","Muhammad Abdullah","Laki-laki","24","Microsoft Excel (Pengelolaan data, formula, rekap laporan, VBA makro); Pemograman aplikasi website","2","2.5","SMA/SMK","3","MIPA","3","183","Instalasi rangka plafon; Staff Admin retail; Customer Service","PT Mitra Asteria Perkasa; Agen JNE Cireunghas 2; Agen JNE Cimangkok, kab.sukabumi","1"
+"72","KISTI","Perempuan","17","Microsoft Excel, Word, Canva","1","4","SMA/SMK","3","Akuntansi dan Keuangan Lembaga","1","17","Staff Administrasi","PT. Jasa Raharja Putera","1"
+"73","Feri ardiansyah","Laki-laki","26","DESIGN POSTER","1","3","SMA/SMK","3","TEKNIK PEMESINAN","2","58","HELPER TEKNISI CCTV; DIGITAL MARKETING","CV.IMAGE SECURITY SYSTEM","1"
+"74","Abdul Basit","Laki-laki","24","Spreadsheet","1","3","SMA/SMK","3","IPS","1","41","PIC","Cipelang Farm","1"
+"75","Muhamad Fachmi Ramadhan","Laki-laki","26","Microsoft Office","1","3","D4/S1","7","Ekonomi Manajemen","1","101","Kepala TU","MTs Attaqwa","1"
+"76","MU'ALIF NAZWAL ABDULAH","Laki-laki","20","BERKOMUNIKASI BAIK, BEKERJA TIM MAUPUN INDIVIDU","1","3","SMA/SMK","3","ILMU PENGETAHUAN SOSIAL",,,,,
+"78","KEVIN AKTAVIANA LUBIS","Laki-laki","18","Teknik","1","4","SMA/SMK","3","Teknik sepeda motor","1","17","Mekanik magang","PT AHASS PASTI JAYA MOTOR","1"
+"80","zidane oktavian","Laki-laki","18","Pemesinan/otomotif/las listrik","1","2","SMA/SMK","3","Teknik Pemesinan",,,,,
+"81","Fadlan Faris Sjafie","Laki-laki","32","Bahasa inggris; C++; Kasir; Microsoft office; Mysql; Os Windows; Php; Sosial media; Visual Basic","9","3.4444","D3","6","Manajemen Informatika","3","267","Staff Accounting; Kasir; Dipper","Hotel Yasmin; Hotel Mega Anggrek; PT.DANAMAS INSAN KREASI ANDALAN","1"
+"82","Egi kustika","Laki-laki","18","Otomotif","1","2","SMA/SMK","3","Teknik sepeda motor","1","17","PKL (mekanik)","Dealer Honda Nusantara Surya Sakti Sukabumi","1"
+"83","Hariansyah","Laki-laki","38","AutoCad Design, 3D Catia,","1","3","D4/S1","7","Teknik mesin","1","173","R&D Design","PT. Elang Perdana tyre industry","1"
+"84","MOHAMMAD RAJA ADITHIA","Laki-laki","19","KOMPUTER","1","2","SMA/SMK","3","TEKNIK JARINGAN DAN KOMPUTER",,,,,
+"85","DINI DWI LURIAN","Perempuan","31","MICROSOFT EXCEL, WORD, POWER POIN","1","3","D4/S1","7","ILMU HUKUM","1","77","KAUR KEUANGAN","KANTOR DESA LOJI","1"
+"86","Deni Permana","Laki-laki","20","pernah pkl","1","2","SMA/SMK","3","TEKNIK BISNIS SEPEDA MOTOR",,,,,
+"87","Andrean","Laki-laki","28","Admin Operator; Mekanik Bengkel; Microsoft Office; Pemasaran Dan Penjualan","4","3","SMA/SMK","3","Teknik Kendaraan Ringan","1","41","Sales Consultants","Yamaha Arista Sukabumi","1"
+"88","Muhamad Yusman","Laki-laki","19","Excel, merajut, speaking,","1","2","SMA/SMK","3","Teknik Komputer dan Jaringan","2","17","Receiving; Operator Produksi","Toserba Yogya Sukabumi; PT. Tera Data Indonusa","1"
+"89","sinta khaerunisa","Perempuan","20","Microsoft word, Excel, kearsipan, korespondensi dan lain sebagainya yang bersangkutan dengan tata kelola perkantoran","1","3","SMA/SMK","3","manajemen perkantoran","1","17","operator produksi","pt rusin skb maju jaya","1"
+"90","Shobakin Shobagio","Laki-laki","29","Microsoft Office; Sosial Media","2","2.5","D4/S1","7","Administrasi publik","1","65","Frontliner/Crew Store","Fitri Cell","1"
+"91","RIDWAN SURYA GANDA","Laki-laki","28","Cleaning service; Driver","2","4","SMA/SMK","3","IPS","1","53","Cleaner","PT ISS INDONESIA","1"
+"92","Fadhil Raflian","Laki-laki","20","Bahasa Inggris; Customer Service; Microsoft Excel; Microsoft PowerPoint; Microsoft Word","5","1.8","SMA/SMK","3","IPS","1","17","Karyawan Operasional","PT Karya Berdaya Guna","1"
+"93","Dava Rizky Ramadhan Boreel","Laki-laki","27","MICROSOFT OFFICE","1","2","D3","6","TEKNIK KOMPUTER","3","123","CLEANING SERVICE; HOUSEKEEPING","PT MITRA USAHA JAYA UTAMA; DAPENSI TRIO USAHA; ANUGRAH HOTEL SUKABUMI","1"
+"94","Muhammad Raihan Maulana","Laki-laki","18","permesinan/las listrik","1","3","SMA/SMK","3","teknik mesin",,,,,
+"95","Arief Cahya Firdaus","Laki-laki","27","Administrasi Akuntansi; Ms Office; SAP Bussines","3","3.3333","D4/S1","7","Ilmu Komputer","1","53","Customer Service","PT BANK RAKYAT INDONESIA TBK","1"
+"96","Muhamad Hildan Ramdani","Laki-laki","21","Microsoft Office; Public Speaking","2","3","SMA/SMK","3","IPS","2","46","Enumerator; Admin/Kasir","Badan Nasional Penanggulangan Bencana; Toko SatuTiga","1"
+"97","Yusuf Saputra","Laki-laki","25","MICROSOFT EXCEL DAN SAP","1","2","SMA/SMK","3","TEKNIK OTOMASI INDUSTRI","2","89","PLANNER; ENGINEERING","PT TIRTA FRESINDO JAYA; PT AKASHA WIRA INTERNASIONAL","1"
+"98","Sri Nurlaelawati","Perempuan","19","Microsoft Excel; Microsoft Word","2","3","SMA/SMK","3","Otomatisasi Tata Kelola Perkantoran",,,,,
+"99","Arya Zul Praisar","Laki-laki","22","bermain alat musik trompet","1","4","SMA/SMK","3","IPS",,,,,
+"100","Ardiana Yoesoef","Perempuan","30","Microsoft Office","1","2","D4/S1","7","Akuntansi","2","118","Finance & Accounting Staff; Customer Service","Primaya Hospital Sukabumi; PT Bank Rakyat Indonesia","1"
+"101","JENY LEFY ARYANTO","Laki-laki","18","Microsoft Excel","1","2","SMA/SMK","3","Ilmu pengetahuan alam",,,,,
+"102","Muhamad abdul azis","Laki-laki","23","Mengendarai mobil, mengaji, teknik mesin,komputer","1","3","SMA/SMK","3","Keagamaan","1","53","Sales executive","Pt mahligai putra berlian","1"
+"103","Indah Herawanti","Perempuan","25","Microsoft office","1","3","D4/S1","7","Manajemen","1","29","Staff Finance","PT Mahugi Jaya Sejahtera","1"
+"104","AHMAD GUNAWAN","Laki-laki","21","ms ofice","1","2","SMA/SMK","3","ILMU PENGETAHUAN SOSIAL","1","29","admin","cv pd garut","1"
+"105","RIZKY NURRAHMAT","Laki-laki","22","Quality Control","1","2","SMA/SMK","3","Pengawasan Mutu","1","41","Kurir Delivery","JNT EKpress","1"
+"106","Alfin Rizky Putra","Laki-laki","25","Eletrical Wiring; Microsoft Office","2","2","D4/S1","7","Teknik Elektro","2","130","Konsultan Pengawas; Electrical Assembly","PT. Prahasta Cakra Utama; PT. Dirgantara Indonesia","1"
+"107","NUR LATIFAH TUL KHALBI","Perempuan","19","komunikasi efektif,manajemen waktu, adaptabilitas, penguasaan Microsoft Office.","1","3","SMA/SMK","3","Teknik komputer dan jaringan","1","17","Staf SKTLK","Polsek cibadak","1"
+"108","Wanda Nurhamidah","Perempuan","0","progra","1","3","SMA/SMK","3","Jurusan matematika",,,,,
+"109","muhamad fadhil katsirul nawal","Laki-laki","22","PENGELASAN GMAW","1","3","SMA/SMK","3","teknik pengelasan","1","89","welder","pt dian pandu pratama","1"
+"110","RATU NUR SHAFINA","Perempuan","19","KOMUNIKASI YANG BAIK; MENGETIK 10 JARI BUTA; Microsoft Office (Ms. Excel & Ms. Word); PELAYANAN PRIMA","4","3","SMA/SMK","3","OTOMATISASI TATA KELOLA PERKANTORAN",,,,,
+"111","Awal Surya Juliansyah","Laki-laki","26","Hubungan Masyarakat; Microsoft Office; Penggunaan Sanitarian Kit","3","3.3333","D3","6","Kesehatan Lingkungan","1","65","Sanitarian","Puskesmas Cidadap","1"
+"112","ZAHRA TAJKIAH","Perempuan","19","barista; komputer; memasak","3","2.3333","SMA/SMK","3",,"1","17","waiters","caffe 35","1"
+"113","Eka alpauji","Laki-laki","21","MERAWAT/SERVICE  komponen pada engine","1","2","SMA/SMK","3","Teknik dan bisnis Speda motor",,,,,
+"114","Ripal gunawan","Laki-laki","27","Microsoft word Exel dan pengalaman front linner","1","3","SMA/SMK","3","Ilmu sosial","1","89","Staf frontlineer","PT bank Neo commerce jakarta","1"
+"115","Dean Pahlevi Surbakti","Laki-laki","31","Adaptasi Cepat; Advokasi; Analisis Hukum; Hubungan Industrial dan Ketenagakerjaan; Kepatuhan Hukum dan Regulasi; Kepemimpinan; Komunikasi; Microsoft Office; Negosiasi dan Penyelesaian Sengketa; Penulisan Dokumen Hukum; Perancangan Kontrak Bisnis; Perizinan","12","4","D4/S1","7","Ilmu Hukum","1","53","Advokat","Lembaga Bantuan Hukum Elang Maut Indonesia","1"
+"116","Rafli Rizki Resandi","Laki-laki","25","Microsoft word","1","1","SMA/SMK","3","Pemasaran Bisnis","1","53","Helper Pengiriman","PT PANJUNAN","1"
+"117","Rai Muhammad Fikri Suryana","Laki-laki","28","Administrasi Penjualan","1","4","SMA/SMK","3","Teknik Pemesinan","1","137","Administrasi Penjualan","PT Mahligai Puteri Berlian Sukabumi","1"
+"118","aryasaputra","Laki-laki","22","Welder pengelasan","2","4","SMA/SMK","3","Teknik otomotif","1","53","Welder","PT kfi nikel indonesia","1"
+"119","Handoyo Jati","Laki-laki","34","Accurate; Data entry; Dokumentasi transaksi; Laporan keuangan; Manajemen kas; Microsoft Excel; Microsoft powerpoint; Microsoft word","8","3.375","D4/S1","7","Agribisnis","4","344","Pengelola Koperasi Karyawan; Helper THL; Administrasi pembiayaan, Akunting Cabang; Teller","PT Nusa Raya Energi Utama; UPTD Agribisnis Tanaman Pangan dan Hortikultura sekarang Kawasan Agroeduwisata Cikundul; KSPPS Baytul Ikhtiar; PT Bank Muamalat Indonesia","1"
+"120","Feri Irmansyah","Laki-laki","24","CNC Milling; Gambar Teknik; Injection Molding; Instalasi Listrik; Las SMAW; Preventive Maintenance Mesin","6","3","SMA/SMK","3","Teknik Mesin","3","219","Operator Produksi; Operator Produksi Injection Molding; Operator Produksi Machining","CV. SUN SUN; PT. Tirta Fresindo Jaya ( MAYORA GROUP ); PT. ASTRA OTOPARTS DIVISI. NUSAMETAL","1"
+"121","M Darmawan Ramadhan","Laki-laki","26","Adobe Photoshop; Bahasa Inggris; Microsoft Excel; Microsoft Powerpoint; Microsoft Word","5","3","D4/S1","7","Akuntansi",,,,,
+"122","Rizky muhammad Abdilah","Laki-laki","20","Mampu bekerja di bawah tekanan,mampu beradaptasi dengan lingkungan,dan dapat mengetik Komputer cepat","1","2","SMA/SMK","3","TKJ(TEKNIK KOMPUTER JARINGAN)","1","17","Karyawan","TrustDigital.ID","1"
+"123","SIFHA MUFTI SAYYIDAH","Perempuan","18","Digital Content; Pengoperasian Komputer Dasar","2","2.5","SMA/SMK","3","PEMASARAN",,,,,
+"124","Nur Usshofa","Perempuan","21","Microsoft office","1","2","SMA/SMK","3","IPA","1","17","Sales assistant","Ria Busana","1"
+"125","Salsa Zulika","Perempuan","18","Microsoft word","1","2","SMA/SMK","3","IPS","1","17","Karyawan Produksi","Mitra Daging","1"
+"126","Eki Rahmawan","Laki-laki","27","Menggunakan Aplikasi dengan baik","1","3","SMA/SMK","3","Ipa","1","101","Operator produksi","Cv. Saga Multi Industri","1"
+"127","M Dena Aprilian","Laki-laki","19","Merakit barang elektronik, Pengendalian kualitas produk, Pemeliharaan alat elektronik","1","2","SMA/SMK","3","Teknik Elektronika Industri",,,,,
+"128","SALWA ALSYA SAEPULOH","Perempuan","21","Kerja di bawah tekanan; Kerja tim; Kreatifitas; Manajemen waktu","4","3.25","SMA/SMK","3","IPS","4","92","Product Safety; QA; QC Finishing; QC Sewing","PT. DASAN PAN PACIFIC INDONESIA","1"
+"129","rahma fauzia kusmayadi w","Perempuan","20","Microsoft Excel, word","1","2","SMA/SMK","3","IPA","1","17","pelayan","toko emas wargi","1"
+"130","Aris munandar","Laki-laki","28","Microsof excel/word","1","3","SMA/SMK","3","Pemasaran","1","101","Staff","Pt lastana expres lex id","1"
+"131","Arlan Ariandi","Laki-laki","25","Pengelasan","1","3","SMA/SMK","3","Pengelasan","1","29","Scanning clerk","Indogrosir","1"
+"132","Sahrul Septiana Ramdan","Laki-laki","19","Microsoft Excel; Microsoft Word","2","2","SMA/SMK","3","Teknik Komputer Dan Jaringan",,,,,
+"133","Karisma ramadina","Perempuan","22","Bahasa Inggris; Bahasa Mandarin; Microsoft Office","3","2.6667","D3","6","Administrasi Bisnis",,,,,
+"134","Ruslan Maulana","Laki-laki","27","Microsoft word","1","4","SMA/SMK","3","IPA","1","41","Operator kandang","Pt. Sreeya sewu indonesia","1"
+"135","Muhammad Adfan Abim","Laki-laki","18","Memperbaiki kerusakan kendaraan ringan","1","3","SMA/SMK","3","Teknik Kendaraan Ringan",,,,,
+"136","Aggy Indar Faudzan","Laki-laki","25","Management; Microsoft Office; Quality Control; Schedule Maker","4","3","D3","6","Teknik Sipil","1","41","Pelaksana","CV. HIKARANA UTAMA","1"
+"137","Adelia Kemista Meilani","Perempuan","19","Berkomunikasi dengan baik, kerja sama tim, gampang beradaptasi dengan lingkungan baru","1","2","SMA/SMK","3","IPA",,,,,
+"138","Muhamad Fadhil","Laki-laki","24","Adaptasi; Berpikir Kritis; Inisiatif; Kepemimpinan; Kerja Sama Tim; Komunikasi Efektif; Microsoft Office/Google Workspace; Problem Solving","8","3.375","D4/S1","7","Manajemen","1","17","Sales Underwriter","Astra Credit Companies","1"
+"139","Nazril Akhmad Wardhana","Laki-laki","20","Maintenance","1","3","SMA/SMK","3","Teknik otomotif","1","29","Mekanik Wheel","PT RIUNG MITRA LESTARI","1"
+"140","M rifky","Laki-laki","22","Microsoft word, editing","1","3","SMA/SMK","3","Bisnis daring dan pemasaran","1","29","Karyawan","Pt supra natami utama","1"
+"141","MH.ALIF SURYA FAHKRI","Laki-laki","20","Mampu berkomunikasi dengan baik","1","3","SMA/SMK","3","Ipa","1","17","Admin","Multi jaya printing","1"
+"142","Perdiyan Putraa","Laki-laki","23","Mesin","1","3","SMA/SMK","3","Teknik Bisnis Sepeda Motor","1","17","FLM Maintenance","PT Abacus","1"
+"143","Ali Fikri","Laki-laki","30","Microsoft Office","1","3","SMA/SMK","3","IPA","1","113","STAFF TU","SMPN 2 KABANDUNGAN","1"
+"144","abdurahman","Laki-laki","38","Bahasa inggris; Microsoft office, word, excel, pdf","2","3","D4/S1","7","Pendidikan agama islam","1","89","Janitor","Pt aplikanusa lintasarta","1"
+"145","RAFA ANUGRAH","Laki-laki","24","Canva; Microsoft Excel; Microsoft Word","3","3","D4/S1","7","Administrasi Bisnis",,,,,
+"146","SITI MA'RIFATUS SOLIHAT","Perempuan","23","Microsoft Office ( word, Excel PPT)","1","4","D4/S1","7","Hukum Keluarga Islam","1","65","Staff Tata Usaha","Mts Syamsul Ulum","1"
+"147","RIDWAN MUKLIS","Laki-laki","27","Instalasi listrik","1","3","SMA/SMK","3","Ipa","1","17","Electrian","Cv dham elektronik","1"
+"148","Siti Nurhalisyah","Perempuan","22","Apps akuntansi (accurate, zahir,excel); Manajemen waktu; Ms office (word, excel, power point)","3","4","D4/S1","7","Akuntansi","3","113","Accounting; Staf administrask umum; Guru dan staf administrasi","Poltekes yapkesbi; Paud Albaaqii","1"
+"149","Muhamad latif","Laki-laki","21","Gampang berkomunikasi","1","2","SMA/SMK","3","Komputer","1","17","Helper","PT abadi mitra Priangan","1"
+"150","MUHAMMAD FAHRI","Laki-laki","18","Otomotif","1","2","SMA/SMK","3","Otomotif",,,,,
+"151","Fachreza Pasya Prayoga","Laki-laki","23","Canva; Google Workspace (Spreadsheet, Google Docs); Microsoft Excel; Microsoft Office (Power Point, Word)","4","3","D4/S1","7","Administrasi Bisnis","1","29","Magang Admin","CV Kota Baru","1"
+"152","alyndra putri aliva","Perempuan","22","Canva; Microsoft Word","2","2","D4/S1","7","HUKUM",,,,,
+"153","MUHAMAD ANDIYANI","Laki-laki","23","-","1","1","SMA/SMK","3","Produksi dan Siaran Program Televisi","1","41","Waiter","Warnas H Empud","1"
+"154","Abdul Hanan","Laki-laki","29","Pelaporan keuangan yayasan; Sebagai Bendahara Yayasan","2","3","D4/S1","7","Ekonomi syariah","1","101","Bendahara pengeluaran, Guru & operator SMA","Sekolah yayasan","1"
+"155","ARMAN","Laki-laki","17","TOEIC Bahsa inggris","1","3","SMA/SMK","3","Agribisnis",,,,,
+"156","Annisa Febrianti","Perempuan","24","Microsoft excel; Microsoft word","2","2.5","D4/S1","7","Manajemen",,,,,
+"157","Daffa Aidil Fahrezi","Laki-laki","20","Microsoft office","1","2","SMA/SMK","3","IPA",,,,,
+"158","ABDUL MALIK","Laki-laki","21","MEKANIK","1","3","SMA/SMK","3","TEKNIK BISNIS SEPEDA MOTOR",,,,,
+"159","Varent Dwi Resviana","Perempuan","20","Otomotif","1","2","SMA/SMK","3","Teknik Otomotif",,,,,
+"160","DINAR RAMDANI","Laki-laki","19","Microsoft Excel; Microsoft Office","2","2","SMA/SMK","3","Manajemen Perkantoran Dan Layanan Bisnis",,,,,
+"161","MuHAMAD SIDIQ MAULANA","Laki-laki","21","Kepemimpinan menejemen waktu menejemen keuangan personal branding networking pengambilan keputusan presentasi pemecahan masalah manny menegement","1","2","SMA/SMK","3","IPS","1","17","STAF TELEMARKETING","CIMB NIAGA AUTO FINANCE","1"
+"162","Haris Farida Abdul Nurwahid","Laki-laki","22","Microsoft excel, word, powerpoint","1","3","SMA/SMK","3","Rekayasa Perangkat Lunak","1","41","Advertiser","Cv alrasyid naturindo","1"
+"163","Tita Suryani","Perempuan","41","Advance excel; Coretax","2","3","D4/S1","7","Hubungan Internasional","1","257","GA Staff","Galaxy trading indonesia","1"
+"164","Restu pirmansah","Laki-laki","20","Microsoft word","1","2","SMA/SMK","3","Otomatisasi tatakelola perkantoran",,,,,
+"165","Fikriyandi Fadli","Laki-laki","21","Microsoft Office","1","3","D3","6","MANAJEMEN",,,,,
+"166","Yuda Maulana Yusup","Laki-laki","26","Microsoft Excel","1","2","SMA/SMK","3","Tataniaga/pemasaran","1","101","Gudang","PT tulus maju","1"
+"167","IRHAS BADRU TAMAM","Laki-laki","20","Menggunakan alat pallet mover gudang; Menggunakan handheld; Mengoperasikan mesin cutting; mengoperasikan mesin jawfeng; mengoperasikan mesin xiaokang","5","3.2","SMA/SMK","3","Teknik Otomotif","1","29","RECEIVING","PT INTI CAKRAWALA CITRA","1"
+"168","Nurhanipah","Perempuan","24","Bahasa Mandarin; Microsoft office","2","2.5","D4/S1","7","Hukum",,,,,
+"169","Mevira Sri Wahyuni","Perempuan","19","Costumer Service; Microsoft Excel; Microsoft Word; Pengarsipan Data","4","2.5","SMA/SMK","3","Pemasaran","1","17","assistant administrative","Lontarlab Foundation","1"
+"170","Gilang Firmansyah","Laki-laki","22","Interpersonal  : Kerja Tim, Manajemen waktu,  Adaptabilitas","1","3","SMA/SMK","3","Teknik Pengelasan","1","53","QC dan Staff Operasional","PT International Leather Work","1"
+"171","Muhammad Abdul bais","Laki-laki","25","Ms office HRIS spreadsheet","1","3","D4/S1","7","Ilmu komunikasi","1","41","STAFF HCGA","PT Panyindangan sukabumi","1"
+"172","RAFFA PUTERA PRATAMA IBRAHIM","Laki-laki","18","sistem informasi","1","1","SMA/SMK","3","IPS",,,,,
+"173","Muhamad rizki Fauzi","Laki-laki","22","Microsoft","1","2","SMA/SMK","3","Rekayasa perangkat lunak","1","41","Crew store","PT Sumber Alfaria Trijaya","1"
+"174","M. Apriyansyah","Laki-laki","25","Microsoft office, HTML, CSS, JAVASCRIPT","1","3","D4/S1","7","Teknik informatika","1","29","Staff TU","Mts SA Miftahul Aziz","1"
+"175","Galih Gunawan","Laki-laki","22","Mengelas, Mengoperasikan Mesin","1","1","SMA/SMK","3","Teknik Pengelasan","1","29","Oprator produksi","PT. Alvin Tecknindo","1"
+"176","Silviyani","Perempuan","18","Publick speaking,customer service,kemampuan mendengarkan aktif","1","3","SMA/SMK","3","Keperawatan",,,,,
+"177","Moch andriansyah Ramdan saputra","Laki-laki","22","Shower hardware","1","2","SMA/SMK","3","Teknik komputer jaringan","1","65","Staf pemulas","Pelampung sukabumi","1"
+"178","Ardiansyah Setiawan","Laki-laki","21","Instalasi Windows & Linux; Microsoft Office; Perakitan PC; Troubleshooting komputer; Virtualisasi","5","2.2","SMA/SMK","3","Teknik Komputer dan Jaringaan","3","53","Staf TAX; Waitre; Intern IT Helpdesk Technician","Hotel Savero Style Bogor; Cafe Metavoya; Hotel Grand Savero Bogor","1"
+"179","Rara Putri Pangesti","Perempuan","18","Mampu mengoperasikan komputer dan Microsoft Office (Word & Excel) tingkat dasar.; Memahami pencatatan barang masuk dan keluar.; Teliti, rapi, jujur dan bertanggung jawab dalam bekerja.","3","3","SMA/SMK","3","IPS",,,,,
+"180","Rathu Aura Yahsya","Perempuan","18","caregiver keperawatan","1","4","SMA/SMK","3","Asisten Keperawatan",,,,,
+"181","Karina yulianti","Perempuan","27","Microsoft excel","1","2","SMA/SMK","3","Ips",,,,,
+"182","Sri purwanti ayu ningrum","Perempuan","23","Pengarsipan administrasi","1","3","D4/S1","7","Pendidikan agama islam","1","41","Staff tata usaha","Smp islam plus kembang","1"
+"183","Siti Raisya Abdillah","Perempuan","17","Bisa mengelola dokumen (arsip), dapat berkomunikasi dengan baik, dan Administrasi dasar","1","3","SMA/SMK","3","Manajemen Perkantoran dan Layanan Bisnis","1","17","Peserta praktik kerja lapangan","Kementerian Agraria dan Tata Ruang Badan Pertanahan Nasional","1"
+"184","Moh Rafli Nur Shiddiq","Laki-laki","23","Microsoft Office ( Word, Excel dan Power Poin ); Otomotif","2","4","D3","6","Administrasi Bisnis",,,,,
+"185","mulky fachrul fadhilah","Laki-laki","20","bisa merakit komputer dengan baik, kreatif dan berkomunikasi secara efektif","1","3","SMA/SMK","3","teknik komputer dan jaringan","3","29","seles; kariyawan; stafff","pt my Republik; pt supra natami utama; mandala computer cianjur","1"
+"186","Riski Purnama","Laki-laki","23","Memahami sedikit microsoft excel,bisa mengoperasikan komputer,","1","2","SMA/SMK","3","Ipa","1","5","Operator gudang","Spx shopee","1"
+"187","Rangga Pratama Putra","Laki-laki","23","Kerja sama tim; Komunikasi; Microsoft excel; Microsoft word; Pengelolaan data; SO Gudang","6","3.3333","SMA/SMK","3","Teknik komputer dan teknologi","1","17","Supervisor keuangan dan administrasi umum","CV. Ajib Bio Syifa","1"
+"188","NAZWA AULIA AZZAHRA","Perempuan","19","Edit foto atau poster di canva, menggunakan Microsoft Office seperti word","1","2","SMA/SMK","3","KURIKULUM MERDEKA","1","17","Operator Injection","PT. Starcomgistic Indonesia","1"
+"189","Muhammad fachril fachriza firdaus","Laki-laki","25","Excel,powerpoint and World","1","2","SMA/SMK","3","Teknik komputer dan jaringan","1","65","Operator","PT SILGA PERKASA","1"
+"190","Andri","Laki-laki","23","Perhotelan, sitem kasir, sitem fifo","1","3","SMA/SMK","3","perhotelan","1","53","waiter","Gion sushi bar","1"
+"191","Dede Mulyana","Laki-laki","24","Data entry; Fast learner; Teamwork","3","2.6667","SMA/SMK","3","IPS","3","58","Helper Instalasi Mesin; Helper Produksi; Web3 Explorer","PT SSA; PT HAPPY INDONESIA; Freelancer","1"
+"192","Mona dwi'dia yudanti","Perempuan","21","Microsoft Excel","1","1","SMA/SMK","3","Ilmu pengetahuan alam","1","29","Waiters","Samudra seafood & resto","1"
+"193","Fika amanda distiani","Perempuan","18","Autocad; Microsoft excel; Microsoft Word; Sketchup","4","2.5","SMA/SMK","3","Desain Pemodelan dan Informasi Bangunan","1","17","Admin Maintenance","PT. Dua Tepian Sungai (Bebek Kaleyo)","1"
+"194","Fadhil razaqa Tsaqib","Laki-laki","17","Microsoft Word","1","3","SMA/SMK","3","IPA",,,,,
+"195","ELISTIANI","Perempuan","26","Bahasa Mandarin","1","2","SMA/SMK","3","ILMU PENGETAHUAN SOSIAL",,,,,
+"196","Novita Rizky Wulandari","Perempuan","18","Dapat mengoprasikan Microsoft Excel, dapat mengoprasikan dasar dasar Akuntansi seperti Buku Kas Masuk dan Keluar.","1","2","SMA/SMK","3","Akuntansi Keuangan dan Lembaga",,,,,
+"197","AMELIA AZZAHRA","Perempuan","19","Microsoft Office","1","2","SMA/SMK","3","Teknik Komputer dan Jaringan","1","17","Operator produksi","PT. Tera Data Indonusa Tbk","1"
+"198","Husen inayatullah","Laki-laki","17","Microsoft Excel,word","1","1","SMA/SMK","3","IPA",,,,,
+"199","Syifa Suci hati","Perempuan","23","Microsoft word","1","3","SMA/SMK","3","Teknik otomasi insdustri","2","53","Operator produksi","PT panasonic manufacturing indonesia; PT premiere berkah perkasa","1"
+"200","ALIFFA SHALVA QIRANI","Perempuan","18","LITERASI DIGITAL/PEMASARAN & KONTEN","1","3","SMA/SMK","3","IPA",,,,,
+"201","Ilham maulana Mansiz","Laki-laki","23","Menguasai Microsoft office","1","2","D4/S1","7","Pendidikan Agama Islam","1","65","Operator Produksi","PT Djojonegoro C1000","1"
+"202","SALIM SALMAN","Laki-laki","19","Customer service","1","2","SMA/SMK","3","Perbankan",,,,,
+"203","Indah Parawangsa","Perempuan","18","Mampu menggunakan komputer, seperti ms excel,word. Mengarsipkan dokumen surat surat, mendata, dan masih banyak lainnya","1","3","SMA/SMK","3","Otomatisasi Tata kelola Perkantoran",,,,,
+"204","Asep Agus Permana","Laki-laki","23","Administrasi; Bahasa Inggris; Jiwa Kepemimpinan; Kerjasama tim, komunikasi efektif, teliti dan disiplin; Manajemen Waktu; Microsoft Excel; Microsoft Word; PowerPoint","8","3.875","D4/S1","7","Manajemen","2","29","Staff Service; Staff Administrasi","PT. Mustika Citra Rasa; Puskesmas Nagrak","1"
+"205","Ariq Martin Rahman","Laki-laki","23","Assist.id; Computer skill; Kejujuran; Microsoft power point; PowerPoint","5","3.2","D3","6","D3 analisis kesehatan","1","17","Analis lab","Gema medikal center klinik bahagia nyomplong Sukabumi","1"
+"206","Afrizal Maulana","Laki-laki","23","Mempersiapkan kebutuhan event; Mengurus izin permit project; Microsoft office","3","2","D4/S1","7","Teknik informatika","1","65","Operator produksi","PT PROSWEAL INDOMAX","1"
+"207","Salma Oktavia ini","Perempuan","19","Microsoft word/ Microsoft Excel","1","2","SMA/SMK","3","Teknik komputer dan jaringan","1","29","Staff","Abadi computer (PKL)","1"
+"208","Adinda Mulya","Perempuan","28","Menggunakan Microsoft Excel,","1","3","SMA/SMK","3","Agribisnis","1","89","Staff Administrasi","Dinas kesehatan","1"
+"209","Lia amelia","Perempuan","33","Microsoft Office","1","2","D4/S1","7","Ilmu Hukum","3","267","Staff Admin; Cashier and Admin; Financial Planner","PT. THT Tour and Travel; Mamita Resto; PT. Prudential Life Assurance","1"
+"210","Alka urvia kurnia","Perempuan","23","Microsoft Excel ( olah data, tabel, rumus dasar, rekap laporan); Microsoft Power Point ( persentasi profesional ); Microsoft Word ( Pembuatan dokumen, surat, laporan )","3","3","D4/S1","7","Manajemen","1","53","Admin","BUNDA FLORIST","1"
+"211","INDI DANI RUSWAN","Laki-laki","19","OTOMOTIF","1","2","SMA/SMK","3","IPS",,,,,
+"212","Muhammad Wildan Ramadhan","Laki-laki","26","Keahlian fisik dan stamina; Komunitas dan kerjasama tim; Manajemen fasilitas; Mengoperasikan komputer","4","2.75","SMA/SMK","3","IPS","1","101","OPHARDUNG (Operation & Maintenance / Ophar Gardu Induk )","PT. MITRA MULTI USAHA INSANI","1"
+"213","Muhammad Ikhsan Setiawan","Laki-laki","23","Autocad; Document Drafting; Draftsight; Integrated Management System; Machine Operation; Microsoft Office; Outlook; Quality Management; Sharepoint; Warehouse Operation","10","3.3","D3","6","Teknik Mesin","1","17","Admin QHSE","PT Grundfos Pompa","1"
+"214","Tegar paskal sukur","Laki-laki","23","Microsoft office, Excel, Word, PPT, Canva","1","3","D4/S1","7","Pendidikan Jasmani Kesehatan Dan Rekreasi","1","29","Production Manage","Reality Event Organizer","1"
+"215","NUROCTAVIANI","Perempuan","23","Microsoft Excel; Microsoft Powerpoint; Microsoft Word; Project Management Ready; Public Speaking","5","3.6","D4/S1","7","Manajemen",,,,,
+"216","MUHAMMAD IHSAN AKMAL","Laki-laki","19","Microsoft excel","1","2","SMA/SMK","3","Teknik komputer jaringan","1","17","Daily worker","Gudang Shopee","1"
+"217","RIZKI SRI WAHYUNI","Perempuan","23","Microsoft Excel; Microsoft PowerPoint; Microsoft Word; PMI Project Management Ready; Public Speaking","5","3.2","D4/S1","7","Manajemen",,,,,
+"218","Muhammad Farhan Fauzan","Laki-laki","23","Microsoft Excel; Microsoft Word","2","2","D4/S1","7","Agroteknologi",,,,,
+"219","HENDRI SURYADI","Laki-laki","25","Otomotif","1","3","SMA/SMK","3","Teknik kendaraan ringan","1","89","Manukfakturing/painting","Pt kawasaki motor indonesia","1"
+"220","Muhammad Hanif Abdul Aziz","Laki-laki","24","Microsoft word/excel","1","2","SMA/SMK","3","Teknik informatika dan jaringan","1","65","Pengawas Produksi","PT GLOSTAR INDONESIA","1"
+"221","Fani Junia Febrianti","Perempuan","19","Microsoft Word","1","2","SMA/SMK","3","MIPA",,,,,
+"222","Imam Nur Aziz","Laki-laki","27","Administrasi; Bahasa Inggris; Bahasa sunda; Canva; Capcut; Customer service; Data Analis; Google Spreadsheet; Microsoft Excel; Microsoft Word; Power Point","11","2.5455","D4/S1","7","Ilmu Peternakan","3","29","Staff Customer Relation; Supervisor Supermarket; Magang","PT Akur Pratama; CV Fiva Food & Meat Supply","1"
+"223","Musa Angkasa Putra","Laki-laki","22","Mampu mengoperasikan mesin Sealer dan mesin mixer cairan bahan","1","2","SMA/SMK","3","Ilmu pengetahuan sosial","1","29","Operator produksi dan pengemasan","Cv.clorogreen","1"
+"224","TASYA NUR AZKIA","Perempuan","21","Menjahit","1","3","SMA/SMK","3","Tata Busana","1","29","Penjaga toko","Pesona Batik Sukabumi","1"
+"225","Iman Sugiman","Laki-laki","32","Marketing 10 thn di Bank Mandiri, analisa data, purchasing, laba rugi, maintance bawahan, monitoring nasabah","1","4","D4/S1","7","Pendidikan psikolog","1","137","Leader marketing unit","PT Bank Mandiri","1"
+"226","ABDUL MUHAMAD RASID","Laki-laki","29","Microsof exel","1","2","D4/S1","7","PGSD","1","29","AREA PROMOTION EKSEKUTIF","PT.KALBE NUTRISIONAL","1"
+"227","Shafa Awalia Nuzula","Perempuan","21","Accurate; Microsoft Excel; Public speaking","4","3.25","SMA/SMK","3","Perbankan","1","53","Staf Gudang","CV Adhi Dharma","1"
+"228","Siti Fatimah Azahra","Perempuan","25","Microsoft Office, Administratif, Communication, Problem solving","1","3","D4/S1","7","Manajemen","1","77","Admin Operasional","TBK Tunas Holistik","1"
+"229","MUHAMMAD IHSAN RAMADHAN","Laki-laki","38","Microsoft Excel","1","3","D4/S1","7","SASTRA INGGRIS","3","298","KASIR & ADMIN; TELLER; STAFF INTERNAL CONTROL","PROSTASIA SUKABUMI; PT. BANK NEGARA INDONESIA; PT. PRATAMA ABADI INDUSTRI","1"
+"230","ELZY LESMANA","Laki-laki","27","Data analyst; Digital marketing; English; Excel; Leadershift; Manajemen waktu; Public speaking; World","8","3.25","SMA/SMK","3","Tehnik kendaraan ringan","1","17","Shift lead ( senior analyst )","SPX EXPRESS","1"
+"231","Azzahra Affrilia Juhaini","Perempuan","24","microsoft office","1","2","D4/S1","7","Pendidikan Ekonomi",,,,,
+"232","Taufik Hidayat","Laki-laki","21","microsoft excel","1","3","SMA/SMK","3","Teknik Jaringan Dan Komputer","1","41","Crew store/kasir","PT. Alfa Trijaya","1"
+"233","Fauzi Bahri","Laki-laki","18","Microsoft Excel","1","3","SMA/SMK","3","Informatika,fisika,ekonomi",,,,,
+"234","RAHMA","Perempuan","18","Bekerja sama dengan baik","1","3","SMA/SMK","3","IPS",,,,,
+"235","ASEP","Laki-laki","23","Microcoft exsel","1","2","D3","6","D3KEPERAWATAN",,,,,
+"236","SANDI SYAHRUL RAMADHAN","Laki-laki","24","Teknik Pengelasan","1","3","SMA/SMK","3","TEKNIK PENGELASAN","1","53","Operator","PT MERSIFARMA TIRMAKU MERCUSANA","1"
+"237","Epan Heriyadi","Laki-laki","36","public speaking, kemampuan organisasi,Microsoft Office","1","4","D4/S1","7","Ilmu Sosial","3","185","Marketing Kredit Sales; Verifikator","PT Bank Mandiri; PT Biro Klasifikasi Indonesia; PT.Multidecon Internal","1"
+"238","Abdul Wadud","Laki-laki","23","Adaptability; Leadership; Microsoft office; Problem solving; Publick speaking; Teamwork","6","2.5","SMA/SMK","3","Multimedia","1","65","Staff operasional","Klinik harapan bunda","1"
+"239","ibu lia","Perempuan","0","Microsoft Excel","1","4","D3","6","Teknik Informatika",,,,,
+"240","Erik maulana","Laki-laki","29","Bisa mengoprasikan mesin packaging AmDk. Dan bisa mengendarai mobil memiliki sim A","1","3","SMA/SMK","3","Teknik otomotif","1","137","Operator produksi","Pt primadaya plastisindo","1"
+"241","Muhammad fauzya taufik riyadi","Laki-laki","23","Video editor (dengan ponsel)","1","2","SMA/SMK","3","IPA",,,,,
+"242","Nazar Nulhakim","Laki-laki","18","Komunikasi baik; Manajemen waktu; Microsoft Office; Tanggung jawab; Teliti dan rapi","5","2.6","SMA/SMK","3","IPS",,,,,
+"243","Agung Malik Firmansyah","Laki-laki","24","Microsoft excel","1","3","SMA/SMK","3","IPS","1","41","Pramuniaga/Crew Strore","PT. Sumber Alfaria Trijaya Tbk","1"
+"244","Novianti","Perempuan","18","Komunikasi: Menyampaikan ide dan informasi dengan jelas; Management Waktu: Mengatur prioritas dan menyelesaikan tugas tepat waktu; Teamwork: Bekerja sama efektif dalam tim untuk mencapai tujuan bersama","3","3","SMA/SMK","3","Ips",,,,,
+"245","Sahid Riyanto","Laki-laki","20","Memahami tentang kelistrikan","1","2","SMA/SMK","3","Teknik Otomasi Industri",,,,,
+"246","MOH AFRIZAL","Laki-laki","23","Logistik","1","3","SMA/SMK","3","Swasta","1","53","Operator","Spx shopee express Bogor","1"
+"247","Awal Ramadhan","Laki-laki","23","Adobe Photoshop; Microsoft Excel; Microsoft Powerpoint; Microsoft Word","4","2.75","D4/S1","7","Pendidikan Pancasila dan Kewarganegaraan",,,,,
+"248","Sabila Maharani","Perempuan","18","Pekerja keras,mampu bekerja sama dengan tim,bisa menggunakan laptop,ramah terhadap pelanggan","1","3","SMA/SMK","3","Ipa",,,,,
+"249","Fitriani Dewi","Perempuan","23","Administrasi dan Pengolahan Data; Cepat Belajar; Disiplin dan Bertanggungjawab; Input data dengan teliti; Komunikasi yang baik; Microsoft Office (Word, Excel, Powerpoint); Pengarsipan Dokumen; Teliti dan detail","8","4","D4/S1","7","Administrasi Bisnis","2","106","Magang - Administrasi / Field support; PKL - Pelayanan / Penjaga Loket","Bank Mandiri Cisaat; Kantor Pos Sukaraja","1"
+"250","Fakhrul agustian","Laki-laki","26","Microsoft Office","1","3","D4/S1","7","Manajemen","1","17","Sales","My republic sukabumi","1"
+"251","Alfan Nur Alfian","Laki-laki","26","Microsoft Excel, access, word, convert file dll","1","3","SMA/SMK","3","Rekayasa perangkat lunak","1","65","Crew store","PT DINAMIKA AGUNG","1"
+"252","FIKRI ENCENG ABDURROHMAN","Laki-laki","23","Operator forklift","1","1","SMA/SMK","3","Ilmu pengetahuan sosial","1","17","Checker","PT NUSANTARA EKSPRES KILAT","1"
+"253","Ujang yamin","Laki-laki","25","Marketing","1","3","SMA/SMK","3","Teknik mesin","1","65","Operator produksi","Bakery","1"
+"254","NOVI SUCI PRAMHAIRIL","Perempuan","22","Word,Exel,Power point","1","3","D4/S1","7","ILMU PEMERINTAHAN","1","65","Operator Pelayanan Masyarakat","Instansi pemerintahan","1"
+"255","M SAHRUL ROMADON","Laki-laki","19","Mekanik","1","2","SMA/SMK","3","Ips","1","53","Mekanika","Wafarel98","1"
+"256","Dede sutisna","Laki-laki","41","Leadership,Marketing,komunikasi","1","3","D4/S1","7","Muamalah","1","161","Operation staff","PT Surya Madistrindo","1"
+"257","Muhammad Ihsan","Laki-laki","25","Kerja Sama Tim; Komunikasi Yang Baik; Manajemen Waktu","3","3.3333","SMA/SMK","3","IPS","1","53","Asisstant Drilling","PT Kapuas Prima Coal Tbk,","1"
+"258","DIKRI MUHAMAD","Laki-laki","20","fisika","1","3","SMA/SMK","3","ipa","1","17","Crew","Roscik","1"
+"259","Irsan Firmansyah","Laki-laki","32","Bermain gitar","1","3","SMA/SMK","3","Teknik Pengelasan","2","137","Operator; Salesman","KNA CELL; PT PRIMA LINTAS NUSANTARA","1"
+"260","Rio Ardan","Laki-laki","27","Microsoft Office; Software Accurate","2","3","D4/S1","7","Teknik Informatika","3","183","Operational Administration Officer; Control Room Officer","PT Krakatau Jasa Logistic; PT Krakatau Jasa Industri; PT Semesta Harapan Usaha","1"
+"261","Deril Paisal Akbar","Laki-laki","30","Welding Manual/Robot Welding","1","2","SMA/SMK","3","Teknik Kendaraan Ringan","1","89","Operator","PT Dharma Polimetal","1"
+"262","Hardiana Hardiansah","Laki-laki","20","bisa mengoperasikan komputer atau laptop","1","2","SMA/SMK","3","Rekayasa Perangkat Lunak","1","17","Admin Teknik Lapangan","PT Adhi Karya (Persero) Tbk","1"
+"263","A. Oktian Permana","Laki-laki","28","Desain; Editing video; Microsoft office; Troubleshooting","4","2.5","D4/S1","7","Sistem informasi","1","101","Kepala urusan tata usaha dan umum","Pemerintah Desa Parakansalak","1"
+"264","Wildan Jan Khomisa","Laki-laki","39","Mengoperasikan komputer","1","3","D4/S1","7","Sistem Informasi","1","77","Kepala Unit","Permodalan Nasional Madani (PNM) - Unit Layanan Modal Mikro (ULAMM)","1"
+"265","Priska ajeng pratiwi","Perempuan","25","Analytical Thinking","1","4","SMA/SMK","3","MIPA","4","166","Staff assignment; Kepala Unit; Staff kasir","Bebek jontor jalur; Ninja Xpress; Pusat Gadai Indonesia; Bebek jontor selabintana","1"
+"266","RIFKI MUBAROK","Laki-laki","21","service/barista/","1","3","SMA/SMK","3","PERHOTELAN","1","17","KARYAWAN","REDBRICK CAFFE","1"
+"267","Bagus Suwiyantoro","Laki-laki","34","Audit Halal; Leadership; Literasi Keuangan; Manajemen Tim; Microsoft Office; Perencanaan","6","3","D4/S1","7","Teknologi Indsutri Pertanian","3","291","Fasilitator Pendamping; Production Section Supervisor; Asisten Supervisor Produksi","Kementrian Pertanian; PT. Indofood CBP Sukses Makmur Tbk; PT. Tirta Purbalingga Adijaya","1"
+"268","Elsa Najwada","Perempuan","22","Microsoft Excel","1","2","SMA/SMK","3","IPS","3","123","Freelance Data Entry; Waitress; Penjaga Warung","Bapenda; Xiboba; Warung Kelontong","1"
+"269","Amelia Fuziati Fuziati","Perempuan","32","Bahasa Inggris; Microsoft Visio basic; Microsoft word, excel, PPT","3","2.6667","D4/S1","7","Teknik Industri","4","332","Karyawan apotek; Admin dan kasir; STAFF ADMINISTRASI LABORATORIUM; Call center agent","Apotek Nafsya Farma Cipanas; Original boutique Ekalokasari Bogor; Laboratorium Klinik Keluarga Cipanas; PT INFOMEDIA NUSANTARA project Telkomsel","1"
+"270","Muhammad Alvan Ratu Adil","Laki-laki","26","Analisa Laporan Keuangan; Komunikasi; Laporan Rekonsiliasi; Microsoft Office; MyOb Accounting","5","2.8","D4/S1","7","Akuntansi","1","77","Penulis Artikel, Analisa Laporan Keuangan, Pelaksana Lapangan, Operasional Logistik, Administrasi, Penjualan","Freelance","1"
+"271","Muhammad Fadjar Mauludyawan","Laki-laki","28","Adobe Illustrator; Microsoft Excel; Microsoft Powerpoint; Microsoft Word","4","3","D4/S1","7","TEKNIK PERENCANAAN WILAYAH DAN KOTA","3","111","Supervisor Operasional (PIC Area); Koordinator","PT Global Jet Express; PT Semut Merah Squad","1"
+"272","M ZIMAT","Laki-laki","18","Teknik mesin","1","2","SMA/SMK","3","Teknik mesin",,,,,
+"273","Sheima Putra Heriyanto","Laki-laki","19","Microsoft Excel, word","1","1","SMA/SMK","3","Teknik mesin",,,,,
+"274","Muhammad Eldimaz Zakaria","Laki-laki","20","Microsoft Excel & Word","1","2","SMA/SMK","3","Teknik Komputer dan Jaringan","1","5","Daily Worker","Shopee Express","1"
+"275","Daffa Naufal Nugraha","Laki-laki","22","Microsoft Excel","1","2","SMA/SMK","3","Teknik Komputer dan Jaringan","1","41","Operator Produksi","PT. Tirta Fresindo Jaya","1"
+"276","Rika Rasati Ariyani","Perempuan","25","Microsoft office (Excel, word, powerpoint)","1","3","D4/S1","7","Manajemen","1","29","Admin Finishing","PT Dasan Pan Pacific Indonesia","1"
+"277","Robiatul Adawiyah","Perempuan","23","Microsoft Word","1","2","SMA/SMK","3","MIPA","1","29","Operator","PT. DASAN PAN PACIFIC INDONESIA","1"
+"278","M Dzikri ridhallah","Laki-laki","26","Marketing , penggunaan sosmed . Ads manager , conten kreator","1","3","SMA/SMK","3","IPS","1","89","Marketing","Hirocorp + CV Kreasindo","1"
+"279","Intan wirdatul hamra","Perempuan","24","Public Speaking","1","4","D4/S1","7","Pendidikan Ekonomi","1","41","SPG","PT. Sukabumi Alam Mandiri","1"
+"280","Fani Aldian Syah","Laki-laki","24","Microsoft Excel, Word, PowerPoint","1","1","D4/S1","7","Agribisnis",,,,,
+"281","Rijwan","Laki-laki","29","-","1","1","SMP","2","-",,,,,
+"282","M Restu","Laki-laki","21","kelistrikan","1","3","SMA/SMK","3","ips","1","29","sales paket","pt j&t express","1"
+"283","Dzul ismail","Laki-laki","33","Las GMAW; Las GTAW; Las SMAW; Menggunakan alat ukur; Mengunakan alat ukur","5","3.4","SMA/SMK","3","Teknik las","1","17","Welder","PT. Bakti sari","1"
+"284","AHMAD BASUKI","Laki-laki","19","Treding Crypt dan saham","1","2","SMA/SMK","3","Kurikulum merdeka belajar","1","17","Operator sewing","PT.CITRA UNGUL TBK (GARMEN)","1"
+"285","Wawan setiawan","Laki-laki","34","memahami alur kerja pergudangan1. Pengelolaan barang (inventory) 2. Packing & sortir 3. Pengoperasian alat hand pallet /forklip 4. Administrasi sederhana 5.Ketelitian & fisik 6. Kerja tim & komunikasi","1","4","SMA/SMK","3","teknik gambar bangunan","1","185","wharehouse gudang material / team member c","PT. PRATAMA ABADI INDUSTRI","1"
+"286","RULI JUANSYAH","Laki-laki","21","Komputer","1","2","SMA/SMK","3","AKUNTANSI","1","53","Staf","PT.SUMBER ALFARIA TRIJAYA TBK","1"
+"287","muhammad rifky adriansyah","Laki-laki","18","adaptabilitas; kerjasama; komunikasi","3","2","SMP","2",,"1","17","crew store","toko thrift baju","1"
+"288","Keni Nuraeni","Perempuan","24","Bahasa Inggris; Canva; data analys; digital marketing; Leadership; manajemen waktu; Microsoft Office; Photoshop; publik speaking","9","3.3333","D4/S1","7","Manajemen","3","17","Consumer Assurance; Back Office","PT Telkom Witel Sukabumi; PT BSI Tbk; PT BPR Artapesada","1"
+"289","Mochammad Isep Saepurrochman","Laki-laki","26","Operator, QC, Stand Keeper/Warehouse","1","4","SMA/SMK","3","Teknik Mesin","4","149","Stand Keeper; QC; Operator","PT. Inti Cakrawala Citra (Indogrosir); PT. Guna Senaputra Sejahtera; PT. Astra Daihatsu Motor; PT. Otics Indonesia","1"
+"290","Amos Lenda Pago","Laki-laki","24","Desain dan editing; Kerja sama tim; Manajemen waktu; Mengoperasikan Microsoft Office; Pengelolaan Sosial Media; Public Speaking","6","3.5","D4/S1","7","Ilmu Pemerintahan",,,,,
+"291","Nurannisa Rahmah","Perempuan","23","Bahasa Inggris; Microsoft Office","2","3","D3","6","Manajemen Perpajakan","1","53","Staff Admin","UPT Pajak Daerah Ciomas","1"
+"292","Melawati Arumsari","Perempuan","25","Microsoft word, Excel dan powerpoint","1","3","D4/S1","7","Manajemen",,,,,
+"293","Maulana Yusuf Abdullah","Laki-laki","24","Microsoft","1","3","D4/S1","7","Teknik Informatika","2","70","Supervisor gudang; Mitra pengolahan data dan lapangan","Komisi pemilihan umum kabupaten sukabumi; Badan pusat statistik kabupaten sukabumi","1"
+"294","Juniawan marhammuda","Laki-laki","31","Bahasa Jepang; Microsoft word","2","2","SMA/SMK","3","Teknik kendaraan ringan","1","53","Team member","PT. Shibauara Searing Indonesia","1"
+"295","NISA SAHEILA","Perempuan","18","Microsoft Word/penyisipan objek","1","2","SMA/SMK","3","BISNIS DARING DAN PEMASARAN",,,,,
+"296","Candra kurniawan","Laki-laki","21","Mengajar beladiri silat","1","4","SMA/SMK","3","Perikanan",,,,,
+"297","Jasca Aufa Aulia Ridwan","Laki-laki","18","Teknik listrik/ketenagalistrikan","1","3","SMA/SMK","3","Teknik ketenagalistrikan",,,,,
+"298","IRYAWAN RAMADHON","Laki-laki","34","OPERATOR","1","3","SMA/SMK","3","IPS","1","125","OPERATOR","PT. PRIMADAYA PLASTISINDO","1"
+"299","ROSMAWATI","Perempuan","23","Adaptasi; Bahasa Inggris; Bahasa Mandarin; computer; komunikasi /CS; Microsoft Office; Problem Solving","7","2.4286","D4/S1","7","Teknik Informatika",,,,,
+"300","Nurhasanah","Perempuan","33","Microsoft Excel","1","2","D4/S1","7","Fisika","2","125","Staf Admin HR/GA; Banassurance Spesialist","PT Quanta Megah Indonesia; PT BNI Life Insurance","1"
+"301","Ardhi Riesnandar","Laki-laki","38","Ms. Office, bahasa Inggris, management, sales","1","3","D3","6","Informatika Komputer","1","173","Account Manager","PT. Samator Gas Industri","1"
+"302","Muhammad kevin alfian","Laki-laki","18","Word,excel,ngelas,gurinda,ngechet besi","1","3","D4/S1","7","ILmu pemerintahan","1","17","Karyawan","Cahaya canopy dan ansa cctv,komputer","1"
+"303","Arib Taufiqurahman","Laki-laki","23","Adaptasi; Kerja sama tim; Komunikasi; Manajemen waktu; Microsoft office","5","3","D4/S1","7","Ilmu Kelautan",,,,,
+"304","BUNGA ALIVIA PUTRI","Perempuan","17","CANVA; CAPCUT; INSTAGRAM; MICROSOFT EXCEL & MICROSOFT WORD; TIKTOK","5","3.6","SMA/SMK","3","IPA",,,,,
+"305","ANDRI MAULANA","Laki-laki","25","Microsoft excel","1","3","SMA/SMK","3","IPA","1","77","Crew","Toserba Yogya Sukabumi","1"
+"306","Aprizal Maulana","Laki-laki","20","Desain grafis/editor","1","2","SMA/SMK","3","Ipa",,,,,
+"307","Naufal Hakiim","Laki-laki","19","akuntan,cashier","1","2","D4/S1","7","akuntansi",,,,,
+"308","M ARRAJI RUSNIANSYAH","Laki-laki","19","Microsoft Excel","1","3","SMA/SMK","3","IPA","1","17","Staf Kitchen","SAUNG KITA","1"
+"309","Neng Tyas Zulqaida Nuryasa","Perempuan","23","Akuntansi Dasar & Menegah  Pengelolaan arsip dan dokumen data keuangan  Penyusunan laporan administrasi  Perpajakan (PPH & PPN Dasar)  Microsoft Excel & Word","1","3","D4/S1","7","Akuntansi",,,,,
+"310","Nopi Damyanti","Perempuan","18","Microsoft","1","3","SMA/SMK","3","Teknik Komputer Jaringan","1","5","kasir","D'top","1"
+"311","Riswandi","Laki-laki","21","Microsoft World/Excel","1","2","SMA/SMK","3","Manajemen Perkantoran","1","17","Staff Operator","PT. MAKCIAK SELERA INDONESIA","1"
+"312","M Rizky","Laki-laki","21","Waiter, barista, stok inventory, kasir","1","3","SMA/SMK","3","Perhotelan","1","17","Full time","JIWA GROUP/JANJI JIWA","1"
+"313","Ardy Dwi Dita","Laki-laki","23","Bongkar pasang variasi jok; Komunikasi yang baik; Menjalankan operasional harian toko","3","3","SMA/SMK","3","Teknik Mesin","1","41","Kepala Toko","PT BERKAH TIGA SRIKANDI (Klik chicken & D'top)","1"
+"314","Sonna Yanuar Pamungkas","Laki-laki","36","Microsoft Excel; Microsoft Power Point; Microsoft Word","3","3","D4/S1","7","Manajemen","1","101","Staff Admin","Kelurahan Cipanengah","1"
+"315","Azmil umur","Laki-laki","19","Komunikasi yang baik 	•	Pelayanan pelanggan 	•	Kerja sama tim 	•	Disiplin & tanggung jawab 	•	Pengelolaan penjualan sederhana 	•	Pemograman Python tingkat pemula , dasar-dasar HTML","1","3","SMA/SMK","3","MIPA (Kurikulum merdeka)",,,,,
+"316","Tessa Septiani","Perempuan","18","Microsoft Excel","1","3","SMA/SMK","3","teknik sepeda motor",,,,,
+"317","Api Alpiah","Perempuan","17","microsoft word","1","3","SMA/SMK","3","Managemen Perkantoran dan Layanan Bisnis",,,,,
+"318","Meli Aulia Andani","Perempuan","24","ADMINISTRASI PERKANTORAN; MICROSOFT OFFICE","2","3.5","D4/S1","7","MANAJEMEN","2","41","INTERN ADMINISTRASI PENGOLAHAN; Intern General Affair dan Manajemen Asset","PTPN IV PKS Cikasungka DJABA; BADAN KEPEGAWAIAN DAN PENGEMBANGAN SUMBER DAYA MANUSIA KAB. SUKABUMI","1"
+"319","Asrillia nur as,syfa","Perempuan","20","Microsoft Excel/ Komunikasi","1","2","SMA/SMK","3","Desain bangunan","1","17","Sales Advisor","CV indo laundry","1"
+"320","Azizah Dikra","Perempuan","22","Microsoft Excel","1","3","SMA/SMK","3","Akuntansi","1","53","Staff administrasi","PT Bintang Barat Indokayu","1"
+"321","Eva Yulia","Perempuan","23","Microsoft Exel","1","3","D4/S1","7","Pendidikan Guru Sekolah Dasar","1","17","Customer service/ PJ Retail","Cv Rabbani Asysa","1"
+"322","Siti Alida","Perempuan","25","Mampu berkomunikasi dengan baik; Microsoft Excel; Microsoft Word","3","3.3333","D4/S1","7","Manajemen","1","89","Operator produksi","PT Pratama Abadi Industri Jx","1"
+"323","AYUDIA SALSA BILAH","Perempuan","18","Fotografer","1","3","SMA/SMK","3","Desain komunikasi visual",,,,,
+"324","Keira Queena Hafiza","Perempuan","18","berkomunikasi","1","4","SMA/SMK","3","umum",,,,,
+"325","Mohammad Haris Ramdhani","Laki-laki","23","Autocad; Master Cam; Microsoft Excell; Microsoft Word; Solidwork","5","2.8","D3","6","Teknik Mesin","1","65","Operator Produksi","Pt Chocomory Cokelat Persada","1"
+"326","IZKI RAMDHANI","Laki-laki","22","Administrasi dan pengolahan data sederhana; Cepat beradaptasi dengan lingkungan baru; Customer service; Editing video dasar; Kerja tim dan kolaborasi; Komunikasi; Manajemen stock barang inventory; Manajemen waktu; Microsoft Excel; Microsoft Word; Operasional kasir dan transaksi; Pemahaman dasar media sosial; Pembuatan konten dengan Ai","13","2.6154","SMA/SMK","3","Teknik komputer jaringan","1","41","Store crew","PT indomarco prismatama","1"
+"327","Ramdhan Ilham Sanusi","Laki-laki","27","Digital marketing; Leadership; Manajemen; Microsoft Office; Stock opname","5","2.6","D3","6","Manajemen","1","5","Collection officer","WOM FINANCE","1"
+"328","Siti Rahmawati","Perempuan","18","Microsoft Excel","1","2","SMA/SMK","3","Ekonomi",,,,,
+"329","ZIKRULLOH APANDI","Laki-laki","20","Human Resource, Advokasi, konseling, coaching","1","3","SMA/SMK","3","IPA",,,,,
+"330","sasta saskia","Perempuan","19","Menggunakan microsoft excel","1","2","SMA/SMK","3","Otomatisasi Tata Kelola dan Perkantoran",,,,,
+"331","M Dikri","Laki-laki","22","Mikrosoft office","1","3","SMA/SMK","3","Teknik komputer dan jaringan","1","17","Merchandiser","Prima centre","1"
+"332","surya arya ajhari","Laki-laki","23","edit","1","2","SMA/SMK","3","teknik sepeda motor","1","41","operator produksi","pt kaldu sari nabati","1"
+"333","MUHAMAD AZRIL ASSYAFA","Laki-laki","22","CAD software; Pengelasan","2","2.5","D3","6","Teknik mesin",,,,,
+"334","sagar","Laki-laki","21","Microsoft","1","1","SMA/SMK","3","TEKNIK JARINGAN KOMPUTER","1","41","OPERATOR","PT ZINUS GELOBAL","1"
+"335","Saprudin Febriansyah","Laki-laki","24","Microsoft Excel","1","3","SMA/SMK","3","Teknik Komputer Dan Jaringan","1","41","Admin Online Shop","FREEDOM INC","1"
+"336","Fauziah Itsnaeni","Perempuan","23","Bahasa Inggris; Bahasa Mandarin; Microsoft Office","3","2.6667","D4/S1","7","Pendidikan Bahasa Inggris","1","41","Guru","Yayasan Daarul Arifin Alkhairi","1"
+"337","Nadiah Salmi","Perempuan","22","Communication; Data Analyst; Microsoft Office; Negoisasi dan Persuasi; Proactive; Problem Solving; Project Management; Quality Management and Food Safety (HACCP/GMP Applied); Research and Development; Teamwork; Technical & Scientific Writing","11","3.2727","D4/S1","7","Teknologi Hasil Perairan","2","46","Tenaga Ahli Lapang/ Mentor Keamanan Pangan; Quality Assurance Internship","PT Biro Klasifikasi Indonesia; PT Bahari Pratama Mandiri","1"
+"338","M.RIZKI SAPARIANSYAH","Laki-laki","19","Microsoft word","1","3","SMA/SMK","3","Teknik mesin",,,,,
+"339","Herdian","Laki-laki","25","Microsoft office","1","2","SMA/SMK","3","Ips","1","89","Packing","Pt kino","1"
+"340","salsabila Khoirunnisa virgieawan","Perempuan","17","Microsoft Excel,word","1","3","SMA/SMK","3","teknik komputer dan jaringan",,,,,
+"341","Lukmanul Hakim","Laki-laki","31","Microsoft Excel","1","2","D3","6","Manajemen Informatika","1","65","Staff Gudang","Pt Lion Express","1"
+"342","Nisrina Salsabila Fauziyah","Perempuan","23","Inggris; Manajemen Waktu; Mandarin; Mengelola keuangan; Microsoft office","5","2.6","D3","6","Administrasi Bisnis",,,,,
+"343","A. RIDWAN BUDIANSYAH","Laki-laki","22","Dapat memahami setiap pekerjaan dengan cepat","1","3","SMA/SMK","3","MIPA","1","41","Shopkeeper","Snack Bintang Mas","1"
+"344","Sofi zakiya salsabila","Laki-laki","19","computer, menghitung","1","2","SMA/SMK","3","ips",,,,,
+"345","Mochamad Azis Setia Ramdani","Laki-laki","25","Basic Komputer","1","2","SMA/SMK","3","Teknik Komputer dan Jaringan","1","41","Anggota Satpam","PT. Reska Multi Usaha","1"
+"346","Sri Rahayu Mulyazanah","Perempuan","25","Administrasi Kantor; Canva; Copywriting; Detail-Oriented; Digital Marketing; Google Sheet; Manajemen Arsip Digital; Manajemen Waktu dan Prioritas; Media Relation; Microsoft Office; Negosiasi dan Komunikasi; Problem Solving; Sales Reporting; Service Excellence; Support HR dan Recruitment","15","3.5333","D4/S1","7","Ekonomi","5","53","Sales Promotion Girl; Marketing Staff; General Affair Staff; Staff Admin; Administrasi Staff","Matahari Department Store; Pasundan Today; CV Sinar Mustika Indah; Chicken D'Kriuk; CV ST. Nelia","1"
+"347","Zahra Alawiyah","Perempuan","20","Bahasa","1","2","SMA/SMK","3","IPA","1","17","Honorer","PAUD","1"
+"348","YUSUF TAJIRI","Laki-laki","19","Microsoft office; Pengukuran topografi; Software pengukuran","3","3","SMA/SMK","3","Teknik Geomatika",,,,,
+"349","Qisthina Tasya Al Hakim","Perempuan","25","Bahasa Inggris; DBMS; HTML/CSS; Komputer Jaringan; Miscrosoft Excel; Miscrosoft PowerPoint; Miscrosoft Words; Pengolahan Citra; Phyton Programming","9","3","D4/S1","7","Ilmu Komputer",,,,,
+"350","Amar Firdaos","Laki-laki","22","Microsoft Excel","1","2","SMA/SMK","3","Ips","1","29","Operator produksi","PT Indokordsa tbk","1"
+"351","Chandra digjaya ramadhan","Laki-laki","24","Memasang instalasi listrik; Memperbaiki peralatan listrik; Microsoft word","3","2","SMA/SMK","3","Teknik instalasi tenaga listrik","2","106","Produksi; Pkl","Prima snack; Pt sketch electronics cicurug","1"
+"352","Ayu Lestari","Perempuan","25","Komputer, Microsoft Office","1","3","D4/S1","7","Pendidikan Guru Sekolah Dasar","1","41","Fasiitator Pendamping, Mentor Muda","PT. BANK BTPN SYARIAH","1"
+"353","Letia Marliana","Perempuan","26","Microsoft Office; Microsoft Word","2","2","D4/S1","7","Manajemen","1","29","Admin Produksi","Sabillah Fashion","1"
+"354","Denar rozella putra","Laki-laki","21","Microsoft Excel dan Word","1","3","SMA/SMK","3","Ipa",,,,,
+"355","Muhamad khoerudin","Perempuan","26","Teknik instalasi listrik","1","3","SMA/SMK","3","Teknik sepeda motor","1","77","Operator moulding","PT Dharma Poliplast","1"
+"356","Destri Herdini","Perempuan","23","Microsoft Office","1","3","SMA/SMK","3","REKAYASA PERANGKAT LUNAK","1","41","OPERATOR FINISH GOOD","PT SUPRA NATAMI UTAMA","1"
+"357","NADIYA NURUL ARAFAH","Perempuan","25","Cash Handling; Microsoft Office; Time Management","3","3","D3","6","Teknologi Produksi dan Manajemen Perikanan Budidaya","1","41","Payment Point","PT Bank Rakyat Indonesia Tbk","1"
+"358","Ikman gumilar","Laki-laki","34","Welder smaw,gmaw,fcaw (bnsp)","1","3","SMA/SMK","3","Otomotif","6","101","Welder","PT Duta hita jaya; PT solid universal indonesia; PT mitsura indonesia; PT katshusiro indonesia; PT Dian pandu pratama; PT aneka gas industri","1"
+"359","Ryo kervin anwar","Laki-laki","22","Mikrosof excel","1","3","D4/S1","7","Manajemen",,,,,
+"360","Elvan Nasrullah","Laki-laki","29","Word, Excel dan powerpoint","1","3","D3","6","Administrasi Bisnis",,,,,
+"361","Muhammad Rusdiansyah","Laki-laki","23","Kepemimpinan, Manajemen Proyek, Public Speaking, Riset & Analisis; Perangkat Lunak (Tools): Microsoft Office Suite, IBM SPSS, mWater.","2","3","D4/S1","7","AGRIBISNIS PERTANIAN","1","29","Surveyor Lapangan & Enumerator","Perumda Air Minum Tirta Bumi Wibawa","1"
+"362","Randi Dharmadi Putra","Laki-laki","20","Microsoft Office; Public Speaking / Komunikasi","2","3","SMA/SMK","3",,"2","70","Waiter; Staff Pelayanan","Restoran Rempah Bistro; Kantor Kecamatan Baros","1"
+"363","NENG LELASARI AGUSTINA","Perempuan","22","Accounting Software; Financial Reconciliation; Financial Reporting; Microsoft Excel; Microsoft Word; Taxation","6","3","D4/S1","7","Akuntansi","4","53","Administrasi & Pelayanan (Internship); Asistensi Pelaporan SPT Orang Pribadi; Business Support (Internship); Operator Entry ST2023(Kontrak)","P3DW Sukabumi I Cibadak; KPP Pratama Sukabumi; Bank Tabungan Negara KC Sukabumi; Badan Pusat Statistik Kab. Sukabumi","1"
+"364","Muhamad Yafi' Zidan","Laki-laki","24","ADMINISTRASI; APK EDITING; BAHASA ARAB; BAHASA INGGRIS; CANVA; GOOGLE SPREADSHEET; MICROSOFT; NETWORKING; PUBLIC SPEAKING; TEAM WORK","10","2.9","D4/S1","7","TADRIS MATEMATIKA","4","17","STAFF ADMIN; STAFF","AGEN JNE; PT AGHNIA INDOPRATAMA; KBIHU IMARATUL MASAJID","1"
+"365","NUR AFIFAH ZAHRI","Perempuan","20","microsoft excel, microsoft word, foto, komunikasi, service","1","2","SMA/SMK","3","MIPA","1","29","Waitress","Lokopi & eatery","1"
+"366","MUHAMMAD ALIEF ALENDE","Laki-laki","22","Microsoft word","1","2","SMA/SMK","3","IPA",,,,,
+"367","Irfan saepul rohim","Laki-laki","20","Bisa bekerja dengan giat dan tahan tekanan","1","4","SMA/SMK","3","IPS","2","58","Kariyawan/gudang produksi; Kariyawan gudang ekspor dan aksesoris","PT. Aneka dishub; PT. dasan","1"
+"368","MUHAMAD PARLAN","Laki-laki","19","Menguasai Alat Ukur; Operator Mesin Bending; Operator Mesin bubut","3","3.3333","SMA/SMK","3","Teknik mesin",,,,,
+"369","Muhamad Yusup rifaldi","Laki-laki","22","Autocad 2D/3D; Bahasa indonesia; Bahasa inggris; Mastercam; Microsoft Exel; Microsoft office; Microsoft word","7","3.1429","D3","6","Teknik mesin",,,,,
+"370","Sudinta","Laki-laki","22","Autocad; Microsoft Office","2","2.5","D3","6","Teknologi Kontruksi Bangunan Gedung",,,,,
+"371","Mochamad Adhietya Dharmawan","Laki-laki","22","Manajemen Mutu; Manajemen SDM; Manajemen waktu; Microsoft exel","4","3","D4/S1","7","Manajemen Pendidikan Islam",,,,,
+"372","Yusuf Maulana Karim","Laki-laki","46","Excel, Word dll","1","3","D4/S1","7","Ekonomi/ Manajemen","1","29","Kepala Pool","PT abadi Makmur Siliwangi","1"
+"373","Gangga Rusmana","Laki-laki","31","Microsoft excel","1","2","SMA/SMK","3","IPA","1","161","Staff Admin","PERUMDA BPR Sukabumi","1"
+"374","Arjuna Pramudani Ali","Laki-laki","23","AutoCAD; Microsoft excel; Microsoft word","3","2.6667","D3","6","teknik mesin",,,,,
+"375","Moh fiqri dwi putra","Laki-laki","19","Operator; Teknisi","2","3.5","SMA/SMK","3","rekaysa perangkat lunak",,,,,
+"376","Hanisa Agustian","Perempuan","24","Informasi dan komunikasi; Microsoft word","2","2.5","SMA/SMK","3","Administrasi perkantoran","1","29","Marketing","Bank Central Asia","1"
+"377","Sandi Rizal Syamsuddin","Laki-laki","27","Bahasa inggris; Instalasi jaringan; Java script; Laravel; Microsoft Office; Phyton; Public Speaking","7","3","D4/S1","7","Teknik Informatika","1","17","Teknisi jaringan","PT.Kencana Raya Indonesia","1"
+"378","Siti Nurandini Safitri","Perempuan","18","Microsoft Office, canva","1","2","SMA/SMK","3",,,,,,
+"379","Muhammad said riyanto","Laki-laki","18","Diagnosa sistem injeksi","1","2","SMA/SMK","3","Otomotif","1","17","Mekanik","PT pasti jaya motor","1"
+"380","Alfenia Rosyida Ashar","Perempuan","25","Desain; Microsoft Office","2","3","D4/S1","7","Ilmu Komputer","1","29","Asisten Administrasi Akademik","Universitas Pakuan","1"
+"381","Zaki Juldanur","Laki-laki","29","Microsoft Office","1","2","D4/S1","7","Informatika","1","41","Pramuniaga","CV Natura Anugerah","1"
+"382","Rachmat Viga Saputra","Laki-laki","26","Autocad; Bahasa mandarin; microsoft excel; microsoft Powerpoint; microsoft word; solidworks","6","3","D4/S1","7","Manajemen","1","17","Bendahara","Koperasi Merah Putih Situmekar","1"
+"383","Fathir Muhamad Alwafi Sembiring","Laki-laki","19","Mampu bekerja dalam tekanan","1","3","SMA/SMK","3","Teknik Elektronika",,,,,
+"384","NINA HERMIATI","Perempuan","24","Microsoft Office","1","3","D4/S1","7","Ilmu Komputer","1","29","Live Streaming","Snack Yura","1"
+"385","Adi yasin khandayas","Laki-laki","23","Microsoft Excel","2","3","SMA/SMK","3","Ilmu pengetahuan sosial",,,,,
+"386","Muhammad Andika Al Fauzan","Laki-laki","19","Turun mesin, sarvice berkala","1","3","SMA/SMK","3","Teknik kendaraan ringan otomotif",,,,,
+"387","JULIANDANI JOSIANA SUHAJA","Laki-laki","24","Microsoft office","1","2","SMA/SMK","3","TEKNIN KOMPUTER DAN JARINGAN",,,,,
+"388","maulana izharudin","Laki-laki","35","ms. office","1","3","D3","6","manajemen informatika","1","29","humas database","pt elnusa","1"
+"389","Marajal Bahrain","Laki-laki","19","AutoCad; pengoperasian mesin frais; Pengoprasian Mesin Bubut","3","2","SMA/SMK","3","Teknik mesin",,,,,
+"390","NATHANNIA AZALYA","Perempuan","18","Soft skill","1","4","SMA/SMK","3","Teknik Kimia Industri","1","17","BOP","PT PLN Indonesia Power UBP m Jawa Barat 2 Pelabuhan Ratu","1"
+"391","Salsabila fauzia oktakirana","Perempuan","23","FIGMA, CANVA, IBISPAIN, PAIN, WORD","1","2","SMA/SMK","3","BISNIS DARING DAN PEMASARAN","1","5","BURUH HARIAN LEPAS","PT. KINO INDONESIA","1"
+"392","INTAN AMI SUMINAR","Perempuan","23","Administrasi; Data entry; Digital Marketing; Microsoft Excel; Microsoft Word","5","2.6","D4/S1","7","Teknik Informatika","1","29","Staff Admin","Dinasti Furniture","1"
+"393","Muhamad Ariq Fauzan","Laki-laki","28","Microsoft Excel, Microsoft Word","1","2","D4/S1","7","Manajemen","4","113","Marketing Verifikasi Officer; Credit Marketing Officer; Manajemen Billing; Problem Account Consultant","PT Summit Oto Finance; PT. Mega Auto Finance Kota Sukabumi; PT. Dinamika Energy Indonesia; PT. BCA Finance Kota Sukabumi","1"
+"394","Feby Alfaraby","Laki-laki","23","Microsoft Excel","1","3","D4/S1","7","Teknik Informatika","2","34","Pustkawan; Staff Bidang Statistik","SMPN 1 KEBONPEDES; Dinas Komunikasi Informatika dan Persandian Kabupaten Sukabumi","1"
+"395","ERLANGGA WIRADINATA","Laki-laki","18","MICROSOFT EXCEL DAN MEKANIK KENDARAAN RINGAN","1","3","SMA/SMK","3","REKAYASA PERANGKAT LUNAK",,,,,
+"396","MOCH. VIRAS ALGAZALI","Laki-laki","18","Microsoft Excel","1","2","SMA/SMK","3","Rekayasa perangkat lunak",,,,,
+"397","RESTI","Perempuan","18","Pramuniaga/ exsel","1","2","SMA/SMK","3","Bisnis ritel","1","17","Pkl","Pt ramayana lestari Sentosa tbk","1"
+"398","Melisa","Perempuan","20","Bahasa inggris","1","2","SMA/SMK","3","IPS","2","17","Helper (sewing); Produksi","PT.CITRA UNGGUL PERKASA; Pabrik mochi","1"
+"399","Hildan aulia as-sidiqi","Laki-laki","21","Teknik pemesinan","1","3","SMA/SMK","3","Teknik pemesinan","1","17","Operator produksi","PT yamaha Indonesia motor manufacturing","1"
+"400","Adam ilham ramdani","Laki-laki","25","Bongkar pasang/memperbaiki mesin kendaraan ringan","1","2","SMA/SMK","3","Otomotif","1","65","Helper driver","Hemat cargo","1"
+"401","Syaira Nur Hanifa","Perempuan","22","Microsoft Excel","1","2","D3","6","Perpajakan",,,,,
+"402","Aria Abdurachman","Laki-laki","21","Microsoft word","1","2","SMA/SMK","3","ilmu pengetahuan alam","1","17","pramuniaga","Victoria Busana","1"
+"403","ELSA PEBRIYANTI","Perempuan","23","English; Microsoft Excel; Micrososf Word; Power BI; Power Point; SAP; SPSS","7","3","D4/S1","7","Teknik Industri Pertanian","1","29","Staff Magang QA/QC","PT Garuda Beverage Sukses","1"
+"404","DEFFYANA SAPUTRA","Laki-laki","19","Microsoft excel, word","1","2","SMA/SMK","3","IPS","1","17","Tim Produksi","Global Bakery","1"
+"405","Elmo Dwiki Dharmaputra Noor","Laki-laki","33","Accurate; Ms office; Sap PP & FI module","3","3","D4/S1","7","Akuntansi","1","77","Sr Staff PPIC","PT glostar Indonesia","1"
+"406","Akmal Fauzi","Laki-laki","20","Microsoft word,Microsoft Power Point","1","2","SMA/SMK","3","Ilmu Pengetahuan Sosial","1","5","Purchase Order","Pt Stralend","1"
+"407","MUHAMAD FARHAN FADILAH","Laki-laki","18","otomotif/mekanik motor","1","2","SMA/SMK","3","otomotif",,,,,
+"408","FIRMAN MAULANA","Laki-laki","19","Microsoft Excel","1","2","SMA/SMK","3","Akuntansi","1","17","Crew store","Prima centre","1"
+"409","ARIEL PRADELA","Laki-laki","22","Pengelasan","1","2","SMA/SMK","3","Teknik pengelasan","1","29","Teknisi alat berat","Pt multindo technology utama","1"
+"410","Afifudin","Laki-laki","17","Microsoft Excel dan teknisi jaringan","1","2","SD","1","Teknik jaringan komputer dan telekomunikasi",,,,,
+"411","Nando Rizki Rizaldi","Laki-laki","19","Instalasi dan pemrograman","1","2","SMA/SMK","3","Teknik komputer jaringan","1","17","Operator produksi","PT Kaldu Sari Nabati Indonesia","1"
+"412","MUHAMMAD ABDUROHMAN","Laki-laki","19","programming","1","3","SMA/SMK","3","IPS",,,,,
+"413","Nurhasanah","Perempuan","24","Microsoft word","1","3","D4/S1","7","Pendidikan bahasa Inggris",,,,,
+"414","Muhamad Fazlur Nazrillah","Laki-laki","19","Microsoft Excel","1","3","SMA/SMK","3","OTOMATISASI TATA KELOLA PERKANTORAN",,,,,
+"415","Laila Maulidawati Mulyana","Perempuan","21","Accurate; Microsoft Excel; Microsoft Word; MYOB","4","2.5","D4/S1","7","Akuntansi",,,,,
+"416","Budi Ramdani","Laki-laki","29","Mengoprasikan mesin washing ampoule , washing vial , mesin tunnel sterilisasi , mesin aoutoclave sterilisasi , mesin las GMAW , robbot wellding dan spot wellding","1","4","SMA/SMK","3","Teknik mesin","1","89","Operator produksi","Pt dharma polimetal dan pt mersi pharma TM","1"
+"417","PRASETYO NURSIDIQ","Laki-laki","25","Microsoft Excel, Microsoft Office","1","1","D4/S1","7","Ilmu Pemerintahan","1","65","Staff admin/ Kedaruratan dan logistik","BPBD KOTA SUKABUMI","1"
+"418","NURMAN MAULANA","Laki-laki","21","Desain grafis; Multimedia","2","2","SMA/SMK","3","MULTIMEDIA","1","41","Operator mesin","Oke print sukabumi","1"
+"419","IKBAL PADILAH","Laki-laki","27","Administrasi Perkantoran (Excel/Word/Power Point); Desain Grafis (Photoshop/Illustrator); Fast Learner; Hardware & Software Troubleshooting; Kerja Sama Tim; Komunikasi Profesional; Manajemen Data & Verifikasi Lapangan; Manajemen Inventaris & Stok","8","3.125","D4/S1","7","Teknik Informatika","6","438","Project Staff (Kreatif); Surveyor RDS; Photographer & Editor; Mobile App Developer (Magang); Owner/Dropshipper; Photographer & Editor (Magang)","DISDAGIN Kab. Sukabumi; PT Ciparigi Sarana Cipta; Freelance Photography; PT Kreasi Usaha Cipta Utama; JualanAh; PT TWIN PHOTOVIDEO","1"
+"420","Siti Nabila","Perempuan","21","Menjual barang","1","3","SMA/SMK","3","Farmasi",,,,,
+"421","Irsyadi Ramdhani","Laki-laki","18","Microsoft word","1","2","SMA/SMK","3","Kurikulum merdeka",,,,,
+"422","Athaya Maula","Perempuan","25","Bahasa Inggris; Google apps (Dokumen, spreadsheet, form); Microsoft office (Word, Excel, Powerpoint)","3","3.6667","D3","6","Teknologi Produksi dan Manajemen Perikanan Budidaya","1","53","Asisten Dosen","Sekolah Vokasi IPB University","1"
+"423","SUKIMAN KAMAL","Laki-laki","25","Microsoft Excel dan Microsoft Word","1","3","SMA/SMK","3","ADMINISTRASI PERKANTORAN","1","77","Staff Pelayanan","Kantor Desa Jayabakti","1"
+"424","Rio Andrian Pamungkas","Laki-laki","21","Microsoft office; Problem Solving; Programming; Team work","4","3","D3","6","Teknik Komputer",,,,,
+"425","latifah","Perempuan","18","BAHASA INGGRIS","1","2","SMA/SMK","3","OTKP","1","29","FRONTLINER","Dinas ketahanan pangan pertanian dan perikanan kota sukabumi","1"
+"426","MUH SARIP HIDAYAT","Laki-laki","19","Teknisi","1","2","SMA/SMK","3","Teknik kendaraan ringan",,,,,
+"427","Bagas Alpatih","Laki-laki","21","Microsoft Excel","1","3","SMP","2",,"1","29","Marketing","Cv alfharizky","1"
+"428","Deris Putra Sulung Maulana","Laki-laki","22","Microsoft excel / Microsoft Word","1","2","SMA/SMK","3","IPA",,,,,
+"429","Nandi Hamdani","Laki-laki","22","MICROSOFT EXCEL; MICROSOFT POWER POINT; MICROSOFT WORLD; OPERATOR MESIN","4","2.5","SMA/SMK","3","Teknik Permesinan","1","41","OPERATOR PRODUKSI","SABLIS FOOD SDN BHD","1"
+"430","Priskila","Perempuan","22","Microsoft Word","1","4","D4/S1","7","Ilmu Pemerintahan",,,,,
+"431","Feri Ruslandi","Laki-laki","25","Las fcaw 1","1","3","SMA/SMK","3","Agroteknologi","1","17","operator produksi-Gudang","PT MERSIFARMA TIRMAKU MERCUSANA","1"
+"432","Yusi Suswandi","Perempuan","37","Microsoft Excell; Microsoft Powerpoint; Microsoft Word; Spreadsheet","4","2.75","D3","6","Komputer Akuntansi","3","137","Maker dan Invoice; Assistant Finance and Accounting; Staff Keuangan","KOPERASI KONSUMEN SATU SOLUSI SEJAHTERA; PT Minula Inti Sejahtera; Universitas Ibn Khaldun","1"
+"433","Almaqhira Alfatunnisa","Perempuan","17","Capcut/editing video","2","2.5","SMA/SMK","3","Ilmu Pengetahuan Sosial",,,,,
+"434","Ardelia septhiani lasalina","Perempuan","22","Microsoft excel; Microsoft word","2","3","D3","6","Administrasi bisnis","1","29","Administrasi pembayaran","Pt. Bank BTPN Tbk","1"
+"435","Kayla Nur Muslimah","Perempuan","17","mengoprasikan mesin kasir","1","3","SMA/SMK","3","Bisnis Ritel","1","17","Kasir","Ramayana Lestari Sentosa Tbk. Sukabumi","1"
+"436","Azis Ikhsan Maulana","Laki-laki","27","Administrasi; Manajemen waktu; Mesin cash register, ewallet, edc; Microsoft Excel; Multitasking; Pelayanan pelanggan; Teamwork","7","3.7143","SMA/SMK","3","Teknik Kendaraan Ringan","4","209","Operator gudang; Crew; Crew store","PT. Sumber Alfaria Trijaya; PT. Lazada Logistics; Rumah makan padang; Aston acc( toko gadget)","1"
+"437","Raihan Mahesa Jenar","Laki-laki","18","Microsoft office, marketing","1","3","SMA/SMK","3","Bisnis daring dan pemasaran",,,,,
+"438","Dade","Laki-laki","24","Soft skills","1","3","SMA/SMK","3","Ips","1","53","Karyawan","Toko raja kado","1"
+"439","Muhammad Yusuf Budiman","Laki-laki","23","Machine Learning; Manajemen Data & Database; Pemrograman & Pengembangan Software; UI/UX Design; Web Developer","5","2.8","D4/S1","7","Teknologi Rekayasa Perangkat Lunak","1","29","Magang","Bogor Sekaloh Tinggi Pariwisata","1"
+"440","Muhamad Iqbal Maulana","Laki-laki","20","Servis ringan/berat kendaraan sepeda motor","1","3","SMA/SMK","3","Teknik bisnis sepeda motor",,,,,
+"441","Farid anwar","Laki-laki","21","Microsof office","1","2","SMA/SMK","3","Ips",,,,,
+"442","NURUL HIDAYATI","Perempuan","19","Bekerja di bawah tekanan; Berkomunikasi dengan baik; Microsoft Excel; Microsoft Word; Teliti","5","3.4","SMA/SMK","3","Manajemen Perkantoran","1","29","Ditempatkan di Ruang Perdata","Pengadilan Negeri Sukabumi (PKL)","1"
+"443","M. RISKI PAUJAN ALWAAN","Laki-laki","19","Mesin bubut","1","2","SMA/SMK","3","TEKNIK PEMESINAN","1","17","HELPER","PT. TRIKARSA BAHTERA ABADI","1"
+"444","Rika Nopialita","Perempuan","29","Microsoft Office","1","3","D4/S1","7","Akuntansi","1","137","Staff admin produksi","PT PRATAMA ABADI INDUSTRI","1"
+"445","Novia Sulastri","Perempuan","28","Auditor; Bahasa Asing (Inggris); Edit & Data Entry; Leadership, Analitical thinking, Kaizen; Management Production Shoes (Lean); Management Trainee; Mengajar dan tata kelola kesiswaan; Ms Office (Word, Excel, PPT) + Coreldraw","8","3.625","D4/S1","7","Sastra Inggris","1","113","Lean / Staff","PT. Pratama Abadi Industri (Jx)","1"
+"446","Luna maulida","Perempuan","19","aksara sunda; Microsoft Excel; public speaking","3","3","SMA/SMK","3","IPS","2","17","kasir; operator","almaz fried chicken; PT. BERDAYA GUNA","1"
+"447","Muhammad Zhary Arrayyan","Laki-laki","22","Analisis Data Ekonomi (EViews, SPSS, Stata); Analisis Laporan Keuangan pada BIsnis; Microsoft Excel/Google Sheets; Microsoft PowerPoint/Google Slides/Canva; Microsoft Word/Google Docs; Visualisasi Data (Tableau, Google Looker Studio)","6","3.3333","D4/S1","7","Ekonomi Islam",,,,,
+"448","RAFA PUTRA PRATAMA","Laki-laki","18","TEKNIK MESIN","1","2","SMA/SMK","3","TEKNIK MESIN",,,,,
+"449","Derian Aupa","Laki-laki","19","BASIC MICROSOFT, PUBLIK SPEAKING, MAMPU BEKERJA DIBAWAH TEKANAN, MAMPU BEKERJA TIM","1","2","SMA/SMK","3","PERHOTELAN","1","17","STAFF PELAYANAN","SPESIAL SOTO BOYOLALI HJ HESTI (SSB)","1"
+"450","Egi Somantri","Laki-laki","25","Microsoft Exel, Word, Autocad, English (Pasif)","1","3","SMA/SMK","3","Teknik Bangunan",,,,,
+"451","Sari marliyani","Perempuan","25","Administrasi & pembukuan; Kerja tim & produksi; Keuangan dasar; Manajemen stok & operasional; Pelaporan & analisis data; Pelayanan pelanggan & penjualan","6","3.3333","D4/S1","7","Ilmu Pemerintahan","1","77","Kitchen Staff & Admin Operasional","Resto Garasi","1"
+"452","Bobby Ikhsan","Laki-laki","29","komputer","1","3","SMA/SMK","3","ipa","1","125","admin, waiters","lets cofee","1"
+"453","Ryan","Laki-laki","20","Leader","1","2","SMA/SMK","3","Marketing","1","5","Staff Delivery","HEAD OFFICE WASCHEN ALORA INDONESIA","1"
+"454","Samsul Ma’arif","Laki-laki","24","Pengelasan,press plug,grease charger,oil charger,painting","1","3","SMA/SMK","3","Teknik Pengelasan","1","53","Operator Produksi","PT Komatsu Undercarriage Indonesia","1"
+"455","MUH ARPAN PIRMANSAH","Laki-laki","22","Mechanical engineering","1","2","SMA/SMK","3","Teknik kendaraan ringan",,,,,
+"456","VICKY TAUFIK RACHMAN","Laki-laki","22","Microsoft Office, Mengoperasikan Mesin Industri, Memahami SOP, Quality Control","1","3","SMA/SMK","3","Ilmu Pengetahuan Alam","2","70","Operator Produksi; waiters dan Kasir","PT INDO CIPTA BOGA; PT Masakan Asli Indonesia","1"
+"457","Siti Parida","Perempuan","24","Microsoft Excel (Vlookup, Xlookup, Countifs, lf, Datedif, Today, Sum, Average, Dll). Canva, UU Ketenagakerjaan,","1","3","D4/S1","7","Manajemen","4","17","Waitress; Back Office lnternship; Operator Produksi lnternship; Admin HR","Crystal Paraiso Verde Resort and Spa, Turki; Bank Syariah Indonesia; Hsien Jinn lndustry, Taiwan; PT Porto Food Indonesia","1"
+"458","ANITA MAHARANI","Perempuan","23","Digital Marketing; Microsoft Excel; Microsoft Power Point; Microsoft Word; Public Speaking; Service Excellent","6","3.6667","D4/S1","7","Manajemen",,,,,
+"459","Muhamad irfan lestaluhu","Laki-laki","32","Office","1","4","D4/S1","7","Teknik Mesin",,,,,
+"460","MELDA MERLIYANA","Perempuan","23","microsoft excdl","1","1","D4/S1","7","Pendidikan Jasmani Kesehatan dan Rekreasi",,,,,
+"461","Wafi Abdul Hakim","Laki-laki","23","Microsoft Word, Microsoft Excel, Power point, Legal Drafting","1","3","D4/S1","7","Ilmu Hukum",,,,,
+"462","Fardan Maulida","Laki-laki","19","Microsoft Excel","1","3","SMA/SMK","3","IPS","1","17","Oprator","Shopee","1"
+"463","Rico Permana","Laki-laki","39","Microsoft excell","1","2","D4/S1","7","Akuntansi","1","173","Internal Audit","PT Bank Mayapada International","1"
+"464","Reza Lazuardy","Laki-laki","33","Microsoft Office (Word,Excel,PowerPoint); Sistem Informasi Manajemen (MIS)","2","3","D4/S1","7","Teknik Informatika","1","77","Mitra BPS (Petugas Lapangan dan Admin Data Entri)","Badan Pusat Statistik","1"
+"465","M. ALFAN ARDIANSYAH","Laki-laki","19","Giat Bekerja","1","3","SMA/SMK","3","BAHASA",,,,,
+"466","Dian Maulana","Laki-laki","23","Administration Logistics; Administration Warehouse; Inventory Management; Logistics Management; Microsoft Excel; Microsoft Powerpoint; Microsoft Word; Warehouse Management","8","3","SMA/SMK","3","IPA","1","65","Logistik","PT Wira Cipta Perkasa","1"
+"467","Hanifah khoerunisa","Perempuan","18","Komputer","1","2","SMA/SMK","3","Ips",,,,,
+"468","Firman Prayoga Wijaya","Laki-laki","20","Memahami kebutuhan customer; Mempromosikan barang; Microsoft Excel","3","2.6667","SMA/SMK","3","Bisnis daring dan pemasaran","1","29","STAFF SALLESMAN","PT.JATIASIH DISTRIBUSIINDO RAYA","1"
+"469","Zidan Muhammad Paris","Laki-laki","20","Microsoft Office (World,Excel,PPT)","1","2","SMA/SMK","3","Soshum",,,,,
+"470","AGUNG","Laki-laki","30","Ms.word dan excel","1","2","SMA/SMK","3","IPS","1","101","Asisten kepala toko","Pt.sumber Alfaria Trijaya Tbk","1"
+"471","Dava Alfajri","Laki-laki","21","-","1","3","SMA/SMK","3","ipa",,,,,
+"472","Prio Handoko","Laki-laki","29","Jaringan; Komunikasi; Microsoft Excel","3","2.3333","D4/S1","7","Ilmu Komputer","2","29","Teknisi; Marketing","KPU Kota Sukabumi; BPR Tutur Ganda Sukabumi","1"
+"473","Muldan Khaelani","Laki-laki","39","Ms.Office (Excel,Word,Power Point)","1","3","D3","6","Managemen Informatika","1","185","Mantri (Account Officer)","BANK RAKYAT INDONESIA","1"
+"474","Rindiani","Perempuan","24","Microsoft office","1","2","D4/S1","7","Pendidikan Ekonomi",,,,,
+"475","Andre Andika Saputra","Laki-laki","35","Microsoft Word","1","3","SMA/SMK","3","IPA","1","53","Operator Sewing","PT. Citra Unggal Perkasa Garment","1"
+"476","Ilman Nurjaman","Laki-laki","23","berbahasa inggris; Canvas; Krita; Microsoft Excel; Microsoft Office; Microsoft Word","6","1.8333","D4/S1","7","Management",,,,,
+"477","Muhammad sidiq wijaya kusuma","Laki-laki","21","Pernah menjadi helper,kemauan untuk belajar,belajar hal baru","1","2","SMA/SMK","3","Teknik geomatika",,,,,
+"478","Dea Defina","Perempuan","23","Ms. office","1","2","SMA/SMK","3","Ilmu pengetahuan sosial","2","94","Asisten Kepala toko; Crew store","CV LEUSER ADVENTURE; PT SUMBER ALFARIA TRIJAYA TBK","1"
+"479","Nova Ristiani","Perempuan","20","Microsoft word, canva","1","3","SMA/SMK","3","IPS","1","17","Waiters/staff cooking","ODC Bakery","1"
+"480","Ruslandi","Laki-laki","27",".; Welding","2","1.5","SMA/SMK","3","Teknik kendaraan ringan","1","65","Operator produksi","Pt dharma controlcable Indonesia","1"
+"481","MOH DJAKA PEBRIANTO","Laki-laki","22","Pengelasan","1","2","SMA/SMK","3","Teknik pengelasan","1","17","Operator mesin","PT. Frankwins sukses cemerlang","1"
+"482","Z ZIDANE AGUNG PERMANA","Laki-laki","23","KOMUNIKASI","1","2","SMA/SMK","3","IPS","1","29","WAITER","BOUNTIE HOTELS","1"
+"483","Rikza Fadli Febriansyah","Laki-laki","19","Operator Produksi; Sales","2","4","SMA/SMK","3","Teknik Mesin","1","5","Operator Produksi","Danz Nine","1"
+"484","Nindia Justita Maryana","Perempuan","22","Microsoft Excel","1","3","D4/S1","7","Teknik Elektro",,,,,
+"485","Adzkia Rahmatillah","Perempuan","23","Bahasa Inggris; Microsoft Suite; Pemetaan; Programming","4","3.5","D4/S1","7","Sistem Informasi Geografis",,,,,
+"486","Lerina Salwa Prahelsa","Perempuan","18","Microsoft office Capcut,Canva Bahasa Indonesia (aktif) Bahasa Inggris (pasif)","1","3","SMA/SMK","3","Bahasa Arab",,,,,
+"487","MUH DAVA ANUGRAH","Laki-laki","20","editing, fotography, videography, adobe photoshop, after effect, adobe illustrator, adobe premiere pro","1","3","SMA/SMK","3","DKV",,,,,
+"488","Diva Nurfitrianti Azizah","Perempuan","23","Microsoft Office, word, exel, powerpoint","1","3","D4/S1","7","Manajemen Agribisnis",,,,,
+"489","Dendi Mahayu","Laki-laki","32","Trainer","1","3","SMA/SMK","3","Otomotif",,,,,
+"490","IMAN MAULANA","Laki-laki","23","Microsoft Excel","1","3","D4/S1","7","Manajemen","1","5","Staf Marketing Mikro","BSI","1"
+"491","Muhammad Rizki","Laki-laki","27","Microsoft Word Excel Power Point. Canva Coreldraw Photoshop","1","3","SMA/SMK","3","Multimedia","1","125","Admin Gudang","PT. Indocorr Packaging Cikarang","1"
+"492","Syipa Salsa Bila","Perempuan","24","Microsoft Office; Tanggung jawab, Teliti, Disiplin","2","3.5","D4/S1","7","Akuntansi","1","17","Staff Akuntan","SPPG Cianjur Sukaresmi Cibadak 1","1"
+"493","Saydza Aulia Ramdhani","Perempuan","25","Microsoft word, power point, Excel","1","3","D4/S1","7","Agribisnis",,,,,
+"494","Muhammad Zidane Prastiyo","Laki-laki","20","Bahasa Inggris; Microsoft Office","2","2.5","SMA/SMK","3","Otomatisasi Tata Kelola Perkantoran",,,,,
+"495","Rizki Widodo","Laki-laki","32","Microsoft Excel, Microsoft Word","1","2","D4/S1","7","S1 - Psikologi","1","53","Geospatial Admin Support","PT. Bina Talenta","1"
+"496","Alinda Mawar","Perempuan","19","Bekerja sama dengan tim","1","3","SMA/SMK","3","IPS",,,,,
+"497","Septian Maulana","Laki-laki","26","Microsof office","1","2","D4/S1","7","Sistem Informasi",,,,,
+"498","A.F Nurdin Syalam","Laki-laki","19","Disiplin; Ms. Word","2","2.5","SMA/SMK","3","Teknik komputer jaringan","2","46","Asisten; Operator produksi (PKL)","Pekerjaan buruh; PT.Longvin indonesia","1"
+"499","Raihan Rahadian Syach","Laki-laki","23","Microsoft Excel; Microsoft word","2","2","SMA/SMK","3","Rekayasa perangkat lunak",,,,,
+"500","Deliana Adistia","Perempuan","24","Microsoft Office","1","2","D4/S1","7","Sastra Inggris",,,,,
+"501","HERU ANUGRAH","Laki-laki","35","Microsoft word","1","2","D4/S1","7","ILMU PEMERINTAHAN","1","173","CASHIER OUTLET","MHARANI HOTEL","1"
+"502","Rifki Febrian Dwiputra","Laki-laki","32","Bahasa Inggris; Berhitung; Microsoft Office","3","3","D4/S1","7","Ilmu Hukum","3","197","Staff PPK ( Pembinaan Penyelesain Kredit); Customer Service; Marketing","PT BPR Nusamba Sukaraja; PT Bank Rakyat Indonesia Tbk; PT Telkom Indonesia","1"
+"503","Dadang jaelani","Laki-laki","34","Las; Mikrosoft exel; Mikrosop word; Perawatan mesin ac; Perbaikan mesin elektronik","5","2.8","SMA/SMK","3","Teknik mesin","5","197","Teknisi lapangan dan admin; Teknisi lapangan; Teknisi gedung; Perawatan mesin industri; Teknisi lapangab","Pt caturaga; Cv maswil intikarya; Pt purna dana investama; Pt.terang part indonesia; Pt haier sales indonesia","1"
+"504","VICKY FEBRIAN","Laki-laki","19","Teknik Pengelasan Fabrikasi Logam","1","3","SMA/SMK","3","Teknik Pengelasan",,,,,
+"505","ABIYU SALMAN SYAID","Laki-laki","19","TEKNIK PENGELASAN DAN FABRIKASI LOGAM","1","4","SMA/SMK","3","TEKNIK PENGELASAN DAN FABRIKASI LOGAM",,,,,
+"506","Neng Ratih Rahmawati","Perempuan","23","Microsoft office, word, excel, power point","1","3","D4/S1","7","Hukum Ekonomi Syari'ah","1","29","Anggota kpps","Pernah mengikuti kerja pas pemilu","1"
+"507","BILAL GHAZI HAZIMI","Laki-laki","18","TEKNIK PENGELASAN DAN FABRIKASI LOGAM","1","4","SMA/SMK","3","TEKNIK PENGELASAN DAN FABRIKASI LOGAM",,,,,
+"508","July Riana","Laki-laki","21","TKRO ( teknik kendaraan ringan )","1","2","SMA/SMK","3","kendaraan ringan otomotif",,,,,
+"509","MUHAMMAD HELMI SAFWAN HIDAYAT","Laki-laki","25","Auto cad, microsoft word, teknisi mekanik","1","3","D3","6","Teknik mesin",,,,,
+"510","Zaky ramadhan","Laki-laki","20","Diagnosa perawatan mesin, sistem transmisi, pengunaan alat scanner motor injeksi, penjualan sparepart, ketelitian dan ketepatan kerja, disiplin dan tanggung jawab, komunikasi yang baik","1","2","SMA/SMK","3","Teknik Bisnis Sepeda Motor","1","29","Helper Operator Produksi","PT KINO TBK INDONESIA","1"
+"511","Putri siti nurani","Perempuan","18","Microsoft Excel, komunitas yang baik","1","4","SMA/SMK","3","ips",,,,,
+"512","Muh khairul adha","Laki-laki","20","Word","1","3","SMA/SMK","3","Bahasa dan budaya",,,,,
+"513","Muhammad taufiqurrahman","Laki-laki","25","Supir,Microsoft Excel","1","3","SMA/SMK","3","Ips","1","53","PDI","CV. Budi jaya","1"
+"514","Slamet Agustian Dermawan","Laki-laki","24","Hardware Komputer","1","2","SMA/SMK","3","Teknik Komputer Jaringan","3","113","Sales Taking Order; Crew Super Store; Crew Resto","PT ARTABOGA CEMERLANG; PT INDOMARCO PRISMATAMA; PT EKA BOGA INTI","1"
+"515","Muhammad Bambang Prayoga","Laki-laki","18","Teknik Pengelasan Dan Fabrikasi Logam","1","3","SMA/SMK","3","Teknik Pengelasan Dan Fabrikasi Logam",,,,,
+"516","RIZQI NURDIANSYAH","Laki-laki","23","Entry Data; Microsoft Office","2","4","D4/S1","7","Ilmu Administrasi Negara","1","53","Operator Entry Data","BPS Kabupaten Sukabumi","1"
+"517","Yogi Prayoga Permana Putra","Laki-laki","26","Microsoft office","1","4","D3","6","Manajemen informatika","4","53","Housekeeping; Operator produksi; Admin; Deskcall","Swissotel jakarta pik avenue; PT starpack indah maju; Wellent print; PT jasa konsultasi mba","1"
+"518","faraz adriansyah","Laki-laki","20","Microsoft excel","1","2","SMA/SMK","3","IPS",,,,,
+"519","Naili Angraisya","Perempuan","22","Microsoft Office (excel dan word)","1","3","D4/S1","7","Administrasi Publik",,,,,
+"520","Wildan Hibatullah Bhakti","Laki-laki","26","Canva; Google workspace; Laporan keuangan dan penjualan; Manajemen analisis keuangan; Microsoft excel; Microsoft office; Microsoft point","7","3.2857","D4/S1","7","Akuntansi","4","176","Leader Area; Kepala Konter; Montoris","PT. Sebelas Bersama Bersatu; Victoria Busana Cibadak; CV. Sukabumi Retail utama; Galeri elzatta Cibadak","1"
+"521","Riza Muhamad Fauzan","Laki-laki","27","Leadership; Microsoft Office Tools","2","3","D4/S1","7","Ilmu Kesejahteraan Sosial",,,,,
+"522","Aditya Reza Nugraha","Laki-laki","28","microsof office","1","2","D4/S1","7",,"1","65","pemrograman","PT PLC","1"
+"523","Shelma marina salsyabila","Perempuan","25","Microsoft excel, microsoft word, networking","1","3","D4/S1","7","Manajrmen","1","17","Data entry","Clipan finance","1"
+"524","Meidina Fauziyyah","Perempuan","24","Menguasai Microsoft Office (word, axcel, PPT)","1","3","D4/S1","7","Pendidikan Bahasa Indonesia","1","77","Helper entry data","Sekolah PAUD dan instansi KB","1"
+"525","HINDA PEBRI HERMAWAN","Laki-laki","19","Memahami Instalasi Listrik","1","4","SMA/SMK","3","TEKNIK INSTALASI TENAGA LISTRIK",,,,,
+"526","Fachrian Zulfiandi Mizan","Laki-laki","26","Komunikasi dan Kerjasama; Microsoft Office (Word, Excel dan Powerpoint); Python; Video / Photo Editor","4","3.5","D4/S1","7","Ilmu Komputer","1","65","Junior IT Staff","PT Kresna Eka Pratama","1"
+"527","Irwan","Laki-laki","33","Microsoft Office","1","3","D4/S1","7","Manajemen","1","17","Supervisor Commercial","PT Anyar Retail Indonesia","1"
+"528","Indah Mawarni","Perempuan","23","Komunikasi efektif; Leadership; Mampu beradaptasi; Manajemen administratif; MICROSOFT EXCEL; Problem Solving; Public Speaking; Teliti; Time Management; Workspace","10","1.9","D4/S1","7","ADMINISTRASI PUBLIK","1","17","Credit Financial Advisor","PT. FIF GROUP","1"
+"529","Cecep Suhendar","Laki-laki","38","Instalasi listrik; Microsof word, office excel","2","2.5","SMA/SMK","3","Teknik Listrik","1","77","Sales Motoris","PT Cianjur Alam Utama","1"
+"530","Alhikayat","Laki-laki","25","Kelistrikan","1","3","SMP","2",,,,,,
+"531","Rahmawati Fauziah","Perempuan","26","Microsoft Office","1","4","D4/S1","7","Manajemen haji dan umrah","1","29","Costamer service","PT. Ambasador tour and trevel","1"
+"532","DINDA ADELIA","Perempuan","28","Bahasa dan etika; Microsoft Excel; Microsoft Word; Sotware kantor","4","2.75","D4/S1","7","S1 FARMASI","2","166","Penanggung Jawab Teknis Distribusi; Asistant apoteker dan admin farmasi","PT Sarandi Karya Nugraha; RS Betha Medika","1"
+"533","RAMDAN SAYIIDUL AZIZI","Laki-laki","22","MS OFFICE AND WORD.; WELDER","2","2","SMA/SMK","3","MULTIMEDIA","2","29","CLEANING SERVICE; FUELMAN","PT MASADENTA; CV. ANGKASA TEKNIK RAYA","1"
+"534","Rayhan Ramadani","Laki-laki","18","Programming","1","2","SMA/SMK","3","Kurikulum Merdeka",,,,,
+"535","Ayu Fitri Sulastri","Perempuan","24","Customer Service, Operasional Kasir (POS), Cash Handling, Komunikasi, Problem Solving, Teliti & Cepat, Teamwork, Time Management","1","4","SMA/SMK","3","Broadcasting","3","65","Cashier; Cashier & Server; Leader Floor","PT Satria Pangan Prima; PT Mount Scopus Indonesia; Restaurant Jepang Ales Place","1"
+"536","Siti Rapigah","Perempuan","26","Hard Skills: Microsoft Word, Microsoft Excel (data & rekap sederhana),  Analisis Data, Administrasi data, dan Adobe Premiere Pro (basic-intermediate); Soft Skills: Disiplin, Teliti, Manajemen Waktu, Kerja Tim","2","3","D4/S1","7","Agribisnis","1","101","Content Editor & Social Media Admin","PT. Sinar Era Baru","1"
+"537","Aulia pratu nissa","Perempuan","19","Microsoft word","1","2","SMA/SMK","3","Ips","1","17","Karyawan","PT Rusin Sukabumi","1"
+"538","Najmi Khairunnisa","Perempuan","18","Soft Skills","1","3","SMA/SMK","3","IPS",,,,,
+"539","Putri Naila Warsyah","Perempuan","22","Administrasi; Microsoft Word; Pelayanan/Costumer service","3","2.6667","SMA/SMK","3","Otomatisasi Tata Kelola Perkantoran",,,,,
+"540","cecep nurjaman","Laki-laki","23","microsoft office","1","3","SMA/SMK","3","mipa","1","29","pengelolaan sistem","badan pusat statistik kota sukabumi","1"
+"541","SHENA RUKMANA","Laki-laki","19","TEKNIK PENGELASAN","1","4","SMA/SMK","3","TEKNIK PENGELASAN DAN FABRIKASI LOGAM",,,,,
+"542","M Rizal Maulana","Laki-laki","24","Microsoft word/ excel","1","2","D4/S1","7","Ilmu Administrasi negara","1","17","Crew Store","PT. Tridaya Dimensi Indonesia","1"
+"543","Parhan Mauludin","Laki-laki","19","Microsoft Office (word, excel)","1","2","SMA/SMK","3","Akuntansi",,,,,
+"544","MUHAMMAD RAAFI ARIFIN RAJO BINTANG","Laki-laki","19","Microsoft office","1","2","SMA/SMK","3","Ips",,,,,
+"545","Raizy Puradica","Laki-laki","24","Komputer; Microscof Exel Dll","2","3","D4/S1","7","Ahwal Al Syaskhshiyyah","1","29","Staf administrasi","SD AL ASHRIYYAH NURUL IMAN","1"
+"546","Ewako Mukhlis","Laki-laki","22","Microsoft excel","1","2","SMA/SMK","3","Otomatisasi dan tata kelola perkantoran",,,,,
+"547","Muhamad Rajib","Laki-laki","19","-","1","2","SMA/SMK","3","Teknik Kendaraan Ringan","1","17","Crew Store","Hz Cell","1"
+"548","RESSA TRI PRATIWI","Perempuan","18","Administrasi; Bertanggung jawab; Disiplin; Editing foto/video(Canva); Inventory Card; Kerja sama tim/individu; Laporan Keuangan; Microsoft Word/Excel","8","3.5","SMA/SMK","3","AKUNTANSI",,,,,
+"549","RUBBIL AKHRARBA YASA","Laki-laki","20","Pasang mesin filling","1","2","SMA/SMK","3","Tkj","1","17","Teknisi","PT bpm","1"
+"550","Muhamad Saeful rosid","Laki-laki","18","teknik otomotif","1","3","SMA/SMK","3","Teknik otomotif",,,,,
+"551","Ridwan Arpandi Yusup","Laki-laki","23","Canva; Microsoft Excel; Microsoft Power Point; Microsoft Word","4","3.25","D4/S1","7","AGRIBISNIS","1","17","Petugas Emulator & Survey Kepuasan Pelanggan","PERUMDA Air Minum Tirta Bumi Wibawa Kota Sukabumi","1"
+"552","MUHAMMAD RIZIQ","Laki-laki","20","Microsoft excel","1","2","SMA/SMK","3","IPA",,,,,
+"553","Clarita Marzelda Berta","Perempuan","17","Microsoft Office","1","2","SMA/SMK","3","IPS",,,,,
+"554","Muhamad zaki indra purnama","Laki-laki","26","Barista; Editor; Proram & editor; Streamer","4","2.5","SMA/SMK","3","TKJ ( Teknik Komputer & Jaringan )",,,,,
+"555","MOCH RIZKY KHOLIQ","Laki-laki","35","Editing","1","3","SMA/SMK","3","Teknik Pemesinan","1","89","Helper","PT. CIANJUR ALAM UTAMA","1"
+"556","Ryan Adhi Kurniawan","Laki-laki","30","Canva; Google Ads","2","3.5","D4/S1","7","Teknik Informatika","1","65","Digital Marketing","Talent Link Indonesia","1"
+"557","FARHAN","Laki-laki","19","TEKNIK PENGELASAN FEBRIKASI LOGAM","1","3","SMA/SMK","3","TEKNIK PENGELASAN",,,,,
+"558","M FIRDAUS","Laki-laki","19","Bekerja sama dengan Tim","1","2","SMA/SMK","3","IPS","1","5","Staff Helper","TOKO SAMUDRA","1"
+"559","Pikri alamsyah","Laki-laki","23","Bisa mengendarai mobil, bongkar mesin,","1","2","SMA/SMK","3","Otomotif","1","17","Penjaga pos parkir","PT secure parking","1"
+"560","Amuri al-farisi","Laki-laki","24","Word, Exel, Power Poin, Publick Speakinh","1","3","D4/S1","7","Hukum Keluarga",,,,,
+"561","RIZKI NUR ALAMSYAH","Laki-laki","18","Bisa mengoperasikan mesin las, dan mesin yang ada di industri seperti mesin miling mesin pres mesin potong","1","3","SMA/SMK","3","Teknik Pengelasan",,,,,
+"562","Muhamad Ilham Maulana","Laki-laki","25","Streaming","1","3","SMA/SMK","3","Mesin","1","89","Kasir","Bi Mart","1"
+"563","Surya saputra","Laki-laki","19","operator mesin bubut","1","2","SMA/SMK","3","TEKNIK PERMESINAN","1","17","PKL","PT FAJAR NUSA TEKNIKOGI","1"
+"564","M. IKHLAS LASMANA","Laki-laki","18","Adaptability; Communications skills; Integrity & honesty; Problem solving; Teamwork","5","2.8","SMA/SMK","3","IPA",,,,,
+"565","M.HERMANSYAH","Laki-laki","21","Bisa memasang instalasi listrik / bisa mengoperasikan komputer/ bisa mengoperasikan Microsoft office word, powerpoint, Excel","1","2","SMA/SMK","3","TITL (TEKNIK INSTALASI TENAGA LISTRIK",,,,,
+"566","Neng Fitri","Perempuan","21","Microsoft excel","1","2","SMA/SMK","3","akuntansi keuangan",,,,,
+"567","Diesfitri Syawalya Fauziah","Perempuan","24","Microsoft office","1","3","D3","6","Teknik Sipil","1","29","Staff Administrasi","Sekolah SMK IT MADANI","1"
+"568","Pingka Mawar Junianti","Perempuan","18","Microsoft office","1","2","SMA/SMK","3","Manajemen Perkantoran Dan Layanan bisnis","1","17","Quality Control","PT Rusin SKB","1"
+"569","Idham kholid","Laki-laki","33","Microsoft Excel, word, power point","1","3","D4/S1","7","Administrasi publik","1","29","Staff keuangan","PT Cipta Niaga Semesta (mayora group)","1"
+"570","Virga Bagya Saputra","Laki-laki","23","Microsoft Word dan Excel","1","3","D3","6","Teknik Sipil","1","5","Inspektor","PT Agrinas Jaladri","1"
+"571","Fajar Ramdani","Laki-laki","21","Operator","3","2","SMA/SMK","3","Teknik Permesinan","1","41","operator","PT ADHITAMA ARKA PRASADA","1"
+"572","Dendi Aris Sopian","Laki-laki","23","mesin bubut, alat ukur, mesin boring, dan crane 3 ton","1","3","SMA/SMK","3","TEKNIK KENDARAAN RINGAN OTOMOTIF","1","65","OPERATOR PRODUKSI","PT KOMATSU INDONESIA","1"
+"573","Reyhan Muhamad Faisal","Laki-laki","22","Bekerja sama tim; Editing; Komunikasi; Leadership; Minrosoft Word","5","3","D3","6","Teknik Komputer","1","29","Staff Admin","RS Bhayangkara","1"
+"574","Muhammad Sahal","Laki-laki","34","Mikrosoft Excel, Microsoft Word","1","2","D4/S1","7","Akuntansi","1","125","Sales/Pramuniaga","PT. Maxistar Intermoda Indonesia","1"
+"575","RIDWAN MAULANA","Laki-laki","19","Microsoft Excel","1","1","SMA/SMK","3","Teknik komputer dan jaringan",,,,,
+"576","M Alfian Maulana","Laki-laki","19","crew store; marketing","2","1.5","SMA/SMK","3","ILMU PENGETAHUAN ALAM",,,,,
+"577","Fauzi Rachmawan","Laki-laki","25","Berhitung, cekatan, teliti; Microsoft word, exelr","2","3.5","SMA/SMK","3","Teknik Komputer Dan Jaringan","1","53","Staff gudang","Pt putra cipta graha indah","1"
+"578","Muhammad Rivan","Laki-laki","23","Microsoft Word, Excel","1","3","SMA/SMK","3","Ilmu Pengetahuan Sosial","1","65","Sales","Mr. Smartphone","1"
+"579","Ervina Desviani Azzahra","Perempuan","23","Arduino IDE; IOT; Microsoft Office; Problem Solving; Public Speaking","5","3.2","D4/S1","7","Teknik Elektro","1","41","Guru Robotik","SMP ITech Pasim Arrayan","1"
+"580","M Adam Ramdan","Laki-laki","25","Microsoft Office","1","2","D4/S1","7","Ilmu Komunikasi",,,,,
+"581","Aditya Bagas Dermawan","Laki-laki","25","Microsoft","1","2","SMA/SMK","3","Ips","1","53","Office boy, Colector, Helper","PT Arga Arta Mitra","1"
+"582","Fina Alsifa Fauziah","Perempuan","24","Microsoft excel, word","1","3","D4/S1","7","Akuntan","1","17","Akuntan","SPPG LEMBURSITU 2","1"
+"583","Rizky permana","Laki-laki","20","MEMAHAMI PERBAIKAN/SERVIS MESIN","1","3","SMA/SMK","3","TEKNIS BISNIS SEPEDA MOTOR",,,,,
+"584","Muchammad Azril Alarkan","Laki-laki","19","Microsoft Word Dan Microsoft Excel","1","3","SMA/SMK","3","Teknik Mesin",,,,,
+"585","Zahra fransdwifa widanti","Perempuan","25","Microsoft exel; Microsoft word","2","2","SMA/SMK","3","Teknik otomasi industri","3","125","Staff notaris; Finance administration officer; Penjaga toko","Notaris suci yuliyanti utami; Pnm mekaar; Apotek walagri","1"
+"586","DERANSYAH WIGUNA SOBARI","Laki-laki","25","Microsoft Office word, excel, ppt, laporan kas kecil, arsip data, vlookup, hlookup","1","3","D4/S1","7","Manajemen","1","41","Staff Admin & Customer Service","PT. Aimtraice Indonesia","1"
+"587","Muchamad Arif Yuliansyah","Laki-laki","22","Autocad; Autodesk Civil 3D; Cubicost TAS & TRB; Microsoft Office; Tekla Structure","5","3","D3","6","Teknik Sipil",,,,,
+"588","M FAHRI LUTFI","Laki-laki","23","Desain Grafis; Dokumen Handling; IT Support; Microsoft Office","4","2","D4/S1","7","SISTEM INFORMASI",,,,,
+"589","AGUS SURYADI","Laki-laki","23","Microsoft word","1","2","SMA/SMK","3","Teknik informatika","1","41","Kepala gudang","Perusahaan online shop","1"
+"590","SYABNAN RUSYDI","Laki-laki","26","DRAFTER; ESTIMASI BIAYA; LOGISTIC; MICROSOFT OFFICE; PROCUREMNET; QUALITY ASSURANCE; QUANTITY SURVEY","7","2.5714","D4/S1","7","TEKNIK SIPIL","4","176","MATERIAL ENGINEER & LOGISTIC PROJECT; PROCUREMNET OFFICER; AUDITOR QUNATITY SURVEY & QUALITY ASSURANCE; DRAFTER ESTIMATOR","PT. ABADI PRIMA INTIKARYA; PT. ADHI KARYA; PT. SURVEYOR INDONESIA; INFURA STRUKTUR","1"
+"591","Risma","Perempuan","18","Microsoft office (Excel)","1","2","SMA/SMK","3","Teknik komputer dan jaringan","1","17","Pramuniaga","Multi grosir","1"
+"592","Muhammad Izdhar hardiana","Laki-laki","29","Microsoft Word/Exel","1","3","D4/S1","7","Manajemen","1","65","Sales Ekslusif","CV. Jasa Venus","1"
+"593","ALIF ANNAZRIL ALFARZI","Laki-laki","18","Mengoprasikan mesin press","1","3","SMA/SMK","3","Teknik mesin","1","17","Produksi","Cv prisma tehnika","1"
+"594","Siska siti Kurnia oktaviansyah","Perempuan","24","Microsoft","1","4","D4/S1","7","Manajemen","2","106","Mahasiswa Intersif (Staf pelayanan); Staff Tata Usaha","Kantor POS Sukabumi; MTS Hidayatul Islamiyah","1"
+"595","NADIRA PUTRI DEVANI","Perempuan","22","Microsoft Excell","1","3","D4/S1","7","Manajemen","1","29","Divisi Pemasaran dan Penjualan","PT. Pos Indonesia Persero","1"
+"596","Dede Nurjaman","Laki-laki","3","Microsof excel","1","2","SMA/SMK","3","Otkp (otomatisasi dan tata kelola perkantoran)","1","17","Kariawan","Indogrosir","1"
+"597","Ramdan Rivaldi","Laki-laki","24","Operator forklift","1","4","SMA/SMK","3","Ips","1","29","Monitoring engineering","PT hdb mullticont","1"
+"598","Muhamad Farid","Laki-laki","20","Teknik otomotif","1","2","SMA/SMK","3","Teknik Kendaraan Ringan Otomotif","1","17","Helper Produksi","PT Prakarsa Alam Segar","1"
+"599","NASWA SHAFWAH JIHAN","Perempuan","17","Komunikasi; Korespondensi; Mengelola Arsip Manual dan Digital; Microsoft Excel dan Word","4","4","SMA/SMK","3","Manajemen Perkantoran dan Layanan Bisnis",,,,,
+"600","FAHRUL SINDANNATUL RIZAL","Laki-laki","18","PEKERJA KERAS, BEKERJASESUAI TEKANAN, MAMPU BEKERJA SAMA DALAM TIM MAUPUN INDIVIDU","1","3","SMA/SMK","3","IPA",,,,,
+"601","Redi Aditya","Laki-laki","20","Microsoft Word dan Microsoft Exel","1","2","SMA/SMK","3","IPA",,,,,
+"602","Muhamad Haikal Mulya Putera","Laki-laki","23","Data Visualization; Maintenance Komputer; Microsoft Office; Programming; Troubleshooting Software","5","3","D3","6","Teknik Komputer","1","29","Intern Web Developer","PT Amerta Indah Otsuka","1"
+"603","Ruswandi.S.I.P","Laki-laki","29","Mic. Office","1","3","D4/S1","7","Ilmu pemerintahan","1","29","Staff customer service","Pt ASJR","1"
+"604","Yusrin Putri Zahirah","Perempuan","18","Microsoft Excel; Microsoft word; Pengoperasian alat GPS dan GNSS; Pengoperasian alat Total Station; Pengoperasian alat Waterpass","5","2.6","SMA/SMK","3","Teknik Geomatika",,,,,
+"605","GALIH PAMUNGKAS","Laki-laki","28","Communication; Hardware Engineering; Microsoft Office; Networking Engineering; Operations Management; Product Operation Technical; Public Service; Quality Control; Stock Opname; Windows Operating System","10","3","D3","6","TEKNIK KOMPUTER","1","5","Admin Project","PT. Mersifarma Tirmaku Mercusana","1"
+"606","Desva Rendana Sobari","Laki-laki","28","Microsoft Excel & Word","1","2","D4/S1","7","Manajemen","3","101","Crew; Admin Operasional","PT Pesta Pora Abadi (Mie Gacoan); Kanaspace Resto & Cafe; CV Dekebondjati","1"
+"607","Galih Maula Kaisar Arafah","Laki-laki","30","Adaptability; Communication; Computer Skills; Conflict Resolution; Creativity; Teamwork","6","3","D4/S1","7","EKONOMI SYARIAH","7","279","Staff Kurikulum; Staff Administrasi; Direct Sales; Barista; Account Executive; Staff Keagamaan; Marketing","PAQ Mecca Medina; SMP ISLAM MECCA MEDINA; PT. Girana First; Resto And Caffe Djoglo Sukabumi; PT. Interpan Pasific Futures; Lembaga Pendidikan ECM Batam; PT. Telkom Indonesia","1"
+"608","Muhammad Lutfi Fadilah","Laki-laki","24","Microsoft Excel; Microsoft Word; Pemograman Android; Pemograman Website","4","2.25","D3","6","Teknik Komputer","1","29","Web Developer Magang","PT. IDE KREATIF SEJAHTERA GLOBAL","1"
+"609","Riki agus muslim","Laki-laki","34","Servis elektronik, servis mesin, servis komputer, servis ac, wallder ( las ) , mampu berbahasa jepang,","1","3","SMA/SMK","3","Teknik elektronika industri","1","185","Staff 3","PT Glostar indonesia","1"
+"610","Ramdan Romadoni","Laki-laki","24","Bisa mengoprasikan mesin press,bubut","1","3","SMA/SMK","3","Teknik Mesin","1","53","Operator Mesin Press","PT.Futaba Industrial Indonesia","1"
+"611","Dipa rivaldo Mawa rizki","Laki-laki","21","Barista Waiters kasir","1","2","SMA/SMK","3","TKJ TEKNIK COMPUTER JARINGAN","1","41","Crew store","PT GRIYA PRATAMA","1"
+"612","NAZWA SYIFAURRAHMAH","Perempuan","20","Administrasi","1","3","SMA/SMK","3","IPS","1","29","Staff Admin Kantor Pemasaran","PT Alrifara Mandiri Pratama","1"
+"613","Angga pratama","Laki-laki","18","EDITING VIDIO DAN FOTO; Foto grafer; Marketing; TEKNIK DASAR SEPEDA MOTOR","4","3","SMA/SMK","3","Ips",,,,,
+"614","Moh alif arasyid","Laki-laki","18","Microsoft Word","1","1","SMA/SMK","3","Teknik Komputer Dan Jaringan","1","17","packer","Dapur kotak","1"
+"615","fatonah","Perempuan","19","Microsoft Excel,word","1","2","SMA/SMK","3","ILMU PENGETAHUAN ALAM (IPA)","1","29","admin","astha group","1"
+"616","MUH ALIF PANGESTU","Laki-laki","19","Editing; Kerja tim; Komunikasi; Photography; Pilot drone; Videography","6","3","SMA/SMK","3","Perfileman","2","58","Photographer & Editor; Magang Photographer","CV. Rumah kreatif visual; PT. KEMBAR KREATIF  VISUAL","1"
+"617","Wahid","Laki-laki","19","Mengoperasikan mesin bubut","1","3","SMA/SMK","3","TEKNIK PEMESINAN","1","17","Operator Produksi","PT. Dirgantara Indonesia","1"
+"618","MUHAMMAD ABDUL MALIK","Laki-laki","19","MICROSOFT OFFICE - WORD, EXCEL, POWER POINT","1","2","SMA/SMK","3","MANAJEMEN PERKANTORAN",,,,,
+"619","Yusuf Maulana","Laki-laki","26","Microsoft word Excel","1","4","D4/S1","7","Ekonomi syariah","1","41","Surveyor spv","PT federal internasional finance","1"
+"620","Efrad Cahya Megantara Diansyah","Laki-laki","23","Komunikasi; Microsoft excel","2","3","D4/S1","7","Manajemen Transportasi","2","17","Admin; Trainee Flight Attendant","PT Gratia Jaya Mulya; PT Garuda Indonesia","1"
+"621","MULYANI","Laki-laki","21","Mekanic/dico","1","3","SMA/SMK","3","Bdp","1","29","PRODUKSI","PT NATA THE COCO","1"
+"622","Ajeng Julia Sani","Perempuan","19","Microsoft excel/word","1","1","SMA/SMK","3","Teknik Komputer Jaringan","1","17","Penjaga toko","Amorcakes&bakery","1"
+"623","Raihan","Laki-laki","18","Microsoft Excel","1","2","SMA/SMK","3","Otomotif",,,,,
+"624","Sunanda","Laki-laki","23","Microsoft Office","1","3","D4/S1","7","Administrasi Publik",,,,,
+"625","M Zeiy lubis","Laki-laki","22","Microsoft office","2","2","D3","6","OFFICE ADMINISTRASI",,,,,
+"626","muhamad indra lesmana","Laki-laki","29","Microsoft office","1","2","D4/S1","7","Manajemem","1","53","Administrasi","Rs Kartika Kasih","1"
+"627","Bayu permana","Laki-laki","23","Microsoft office","1","3","D4/S1","7","Pendidikan kewarganegaraan","1","29","Guru","SMKN 1 kota sukabumi","1"
+"628","Muhamad Rizki Ramdani Alamsyah","Laki-laki","23","Canva; Corel draw; Microsoft Excel; Microsoft Powerpoint; Microsoft word","5","3","SMA/SMK","3","IPS","4","41","Staff Quality Control; Crew Store; Freelance Video editor; Kepala Bidang Media","Koperasi Bismillah Indonesia Sejahtera; Bilal Bakery; At-Taqwa; Yayasan Darul Huffazh Al-Matin","1"
+"629","Namira Aurastya Sastro Prihandiono","Perempuan","22","Adaptabilitas; Analitis; Attention to detail; Bahasa Inggris; Canva; Communication; Data Entry; Empati & Active listening; Google Workspace; Inisiatif; Kepemimpinan; Manajemen waktu & Agenda; Microsoft Office (word, excel, power point); Teamwork","14","3.5","D3","6","Teknologi Industri Benih","1","17","Staff Operasional Produksi","Balai P3MBTP Daerah Istimewa Yogyakarta","1"
+"630","Arief Mujib Hadinsyah","Laki-laki","31","Microsoft Office","1","3","D3","6","Teknik Mesin","1","89","Asisten Supervisor","PT Bringin Gigantara","1"
+"631","Muhammad farhan juniawan","Laki-laki","20","bertanggung jawab; dapat membawa mobil; disiplin; mekanik motor","4","3.75","SMA/SMK","3","Teknik bisnis sepeda motor","1","41","Supir kirim","TB Sederaha jaya","1"
+"632","HIMAWAN PUTRA PURNAMA","Laki-laki","25","English: Working Knowledge; Import/Export Document; Microsoft Office","3","2.6667","D4/S1","7","SASTRA INGGRIS","2","34","Freelancer EKSIM; Staff Operasional","PT KNZ WAHANA TRANS; ADHIGANA GLOBAL LOGISTIC","1"
+"633","Laila Zahra","Perempuan","18","Melayani tamu; Mengelola administrasi umum; Mengelola arsip/kearsipan; Microsoft Excel/Microsoft word","4","4","SMA/SMK","3","Manajemen perkantoran",,,,,
+"634","MUH FAQIH ASY SYAKIR","Laki-laki","23","Google Workspace; Microsoft Excel; Microsoft Word","3","3","D4/S1","7","Manajemen","4","17","Teknisi; STAFF OPERASIONAL; STAFF ADMIN GUDANG; KOORDINATOR OPERASIONAL","PT. MAHA MITRA SEJATI; KENYANGIN RESTO; PT. TELKOM AKSES; FELNITY FASHION","1"
+"635","Deden","Laki-laki","23","Mengoperasikan Microsoft","1","3","SMA/SMK","3","IPS","1","41","Chef, kasir","PUKIS KOTABARU","1"
+"636","Muhammad Rahmat Hidayat","Laki-laki","29","Manajemen data; Microsoft Excel; Microsoft Powerpoint; Microsoft word","4","3","D4/S1","7","Manajemen","1","29","SMD","PT. Besda Jaya Pratama","1"
+"637","Raihan Delas Alkadar","Laki-laki","20","administrasi umum; Cutleries; Microsoft Office","3","2.6667","SMA/SMK","3","Bisnis dan Pemasaran","1","17","Cleaning Service","PT DUNIA ENTERTAINMENT","1"
+"638","Rizal Iman Alhaffar","Laki-laki","23","Administrasi & Pengarsipan Dokumen; Inventory Control & Stock Opname; Microsoft Excel; Microsoft Office; Problem Solving; Public Speaking","6","3.8333","D3","6","Manajemen Informatika","3","82","Audit Inventory; Crew Wedding Organizer; Staff Tata Usaha","PT. Inti Prima Satwa Sejahtera; Alesha Event Planner; SMK Islam Penguji Sukabumi","1"
+"639","Dede ripa","Laki-laki","33","Anality data; Leadership; Microsoft office","3","3","SMA/SMK","3","Pengawasan mutu","1","125","Chief of store","PT Indomarco Prismatama","1"
+"640","Ita Rosita Wati","Perempuan","18","Mengelola Kearsipan; Microsoft Word dan Excel","2","3.5","SMA/SMK","3","Manajemen Perkantoran",,,,,
+"641","3202332303030001","Laki-laki","23","Desain Grafis; Microsoft Word/Excel/Powerpoint; Pembuatan 3D Karakter dan Modelling; Pemograman Aplikasi berbasis android; Pemograman Aplikasi berbasis web; Pemograman Game; Teknisi Software/Hardware","7","2.1429","D3","6","Teknik Komputer",,,,,
+"642","Nida An Kahuvia Rahman","Perempuan","22","Bahasa Inggris; Microsoft Office","2","2","D3","6","Keperawatan",,,,,
+"643","galang agustian","Laki-laki","20","computer","1","2","SMA/SMK","3","teknik jaringan komputer",,,,,
+"644","Rohadian rangga putra","Laki-laki","25","Welding","1","2","SMA/SMK","3","IPS","1","29","operator produksi","PT Yasunli Abadi Utama Plastik","1"
+"645","Boby Rahman","Laki-laki","20","Agribisnis","1","2","SMA/SMK","3","Agribisnis perikanan","1","17","Helper","PT leader kontraktor Indonesia","1"
+"646","ABIL GANI","Laki-laki","19","B.INGGRIS; B.JEPANG; HARDWARE; MICROSOFT OFFICE; TEKNI KOMPUTER; TROUBLESHOOTING","6","2.8333","SMA/SMK","3","TKJ",,,,,
+"647","Denni Noeriawan S","Laki-laki","53","Leadership Skill; Microsoft Office","2","4","D3","6","Keuangan dan Perbankan","1","245","Supervisor Operations","PT Jaccs MPM Finance","1"
+"648","Devit ali suherman","Laki-laki","33","Microsoft excell, microsoft word","1","3","D4/S1","7","ILMU PEMERINTAHAN","1","137","Field Collection","PT Federal International Finance (FIF)","1"
+"649","Rismawati","Perempuan","24","microsoft word, hand pallet, excel dasar","1","3","D4/S1","7","Hukum Ekonomi Syariah","1","17","Pramuniaga","Salamah Elektronik","1"
+"650","SALWA FAUZIAH ISMAIL","Perempuan","20","On time","1","3","SMA/SMK","3",,,,,,
+"651","Harfan Fauzan","Laki-laki","19","Microsoft Excel; Microsoft Office; Microsoft word","3","3","SMA/SMK","3","Teknik Komputer dan Jaringan","1","29","Produksi","PT. LongVin Indonesia","1"
+"652","Jihan fadilah","Perempuan","28","Microsoft Excel","1","3","SMA/SMK","3","IPA","1","89","Operator produksi","PT.pramata abadi industri jx","1"
+"653","Parhan Firdaus","Laki-laki","20","LAS (SMAW); Microsoft Excel, Microsoft office, Microsoft word, Goglle Dock","2","3.5","SMA/SMK","3","IPA",,,,,
+"654","Pitriani Anggi Rasid","Perempuan","27","Berpikir Kritis/Teliti; Digital Marketing; Editing Video/Foto Via Ponsel; Komunikatif; Menulis; Microsoft Word","6","3","D4/S1","7","Sastra Indonesia","1","5","Crew","PT. Barokah Tour and Travel","1"
+"655","HAMDILAH","Laki-laki","21","MENGOPERASIKAN MESIN","1","2","SMA/SMK","3","TEKNIK MESIN","1","53","KARYAWAN","CV BENDA KARYA PRIMA","1"
+"656","Rendy Krisnawan","Laki-laki","24","Microsoft word","1","4","SMA/SMK","3","Bisnis Manajemen","1","65","Crew Store","PT Alfa TRIJAYA TBK","1"
+"657","Moh. Aden Muria","Laki-laki","18","Program","1","3","SMA/SMK","3","Teknik Pemesinan",,,,,
+"658","Angelica Fortuna","Perempuan","18","mengetik cepat,berkomunikasi baik,ngedit,bikin konten,kasir,gampang beradaptasi","1","3","SD","1","IPA",,,,,
+"659","Dinar Ismunandar","Laki-laki","28","HTML+CSS; Javascript; Laravel; Microsoft Excel; microsoft office; MySQL; Visual Studio Code","7","3","S2","8","Ilmu Komputer","1","53","Tenaga Kependidikan","Yayasan Bina Sarana Informatika","1"
+"660","Siti Sarah","Perempuan","19","Microsoft Excel, Microsoft word","1","2","SMA/SMK","3","ILMU AGAMA ISLAM",,,,,
+"661","Gina Melani","Perempuan","22","Communication; Copy Writer; Finance; Microsof office","4","3.5","D4/S1","7","Pendidikan Bahasa dan Sastra Indonesia",,,,,
+"662","Iwan setiawan","Laki-laki","34","Ms.excel, ms.word dan instalasi listrik","1","2","D4/S1","7","Pendidikan akuntansi ekonomi","1","89","Operator produksi","Pt.sun tak indonesia","1"
+"663","Hari Nasrul Haryanto","Laki-laki","37","Microsoft Excel","1","2","SMA/SMK","3","IPS",,,,,
+"664","Nelisa Destiana","Perempuan","19","keagamaan","1","2","SMA/SMK","3","IPS",,,,,
+"665","Moch Abdul Kamal","Laki-laki","20","Belum ada Keahlian; Microsoft word","2","1","SMA/SMK","3","IPA",,,,,
+"666","FAUZIA ADAWIAH","Perempuan","18","kearsipan manual dan digital; komunikasi; korespondensi; mrs. word dan mrs. excel","4","4","SMA/SMK","3","manajemen perkantoran dan layanan bisnis",,,,,
+"667","KHOTOB TOBI ALMALIBARI","Laki-laki","26","Microsft Office","1","2","D4/S1","7","HUKUM","1","17","Admin Lahan","PT. Asabaland","1"
+"668","ERVAN AL-FIAN","Laki-laki","24","Microsoft Office; Software Editing & Desain","2","4","D4/S1","7","Ilmu Hukum","2","106","Desainer Grafis; Pelaksana Gudang","CV. Ritrack Indonesia; PT Kino Indonesia, Tbk.","1"
+"669","M Aji Salam","Laki-laki","22","Otmomotif membongkar; Otomotif","2","2","SMA/SMK","3","Otomotif","1","17","Dadicated","Pt ims logistic","1"
+"670","Nur Fatimah Sutomo","Perempuan","23","Adaptability; Analytical and Research Skill; Bahasa Inggris; Komunikasi; Microsoft Office; Project and Performance Monitoring","6","3.3333","D4/S1","7","Sastra Inggris","2","17","Progress Advisor; Activation and Promotion Support","English 1 Sukabumi; Pt Paragon Technology and Innovation","1"
+"671","nasywa destria mardhotillah","Perempuan","22","Analisis Laboratorium","1","3","D4/S1","7","Kimia",,,,,
+"672","Muhammad nur fauzan","Laki-laki","26","Ms office,desain grafis","1","2","D3","6","Teknik komputer","1","113","QA & QC","PT pindad (persero)","1"
+"673","DEDE SOBARI","Laki-laki","37","Mampu mengoperasikan komputer","1","2","SMA/SMK","3","Pemasaran","1","221","Salesman","PT DJARUM","1"
+"674","Reggyna Novelly","Perempuan","27","Microsoft Office","1","3","D4/S1","7","Ilmu Keperawatan","1","65","Entry Data","Epic Usaid Indonesia Vaksin Covid-19","1"
+"675","Hari wirdan","Laki-laki","28","Microsoft Excel; Microsoft word","2","2","D4/S1","7","Manajemen","1","89","PT.SINAR INTI HARAPAN","PT","1"
+"676","SITI NAZLIA KHAERUNNISA R","Perempuan","25","Komunikasi; Microsoft Excel","2","3.5","D4/S1","7","Administrasi Publik","1","17","Admin Hc","PT KINO INDONESIA TBK PLANT CIKEMBAR","1"
+"677","ANISA GUSTIANI","Perempuan","18","Microsoft Excel","1","2","SMA/SMK","3","OTOMATISASI TATA KELOLA PERKANTORAN",,,,,
+"678","audrey noval muhammad adnan","Laki-laki","18","editingg","1","1","SMA/SMK","3","ips",,,,,
+"679","Kaifa Raditya Prakasa","Laki-laki","22","Pemeliharaan dan perbaikan kendaraan ringan","1","2","D3","6","Teknik Otomotif","1","29","Sparepart,Mekanik,Foreman","PT.Astra Daihatsu Sales Operation cabang Serang","1"
+"680","KAFKA DIFAR RIFATULLAH","Laki-laki","23","Bongkar pasang dan genti komponen handphone; Mampu mempelajari hal baru; Microsoft Office","3","2","SMA/SMK","3","Teknik Informatika","1","41","Admin Gudang","PT.Inti Walet Abadi","1"
+"681","Rizal Ramadhan","Laki-laki","31","Microsoft Excel","1","3","D4/S1","7","Administrasi Bisnis","1","101","Head Admin","PT. Cipta Mutu Entertainment","1"
+"682","perdy imam","Laki-laki","20","Coding, design, Microsoft office, packaging barang.","1","3","SMA/SMK","3","Rekayasa perangkat lunak","1","29","Kasir","PT ria busana","1"
+"683","Destiara islami putri","Perempuan","20","merias make up","1","3","SMA/SMK","3","Mipa",,,,,
+"684","Nina Aida Aini","Perempuan","23","Design grafis menggunakan aplikasi Canva dan Correldraw; Mengelola Media Sosial (Tiktok, Facebook, Instagram, dll); Mengelola Penjualan di Marketplace (Shopee, Tiktok Seller Center, Facebook); Microsoft Excel (Menguasai Beberapa rumus untuk mempercepat pekerjaan, Pembuatan Tabel,dll); Microsoft Powerpoint; Microsoft Word (Pembuatan Dokumen, Perapihan file, Pembuatan surat, dll); Pembuatan Copywriting yang menarik; Pembuatan Invoice; Pembuatan Purchase Order; Public Speaking","10","3.1","D4/S1","7","Manajemen","3","111","Admin Cs, Marketing, dan Design Grafis; Asisten Tenaga Teknis Kefarmasian; Guru","Drprintingvisual; Apotek Puri Indah; Kober Cermat","1"
+"685","salwa amelia","Perempuan","19","Programmer","1","2","SMA/SMK","3","rekayasa perangkat lunak",,,,,
+"686","Abdul Fatah Nawawi","Laki-laki","22","Microsoft office; Sistem POSCH","2","3.5","SMA/SMK","3","Teknik Komputer dan Jaringan","1","29","Assistant Leader","PT. Surganya Motor Indonesia","1"
+"687","Bunga noila oqtareza","Perempuan","20","merias","1","3","SMA/SMK","3","MIPA 1",,,,,
+"688","Aditya Apriliadi Pratama","Laki-laki","18","3F GMAW","1","3","SMA/SMK","3","TEKNIK PENGELASAN",,,,,
+"689","hudan nurullah","Laki-laki","30","FORKLIFT; MICROSOFT EXCEL; WELDING SPOT","3","2","SMA/SMK","3","TEKNIK PERMESINAN","4","221","OPERATOR BLISTERING; WELDING SPOT; OPERATOR MIXING; EXPEDISI/ WAREHOUSE","PT ASTRA DAIHATSU MOTOR; PT MERSIFARMA TIRMAKU; PT TAEWON INDONESIA","1"
+"690","Muhamad Jikril Aryanda","Laki-laki","22","Bahasa Inggris; IT Support / Helpdesk; Jaringan Komputer; Manajemen Basis Data; Microsoft Office (Excel, Word, PPT, Visio); Pemrograman Mobile; Pemrograman Web; Perbaikan dan pemecahan masalah hardware dan software komputer","8","3.25","D3","6","Teknik Komputer","1","29","Web Developer","PT Apex Mitra Malindo","1"
+"691","Hasya destri prisilla","Perempuan","20","komunikasi","1","3","SMA/SMK","3","perkantoran",,,,,
+"692","Imam mulyana","Laki-laki","24","Microsoft exel","1","3","D4/S1","7","Administrasi Publik",,,,,
+"693","Desti Aprianti","Perempuan","18","Microsoft Word","1","2","SMA/SMK","3","IPA","1","17","Host Live","Vella Audria","1"
+"694","Maulidya Nurfitriani","Perempuan","26","Legal & Contract Drafting; Microsoft Office; Review Kepatuhan","3","3","D4/S1","7","Ilmu Hukum","1","17","Corporate Compliance Support","Astra Credit Companies","1"
+"695","Siti Rahmah","Perempuan","24","Microsoft Office","1","3","D4/S1","7","Hukum Ekonomi Syariah","2","17","Guru; Asisten Customer Service","Madrasah Diniyah Raudhatul Athfal; Bank BJB KCP Sukabumi","1"
+"696","Muhamad Fauzan M","Laki-laki","22","Mekanik","1","2","SMA/SMK","3","Teknik Otomasi Industri","1","17","Maintenance","Cv Saga Multi Industri","1"
+"700","M FAIZAL RAHMAN","Laki-laki","20","microsoft excel,instalasi listrik","1","3","SMA/SMK","3","TEKNIK INSTALASI TENAGA LISTRIK","1","17","TEKNISI AC","PT.INDO ALOGO SEJAHTERA","1"
+"701","Mochanad Akbar","Laki-laki","17","Komunikatif, Marketing, Salestalk","1","2","SMA/SMK","3","Akuntansi dan Keuangan Lembaga","1","5","Product Consultant","PT Mitra Hub Indonesia","1"
+"702","rustaman","Laki-laki","23","Microsoft Excel, ms word powerpoint","1","2","SMA/SMK","3","teknologi informasi","1","53","staff gudang","PT tulus maju","1"
+"703","DIMAS ADITYA SUDRAJAT","Laki-laki","21","MARKETING","1","3","SMA/SMK","3","IPS",,,,,
+"704","Muhammad Dani Sopiandi","Laki-laki","23","Leadership, komunikasi, negosiasi,dan public speeking","1","2","D4/S1","7","Pendidikan guru sekolah dasar","1","17","Pekerja harian Lepas","PT Alfamart","1"
+"705","Muhamad Yusuf","Laki-laki","18","microsoft office","1","3","SMA/SMK","3","Multimedia",,,,,
+"706","Dandi Ruswandi","Laki-laki","23","Microsoft office","1","3","D4/S1","7","ekonomi syariah","1","5","Development","PT Magnet berjangka Indonesia","1"
+"707","Muhamad Raihan hamdani","Laki-laki","25","Menguasai Microsoft Excel","1","2","D4/S1","7","Pendidikan Jasmani kesehatan dan rekreasi","1","41","Guru olahraga","SMPN 2 sukaraja","1"
+"708","Ilham","Laki-laki","27","Microsoft word, Excel powerpoint","1","4","SMA/SMK","3","Teknik komputer dan jaringan",,,,,
+"709","Guntur Satrya Sukma","Laki-laki","18","Mampu Membaca Gambar Pengawatan Instalasi Rumah sederhana","1","3","SMA/SMK","3","Teknik Instalasi Tenaga Listrik","1","17","Enginerring","PT. Perumda Air Minum Tirta Bumi Wibawa","1"
+"710","MOCHAMAD RIZKY REYVANZA","Laki-laki","23","Ms.word & excel","1","2","D3","6","Administrasi Bisnis",,,,,
+"711","RM Fikri Haryo Wicaksono","Laki-laki","35","Administrasi; communication skills; JavaScript; Microsoft Excel; MySql; SDLC; STLC","7","2.7143","D3","6","Manajemen Informatika","5","161","Owner & Retail Manager; Software Quality Assurance; Admin & Purchase; Software Beta Tester (Validation Tester); Software Tester","Polland Batik; PT. Indocyber Global Technology; PT. Berkah Alam Mineral; PT. Oberthur Technologies (IDEMIA); PT. Sigma Cipta Caraka (TELKOM SIGMA)","1"
+"712","NAUFAL FAUZI FADLURRAHMAN","Laki-laki","18","beradaptasi dengan baik","1","2","SMA/SMK","3","ilmu pengetahuan alam","1","17","sales","PT danamas insan kreasi andalan","1"
+"713","Lutfi Rahman Fadilah","Laki-laki","25","Microsoft Excel","1","2","D3","6","Administrasi bisnis",,,,,
+"714","M Jibran setiawan","Laki-laki","21","Desain grafis dan seni kerajinan tangan; Microsoft excel; Service dasar sepeda motor","3","2.6667","SMA/SMK","3","Teknik Bisnis Sepeda Motor",,,,,
+"715","LIRA SILPIANI","Perempuan","21","manajemen waktu,pengelola keuangan,publik speaking","1","3","SMA/SMK","3","ips","1","17","kasir dan keuangan","toko glosir","1"
+"716","Elsa Mara Barokah","Perempuan","19","Digital Marketing","1","3","SMA/SMK","3","Pemasaran",,,,,
+"717","Fasha mahendra","Laki-laki","18","Otomotif","1","3","SMA/SMK","3","Teknik otomotif",,,,,
+"718","HARSYA HARDINANSYAH","Laki-laki","19","Inbon; memasang jaringan komputer ke wifi; Merakit PC; Microsoft Excel; onboun; Packing; Sortir","9","2.4444","SMA/SMK","3","TKJ","1","17","DW","GUDANG SHOPEE","1"
+"719","Firdaus Yusuf","Laki-laki","34","Administrasi Data; Basic Instalasi Netwok; Microsof office; Otomotif Engineer; Pivot table; Troubleshoot gangguan aplikasi dan network","6","2.6667","D3","6","Manajemen Informatika","1","101","Staff Operation","PT. Telkominfra","1"
+"720","Mohammad Aris","Laki-laki","31","Manajerial,","1","2","D4/S1","7","Manajemen","1","53","Supervisor","PT AKIRA KANAIK INDAH","1"
+"721","Difki Caesar Fadilah","Laki-laki","19","Microsoft Excel","1","1","SMA/SMK","3","Teknik jaringan komputer dan telekomunikasi","1","5","Steward","Glass house","1"
+"722","Samdra Agustriana","Laki-laki","27","Microsoft word, Microsoft Excel, Microsoft Powerpoint,SPSS, canva","1","2","D4/S1","7","Manajemen","1","101","Staff operasional masjid","RSUD R Syamsudin SH Kota Sukabumi","1"
+"723","M Sidik","Laki-laki","24","desain grafis, Editing Video/Foto","1","3","SMA/SMK","3","Teknik Komputer Dan Jaringan","1","65","Operator Produksi","ISRIN ISRAN","1"
+"724","Ira Meirisa Hikmat","Perempuan","23","Komunikasi; Manajemen Data; Microsoft Excel; Microsoft Word; Pelayanan Publik","5","3","D4/S1","7","Ilmu Administrasi Negara","2","94","Staff Administrasi; Administrasi Pelayanan","Kecamatan Cibeureum; Kelurahan Kebonjati","1"
+"725","Intan nurfitriani","Perempuan","18","Microsoft","1","2","SMA/SMK","3","Bisnis ritel","1","29","Pramuniaga","Ramayana","1"
+"726","Nurul Intan Lestari","Perempuan","19","Microsoft Office","1","3","SMA/SMK","3","Manajemen Perkantoran Layanan Bisnis",,,,,
+"727","Erik bastian","Laki-laki","20","mekanik","1","3","SMA/SMK","3","kurikulum merdeka",,,,,
+"728","MUHAMMAD ZAKY FAUZAN","Laki-laki","20","Microsoft exel; Microsoft word","2","2","SMA/SMK","3","Otomatisasi tata kelola perkantoran","1","29","Crew store","PT SUMBER ALFARIA TRIJAYA TBK","1"
+"729","Fadilah Ramdani","Laki-laki","20","teknik Otomasi industri","1","3","SMA/SMK","3","teknik Otomasi industri","1","41","operator produksi","PT twin tek","1"
+"730","Salma Nur aulia","Perempuan","19","Microsoft excel","1","2","SMA/SMK","3","Ips",,,,,
+"731","Rahmi Widianti","Perempuan","27","administrasi daftar pasien, Microsoft office","1","2","SMA/SMK","3","ilmu keperawatan","1","101","staff administrasi","Klinik 24 jam otista Raya Jakarta Timur","1"
+"732","Muhamad Rido Musahid","Laki-laki","18","Bidang pastry; Microsoft Word","2","2.5","SMA/SMK","3","IPS",,,,,
+"733","Devina Octaviani","Perempuan","23","Customer Relation/Service; Digital Marketing; Filling/Administration; Leadership; Microsoft Office; Public Speaking","6","3.8333","D4/S1","7","Ilmu Administrasi Bisnis","2","17","Teller; Administrasi Penagihan","PT Wahana Ottomitra Multiartha; PT BPR Supra Artapersada","1"
+"734","M Riza Sultan Saputra","Laki-laki","21","Microsoft Office; Programming (C Language); Soldering","3","2.6667","SMA/SMK","3","Teknik Elektronika Industri","2","94","Store Assistant; Operator Produksi","Baccorner; PT Panasonic Manufacturing Indonesia","1"
+"735","YOGI PANGESTU","Laki-laki","31","Microsoft Excel","1","2","D4/S1","7","akuntansi",,,,,
+"736","M FAHRI","Laki-laki","18","Pengoperasian mesin bubut","1","3","SMA/SMK","3","Teknik Pemesinan",,,,,
+"737","Riza Rumayanti Dewi","Perempuan","23","Bahasa Inggris; Data Analysis; Desain Grafis (Canva, Figma); Google Workspace (Meets, Gmail, Drive, Docs, Sheets, Sildes); Microsoft Office; Programming (Python, Java, Machine Learning, Deep Learning, AI); Web Development","7","2.2857","D4/S1","7",,"3","195","Staff Magang Sistem Informasi; Staff Financial; Staff TU","PT INDONESIA POWER KAMOJANG POMU; PT PELOPOR PENDIDIKAN INDONESIA; MTs Kadudampit","1"
+"738","Muhammad Aditya Saputra","Laki-laki","17","Otomotif","1","2","SMA/SMK","3","Teknik Sepeda Motor",,,,,
+"739","Dila Lediyanti","Perempuan","23","Microsoft Excel; Microsoft Word; Power Point","3","3","D4/S1","7","Akuntansi","2","29","Pramu Administrasi; Magang-Sub Bagian Perencanaan dan Keuangan","DP2KBP3A Kota Sukabumi","1"
+"740","Muhamad Abdul Zabar Maulana","Laki-laki","25","Microsoft excel; Microsoft word","2","3","D4/S1","7","Ilmu Hukum","1","17","Sekretaris","Bumdes Gedepangrango Mandiri","1"
+"741","M.farhan bahtian","Laki-laki","19","Pengarsipan Sistim Abjad","1","3","SMA/SMK","3","MANAJEMEN PERKANTORAN",,,,,
+"742","SANDI KUSUMA WIJAYA","Laki-laki","19","Membaca alat ukur","1","2","SMA/SMK","3","Teknik kendaraan ringan",,,,,
+"743","Dean Rijki Pauji","Laki-laki","19","Otomotif kendaraan ringan, komunikasi interpersonal, adaptabilitasi tinggi, troubleshooting dan multitasking, dan versatile","1","3","SMA/SMK","3","Teknik Kendaraan Ringan",,,,,
+"744","Nadila Fitriani","Perempuan","23","Berkomunikasi yang baik; Bertanggung jawab; Disiplin; Fotography; Jujur; Kerja Tim; Microsoft office; Pengarsipan Dokumen; Pengelolaan Data; Videography","10","3.5","D3","6","Teknologi Industri Benih",,,,,
+"745","Santi Susilawati","Perempuan","22","microsof excel,word","1","3","SMA/SMK","3","OTOMATISASI TATA KELOLA PERKANTORAN","1","17","OPERATOR","PT BERDAYA GUNA","1"
+"746","Dean Firga Iswara","Laki-laki","28","Automotif","1","2","SMA/SMK","3","Automotif","1","53","OB (ofice boy)","Sabistrimingstudio","1"
+"747","ZAHRA HIZAZ YAULIZKA","Perempuan","20","Desain grafis; Editing Video; Microsoft Excel","3","2","SMA/SMK","3","Ips",,,,,
+"748","Indriani Rahma","Perempuan","24","Bahasa inggris; Legal Drafting; Microsoft Office; Pengelolaan Administrasi Hukum; Penyusunan Legal Opini","5","3.4","D4/S1","7","Ilmu Hukum",,,,,
+"749","MUHAMAD DIKRI MAULANA","Laki-laki","18","Bisa mengelas SMAW/GMAW","1","3","SMA/SMK","3","Teknik Pengelasan",,,,,
+"750","nabila","Perempuan","19","komunikasi dan kerja sama tim","1","4","SMA/SMK","3","IPS",,,,,
+"751","Kamilia Al Mathari Fajrin","Perempuan","18","Aplikasi Microsoft Office","1","4","SMA/SMK","3","Manajemen Perkantoran dan Layanan Bisnis",,,,,
+"752","Azis Setiawan","Laki-laki","20","Bekerja sama dengan tim dengan baik","1","2","SMA/SMK","3","IPS",,,,,
+"753","Syifa Azahra","Perempuan","22","Microsoft office","1","3","D3","6","Teknologi Industri Benih",,,,,
+"754","Eneng Rossa Amelia","Perempuan","25","Software  Microsoft Office : Word(Pembuatan dokumen, surat, laporan), Excel (Olah data, tabel, rumus dasar), Powerpoint (Presentasi), Publisher, Outlook & Dll.Google Workspace : Gmail & Email, Drive, Docs, Sheets, Slides, Calender, dan Form, Canva","1","3","D4/S1","7","Manajemen","1","41","Pengajar / Staff Kantor","SMP BW Al-Mumtaz","1"
+"755","HARDI ANGGA WIGUNA","Laki-laki","24","Manajemen waktu, adaptibilitas, berfikir kritis","1","3","SMA/SMK","3","IPS","1","29","Staff DKL","Koperasi Jaya Makmur","1"
+"756","MUHAMMAD AGUS SYABAN","Laki-laki","17","Cleaning AC","1","3","SMA/SMK","3","TEKNIK INSTALASI TENAGA LISTRIK","1","17","TEKNIS HVAC","PT.DUA TEPIA SUNGAI(BEBEK KALEYO GROUP)","1"
+"757","Rendi realdy","Laki-laki","22","Melakukan pengecekan dan pencatatan inventaris; Menejemen tim; Mengatur stok barang (masuk & keluar); Microsoft Excel; Stok opname","5","3.8","SMA/SMK","3","Teknik mesin dan las","1","53","Kepala toko","PT NICESO SUKSES INDONESIA","1"
+"758","HAYDAR JUNIYAWAN SAPUTRA","Laki-laki","19","OTOMOTIF","1","3","SMA/SMK","3","TBSM",,,,,
+"759","Muhammad Reynaldo","Laki-laki","27","Office,Editing,Pemasaran Digital,Analisi Data,Manajemen Proyek,Komunikasi,Kerja Tim,Kolaborasi,Adaptabilitas","1","2","D4/S1","7","Informasi","1","53","Staff","Sppbe","1"
+"760","AGNA MUDZKIA","Perempuan","23","Microsoft Office (Excel, Word, Power Point), Microsoft Acses, Administrasi.","1","3","D4/S1","7","Pendidikan Guru Pendidikan Anak Usia Dini","1","-18","Staff Administrasi informasi dan customer service","Al Azhar Rumah Gemilang Indonesia","1"
+"761","Denda Andrean","Laki-laki","24","Otomotif","1","2","SMA/SMK","3","Otomotif","1","17","Kariawan","SRC Aulia Rizky","1"
+"762","Rexa yoga pratama","Laki-laki","29","Microsoft exel","1","2","D3","6","Manajemen informatika",,,,,
+"763","Helvira Desianti Jaelani","Perempuan","23","Microsoft Office, Administrasi, Data Entry, Pelayanan Pelanggan, Ketelitian","1","3","D4/S1","7","Manajemen",,,,,
+"764","Safana Safira Sahar","Perempuan","18","Microsoft Excel, Microsoft Word","1","2","SMA/SMK","3","IPS",,,,,
+"765","Siti Farah Fauziah","Perempuan","32","Microsoft word","1","3","D4/S1","7","Manajemen","1","113","Admin Sales","Honda perdana sukabumi","1"
+"766","DE NONA VIARLY","Perempuan","21","kamera; microsoft excel; pelayanan","3","4","SMA/SMK","3","MULTIMEDIA","2","70","pramuniaga; crew store","pt.ramayana lestari sentosa tbk; pt.sumber alfaria trijaya tbk","1"
+"767","Ariel Akbar Febriansyah","Laki-laki","20","Network engineer","1","4","SMA/SMK","3","Teknik komputer dan jaringan",,,,,
+"768","NAZWA AWALUDIN","Laki-laki","20","Teknik mesin","1","2","SMA/SMK","3","TEKNIK MESIN",,,,,
+"769","Rizki muhamad ramdani","Laki-laki","24","Bisa mengoprasikan mesin press,bubut","1","3","SMA/SMK","3","Teknik Mesin","1","65","Operator","Pt mikuni indonesia","1"
+"770","MUHAMMAD FAUZAN","Laki-laki","22","AutoCAD; Microsoft Office; Quality Control","3","2.6667","D4/S1","7","Teknik Mesin","1","5","Staff Pengawas","PT. Putra Sugis Karya Mandiri","1"
+"771","ABDUL KHOLIS MUKLIS","Laki-laki","19","Microsoft office","1","2","SMA/SMK","3","Ilmu Pengetahuan Sosial",,,,,
+"772","M RIZKI AZKIA","Laki-laki","19","TBSM","1","3","SMA/SMK","3","TBSM",,,,,
+"773","Bugar Restu Pamungkas","Laki-laki","22","Autocad, word, miling","1","3","D3","6","Teknik mesin",,,,,
+"774","Ardi Pamungkas R","Laki-laki","23","Programming/Desain Grafis/Microsoft Office","1","3","SD","1","Teknik Komputer dan Jaringan","1","5","Programmer","CV. IMCOMPUTER","1"
+"775","xena anaqami","Perempuan","18","microsoft excel","1","2","SMA/SMK","3","ipa",,,,,
+"776","Ria Indriawati","Perempuan","26","Microsoft word","1","3","D4/S1","7","Sistem informasi",,,,,
+"777","Kayla Zaskia Widad","Perempuan","18","Microsoft Excel","1","2","SMA/SMK","3","Agribisnis Tanaman Pangan dan Hortikultura",,,,,
+"778","Nugi kusnadi ulum","Laki-laki","40","Menjahit","1","3","SMA/SMK","3","Ips","1","17","Operator","Pt citra unggul perkasa","1"
+"779","Dikha Ardiansyah","Laki-laki","29","IT Support; Microsoft Excel; Microsoft Word; Programing","4","2.75","D4/S1","7","Teknik Informatika",,,,,
+"780","Della Maretha","Perempuan","19","Berbisnis","1","3","SMA/SMK","3","IPS","1","17","Staff Admin","Ruko Rairaka","1"
+"781","Siti Nur Azmi","Perempuan","19","Microsoft Excel and word","1","2","SMA/SMK","3","Otomatisasi dan ayat kelola perkantoran","1","17","STAFF ADMINISTRASI","PT GUNUNG SUCI PERMATA","1"
+"782","Anggian Ramadhan","Laki-laki","26","Microsoft office","1","2","D4/S1","7","Manajemen",,,,,
+"783","Dara Nadia Rahayu","Perempuan","29","Microsoft word dan excel","1","3","D3","6","Manajemen Informatika","1","41","Staf Administrasi","PT. Amanah Abadi","1"
+"784","Lukman","Laki-laki","22","Ahli dalam bidang marketing","1","4","SMA/SMK","3","Teknik instalasi tenaga listrik","1","53","Seles","PT ARTABOGA CEMERLANG","1"
+"785","Dendie andriama","Laki-laki","25","Microsoft exel","1","2","D4/S1","7","Manajemen",,,,,
+"786","RIVALDI R SAPUTRA","Laki-laki","21","FNB","1","3","SMA/SMK","3","Otomatisasi tata kelola perkantoran","1","5","Kitchen","Cafe somewhere","1"
+"787","Rainaldy Herdiansyah","Laki-laki","28","berkomunikasi dengan baik","1","2","SMA/SMK","3","TEKNIK OTOMOTIF","4","284","sales; mekanik; marketing","Pt xinyuan induatri; bengkel motor; Nusantara sakti","1"
+"788","Maesa Salsabila","Perempuan","18","membuat web/aplikasi","1","2","SMA/SMK","3","REKAYASA PERANGKAT LUNAK",,,,,
+"789","Rama Abdira","Laki-laki","18","Bisnis","1","2","SMA/SMK","3","Ips",,,,,
+"790","Sulaiman Hafizh Jafar","Laki-laki","23","Content Management System (CMS); English Speaking; Goods Receiving & Inspection; Inventory Management; Leadership & Teamwork; Manajemen Produksi & Operasional; Microsoft Office (Excel & Word); Quality Control (QC); Space Optimization; Stock Opname; Time Management; User Interface Testing","12","3","SMA/SMK","3","IPA","2","-79","UI/UX Designer; Operasional & Marketplace (Internship)","FYP Media (Tangerang BSD); Callanda Hijab (Bogor)","1"
+"791","Hadi Mulia","Laki-laki","24","Microsoft office","1","2","D4/S1","7","Teknik Mesin","3","75","AccountingADMALL; Mechanical Engginering; Staff pengerahan","PT. Nusantara Surya Sakti; PT. Assalamah Cahya Sakti; PT. Rajawali Cooling Store","1"
+"792","Asep Nurjaman","Laki-laki","38","Microsoft Office; Proggraming","2","3","D4/S1","7","Teknik Informatika","3","339","Business Assistant; Associate Mantri; IT Staff","Kementrian Koperasi Indonesia; PT Bank Rakyat Indonesia (PERSERO) T.bk; PT. Pro-Healt International","1"
+"793","Asti Naiman istaadah","Perempuan","28","bidang produksi","1","3","SMA/SMK","3","Ips","1","101","operator produksi","PT Pratama abadi industri","1"
+"794","Aditya Rifki Shandya","Laki-laki","24","Bahasa Inggris; Manajemen Berkas; Microsoft Office; Pengarsipan","4","2.75","D3","6","Office Administration","3","41","Admin Gudang; Kasir dan Pramuniaga; Security","PT ID Express Logistik Indonesia; Prima Centre; Agung Podomoro Group","1"
+"795","M NOVAL KAUSAR","Laki-laki","19","Otomotif","1","2","SMA/SMK","3","Teknik kendaraan ringan otomotif","1","17","PKL","Cobul custom","1"
+"796","MUHAMMAD GHIYATS HAFIY SUGANDI","Laki-laki","20","Las SMAW","1","3","SMA/SMK","3","Teknik Sepeda Motor",,,,,
+"797","Tariza Sagita Hermawan","Perempuan","25","Microsoft Office","1","2","D4/S1","7","Pendidikan Jasmani, Kesehatan, dan Rekreasi","1","41","Tenaga Pendidik","SD Negeri 1 Caringin","1"
+"798","Aldiansyah","Laki-laki","23","Mengoperasikan komputer","1","4","SMA/SMK","3","Teknik Komputer Jaringan","1","29","Resepsionis","Qiai Guesthouse","1"
+"799","M.Z. Alfadh Fakhri Arifin","Laki-laki","18","Public Speaking","1","3","SMA/SMK","3","IPA",,,,,
+"800","RIYAN FIRMANSYAH","Laki-laki","23","Kerja sama tim; Komunikasi efektif","2","3","SMA/SMK","3","Perhotelan","1","77","Waiter","Part time","1"
+"801","Habil Nugraha","Laki-laki","26","Administrasi; Drone Pilot; GIS","3","2.6667","D4/S1","7","Perencanaan Wilayah dan Kota","1","29","Data Processor","PT. Skytech Indonesia","1"
+"802","Widiana","Perempuan","26","Microsoft Excel, Word","1","3","D4/S1","7","Pendidikan Ekonomi","1","101","Senior Account Officer","PT PERMODALAN NASIONAL MASANI","1"
+"803","Dhika wirahadi","Laki-laki","27","Memperbaiki mesin sepeda motor","1","3","SMA/SMK","3","Teknik sepeda motor ( otomotif )","1","77","Mekanik","Ahass Duta Buana Motor","1"
+"804","Deo lutfi ramadhan","Laki-laki","24","Mengoprasikan mesin vibration","1","3","SMA/SMK","3","TTEKNIK PEMESINAN","1","41","OPRATOR","PT MIKUNI INDONESIA","1"
+"805","Ikbal maulana","Laki-laki","25","Microsoft Excel, power point,word","1","3","D4/S1","7","manajemen SDM","4","284","Direktur; staff admin","Asosiasi Perusahaan Sukabumi; CV. AKASIA PUTRA UTAMA; CV. PAJAR PUTRAMA MANDIRI; CV. PARHAN PUTRA","1"
+"806","Pandu maulana yusup","Laki-laki","25","Mengoperasikan perbaikan motor dan mobil","1","3","SMA/SMK","3","TEKNIK OTOMOTIF KENDARAAN RINGAN","1","53","LEADER OPRATOR PRODUKSI","PT. SEIWA WEX. CP. LDT. (LOUNDRY HOTEL) DIJEPANG","1"
+"807","AHMAD RIZKI RAMADHANI","Laki-laki","23","Solidworks, AutoCad, Ansys, Microsoft Word, Excel, PowerPoint.","1","3","D4/S1","7","Teknik Mesin",,,,,
+"808","Muhamad Aji Junaedi","Laki-laki","23","Administrasi; Microsoft Excel; Microsoft Power Point; Microsoft Word","4","2.75","D4/S1","7","Perbankan Syariah",,,,,
+"811","Nazzra Fazzri","Laki-laki","18","Basic Pengelasan","1","3","SMA/SMK","3","TEKNIK PEMESINAN","1","17","Gerinding","PT FOLINDO","1"
+"812","Bagja Fauzi","Laki-laki","19","Pengelasan","1","2","SMA/SMK","3","TEKNIK PENGELASA",,,,,
+"813","Anissa Syah Fitri","Perempuan","23","Microsoft Exel & Sistem Perusahaan","1","3","D3","6","Administrasi Bisnis","1","17","Key Opinion Leader Specialist","PT Kreasi Asli Nusantara","1"
+"814","Reza Yahya Maulana","Laki-laki","19","pengoperasian mesin bubut dan frais, memiliki kemampuan bahasa jepang","1","2","SMA/SMK","3","TEKNIK MESIN","1","17","Operator","PT ADHITAMA ARKA PRASASADA","1"
+"815","Algi pahreji","Laki-laki","25","Microsoft excel","1","3","SMA/SMK","3","Rekayasa perangkat lunak",,,,,
+"816","M. IBNU RUSYD NURFIRDAUS","Laki-laki","19","Creative Digital Desain; Mengoprasikan Software Word, Excel & Powerpoint","2","3.5","SMP","2","Reguler",,,,,
+"817","Muhammad Ramadhan","Laki-laki","19","AutoCad; CX-Program; Microsoft Excel","3","2.6667","SMA/SMK","3","TEKNIK INSTALASI TENAGA LISTRIK","1","17","Engineering","PT. SATYA ANUGERAH PERKASA","1"
+"818","Raka Agustian","Laki-laki","23","Microsoft office","1","2","D3","6","Manajemen Informatika","1","17","Operator Produksi","PT Cakra Pilar Persada","1"
+"819","ASEP AHMAD WILDAN","Laki-laki","25","Microsoft Office; Pengoperasian Komputer","2","4","D4/S1","7","PENDIDIKAN JASMANI KESEHATAN DAN REKREASI","1","77","Staff Administrasi dan Operator","SMAS ARRAHMAN BOJONGGENTENG","1"
+"820","Erlangga Ramdan Riyadi","Laki-laki","19","rescue reptile; tune up, skener, servis ringan","2","2","SMA/SMK","3","teknik kendaraan ringan",,,,,
+"821","Naufal Azhar Alamsyah","Laki-laki","23","Microsoft excel","1","3","D4/S1","7","Akuntansi",,,,,
+"822","Tiara cahyani","Perempuan","25","Disiplin, tepat waktu , mampu bekerja sama dalam tim; Mampu berkomunikasi dengan baik; Microsoft excel , mampu mengoperasikan komputer","3","4","D4/S1","7","Ilmu pemerintahan","2","82","Pendataan dan pengolahan; Staff marketing","Badan pusat statistik; Pt dika","1"
+"823","Nabila Ramadani","Perempuan","19","Microsoft Word, Excel, PowerPoint, Google docs","1","3","SMA/SMK","3","Administrasi Perkantoran",,,,,
+"824","Padlik Abdillah","Laki-laki","29","Mengoperasikan komputer","1","3","SMA/SMK","3","IPS","1","65","Staff Return","PT Sirkulasi Kompas Gramedia","1"
+"825","Salwa Wardah Fauziyyah","Perempuan","25","Microsoft Office","1","2","D3","6","Teknologi Industri Benih","1","29","Asisten Dosen","Sekolah Vokasi IPB","1"
+"826","Meira Saprila Salma","Perempuan","23","Bahasa Inggris; Bekerja sama dengan tim; Microsoft Office (Word, Excel, Powerpoint); Pemaparan Presentasi; Problem Solving","5","3.6","D4/S1","7","Sastra Inggris","1","17","Staff Quality Integration Program","PT Glostar Indonesia","1"
+"827","DELI PRATAMA","Laki-laki","21","Adobe illustrator; Adobe Photoshop; Corel draw; fotografer; Microsoft Excel; Microsoft word; publik speaking","7","3","SMA/SMK","3","multimedia","3","87","operator produksi; staff gudang; ketua editing","PT anugrah citra walet Indonesia; PT Dae HWA INDONESIA; riglesn studio foto","1"
+"828","Muhammad Alviansyah Kurnia","Laki-laki","20","Peracikan obat; Waiter","2","2.5","SMA/SMK","3","Farmasi Klinis Dan Kesehatan","1","29","Waiters","Sapa Cafe","1"
+"829","Akbar Aljabari","Laki-laki","18","Adaptif/Fleksibilitas; Bertanggung jawab; Bhs.Inggris; Desain Grafis; Digital Marketing; Kemampuan komputer dasar (Excel,Word, Powerpoint); Kreatif; Leadership","8","3","SMA/SMK","3","Sistem Kurikulum Merdeka (IPA/IPS)",,,,,
+"830","Dimas Anugrah Putra","Laki-laki","25","Microsoft office","1","1","SMA/SMK","3","Ipa","1","29","Operator","Pt karya berdaya guna","1"
+"831","YOGA PRADIKA PRATAMA","Laki-laki","18","Troubleshooting Hardware Software,​Instalasi Jaringan","1","3","SMA/SMK","3","TEKNIK KOMPUTER DAN JARINGAN","1","17","QUALITY CONTROL","PT MITRA TANI MAKMUR","1"
+"832","SYAHRIL AL AFGANI","Laki-laki","23","Digital Marketing; Microsoft Excel; Pemograman","3","3","SMA/SMK","3","Teknik Komputer Dan Jaringan","1","17","Operator Packing","PT PARAMA GLOBAL INSPIRAN","1"
+"833","MUHAMMAD FAHDLY RAZAK","Laki-laki","28","DAPAT MENGOPERASIKAN KOMPUTER","1","3","D4/S1","7","TEKNIK INFORMATIKA","1","17","PURCHASING","PT GLOSTAR INDONESIA","1"
+"834","Rizky Akbar Kurniawan","Laki-laki","21","Perbaikan service ringan cune up","1","3","SMA/SMK","3","Teknik Kendaraan Ringan","1","41","Helper","Alex Bengkel","1"
+"835","MOHAMMAD RIZKI AGUSTIAN","Laki-laki","18","Servis berkala kendaraan menguasai prosedur servis ganti oli, pengecekan rem, radiator, dan busi, Diagnosa kerusakan ringan terampil menggunakan alat scanner OBD","1","3","SMA/SMK","3","Otomotif",,,,,
+"836","Deri Aderian","Laki-laki","22","Kerja sama tim; Ketelitian; Tanggung jawab","3","3","SMA/SMK","3","Teknik mesin","1","17","Operator Produksi","PT Toyota Boshoku Indonesia","1"
+"837","Siti Khalida Muthmainnah","Perempuan","20","Microsoft Office","1","3","SMA/SMK","3","IPS",,,,,
+"838","ADI KARYADI","Laki-laki","27","Microsoft Excel , Microsoft Word","1","2","D4/S1","7","ILMU HUKUM",,,,,
+"839","Aden Barul Basit","Laki-laki","32","Microsoft Word, Excel, Program.","1","3","D4/S1","7","Pendidikan Agama Islam","1","173","Kepala Tata Usaha","SMK AL BAROKAH","1"
+"840","Sofi Fauziah Nurunnisa","Perempuan","24","microsoft axcel; Microsoft word","2","3","SMA/SMK","3","Ips","3","77","Cleaning service; Cashier dan pelayan toko; Operator Produksi","Fastrack fitness; Toko Barokah; PT Pratama Abadi Industri JX","1"
+"841","Muhamad rizal khalefah","Laki-laki","22","Mampu berkomikasi dengan baik","1","3","SMA/SMK","3","IPS","1","17","Tim work","PT PERSADA ABADI","1"
+"842","Muhamad Yusuf Gumelar","Laki-laki","32","Microsoft office","1","2","D4/S1","7","Teknik Informatika","1","41","PIC / Supervisor","PT. Indopsiko Ekspress Logistik","1"
+"843","Sheila Natasha Putri","Perempuan","24","Autocad; Inventor; Microsoft office","3","2","D4/S1","7","Teknik Mesin",,,,,
+"844","Qeysha aqlya salsabila","Perempuan","0","komputer","1","2","SMA/SMK","3","ips","1","17","sales","pt dika","1"
+"845","M.Farhan Firdaus","Laki-laki","18","otomotif","1","3","SMA/SMK","3","ipa",,,,,
+"846","Muhammad Anwari","Laki-laki","24","Komputer; Microsoft","2","2","SMA/SMK","3","TEKNIK KOMPUTER DAN JARINGAN","1","41","Comber Frozen(Ice Cream)","PT Tambun Distribusindo Raya(Wings)","1"
+"847","MUHAMMAD SULTHAN FAUZAAN","Laki-laki","18","Adaptif/Fleksibel; Akuntansi; Bertanggung jawab; Bhs.Inggris; Kedisiplinan; Kemampuan komputer dasar (Excel,Word,Power Point); Kreatif; Otomotif","8","2.75","SMA/SMK","3","Sistem Kurikulum Merdeka",,,,,
+"848","Sastidhiya Farah Lesmana","Perempuan","23","Audacity; Canva; CapCut; Microsoft Excel; Microsoft PowerPoin; Microsoft Word","6","2.6667","D4/S1","7","Ekowisata","2","58","QA; Staff Operasional (Sales, Housekeeping dan Content Creator)","PT. Teratai Widjaja; Green Hill Park","1"
+"849","Muhammad rayhan","Laki-laki","23","Housekeeping; Knowledge management; Pengolahan data; Waiters","4","2.5","D4/S1","7","Hukum ekonomi syariah",,,,,
+"850","Rifa Adrian Maulana Putra","Laki-laki","20","Microsoft exel dan word","1","3","SMA/SMK","3","Rekayasa Perangkat Lunak","1","17","Staff Gudang","PT SLN Cargo","1"
+"851","Syifa nurul aeni","Perempuan","20","Desain; MAKE UP; Menjahit","3","4","SMA/SMK","3","Busana","4","41","Marketing; Sewing; Costumer service","Pt dika; My dent; PT DAESAN SENTOSA; Rika boutiqe","1"
+"852","Siti Azka Nursalma","Perempuan","19","Canva editing, Capcut","1","3","SMA/SMK","3","IPA",,,,,
+"853","RIPKI ROSANDI","Laki-laki","23","Microsof exel","1","4","SMA/SMK","3","IPS","1","17","SECURITI/ANGGOTA SATPAM","PT HAIDAR RASYAD INDONESIA","1"
+"854","Nabila Putri Permata S","Perempuan","20","Microsoft Word dan Microsoft Powerpoint Point","1","2","SMA/SMK","3","Keperawatan",,,,,
+"855","Herdawati slamet","Perempuan","24","World, Excel ,ppt","1","2","D4/S1","7","Manajemen",,,,,
+"856","Ayra Citra Nabilla","Perempuan","0","Administrasi HR; Administrasi Hukum; Legal Drafting; Microsoft excel","4","2.5","D4/S1","7","Ilmu Hukum",,,,,
+"857","ARIZKY PUTRA PRATAMA","Laki-laki","18","Disiplin dan tanggung jawab; Kerja tim; Komunikasi dasar; Servis dan perawatan kendaraan ringan; Sistem kelistrikan","5","2.6","SMA/SMK","3","Teknik kendaraan ringan otomotif",,,,,
+"858","MUTIARANI DWI PUTRI","Perempuan","27","Microsoft exel","1","2","D3","6","Office management","1","77","Staff customer service dan teller","PT BPR NUSAMBA SUKARAJA","1"
+"859","Isra Elwanda Putra","Laki-laki","25","ime Management; Microsoft Office; Problem Solving; Programming; Solidity Blockchain; Teliti","6","3.3333","D4/S1","7","Teknik Informatika",,,,,
+"860","Muhammad Ravi-ul Muharram","Laki-laki","30","CapCut; Jaringan Komputer; Microsoft Exel; Microsoft Power Point; Microsoft Word","5","2.8","D4/S1","7","Ilmu Komputer","4","272","Supervisor Parking; Sosial Media spesialis; Admin","PT. Cipako; PT. PDR; Yayasan Shoffa Bunyaanum Marshuus; PT. Bogor Media Express","1"
+"861","ABDULRAHMAN ILMAN HULUNGO","Laki-laki","34","DRIVER, MICROSOFT OFFICE, MERCHANDISER,","1","3","D4/S1","7","PENDIDIKAN JASMANI KESEHATAN DAN REKREASI","3","267","STAFF LAPANGAN (DRIVER); Asisten Kepala Toko; Admin/Operator","PT. PUSAKA DEWA KRESNA; PT INDOMARCO PRISMATAMA TBK; SAT LANTAS POLRES MINAHASA","1"
+"862","Delawati Meliana","Perempuan","20","Microsoft","1","3","SMA/SMK","3","Ips",,,,,
+"863","Afrizal Nadya Mutaqin","Laki-laki","24","Microsoft Excel; Microsoft Word","2","2","SMA/SMK","3","TEKNIK KENDARAAN RINGAN","1","65","OPERATOR PRODUKSI","PT GS BATTERY","1"
+"864","Irwansyah","Laki-laki","41","Microsoft office, driver A dan C","1","3","D4/S1","7","manajemen pemasaran","1","125","staff operasional","PT. Telkominfra","1"
+"865","Muhammad ramdhani","Laki-laki","23","Microsoft office; Microsoft word","2","2","SMA/SMK","3","Ips","1","29","Crew","PT SUPRA NATAMI UTAMI","1"
+"866","Deva Adipraja","Laki-laki","19","Bahasa Asing (Inggris, dan Jepang); Microsoft Office","2","2.5","SMA/SMK","3","Teknik Komputer dan Jaringan",,,,,
+"867","Avissa Nur Hafizah","Perempuan","21","Editing canva; Fasih berbahasa Arab; Fasih berbahasa inggris; Microsoft Word; Presentasi","5","3.2","SMA/SMK","3","MIPA","1","41","Pengajar Bahasa Inggris","Pesantren Modern Daarul Uluum Lido Bogor","1"
+"868","Salma Addini Maulida","Perempuan","18","Kearsipan; Komunikasi; Melakukan Pengelolaan Surat Masuk dan Keluar; Membuat Laporan Kas Kecil; Microsoft Excel; Microsoft Word","6","2.8333","SMA/SMK","3","Manajemen Perkantoran","1","17","Front Office","Dinas Kependudukan dan Pencatatan Sipil","1"
+"869","Ahmad Razali Hakim","Laki-laki","24","Agisoft Metashape; ArcGIS; AutoCAD; Database Analysis; Exploration; Geological Modelling; Global Mapper; Microsoft Excel; Microsoft Office; Minescape; Pilot Drone; Surpac","12","3.6667","D4/S1","7","Teknik Pertambangan","2","70","Exploration Manager; Mine Plan Engineer","PT. Bangun Djaja; PT. Asta Rekayasa Unggul","1"
+"870","Raya Anggita Driandra","Perempuan","23","Microsoft word & excel","1","2","D4/S1","7","Pendidikan Ekonomi","1","17","Kasir","PT. Naoki Grup Sukabumi","1"
+"871","Saepuloh","Laki-laki","30","Gesit","1","3","SMA/SMK","3","Ips",,,,,
+"872","Selina Alasya Septiani","Perempuan","25","Ibis Paint X; Microsoft Excel; Microsoft Word; Procreate","4","3","D4/S1","7","Fisika","1","29","Admin Analytical Development","PT. Promedraharjo Farmasi Industri","1"
+"873","Fahri Andrian","Laki-laki","23","Editing","1","3","SMA/SMK","3","Teknik Dan Bisnis Speda Motor","2","29","Packer; General Affair","PT Indo eksotik lestari; PT PILAR KREASI SENI","1"
+"874","BAGAS ALDIYANSAH","Laki-laki","26","Kerja sama tim, manejemen waktu, komunikasi dan adaptasi yg baik; Microsoft Excel, office, world","2","2.5","SMA/SMK","3","IPS","1","29","Barista","RESTORAN SEA FOOD","1"
+"875","Herdiawan Pahmi Damarapandi","Laki-laki","22","microsoft word","1","2","SMA/SMK","3","Farmasi",,,,,
+"876","Zahra Elsi Febriany","Perempuan","18","BISNIS DARING PEMASARAN","1","2","SMA/SMK","3","BISNIS DARING PEMASARAN",,,,,
+"877","M Jamaludin","Laki-laki","22","costumer service","1","2","SMA/SMK","3","Pemasaran","1","41","costumer service","Toserba selamat","1"
+"878","Janisa Auralia Rajabby","Perempuan","18","English Language; Japanese Language","2","3","SMA/SMK","3","IPA",,,,,
+"879","M AFSAL FAUZY","Laki-laki","21","mesin","1","3","SMA/SMK","3","TEKNIK SEPEDA MOTOR","1","29","helper","Steak21","1"
+"880","Irsyad khoiri","Laki-laki","23","Marketing","1","2","SMA/SMK","3","Bisnis Daring Pemasaran (bdp)","1","41","Promotor","Pt.accentuates","1"
+"881","Andikha Dwisakti Priatna","Laki-laki","25","Bahasa Inggris; Microsoft Excel","2","2.5","D4/S1","7","Bahasa dan Sastra Inggris",,,,,
+"882","Stevanus Silent Saputra","Laki-laki","24","Komunikasi & Negosiasi Brand; Management Campaign; Management KOL & Influencer; Ms. Offcie; Penyusunan Brief & Script Creative","5","3","D4/S1","7","Ekonomi Pembangunan","1","17","KOL Spesialist","PT Kreasi Asli Nusantara","1"
+"883","Andhika Rizqi darmawan","Laki-laki","18","Autocad & sketchup","1","3","SMA/SMK","3",,"1","17","Darfter","PKL DI PT SIBAMBO STUDIO KARYA INTERNASIOANAL","1"
+"884","M Alvi Muhadin","Laki-laki","22","Instalasi Tenaga Listrik; Microsoft Office","2","2.5","SMA/SMK","3","Teknik Instalasi Tenaga Listrik",,,,,
+"885","MUHAMMAD DIMAS FAJAR SETIAJI","Laki-laki","25","Microsoft office; pengelasan","2","2.5","SMA/SMK","3","teknik pengelasan","1","53","operator produksi","PT MEKAR ARMADA JAYA","1"
+"886","Muhamad Solehudin","Laki-laki","31","Microsoft office","1","3","D4/S1","7","Pendidikan Ekonomi","1","161","Visual merchandise","Matahari department store","1"
+"887","Indrawan saputra","Laki-laki","18","mekanik kendaraan","1","2","SMA/SMK","3","ipa",,,,,
+"888","Nabila Ramadhani Nuriyansah","Perempuan","17","publik speaking","1","2","SMA/SMK","3","TEKNIK KOMPUTER DAN JARINGAN",,,,,
+"889","Rengga Tri Nugraha","Laki-laki","25","Microsoft Word","1","1","SMA/SMK","3","Teknik Pemesinan","1","29","Anggota Kelompok Penyelenggara Pemungutan Suara","Komisi Pemilihan Umum","1"
+"890","Widi Astriyani","Perempuan","25","Administrasi dasarMicrosoft Office (Word, Excel) & Editing video dasar","1","2","D4/S1","7","Pendidikan Ekonomi","1","65","Helper","Pt. Kino Indonesia","1"
+"891","FILDA AULIA","Perempuan","20","kerjasama tim, komunikasi dasar, digital marketing, pengolahan dan penginputan data, manajemen waktu, microsoft excel, microsof tword","1","3","SMA/SMK","3","perbankan","1","29","customer service, crew outlet","pegadaian syariah kebon jati, pt poci kreasi mandiri","1"
+"892","Siti Yulianti Nabilah","Perempuan","19","bisa mengoperasikan Ms. word","1","1","SMA/SMK","3","Paket 1 (IPA)","1","17","Operator produksi","PT. Cosmo Technology Indonesia","1"
+"893","M Amli Mustika","Laki-laki","25","Komunikasi dan negosiasi","1","3","SMA/SMK","3","Agribisnis Pengolahan Hasil Pertanian","1","89","Pramuniaga","Pt indomarco prismatama","1"
+"894","Aby prayogi","Laki-laki","27","Service ringan motor","1","2","SMA/SMK","3","Ips","1","29","Kurir","Jnt express","1"
+"895","Adila jelita anjasari putri","Perempuan","18","public speaking","1","3","SMA/SMK","3","IPA",,,,,
+"896","ANAS NASWARI","Laki-laki","21","marketing","1","2","SMA/SMK","3","ILMU PENGETAHUAN SOSIAL (IPS)",,,,,
+"897","muhammad anis widia mulyana","Laki-laki","25","Membuat roti","1","2","SMA/SMK","3","Tata boga",,,,,
+"898","Siti zahra raiva putri","Perempuan","20","microsoft exsel, microsoft word","1","2","SMA/SMK","3","IPA","1","29","Kru toko","Menjaga warung/toko","1"
+"899","MUHAMMAD RAFLY ATTALA NAPAL","Laki-laki","27","MS EXCEL/word","1","2","SMA/SMK","3","IPS","1","101","Pramuniaga","Matahari departemen store","1"
+"900","HAFIDH ADI HUWAIDY","Laki-laki","28","Listrik Instalasi; Program Komputer","2","3","SMA/SMK","3","IPA","1","53","Operator Produksi","PT. Inti Plastik Aneka Karet","1"
+"901","Sinta maulani","Perempuan","27","kasir & keamanan security","1","3","SMA/SMK","3","IPS","1","29","staff admin & security","klinik Airin","1"
+"902","Dirga Marin Ramadhan","Laki-laki","22","Bahasa python; Microsoft Office","2","3","D4/S1","7","Teknik Informatika","1","41","QA Manual Testing","Mangcoding","1"
+"903","Mochamad Yusup Ardiansyah","Laki-laki","23","OPERATOR MESIN JAHIT SEWING; TEKNIK LAS SMAW","2","2.5","SMA/SMK","3","TEKNIK KOMPUTER JARINGAN","1","53","KURIR","PT.KOMPAS GRAMEDIA EXPPRES","1"
+"904","Hadad alwi","Laki-laki","20","Program PKL","1","4","SMA/SMK","3","Otomotif",,,,,
+"905","Mizan Fadillah Al Anshaari","Laki-laki","21","Pelayanan kepada customer","1","3","SMA/SMK","3","Usaha perjalanan wisata",,,,,
+"906","Sendy Dwi depayanti","Perempuan","22","Memasak ,menjahit","1","3","SMA/SMK","3","Tata busana","1","41","Time toping","Pizza nyantuy makasar","1"
+"907","Filah hisa Pebrian","Laki-laki","21","Program pkl","1","4","SMA/SMK","3","BDP (bisnis daring dan pemasaran",,,,,
+"908","Rangga Agustian","Laki-laki","21","Bahasa Inggris","1","4","SMA/SMK","3","IPS","1","29","Crew Store","PT Setya Kuliner Mandiri","1"
+"909","Ema Maemunah","Perempuan","40","Keyuce","1","2","SMA/SMK","3","Ips","1","233","Kariawan","Lonping","1"
+"910","Taufik Bima Maulana","Laki-laki","23","IT Support","1","3","D4/S1","7","Teknik Informatika","1","29","IT Support","PT Mersifarma TM","1"
+"911","Alfi Khoerunnisa","Perempuan","22","Microsoft Excel, Autocad","1","1","D4/S1","7","Teknik Sipil","1","29","Quantity Surveyor","PT Nindya Karya","1"
+"912","Abdullah","Laki-laki","25","Housekeeping","1","3","SMA/SMK","3","Tata dan kelola perkantoran","1","41","Housekeeping","Bumi mandiri center","1"
+"913","Aditya d maulana","Laki-laki","24","Microsoft","1","1","SMA/SMK","3","Akuntansi",,,,,
+"914","M PAHRA PRAYOGA","Laki-laki","19","Untuk pekerjaan produksi: Memahami proses produksi, menjaga kualitas hasil kerja, bekerja dengan teliti dan cermat","1","3","SMA/SMK","3","ILMU PENGETAHUAN SOSIAL","1","17","KARYAWAN","PT KINO MARIO JAYA PLASTIK","1"
+"915","Bachtiar Rivai","Laki-laki","28","Microsoft","1","1","SMA/SMK","3","Ips","1","53","Crew Restaurant","PT.FAST FOOD INDONESIA TBK","1"
+"916","Alia Rizki Saharani","Perempuan","19","Microsoft word","1","1","SD","1","IPA","1","5","Store Crew","Cahaya Baru","1"
+"917","Muhammad fasha maulana","Laki-laki","20","Menghitung","1","3","SMA/SMK","3","PERIKANAN","1","17","Crew outlet","PT Setya kuliner mandiri(lazatto)","1"
+"918","Ujang Usep Saepul Mujib","Laki-laki","34","Cost Estimation; Microsoft Office; Negosiasi; Team Leader; Team Work; Time Management","6","3.5","D4/S1","7","Hukum","1","89","Group Head","PT BRI Multifinance Indonesia","1"
+"919","Syifa Nur Fitria","Perempuan","24","Microsoft Excel; Microsoft Word","2","2.5","D4/S1","7","Sistem Informasi",,,,,
+"920","Rozan Vina Rahmani","Perempuan","24","Microsoft Office Word, Microsoft Excel, Canva, Power Point","1","3","S2","8","Manajemen","1","17","Partnership Account Officer / Marketing Pembiayaan Modal Usaha bagi pelaku UMKM","PT Federal International Finance","1"
+"921","SHAQIRA LIVIA RESMANDA","Perempuan","27","Microsoft excel, Microsoft word","1","3","D4/S1","7","ILMU HUKUM","1","41","ADMIN UNDERWRITTING","PT. ASTRA SEDAYA FINANCE BANDUNG","1"
+"922","siti zahra aprilia","Perempuan","20","microsoft excel","1","4","SMA/SMK","3","ipa","1","17","crew store","pt.indomarco pristama tbk","1"
+"923","Azfar Ramadan","Laki-laki","19","memperbaiki mesin mobil","1","2","SMA/SMK","3","teknik kendaraan ringan",,,,,
+"924","Irfan fauzi","Laki-laki","20","Multi talenta","1","2","SMA/SMK","3","Ips","1","17","Staff produksi","PT industri nusantara","1"
+"925","Restu ashar maulna","Laki-laki","20","produksi","1","2","SMA/SMK","3","Ips","1","29","Stap produksi","PT industri bisnis nusantara","1"
+"926","MUHAMMAD FEBRYAN","Laki-laki","24","AI Automation; Analisis Data; Microsoft Excel; Visualisasi Data","4","4","D4/S1","7","Sains Data","4","17","Operation Excellence Intern; Business Analyst Intern; Chief Technology Officer; Data Scientist Intern","PT Dash Platform Indonesia; PT Studio Lima Arkon; MaggoCycle; PT Bisa Artifisial Indonesia","1"
+"927","Andika Ilham","Laki-laki","32","mengoperasikan mesin","1","2","SMA/SMK","3","teknik otomotif","1","173","operator produksi","pt.samick indonesia","1"
+"928","PARHAN SEPTINA","Laki-laki","23","Microsoft word","1","2","D4/S1","7","Pendidikan ekonomi","1","17","Clening servis","Badan gizi nasional","1"
+"929","Evi Adista dewi","Perempuan","24","Microsoft","1","2","SMA/SMK","3","Teknik komputer dan jaringan","1","65","Oprator","PT Pratama abadi indrustri","1"
+"930","Ni Ayu Komang Diah Puji Astini","Perempuan","25","Microsoft Excel, Micrisoft word, pemahaman manajemen","1","2","D4/S1","7","Manajemen",,,,,
+"931","Aditia ramadhan","Laki-laki","19","Memahami sedikit microsoft excel,bisa mengoperasikan komputer,","1","2","SMA/SMK","3","Agribisnis pengolahan hasil pertanian","1","29","Filing produksi","Cv indokopi makmur sentosa","1"
+"932","mochamad ilham rismawan","Laki-laki","18","Otomotif","1","3","SMA/SMK","3","Ilmu Pengetahuan Sosial",,,,,
+"933","MOCH RAFLI MAHARDIKA","Laki-laki","19","-","1","2","SMA/SMK","3","IPA",,,,,
+"934","Haikal pais","Laki-laki","20","Desain grafis (Canva & Fhotoshop) fotografi & Videografi, Komputer","1","4","SMA/SMK","3","Multimedia",,,,,
+"935","Muhamad Arya Gumelar","Laki-laki","24","Microsoft Excel","1","3","D4/S1","7","Pendidikan Agama Islam","1","29","Barista","Kedai Sebastien","1"
+"936","Ade Maulana S","Laki-laki","27","Microsoft Excel, word, powerpoint","1","4","D4/S1","7","Manajemen","1","41","Credit Marketing Officer","PT Adira Dinamika Multifinance","1"
+"937","Rio Alfian","Laki-laki","25","Bahasa inggris; Bahasa jepang; Microsoft Excel; Microsoft word; Vidio editing","5","2.6","SMA/SMK","3","Multimedia","2","130","Data entry/ Vidio editor; Pelayan/ cook","Freelance; Restoran","1"
+"938","Shadam alfadillah","Laki-laki","23","OPERATOR","1","2","SMA/SMK","3","TEKNIK KENDARAAN RINGAN","1","29","CREW","PT ALFARIA TRIJAYA TBK","1"
+"939","Dafa Walid Abdillah","Laki-laki","20","Bisnis Pemasaran","1","2","SMA/SMK","3","IPS","1","17","Salles","Pt Mandala Finance","1"
+"940","fauzi lukman aziz taufik kurachman","Laki-laki","36","Microsof office","1","3","D4/S1","7","TEKNIK INFORMATIKA","1","17","DIRECT SALES & SPONSOR EVENT","PT. SARANA MEDIA SELULAR","1"
+"941","Wahyu Dwi Septiana","Laki-laki","27","Driving; Marketing; Networking; Programmer; Public speaking","5","2.4","D4/S1","7","Sistem informasi","1","89","Distributor Network Marketing","PT Singa Langit Jaya (Tiens)","1"
+"942","Muhamad Rafly","Laki-laki","24","Microsoft Word, Excel, Bahasa Arab","1","3","D4/S1","7","Pendidikan Bahasa Arab","1","29","Operator Dapodik","SMA AL ASHRIYYAH NURUL IMAN","1"
+"943","Rio amadeo pratama","Laki-laki","25","mengoperasikan mesin","1","3","D4/S1","7","PJKR","1","77","Staff","Dinas Pendidikan Kota Sukabumi","1"
+"944","MUH.IHSAN AYYUL HIZBA","Laki-laki","27","Administrasi publik","2","2","D4/S1","7","Ilmu administrasi publik","1","17","Pendamping Koperasi","Dinas koperasi dan usaha kecil provinsi Jawa Barat","1"
+"945","Denis Andika","Laki-laki","20","Microsoft Word; Networking","2","2.5","SMA/SMK","3","Teknik Jaringan Komputer dan Telekomunikasi","1","29","Staff Teknisi","GLOBE NETWORK","1"
+"946","Adam Fahreza Oktava","Laki-laki","23","Mekanik; Problem solving","2","3","D4/S1","7","Teknik Mesin",,,,,
+"947","Reva Ferantika Patimah","Perempuan","32","microsof","1","3","D4/S1","7","ilmu pemerintahan","1","149","back relation","bpjs kesehatan","1"
+"948","Angger Praba Fatah","Laki-laki","23","Inventor Autodesk; Microsoft Excel; Microsoft Power Point; Microsoft Word; Minitab analisis; Solidworks","6","3.5","D4/S1","7","Teknik Mesin",,,,,
+"949","WALID MUHAMAD AL FAJRI","Laki-laki","24","Otomotif","1","3","SMA/SMK","3","Otomotif","1","41","Karyawan","Pt saga produksi pembuatan per mobil","1"
+"950","Yusup Hidayatullah","Laki-laki","22","Administrasi","1","3","SMA/SMK","3","Ilmu pengetahuan Sosial","1","41","staff","Oxo Warehouse","1"
+"951","Suci Rahmawati","Perempuan","18","Manajemen Dokumen","1","2","SMA/SMK","3","MIPA",,,,,
+"952","Ikhsan Rakhmat Harahap","Laki-laki","25","Microsoft Office","1","2","D4/S1","7","Agronomi dan Hortikultura",,,,,
+"953","Mohammad rifki lazuardi","Laki-laki","30","Microsoft excel","1","2","SMA/SMK","3","Akutansi","1","77","Staff","PT. ADIRA DINAMIKA MULTI FINANCE SUKABUMI","1"
+"954","rendi arianto","Laki-laki","33","merawat mesin","1","2","SMA/SMK","3","otomotif","1","101","OB","PT. MNC LIFE ASSURANCE","1"
+"955","UPAY SUTISNA","Laki-laki","24","Cisco Packet Tracer; Microsoft Excel; Mikrotik; Winbox","4","3","D4/S1","7","Teknologi Informasi","5","157","Staff HR; Staff Admin; Staff IT; FOC","PT Artha Kreasi Utama; Warehouse Lazada Logistic; PT Exatra Enjinering; PT Indonesia Comnets Plus; Homeschooling","1"
+"956","Dwi Rizky Novianto","Laki-laki","26","Microsoft word,exel","1","2","D4/S1","7","Ilmu Administrasi Negara","1","89","Delivery","Pizza Hut Delivery","1"
+"957","Muhammad Awaludin Fatansyah","Laki-laki","29","Microsoft Office","1","3","D4/S1","7","Manajemen Keuangan",,,,,
+"958","Karawina Sarah Ambarwati","Perempuan","33","Adobe Illustrator; Adobe Photoshop; Bahasa Inggris; Clip Studio Paint; Corel Draw; Desain Grafis; Ilustrasi; Medibang Paint; Microsoft Excel; Microsoft PowerPoint; Microsoft Word","11","3","D4/S1","7","Desain Komunikasi Visual","3","214","Tutor Privat Seni (Freelance); Junior Desainer Grafis; Asisten Desainer Konsep","-; Elefan Design; Digital Happiness","1"
+"959","M RAIHAN","Laki-laki","21","Pelayanan","1","4","SMA/SMK","3","IPA","1","41","CREW","PT.ALFARIA TRIJAYA T.BK","1"
+"960","Yodika Putra","Laki-laki","21","bekerja sama dalam tim","1","3","SMA/SMK","3","IPS","1","17","Staff Inbound","PT ASTRO","1"
+"961","Baden ismatulloh","Laki-laki","28","Konten kreator; Microsoft office","2","2","D4/S1","7","Agribisnis","1","41","Gardener","PT Angkasapura supports","1"
+"962","Rehan ramadhan Prasetiyo","Laki-laki","17","Penjualan dan pemasaran","1","3","SMA/SMK","3","Ipa",,,,,
+"963","Dasep Burhanudin","Laki-laki","32","Coreldraw, MS. Word, PDF.","1","3","D4/S1","7","Studi Agama-Agama","1","29","Staff Gudang, Staff Admin.","PERCETAKAN BUKU BANDUNG-IRN Designer- Home Industries","1"
+"964","Karadhira Thalia Ghassani","Perempuan","23","Kerja Lapangan, Mengolah Data, Laboratorium, Microsoft Excel, Microsoft Word, Ketelitian, Kerja dalam kelompok, & Komunikasi","1","4","D4/S1","7","Biologi","1","29","Staff Magang","SEAMEO BIOTROP","1"
+"965","Pernanda Erika","Perempuan","20","Digital Marketing; Microsoft Word","2","3","SMA/SMK","3","IPA","1","5","Admin Marketing","adsventure","1"
+"966","Yudi Andriani","Laki-laki","31","Operator produksi; Serabutan","3","1.3333","SMA/SMK","3","Ips","1","101","Serabitan","Serabutan","1"
+"967","Darin Putri","Perempuan","24","Microsoft Office","1","4","D3","6","TEKNIK SIPIL","3","41","Admin; Staff Kasir","Kanawa Express; The Bellas; Dinopark","1"
+"968","Ijar","Laki-laki","18","Microsoft Excel/Ms word/wifi/administrasi","1","2","SMA/SMK","3","Teknik komputer dan jaringan","1","17","Crew","Green garden biliard pool and cafe","1"
+"969","ARI ZAILANI","Laki-laki","19","Kelistrikan/sales/","1","3","SMA/SMK","3","TITL",,,,,
+"970","Chandra Septiawan","Laki-laki","21","Microsoft exel","1","2","SMA/SMK","3","Ips","1","29","Operator produksi QC","PT Porto Food Indonesia","1"
+"971","Fikri Faisal Hibatullah","Laki-laki","24","Analisis Data & Machine Learning; Hospitality, Kerja sama tim; IT Support dan Infrastruktur; Microsoft Office (excel, word, powerpoint)","4","3.5","D4/S1","7","Sistem Informasi",,,,,
+"972","Muhammad Fauzi","Laki-laki","27","MEKANIK; TEKNIK KENDARAAN RINGAN; TEKNIK SPEDAH MOTOR KONVENSIONAL; WELDER / PENGELASAN","4","3.75","SMA/SMK","3","TEKNIK OTOMOTIF","1","41","ASISTEN WELDER","PT.INDOBARA BAHANA","1"
+"973","AWAN DENPRATAMA","Laki-laki","18","desain canva, fotografi dasar, sablon kaos, tipografi","1","2","SMA/SMK","3","Desain komunikasi visual","1","17","ADMINISTRASI","POLSEK KADUDAMPIT","1"
+"974","Muhammad Alpariji","Laki-laki","22","Menguasai' komputer","1","2","SMA/SMK","3","Ips",,,,,
+"975","Abdul Wahab","Laki-laki","21","Bekerja sama dengan tim","1","2","SMA/SMK","3","Ips",,,,,
+"976","Muhamad alfan","Laki-laki","18","Bekerja sama dengan tim","1","2","SMA/SMK","3","Ips",,,,,
+"977","ANGGA RUSLIYANDI","Laki-laki","27","Microsoft Excel/ Microsoft word/power point","1","3","SMA/SMK","3","teknik speda motor","1","65","operator timbangan","PT GENERASI MUDA BERSATU","1"
+"978","abdul rohman","Laki-laki","39","bahasa inggris","1","3","SMA/SMK","3","Food and Beverage Service","1","209","waiter fine dinning","holland america line","1"
+"979","Galang Hardian","Laki-laki","18","komunikasi yang baik","1","3","SMP","2","IPS",,,,,

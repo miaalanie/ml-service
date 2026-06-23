@@ -3,41 +3,42 @@ from typing import List, Optional
 
 
 # SKILL — sesuai tabel pelamarskills
-# field: namaskill, keterangan (enum)
 class SkillSchema(BaseModel):
     namaskill: str
     keterangan: str  # 'Kurang' | 'Cukup' | 'Baik' | 'Sangat Baik'
 
 
 # PENDIDIKAN — sesuai tabel pelamarpendidikans
-# field: kategori, jurusan, tahunawal, tahunselesai
 class PendidikanSchema(BaseModel):
-    kategori: str           # 'SMA/SMK' | 'D3' | 'D4/S1' | 'S2' dst
+    kategori: str
     jurusan: Optional[str] = None
     tahunawal: Optional[int] = None
     tahunselesai: Optional[int] = None
 
 
 # PENGALAMAN — sesuai tabel pelamarpengalamen
-# field: posisi, tahunawal, tahunselesai, aktif
-# TIDAK ada field deskripsi → matching hanya dari posisi
+# bulanawal & bulanselesai ditambah sesuai ALTER TABLE
 class PengalamanSchema(BaseModel):
     posisi: str
+    bulanawal: int = 0      # 0 = tidak diketahui
     tahunawal: int
+    bulanselesai: int = 0   # 0 = tidak diketahui
     tahunselesai: Optional[int] = None
     aktif: int = 0          # 1 = masih bekerja
 
 
 # PELAMAR — sesuai tabel pelamars + relasi
+# total_pengalaman_bulan dihitung di Laravel (MLMatchingService)
 class PelamarSchema(BaseModel):
     id: int
     namalengkap: str
-    deskripsidiri: Optional[str] = None   # sering kosong di data real
-    tanggallahir: Optional[str] = None    
+    deskripsidiri: Optional[str] = None
+    tanggallahir: Optional[str] = None
     jeniskelamin: Optional[str] = None
     skills: List[SkillSchema] = []
     pendidikans: List[PendidikanSchema] = []
     pengalamans: List[PengalamanSchema] = []
+    total_pengalaman_bulan: int = 0
 
 
 # KATEGORI LOKER — sesuai tabel kategorilowongans
@@ -46,30 +47,57 @@ class KategoriSchema(BaseModel):
     nama: str
 
 
-# LOWONGAN — sesuai tabel lowongans
-# Hanya loker dari event yang sedang aktif yang dikirim
-# Filter dilakukan di Laravel sebelum kirim ke ML service
+# MINIMAL PENDIDIKAN — dari kolom minimal_pendidikan (TINYINT)
+# kode: 1=SD, 2=SMP, 3=SMA/SMK, 4=D1, 5=D2, 6=D3, 7=D4/S1, 8=S2, 9=S3
+class MinimalPendidikanSchema(BaseModel):
+    kode: int
+    nama: str
+
+
+# SKILL LOWONGAN — dari tabel lowonganskills → masterskills
+class LowonganSkillSchema(BaseModel):
+    id: int
+    nama: str
+
+
+# JURUSAN LOWONGAN — dari tabel lowonganjurusans → masterjurusans
+class LowonganJurusanSchema(BaseModel):
+    id: int
+    nama: str
+
+
+# LOWONGAN — sesuai tabel lowongans + kolom tambahan
 class LowonganSchema(BaseModel):
     id: int
     namalowongan: str
-    deskripsi: str          # HTML dari rich text editor
+    deskripsi: str
     kategori: KategoriSchema
     kategorilokasi: Optional[str] = None
     gaji_awal: Optional[float] = None
     gaji_akhir: Optional[float] = None
+
+    # Kolom tambahan dari ALTER TABLE
+    minimal_pendidikan: Optional[MinimalPendidikanSchema] = None
+    minimal_pengalaman_bulan: int = 0
+    preferensi_gender: str = 'Semua'    # 'Semua' | 'Laki-laki' | 'Perempuan'
+    usia_min: int = 0
+    usia_max: int = 0
+
+    # Relasi skills & jurusans yang diharapkan loker
+    skills: List[LowonganSkillSchema] = []
+    jurusans: List[LowonganJurusanSchema] = []
+
     perusahaan_nama: Optional[str] = None
     perusahaan_logo: Optional[str] = None
 
 
-# PAYLOAD REQUEST
-# Laravel mengirim:
-#   - data pelamar lengkap (skills, edu, exp)
-#   - list loker aktif dari event yang sedang berjalan
+# PAYLOAD /match
 class MatchRequestSchema(BaseModel):
     pelamar: PelamarSchema
     lowongans: List[LowonganSchema]
 
-# SCHEMA UNTUK RANKING PELAMAR PER LOWONGAN
+
+# PAYLOAD /rank-applicants
 class RankApplicantsRequestSchema(BaseModel):
-    lowongan: LowonganSchema          # 1 loker yang sedang dibuka
-    pelamars: List[PelamarSchema]     # list semua pelamar yang apply
+    lowongan: LowonganSchema
+    pelamars: List[PelamarSchema]

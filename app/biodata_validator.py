@@ -1,27 +1,24 @@
 from datetime import date, datetime
+from .preprocess import TextPreprocessor
 
-# HELPER
+
 def _hitung_usia(tanggallahir) -> int | None:
     if tanggallahir is None:
         return None
-
     if isinstance(tanggallahir, str):
         try:
             tanggallahir = datetime.strptime(
-                tanggallahir[:10], '%Y-%m-%d'
+                str(tanggallahir)[:10], '%Y-%m-%d'
             ).date()
         except ValueError:
             return None
-
     today = date.today()
-    usia = today.year - tanggallahir.year - (
+    return today.year - tanggallahir.year - (
         (today.month, today.day) < (tanggallahir.month, tanggallahir.day)
     )
-    return usia
 
 
 def _normalize_gender(raw: str) -> str | None:
-    #Normalize gender string dari DB.
     if not raw:
         return None
     r = str(raw).strip().lower()
@@ -32,39 +29,38 @@ def _normalize_gender(raw: str) -> str | None:
     return None
 
 
-def _edu_level_from_str(kategori: str) -> int:
-    # Mirror dari scoring.py — jangan ubah logikanya.
-    k = str(kategori).upper().strip()
-    if 'S3'  in k: return 10
-    if 'S2'  in k: return 8
-    if 'S1'  in k: return 6
-    if 'D4'  in k: return 6
-    if 'D3'  in k: return 5
-    if 'D2'  in k: return 4
-    if 'D1'  in k: return 4
-    if 'SMK' in k: return 3
-    if 'SMA' in k: return 3
-    if 'SMP' in k: return 2
-    if 'SD'  in k: return 1
-    return 0
+# Keyword bahasa yang dicek dari nama skill loker & skill pelamar
+_LANG_KEYWORDS = {
+    'Mandarin': ['mandarin', 'tiongkok', 'chinese'],
+    'Inggris':  ['inggris', 'english'],
+}
 
 
-# BIODATA VALIDATOR
 class BiodataValidator:
-    # Validasi biodata pelamar terhadap hard requirements loker.
-    # Output dipakai ReasoningService untuk reasoning kontekstual.
+
     def validate(
         self,
         pelamar_biodata: dict,
-        hard_requirements: dict,
+        lowongan,
         pelamar_edu_kategori: str = None,
-        total_exp_years: float = 0,
+        total_pengalaman_bulan: int = 0,
         pelamar_skills_raw: list = None,
     ) -> dict:
-        req = hard_requirements
         result = {}
 
+        # Ambil syarat dari object lowongan langsung
+        req_gender    = None if lowongan.preferensi_gender == 'Semua' \
+                        else lowongan.preferensi_gender
+        min_usia      = lowongan.usia_min if lowongan.usia_min and lowongan.usia_min > 0 else None
+        max_usia      = lowongan.usia_max if lowongan.usia_max and lowongan.usia_max > 0 else None
+        min_edu_kode  = lowongan.minimal_pendidikan.kode \
+                        if lowongan.minimal_pendidikan else 0
+        min_edu_req   = TextPreprocessor.get_pendidikan_level_from_kode(min_edu_kode)
+        min_exp_bulan = lowongan.minimal_pengalaman_bulan or 0
+
+        # --------------------------------------------------------
         # 1. USIA
+        # --------------------------------------------------------
         usia = _hitung_usia(pelamar_biodata.get('tanggallahir'))
         result['usia'] = usia
 
@@ -72,45 +68,41 @@ class BiodataValidator:
             result['usia_match'] = None
             result['usia_note']  = 'Data tanggal lahir tidak tersedia'
 
-        elif req.get('min_usia') is None and req.get('max_usia') is None:
+        elif min_usia is None and max_usia is None:
             result['usia_match'] = None
             result['usia_note']  = 'Loker tidak mencantumkan syarat usia'
 
         else:
-            min_u = req.get('min_usia')
-            max_u = req.get('max_usia')
-
-            too_young = min_u is not None and usia < min_u
-            too_old   = max_u is not None and usia > max_u
+            too_young = min_usia is not None and usia < min_usia
+            too_old   = max_usia is not None and usia > max_usia
 
             if too_young:
                 result['usia_match'] = False
                 result['usia_note']  = (
                     f'Usia pelamar {usia} tahun di bawah batas minimum '
-                    f'{min_u} tahun yang disyaratkan loker'
+                    f'{min_usia} tahun yang disyaratkan loker'
                 )
             elif too_old:
                 result['usia_match'] = False
                 result['usia_note']  = (
                     f'Usia pelamar {usia} tahun melebihi batas maksimal '
-                    f'{max_u} tahun yang disyaratkan loker'
+                    f'{max_usia} tahun yang disyaratkan loker'
                 )
             else:
                 result['usia_match'] = True
-                usia_range = ''
-                if min_u and max_u:
-                    usia_range = f' (syarat: {min_u}–{max_u} tahun)'
-                elif max_u:
-                    usia_range = f' (syarat: maksimal {max_u} tahun)'
-                elif min_u:
-                    usia_range = f' (syarat: minimal {min_u} tahun)'
+                if min_usia and max_usia:
+                    range_str = f' (syarat: {min_usia}–{max_usia} tahun)'
+                elif max_usia:
+                    range_str = f' (syarat: maksimal {max_usia} tahun)'
+                else:
+                    range_str = f' (syarat: minimal {min_usia} tahun)'
                 result['usia_note'] = (
-                    f'Usia pelamar {usia} tahun memenuhi syarat usia loker'
-                    f'{usia_range}'
+                    f'Usia pelamar {usia} tahun memenuhi syarat usia loker{range_str}'
                 )
 
+        # --------------------------------------------------------
         # 2. GENDER
-        req_gender     = req.get('gender')
+        # --------------------------------------------------------
         pelamar_gender = _normalize_gender(
             pelamar_biodata.get('jeniskelamin', '')
         )
@@ -136,8 +128,13 @@ class BiodataValidator:
                 f'pelamar berjenis kelamin {pelamar_gender}'
             )
 
-        # 3. PENDIDIKAN — cek gap terhadap minimum
-        min_edu_req = req.get('min_edu', 0)
+        # --------------------------------------------------------
+        # 3. PENDIDIKAN
+        # --------------------------------------------------------
+        EDU_LABEL_MAP = {
+            9: 'S3', 8: 'S2', 7: 'D4/S1', 6: 'D3',
+            5: 'D2', 4: 'D1', 3: 'SMA/SMK', 2: 'SMP', 1: 'SD'
+        }
 
         if min_edu_req == 0:
             result['edu_gap']  = False
@@ -148,93 +145,81 @@ class BiodataValidator:
             result['edu_note'] = 'Data pendidikan pelamar tidak tersedia'
 
         else:
-            pelamar_edu_level = _edu_level_from_str(pelamar_edu_kategori)
-            edu_label_map = {
-                10: 'S3', 8: 'S2', 6: 'S1/D4', 5: 'D3',
-                4: 'D1/D2', 3: 'SMA/SMK', 2: 'SMP', 1: 'SD', 0: '-'
-            }
-            req_label     = edu_label_map.get(min_edu_req, str(min_edu_req))
-            pelamar_label = pelamar_edu_kategori
+            pelamar_edu_level = TextPreprocessor.get_pendidikan_level(
+                pelamar_edu_kategori
+            )
+            req_label = EDU_LABEL_MAP.get(min_edu_req, str(min_edu_req))
 
             if pelamar_edu_level >= min_edu_req:
                 result['edu_gap']  = False
                 result['edu_note'] = (
-                    f'Pendidikan pelamar ({pelamar_label}) memenuhi '
+                    f'Pendidikan pelamar ({pelamar_edu_kategori}) memenuhi '
                     f'syarat minimum loker ({req_label})'
                 )
             else:
                 result['edu_gap']  = True
                 result['edu_note'] = (
-                    f'Pendidikan pelamar ({pelamar_label}) di bawah '
+                    f'Pendidikan pelamar ({pelamar_edu_kategori}) di bawah '
                     f'syarat minimum loker ({req_label})'
                 )
 
-        # 4. PENGALAMAN — cek gap terhadap minimum
-        min_exp_req = req.get('min_exp_years')
-
-        if min_exp_req is None:
-            result['exp_gap']  = False
-            result['exp_note'] = 'Loker tidak mencantumkan syarat pengalaman minimum'
-
-        elif min_exp_req == 0:
+        # --------------------------------------------------------
+        # 4. PENGALAMAN (dalam bulan)
+        # --------------------------------------------------------
+        if min_exp_bulan == 0:
             result['exp_gap']  = False
             result['exp_note'] = 'Loker terbuka untuk fresh graduate'
 
         else:
-            exp_years = float(total_exp_years or 0)
-
-            if exp_years >= min_exp_req:
+            if total_pengalaman_bulan >= min_exp_bulan:
                 result['exp_gap']  = False
                 result['exp_note'] = (
-                    f'Total pengalaman pelamar '
-                    f'({int(exp_years)} tahun) memenuhi '
-                    f'syarat minimum loker ({min_exp_req} tahun)'
+                    f'Total pengalaman pelamar ({total_pengalaman_bulan} bulan) '
+                    f'memenuhi syarat minimum loker ({min_exp_bulan} bulan)'
                 )
             else:
                 result['exp_gap']  = True
                 result['exp_note'] = (
-                    f'Total pengalaman pelamar '
-                    f'({int(exp_years)} tahun) kurang dari '
-                    f'syarat minimum loker ({min_exp_req} tahun)'
+                    f'Total pengalaman pelamar ({total_pengalaman_bulan} bulan) '
+                    f'kurang dari syarat minimum loker ({min_exp_bulan} bulan)'
                 )
 
-        # 5. BAHASA — cek yang wajib tapi tidak ada di profil
-        required_langs = req.get('required_langs', [])
+        # --------------------------------------------------------
+        # 5. BAHASA — deteksi dari nama skill loker vs skill pelamar
+        # --------------------------------------------------------
+        skill_loker_text   = ' '.join(
+            s.nama.lower() for s in (lowongan.skills or [])
+        )
+        skill_pelamar_text = ' '.join(
+            str(s).lower() for s in (pelamar_skills_raw or [])
+        )
 
-        if not required_langs:
-            result['lang_missing'] = []
-            result['lang_note']    = 'Loker tidak mencantumkan syarat bahasa khusus'
+        lang_found   = []
+        lang_missing = []
 
-        else:
-            # Gabungkan skills + deskripsi diri untuk cek bahasa
-            skills_text = ' '.join(
-                str(s).lower() for s in (pelamar_skills_raw or [])
+        for lang, keywords in _LANG_KEYWORDS.items():
+            loker_butuh = any(kw in skill_loker_text for kw in keywords)
+            if loker_butuh:
+                pelamar_punya = any(kw in skill_pelamar_text for kw in keywords)
+                if pelamar_punya:
+                    lang_found.append(lang)
+                else:
+                    lang_missing.append(lang)
+
+        result['lang_found']   = lang_found
+        result['lang_missing'] = lang_missing
+
+        if not lang_found and not lang_missing:
+            result['lang_note'] = 'Loker tidak mensyaratkan kemampuan bahasa khusus'
+        elif not lang_missing:
+            result['lang_note'] = (
+                f'Pelamar memiliki kemampuan bahasa yang dibutuhkan loker: '
+                f'{", ".join(lang_found)}'
             )
-
-            lang_keyword_map = {
-                'Mandarin' : ['mandarin', 'tiongkok', 'chinese', '中文'],
-                'Inggris'  : ['inggris', 'english'],
-                'Indonesia': ['indonesia'],
-            }
-
-            missing = []
-            for lang in required_langs:
-                keywords = lang_keyword_map.get(lang, [lang.lower()])
-                found = any(kw in skills_text for kw in keywords)
-                if not found:
-                    missing.append(lang)
-
-            result['lang_missing'] = missing
-
-            if not missing:
-                result['lang_note'] = (
-                    f'Pelamar memiliki kemampuan bahasa yang disyaratkan: '
-                    f'{", ".join(required_langs)}'
-                )
-            else:
-                result['lang_note'] = (
-                    f'Bahasa yang disyaratkan loker namun tidak ditemukan '
-                    f'di profil pelamar: {", ".join(missing)}'
-                )
+        else:
+            result['lang_note'] = (
+                f'Bahasa yang dibutuhkan loker namun tidak ditemukan '
+                f'di profil pelamar: {", ".join(lang_missing)}'
+            )
 
         return result

@@ -1,11 +1,11 @@
-# ranker.py
 from .preprocess import TextPreprocessor
 from .embedding import EmbeddingService
 from .scoring import ScoringService
 from .reasoning import ReasoningService
-from .description_parser import DescriptionParser
+
 
 class RankerService:
+
     def __init__(self):
         self.embedding_service = EmbeddingService()
 
@@ -15,20 +15,18 @@ class RankerService:
 
         if not pelamars:
             return {
-                'success': True,
-                'total': 0,
-                'lowongan_id': lowongan.id,
-                'namalowongan': lowongan.namalowongan,
+                'success':           True,
+                'total':             0,
+                'lowongan_id':       lowongan.id,
+                'namalowongan':      lowongan.namalowongan,
                 'ranked_applicants': []
             }
-        
-        # STEP 1 — ENCODE LOWONGAN (sekali, reuse untuk semua pelamar
-        lowongan_text = TextPreprocessor.build_lowongan_text(lowongan)
-        job_vec = self.embedding_service.encode(lowongan_text)
-        parsed_desc = ReasoningService.parse_lowongan(lowongan)
-        hard_req    = parsed_desc['hard_requirements']
 
-        # STEP 2 — ENCODE SEMUA PELAMAR (batch untuk efisiensi
+        # STEP 1 — BUILD & ENCODE LOKER (sekali, reuse semua pelamar)
+        lowongan_text = TextPreprocessor.build_lowongan_text(lowongan)
+        job_vec       = self.embedding_service.encode(lowongan_text)
+
+        # STEP 2 — ENCODE SEMUA PELAMAR (batch)
         pelamar_texts = [
             TextPreprocessor.build_pelamar_text(p)
             for p in pelamars
@@ -40,42 +38,49 @@ class RankerService:
         for i, pelamar in enumerate(pelamars):
             pelamar_vec = pelamar_vecs[i]
 
-            # STEP 3 — S1: SEMANTIC SCORE
+            # STEP 3 — BIODATA FLAGS (hard requirements langsung dari lowongan)
+            biodata_flags = ReasoningService.build_biodata_flags(
+                pelamar, lowongan
+            )
+
+            # STEP 4 — S1: SEMANTIC SCORE
             semantic = ScoringService.semantic_similarity(
                 pelamar_vec, job_vec
             )
 
-            # STEP 4 — S2: SKILL SCORE
+            # STEP 5 — S2: SKILL SCORE
             skill = ScoringService.skill_score(
                 pelamar.skills,
-                job_vec,
+                lowongan.skills,
                 self.embedding_service
             )
 
-            # STEP 5 — S3: EDUCATION SCORE
+            # STEP 6 — S3: EDUCATION SCORE
             edu = ScoringService.education_score(
                 pelamar.pendidikans,
+                lowongan,
                 job_vec,
                 self.embedding_service
             )
 
-            # STEP 6 — S4: EXPERIENCE SCORE
+            # STEP 7 — S4: EXPERIENCE SCORE
             exp = ScoringService.experience_score(
                 pelamar.pengalamans,
-                job_vec,
+                pelamar.total_pengalaman_bulan,
+                lowongan,
                 self.embedding_service
             )
 
-            # STEP 7 — FINAL WEIGHTED SCORE
-            # w = [0.50, 0.10, 0.15, 0.25] dari ablation study
+            # STEP 8 — FINAL SCORE
+            # w = [0.50, 0.10, 0.15, 0.25]
             final = ScoringService.final_score(semantic, skill, edu, exp)
 
-            # STEP 8 — CLASSIFY & LABEL
+            # STEP 9 — CLASSIFY & LABEL
             label      = ScoringService.classify(final)
             color      = ScoringService.determine_color(final)
             percentage = ScoringService.percentage(final)
 
-            # STEP 9 — EXPLAINABILITY
+            # STEP 10 — EXPLAINABILITY
             scores_dict = {
                 'semantic': semantic,
                 'skill':    skill,
@@ -83,17 +88,14 @@ class RankerService:
                 'exp':      exp,
             }
 
-            biodata_flags = ReasoningService.build_biodata_flags(pelamar, hard_req)
-
             tags = ReasoningService.generate_tags(
-                pelamar, job_vec, self.embedding_service, final,
-                parsed_desc=parsed_desc,
+                pelamar, lowongan, job_vec, self.embedding_service, final,
                 biodata_flags=biodata_flags
             )
 
             reasons = ReasoningService.generate_reasons(
-                pelamar, lowongan, job_vec, self.embedding_service, scores_dict,
-                parsed_desc=parsed_desc,
+                pelamar, lowongan, job_vec, self.embedding_service,
+                scores_dict,
                 biodata_flags=biodata_flags
             )
 
@@ -115,7 +117,8 @@ class RankerService:
                 'tags':    tags,
                 'reasons': reasons,
             })
-        # STEP 10 — SORT DESCENDING + ASSIGN RAN
+
+        # STEP 11 — SORT DESCENDING + ASSIGN RANK
         results.sort(key=lambda x: x['final_score'], reverse=True)
 
         for idx, r in enumerate(results):

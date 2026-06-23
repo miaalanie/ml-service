@@ -2,7 +2,7 @@ from .preprocess import TextPreprocessor
 from .embedding import EmbeddingService
 from .scoring import ScoringService
 from .reasoning import ReasoningService
-from .description_parser import DescriptionParser
+
 
 class MatcherService:
 
@@ -15,74 +15,76 @@ class MatcherService:
 
         if not lowongans:
             return {
-                'success': True,
-                'total': 0,
-                'pelamar_id': pelamar.id,
+                'success':         True,
+                'total':           0,
+                'pelamar_id':      pelamar.id,
                 'recommendations': []
             }
-     
-        # STEP 1 — BUILD TEKS PELAMAR Gabung skill + edu + exp menjadi 1 teks terstruktur
+
+        # STEP 1 — BUILD & ENCODE TEKS PELAMAR
         pelamar_text = TextPreprocessor.build_pelamar_text(pelamar)
+        pelamar_vec  = self.embedding_service.encode(pelamar_text)
 
-        # STEP 2 — ENCODE PELAMAR
-        pelamar_vec = self.embedding_service.encode(pelamar_text)
-
-        # STEP 3 — ENCODE SEMUA LOKER (batch untuk efisiensi) Encode semua sekaligus lebih efisien dari satu-satu
+        # STEP 2 — ENCODE SEMUA LOKER (batch)
         lowongan_texts = [
             TextPreprocessor.build_lowongan_text(lo)
             for lo in lowongans
         ]
-        lowongan_vecs = self.embedding_service.encode_batch(
-            lowongan_texts
-        )
+        lowongan_vecs = self.embedding_service.encode_batch(lowongan_texts)
 
         results = []
 
         for i, lowongan in enumerate(lowongans):
+            job_vec = lowongan_vecs[i]
 
-            job_vec       = lowongan_vecs[i]
-            parsed_desc   = ReasoningService.parse_lowongan(lowongan)
-            hard_req      = parsed_desc['hard_requirements']
-            biodata_flags = ReasoningService.build_biodata_flags(pelamar, hard_req)
+            # STEP 3 — BIODATA FLAGS (hard requirements langsung dari lowongan)
+            biodata_flags = ReasoningService.build_biodata_flags(
+                pelamar, lowongan
+            )
 
-            # STEP 4 — S1: SEMANTIC SCORE Cosine similarity profil pelamar vs lowongan secara holistik
+            # STEP 4 — S1: SEMANTIC SCORE
+            # Kemiripan umum teks profil pelamar vs teks loker
             semantic = ScoringService.semantic_similarity(
                 pelamar_vec, job_vec
             )
 
-            # STEP 5 — S2: SKILL SCORE Weighted proficiency + cosine match per skill
+            # STEP 5 — S2: SKILL SCORE
+            # Weighted match skill loker vs skill pelamar, threshold cosine >= 0.50
+            # Bobot: Kurang=0.25, Cukup=0.50, Baik=0.75, Sangat Baik=1.00
             skill = ScoringService.skill_score(
                 pelamar.skills,
-                job_vec,
+                lowongan.skills,
                 self.embedding_service
             )
 
-            # STEP 6 — S3: EDUCATION SCORE 35% ordinal level + 65% semantic jurusan
+            # STEP 6 — S3: EDUCATION SCORE
+            # (0.5 x level_score) + (0.5 x jurusan_score)
             edu = ScoringService.education_score(
                 pelamar.pendidikans,
+                lowongan,
                 job_vec,
                 self.embedding_service
             )
 
-            # STEP 7 — S4: EXPERIENCE SCORE relevance × duration_weight × recency_weight, ambil max
+            # STEP 7 — S4: EXPERIENCE SCORE
+            # (0.5 x posisi_score) + (0.5 x durasi_score)
             exp = ScoringService.experience_score(
                 pelamar.pengalamans,
-                job_vec,
+                pelamar.total_pengalaman_bulan,
+                lowongan,
                 self.embedding_service
             )
 
-            # STEP 8 — FINAL SCORE Weighted linear combination dari ablation study w = [0.50, 0.10, 0.15, 0.25]
-            final = ScoringService.final_score(
-                semantic, skill, edu, exp
-            )
+            # STEP 8 — FINAL SCORE
+            # w = [0.50, 0.10, 0.15, 0.25]
+            final = ScoringService.final_score(semantic, skill, edu, exp)
 
             # STEP 9 — CLASSIFY & LABEL
             label      = ScoringService.classify(final)
             color      = ScoringService.determine_color(final)
             percentage = ScoringService.percentage(final)
 
-         
-            # STEP 10 — EXPLAINABILITY Tags dan reasons untuk ditampilkan ke user
+            # STEP 10 — EXPLAINABILITY
             scores_dict = {
                 'semantic': semantic,
                 'skill':    skill,
@@ -91,14 +93,13 @@ class MatcherService:
             }
 
             tags = ReasoningService.generate_tags_rekomendasi(
-                pelamar, job_vec, self.embedding_service,
-                parsed_desc=parsed_desc,
+                pelamar, lowongan, job_vec, self.embedding_service,
                 biodata_flags=biodata_flags
             )
-            
+
             reasons = ReasoningService.generate_reasons(
-                pelamar, lowongan, job_vec, self.embedding_service, scores_dict,
-                parsed_desc=parsed_desc,
+                pelamar, lowongan, job_vec, self.embedding_service,
+                scores_dict,
                 biodata_flags=biodata_flags
             )
 
@@ -127,12 +128,8 @@ class MatcherService:
                 'reasons': reasons,
             })
 
-     
-        # STEP 11 — RANKING Urutkan berdasarkan final_score descending
-        results.sort(
-            key=lambda x: x['final_score'],
-            reverse=True
-        )
+        # STEP 11 — RANKING descending
+        results.sort(key=lambda x: x['final_score'], reverse=True)
 
         return {
             'success':         True,

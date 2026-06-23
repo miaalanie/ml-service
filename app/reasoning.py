@@ -1,76 +1,80 @@
 from datetime import date, datetime
 from sklearn.metrics.pairwise import cosine_similarity
 
-from .scoring import SKILL_THRESHOLD, PROFICIENCY_WEIGHT, _edu_level_from_str
-from .description_parser import DescriptionParser
+from .preprocess import TextPreprocessor, SKILL_THRESHOLD
 from .biodata_validator import BiodataValidator
 
-_parser    = DescriptionParser()
 _validator = BiodataValidator()
 
 CURRENT_YEAR = datetime.now().year
 
-
-# HELPER INTERNAL
-def _hitung_usia(tanggallahir) -> int | None:
-    if tanggallahir is None:
-        return None
-    if isinstance(tanggallahir, str):
-        try:
-            tanggallahir = datetime.strptime(
-                str(tanggallahir)[:10], '%Y-%m-%d'
-            ).date()
-        except ValueError:
-            return None
-    today = date.today()
-    return today.year - tanggallahir.year - (
-        (today.month, today.day) < (tanggallahir.month, tanggallahir.day)
-    )
+EDU_LABEL_MAP = {
+    9: 'S3', 8: 'S2', 7: 'D4/S1', 6: 'D3',
+    5: 'D2', 4: 'D1', 3: 'SMA/SMK', 2: 'SMP', 1: 'SD'
+}
 
 
-def _get_matched_skills(pelamar, job_vec, embedding_service) -> tuple:
+def _bulan_to_label(bulan: int) -> str:
+    if bulan == 0:
+        return '< 1 bulan'
+    if bulan < 12:
+        return f'{bulan} bulan'
+    tahun = bulan // 12
+    sisa  = bulan % 12
+    if sisa == 0:
+        return f'±{tahun} tahun'
+    return f'±{tahun} tahun {sisa} bulan'
+
+
+def _get_matched_skills(pelamar, lowongan, embedding_service) -> tuple:
+    """
+    Iterasi dari sisi skill LOKER.
+    matched   = [(nama_skill_loker, nama_skill_pelamar_terbaik, keterangan), ...]
+    unmatched = [nama_skill_loker yang tidak ter-cover, ...]
+    """
     matched   = []
     unmatched = []
 
-    for skill in (pelamar.skills or []):
-        skill_text = f"memiliki keahlian {skill.namaskill}"
-        skill_vec  = embedding_service.encode(skill_text)
-        sim = float(cosine_similarity([skill_vec], [job_vec])[0][0])
+    if not lowongan.skills:
+        return matched, unmatched
 
-        if sim >= SKILL_THRESHOLD:
-            matched.append((skill.namaskill, skill.keterangan))
+    for loker_skill in lowongan.skills:
+        loker_vec = embedding_service.encode(
+            TextPreprocessor.normalize_text(loker_skill.nama)
+        )
+
+        best_sim  = 0.0
+        best_name = ''
+        best_ket  = ''
+
+        for s in (pelamar.skills or []):
+            s_vec = embedding_service.encode(
+                TextPreprocessor.normalize_text(s.namaskill)
+            )
+            sim = float(cosine_similarity([s_vec], [loker_vec])[0][0])
+            if sim > best_sim:
+                best_sim  = sim
+                best_name = s.namaskill
+                best_ket  = s.keterangan
+
+        if best_sim >= SKILL_THRESHOLD:
+            matched.append((loker_skill.nama, best_name, best_ket))
         else:
-            unmatched.append(skill.namaskill)
+            unmatched.append(loker_skill.nama)
 
     return matched, unmatched
 
 
 def _get_edu_tertinggi(pelamar):
-    # Return objek pendidikan tertinggi pelamar, atau None.
     if not pelamar.pendidikans:
         return None
-    return max(pelamar.pendidikans, key=lambda p: _edu_level_from_str(p.kategori))
-
-
-def _hitung_total_exp(pelamar) -> float:
-    # Total tahun pengalaman kerja.
-    if not pelamar.pengalamans:
-        return 0.0
-    total = 0
-    for exp in pelamar.pengalamans:
-        thn_awal  = int(exp.tahunawal)
-        thn_akhir = (
-            CURRENT_YEAR
-            if exp.aktif == 1 or exp.tahunselesai is None
-            else int(exp.tahunselesai)
-        )
-        thn_akhir = max(thn_awal, min(thn_akhir, CURRENT_YEAR))
-        total += thn_akhir - thn_awal
-    return float(total)
+    return max(
+        pelamar.pendidikans,
+        key=lambda p: TextPreprocessor.get_pendidikan_level(p.kategori)
+    )
 
 
 def _get_most_relevant_exp(pelamar, job_vec, embedding_service):
-    # Return pengalaman paling relevan (objek + similarity score). Return (None, 0.0) jika tidak ada pengalaman.
     if not pelamar.pengalamans:
         return None, 0.0
 
@@ -78,8 +82,10 @@ def _get_most_relevant_exp(pelamar, job_vec, embedding_service):
     best_sim = -1.0
 
     for exp in pelamar.pengalamans:
-        posisi_text = f"pengalaman kerja sebagai {exp.posisi}"
-        posisi_vec  = embedding_service.encode(posisi_text)
+        posisi_text = TextPreprocessor.normalize_text(
+            f"pengalaman kerja sebagai {exp.posisi}"
+        )
+        posisi_vec = embedding_service.encode(posisi_text)
         sim = float(cosine_similarity([posisi_vec], [job_vec])[0][0])
         if sim > best_sim:
             best_sim = sim
@@ -89,29 +95,34 @@ def _get_most_relevant_exp(pelamar, job_vec, embedding_service):
 
 
 def _get_skills_text(pelamar) -> list:
-    # Return list nama skill sebagai string untuk cek bahasa.
     return [s.namaskill for s in (pelamar.skills or [])]
 
 
-# REASONING SERVICE
+def _get_min_edu_req(lowongan) -> int:
+    if lowongan.minimal_pendidikan and lowongan.minimal_pendidikan.kode:
+        return TextPreprocessor.get_pendidikan_level_from_kode(
+            lowongan.minimal_pendidikan.kode
+        )
+    return 0
+
 class ReasoningService:
-    # GENERATE TAGS
+
     @staticmethod
     def generate_tags(
         pelamar,
+        lowongan,
         job_vec,
         embedding_service,
         final_score: float,
-        parsed_desc: dict = None,
         biodata_flags: dict = None,
     ) -> list:
         tags = []
-        req  = (parsed_desc or {}).get('hard_requirements', {})
 
-        # TAG 1: BIODATA — Gender & Usia (jika loker mensyaratkan)
+        # TAG 1 — BIODATA
         if biodata_flags:
-            # Gender
             gm = biodata_flags.get('gender_match')
+            um = biodata_flags.get('usia_match')
+
             if gm is True:
                 tags.append({
                     'type': 'success',
@@ -122,10 +133,7 @@ class ReasoningService:
                     'type': 'danger',
                     'text': biodata_flags.get('gender_note', 'Gender tidak sesuai')
                 })
-            # None = tidak disyaratkan → tidak ada tag gender
 
-            # Usia
-            um = biodata_flags.get('usia_match')
             if um is True:
                 usia = biodata_flags.get('usia')
                 tags.append({
@@ -138,128 +146,177 @@ class ReasoningService:
                     'text': biodata_flags.get('usia_note', 'Usia tidak memenuhi syarat')
                 })
 
-        # TAG 2: SKILL
-        matched_skills, _ = _get_matched_skills(pelamar, job_vec, embedding_service)
+        # TAG 2 — SKILL
+        matched_skills, _ = _get_matched_skills(pelamar, lowongan, embedding_service)
 
-        if not pelamar.skills:
-            tags.append({
-                'type': 'warning',
-                'text': 'Belum ada skill terdaftar di profil'
-            })
+        if not lowongan.skills:
+            pass
+        elif not pelamar.skills:
+            tags.append({'type': 'warning', 'text': 'Belum ada skill terdaftar di profil'})
         elif matched_skills:
-            # Tampilkan max 3 skill yang match
-            for nama, level in matched_skills[:3]:
-                tags.append({
-                    'type': 'success',
-                    'text': f'{nama} ({level})'
-                })
+            for loker_nama, _, ket in matched_skills[:3]:
+                tags.append({'type': 'success', 'text': f'{loker_nama} ({ket})'})
         else:
-            tags.append({
-                'type': 'danger',
-                'text': 'Skill belum relevan dengan kebutuhan loker'
-            })
+            tags.append({'type': 'danger', 'text': 'Skill belum relevan dengan kebutuhan loker'})
 
-        # TAG 3: BAHASA (jika loker mensyaratkan)
+        # TAG 3 — BAHASA
         if biodata_flags:
             lang_missing = biodata_flags.get('lang_missing', [])
+            lang_found   = biodata_flags.get('lang_found', [])
             if lang_missing:
                 tags.append({
                     'type': 'danger',
                     'text': f'Tidak ada bukti kemampuan: {", ".join(lang_missing)}'
                 })
-            elif req.get('required_langs'):
-                # Ada syarat bahasa dan semua terpenuhi
+            elif lang_found:
                 tags.append({
                     'type': 'success',
-                    'text': f'Bahasa {", ".join(req["required_langs"])} tersedia'
+                    'text': f'Bahasa {", ".join(lang_found)} tersedia'
                 })
 
-        # TAG 4: PENDIDIKAN — kontekstual terhadap syarat loker
+        # TAG 4 — PENDIDIKAN
         edu_tertinggi = _get_edu_tertinggi(pelamar)
-        min_edu_req   = req.get('min_edu', 0)
+        min_edu_req   = _get_min_edu_req(lowongan)
 
         if not pelamar.pendidikans:
-            tags.append({
-                'type': 'warning',
-                'text': 'Data pendidikan tidak tersedia'
-            })
+            tags.append({'type': 'warning', 'text': 'Data pendidikan tidak tersedia'})
         else:
-            edu_level    = _edu_level_from_str(edu_tertinggi.kategori)
-            edu_label    = edu_tertinggi.kategori
+            edu_level = TextPreprocessor.get_pendidikan_level(edu_tertinggi.kategori)
+            edu_label = edu_tertinggi.kategori
 
             if min_edu_req == 0:
-                # Loker tidak mensyaratkan pendidikan → info saja
-                tags.append({
-                    'type': 'info',
-                    'text': f'Pendidikan: {edu_label}'
-                })
+                tags.append({'type': 'info', 'text': f'Pendidikan: {edu_label}'})
             elif edu_level >= min_edu_req:
-                tags.append({
-                    'type': 'success',
-                    'text': f'Pendidikan {edu_label} — memenuhi syarat'
-                })
+                tags.append({'type': 'success', 'text': f'Pendidikan {edu_label} — memenuhi syarat'})
             else:
-                tags.append({
-                    'type': 'danger',
-                    'text': f'Pendidikan {edu_label} — di bawah syarat minimum'
-                })
+                tags.append({'type': 'danger', 'text': f'Pendidikan {edu_label} — di bawah syarat minimum'})
 
-        # TAG 5: PENGALAMAN — relevansi + durasi, bukan hanya durasi
-        best_exp, best_sim = _get_most_relevant_exp(
-            pelamar, job_vec, embedding_service
-        )
-        total_exp    = _hitung_total_exp(pelamar)
-        min_exp_req  = req.get('min_exp_years')
+        # TAG 5 — PENGALAMAN
+        best_exp, best_sim = _get_most_relevant_exp(pelamar, job_vec, embedding_service)
+        total_bulan        = pelamar.total_pengalaman_bulan
+        min_exp_bulan      = lowongan.minimal_pengalaman_bulan or 0
 
         if not pelamar.pengalamans:
-            if min_exp_req is not None and min_exp_req > 0:
+            if min_exp_bulan > 0:
                 tags.append({
                     'type': 'danger',
-                    'text': f'Tidak ada pengalaman (loker min. {min_exp_req} tahun)'
+                    'text': f'Tidak ada pengalaman (loker min. {_bulan_to_label(min_exp_bulan)})'
                 })
             else:
-                tags.append({
-                    'type': 'warning',
-                    'text': 'Belum ada pengalaman kerja'
-                })
+                tags.append({'type': 'warning', 'text': 'Belum ada pengalaman kerja'})
         else:
-            # Tentukan label pengalaman berdasarkan relevansi
             if best_sim >= 0.55:
-                rel_label = 'sangat relevan'
-                rel_type  = 'success'
+                rel_label, rel_type = 'sangat relevan', 'success'
             elif best_sim >= 0.40:
-                rel_label = 'cukup relevan'
-                rel_type  = 'success'
+                rel_label, rel_type = 'cukup relevan', 'success'
             else:
-                rel_label = 'kurang relevan'
-                rel_type  = 'warning'
+                rel_label, rel_type = 'kurang relevan', 'warning'
 
-            # Durasi: kalau 0 tapi ada pengalaman → "< 1 tahun"
-            if total_exp == 0:
-                dur_label = '< 1 tahun'
-            elif total_exp == 1:
-                dur_label = '±1 tahun'
-            else:
-                dur_label = f'±{int(total_exp)} tahun'
+            dur_label = _bulan_to_label(total_bulan)
 
-            # Cek gap terhadap syarat minimum
-            if min_exp_req and total_exp < min_exp_req:
+            if min_exp_bulan > 0 and total_bulan < min_exp_bulan:
                 tags.append({
                     'type': 'warning',
-                    'text': (
-                        f'Pengalaman {dur_label} — '
-                        f'kurang dari syarat {min_exp_req} tahun'
-                    )
+                    'text': f'Pengalaman {dur_label} — kurang dari syarat {_bulan_to_label(min_exp_bulan)}'
                 })
             else:
-                tags.append({
-                    'type': rel_type,
-                    'text': f'Pengalaman {dur_label} ({rel_label})'
-                })
+                tags.append({'type': rel_type, 'text': f'Pengalaman {dur_label} ({rel_label})'})
 
         return tags
 
-    # GENERATE REASONS
+    @staticmethod
+    def generate_tags_rekomendasi(
+        pelamar,
+        lowongan,
+        job_vec,
+        embedding_service,
+        biodata_flags: dict = None,
+    ) -> list:
+        tags = []
+
+        # TAG 1 — BIODATA
+        if biodata_flags:
+            gm = biodata_flags.get('gender_match')
+            um = biodata_flags.get('usia_match')
+
+            if gm is True:
+                tags.append({'type': 'success', 'text': 'Gender sesuai'})
+            elif gm is False:
+                tags.append({'type': 'danger', 'text': 'Gender tidak sesuai'})
+
+            if um is True:
+                usia = biodata_flags.get('usia')
+                tags.append({'type': 'success', 'text': f'Usia {usia} thn sesuai'})
+            elif um is False:
+                tags.append({'type': 'danger', 'text': 'Usia tidak memenuhi syarat'})
+
+        # TAG 2 — SKILL
+        matched_skills, _ = _get_matched_skills(pelamar, lowongan, embedding_service)
+
+        if not lowongan.skills:
+            pass
+        elif not pelamar.skills:
+            tags.append({'type': 'warning', 'text': 'Belum ada skill'})
+        elif matched_skills:
+            tags.append({'type': 'success', 'text': 'Skill relevan'})
+        else:
+            tags.append({'type': 'warning', 'text': 'Skill kurang sesuai'})
+
+        # TAG 3 — BAHASA
+        if biodata_flags:
+            lang_missing = biodata_flags.get('lang_missing', [])
+            lang_found   = biodata_flags.get('lang_found', [])
+            if lang_missing:
+                tags.append({'type': 'danger', 'text': f'Perlu {", ".join(lang_missing)}'})
+            elif lang_found:
+                tags.append({'type': 'success', 'text': f'Bahasa {", ".join(lang_found)} ✓'})
+
+        # TAG 4 — PENDIDIKAN
+        edu_tertinggi = _get_edu_tertinggi(pelamar)
+        min_edu_req   = _get_min_edu_req(lowongan)
+
+        if not pelamar.pendidikans:
+            tags.append({'type': 'warning', 'text': 'Data pendidikan kosong'})
+        else:
+            edu_level = TextPreprocessor.get_pendidikan_level(edu_tertinggi.kategori)
+            if min_edu_req == 0:
+                tags.append({'type': 'info', 'text': 'Pendidikan tidak disyaratkan'})
+            elif edu_level >= min_edu_req:
+                tags.append({'type': 'success', 'text': f'Pendidikan {edu_tertinggi.kategori} ✓'})
+            else:
+                req_label = EDU_LABEL_MAP.get(min_edu_req, str(min_edu_req))
+                tags.append({'type': 'danger', 'text': f'Pendidikan di bawah syarat {req_label}'})
+
+        # TAG 5 — PENGALAMAN
+        best_exp, best_sim = _get_most_relevant_exp(pelamar, job_vec, embedding_service)
+        total_bulan        = pelamar.total_pengalaman_bulan
+        min_exp_bulan      = lowongan.minimal_pengalaman_bulan or 0
+
+        if not pelamar.pengalamans:
+            if min_exp_bulan == 0:
+                tags.append({'type': 'success', 'text': 'Fresh graduate welcome'})
+            else:
+                tags.append({
+                    'type': 'danger',
+                    'text': f'Perlu pengalaman min. {_bulan_to_label(min_exp_bulan)}'
+                })
+        else:
+            if min_exp_bulan == 0:
+                tags.append({'type': 'success', 'text': 'Fresh graduate welcome'})
+            elif total_bulan < min_exp_bulan:
+                tags.append({
+                    'type': 'warning',
+                    'text': f'Pengalaman {_bulan_to_label(total_bulan)} (min. {_bulan_to_label(min_exp_bulan)})'
+                })
+            elif best_sim >= 0.45:
+                tags.append({'type': 'success', 'text': 'Pengalaman relevan'})
+            elif best_sim >= 0.30:
+                tags.append({'type': 'warning', 'text': 'Pengalaman cukup relevan'})
+            else:
+                tags.append({'type': 'warning', 'text': 'Pengalaman kurang relevan'})
+
+        return tags
+
     @staticmethod
     def generate_reasons(
         pelamar,
@@ -267,14 +324,11 @@ class ReasoningService:
         job_vec,
         embedding_service,
         scores: dict,
-        parsed_desc: dict = None,
         biodata_flags: dict = None,
     ) -> list:
         reasons = []
-        req     = (parsed_desc or {}).get('hard_requirements', {})
-        nice    = (parsed_desc or {}).get('nice_to_have', [])
 
-        # 1. SEMANTIC — kecocokan keseluruhan
+        # 1. SEMANTIC
         sem = scores.get('semantic', 0)
         if sem >= 0.55:
             reasons.append(
@@ -296,7 +350,7 @@ class ReasoningService:
                 f"Profil pelamar mungkin perlu dilengkapi lebih lanjut."
             )
 
-        # 2. BIODATA — gender & usia
+        # 2. BIODATA
         if biodata_flags:
             gm = biodata_flags.get('gender_match')
             um = biodata_flags.get('usia_match')
@@ -306,27 +360,29 @@ class ReasoningService:
             if um is False:
                 reasons.append(biodata_flags['usia_note'] + '.')
             if gm is True and um is True:
-                usia = biodata_flags.get('usia')
+                usia      = biodata_flags.get('usia')
                 gender_val = getattr(pelamar, 'jeniskelamin', '') or ''
                 reasons.append(
                     f"Pelamar memenuhi syarat biodata loker: "
                     f"jenis kelamin {gender_val} dan usia {usia} tahun sesuai ketentuan."
                 )
-            elif gm is True and um is None:
-                pass  # tidak perlu disebutkan jika usia tidak disyaratkan
             elif gm is None and um is True:
                 usia = biodata_flags.get('usia')
                 reasons.append(
-                    f"Usia pelamar ({usia} tahun) sesuai dengan "
-                    f"ketentuan loker ini."
+                    f"Usia pelamar ({usia} tahun) sesuai dengan ketentuan loker ini."
                 )
 
         # 3. SKILL
         matched_skills, unmatched_skills = _get_matched_skills(
-            pelamar, job_vec, embedding_service
+            pelamar, lowongan, embedding_service
         )
 
-        if not pelamar.skills:
+        if not lowongan.skills:
+            reasons.append(
+                f"Loker {lowongan.namalowongan} tidak mencantumkan daftar skill "
+                f"yang dibutuhkan. Penilaian skill dilakukan secara semantik."
+            )
+        elif not pelamar.skills:
             reasons.append(
                 "Pelamar belum mencantumkan skill di profil. "
                 "Penilaian skill tidak dapat dilakukan — "
@@ -334,99 +390,83 @@ class ReasoningService:
             )
         elif matched_skills:
             skill_str = ', '.join(
-                f"{nm} ({lv})" for nm, lv in matched_skills[:5]
+                f"{loker_nm} → {pal_nm} ({ket})"
+                for loker_nm, pal_nm, ket in matched_skills[:5]
             )
-            reasons.append(
-                f"Skill yang relevan dengan loker: {skill_str}."
-            )
+            reasons.append(f"Skill yang relevan dengan kebutuhan loker: {skill_str}.")
             if unmatched_skills:
-                unmatched_str = ', '.join(unmatched_skills[:3])
                 reasons.append(
-                    f"Skill lain yang tercantum namun kurang relevan "
-                    f"dengan kebutuhan loker ini: {unmatched_str}."
+                    f"Skill loker yang belum ter-cover di profil pelamar: "
+                    f"{', '.join(unmatched_skills[:3])}."
                 )
         else:
             reasons.append(
-                "Tidak ditemukan skill yang langsung relevan dengan "
-                f"kebutuhan loker {lowongan.namalowongan}. "
-                "Skill yang tercantum di profil belum mencerminkan "
-                "kompetensi utama yang dibutuhkan."
+                f"Tidak ditemukan skill pelamar yang cocok dengan kebutuhan "
+                f"loker {lowongan.namalowongan}. "
+                f"Skill yang dibutuhkan: {', '.join(s.nama for s in lowongan.skills[:3])}."
             )
 
-        # 4. PENDIDIKAN — kontekstual
+        # 4. PENDIDIKAN
         edu_tertinggi = _get_edu_tertinggi(pelamar)
-        min_edu_req   = req.get('min_edu', 0)
+        min_edu_req   = _get_min_edu_req(lowongan)
 
         if not pelamar.pendidikans:
             reasons.append("Data riwayat pendidikan pelamar tidak tersedia.")
-
         else:
-            edu_level = _edu_level_from_str(edu_tertinggi.kategori)
-            jurusan   = edu_tertinggi.jurusan or ''
+            edu_level   = TextPreprocessor.get_pendidikan_level(edu_tertinggi.kategori)
+            jurusan     = edu_tertinggi.jurusan or ''
             jurusan_str = f" jurusan {jurusan}" if jurusan and jurusan != '-' else ''
 
             if min_edu_req == 0:
-                # Loker tidak mensyaratkan → sebutkan saja tanpa judgement
                 reasons.append(
-                    f"Pendidikan terakhir pelamar: "
-                    f"{edu_tertinggi.kategori}{jurusan_str}. "
+                    f"Pendidikan terakhir pelamar: {edu_tertinggi.kategori}{jurusan_str}. "
                     f"Loker ini tidak mencantumkan syarat pendidikan minimum."
                 )
             elif edu_level >= min_edu_req:
                 reasons.append(
-                    f"Pendidikan pelamar ({edu_tertinggi.kategori}"
-                    f"{jurusan_str}) memenuhi syarat minimum loker."
+                    f"Pendidikan pelamar ({edu_tertinggi.kategori}{jurusan_str}) "
+                    f"memenuhi syarat minimum loker."
                 )
             else:
-                # Gap pendidikan — jelaskan dengan jelas
-                edu_label_map = {
-                    10: 'S3', 8: 'S2', 6: 'S1/D4', 5: 'D3',
-                    4: 'D1/D2', 3: 'SMA/SMK', 2: 'SMP', 1: 'SD'
-                }
-                req_label = edu_label_map.get(min_edu_req, str(min_edu_req))
+                req_label = EDU_LABEL_MAP.get(min_edu_req, str(min_edu_req))
                 reasons.append(
-                    f"Pendidikan pelamar ({edu_tertinggi.kategori}"
-                    f"{jurusan_str}) berada di bawah syarat minimum "
-                    f"loker ({req_label}). "
+                    f"Pendidikan pelamar ({edu_tertinggi.kategori}{jurusan_str}) "
+                    f"berada di bawah syarat minimum loker ({req_label}). "
                     f"Pertimbangkan ini sebagai faktor seleksi awal."
                 )
 
-        # 5. PENGALAMAN — relevansi + durasi + recency
-        best_exp, best_sim = _get_most_relevant_exp(
-            pelamar, job_vec, embedding_service
-        )
-        total_exp   = _hitung_total_exp(pelamar)
-        min_exp_req = req.get('min_exp_years')
+        # 5. PENGALAMAN
+        best_exp, best_sim = _get_most_relevant_exp(pelamar, job_vec, embedding_service)
+        total_bulan        = pelamar.total_pengalaman_bulan
+        min_exp_bulan      = lowongan.minimal_pengalaman_bulan or 0
 
         if not pelamar.pengalamans:
-            if min_exp_req == 0:
+            if min_exp_bulan == 0:
                 reasons.append(
                     "Pelamar belum memiliki pengalaman kerja. "
                     "Loker ini terbuka untuk fresh graduate."
                 )
-            elif min_exp_req and min_exp_req > 0:
-                reasons.append(
-                    f"Pelamar belum memiliki pengalaman kerja, "
-                    f"sementara loker ini mensyaratkan minimal "
-                    f"{min_exp_req} tahun pengalaman."
-                )
             else:
                 reasons.append(
-                    "Pelamar belum memiliki pengalaman kerja."
+                    f"Pelamar belum memiliki pengalaman kerja, sementara loker ini "
+                    f"mensyaratkan minimal {_bulan_to_label(min_exp_bulan)} pengalaman."
                 )
         else:
-            # Pengalaman paling relevan
-            posisi_relevan = best_exp.posisi
-            thn_awal_rel   = int(best_exp.tahunawal)
-            thn_akhir_rel  = (
-                CURRENT_YEAR
-                if best_exp.aktif == 1 or best_exp.tahunselesai is None
-                else int(best_exp.tahunselesai)
-            )
-            thn_akhir_rel  = max(thn_awal_rel, min(thn_akhir_rel, CURRENT_YEAR))
-            durasi_rel     = thn_akhir_rel - thn_awal_rel
+            bln_awal  = int(getattr(best_exp, 'bulanawal', 0) or 1)
+            thn_awal  = int(best_exp.tahunawal)
 
-            # Label relevansi
+            if best_exp.aktif == 1 or best_exp.tahunselesai is None:
+                today     = date.today()
+                bln_akhir = today.month
+                thn_akhir = today.year
+            else:
+                bln_akhir = int(getattr(best_exp, 'bulanselesai', 0) or 1)
+                thn_akhir = int(best_exp.tahunselesai)
+
+            durasi_bulan = max(
+                (thn_akhir - thn_awal) * 12 + (bln_akhir - bln_awal), 0
+            )
+
             if best_sim >= 0.55:
                 rel_desc = "sangat relevan"
             elif best_sim >= 0.40:
@@ -434,240 +474,84 @@ class ReasoningService:
             else:
                 rel_desc = "kurang relevan secara langsung"
 
-            # Label durasi
-            if durasi_rel == 0:
-                dur_str = "kurang dari 1 tahun"
-            elif durasi_rel == 1:
-                dur_str = "±1 tahun"
-            else:
-                dur_str = f"±{durasi_rel} tahun"
-
-            # Status (masih aktif atau sudah selesai)
             status_str = (
                 "masih aktif"
                 if (best_exp.aktif == 1 or best_exp.tahunselesai is None)
-                else f"selesai {thn_akhir_rel}"
+                else f"selesai {thn_akhir}"
             )
 
             reasons.append(
-                f"Pengalaman paling relevan: {posisi_relevan} "
-                f"({dur_str}, {status_str}) — {rel_desc} "
+                f"Pengalaman paling relevan: {best_exp.posisi} "
+                f"({_bulan_to_label(durasi_bulan)}, {status_str}) — {rel_desc} "
                 f"untuk posisi {lowongan.namalowongan}."
             )
 
-            # Jika ada lebih dari satu pengalaman, sebut total
             if len(pelamar.pengalamans) > 1:
                 semua_posisi = [e.posisi for e in pelamar.pengalamans]
                 reasons.append(
-                    f"Total pengalaman kerja: ±{int(total_exp)} tahun "
+                    f"Total pengalaman kerja: {_bulan_to_label(total_bulan)} "
                     f"dari {len(pelamar.pengalamans)} posisi "
                     f"({', '.join(semua_posisi[:3])}"
                     f"{'...' if len(semua_posisi) > 3 else ''})."
                 )
 
-            # Gap terhadap syarat minimum
-            if min_exp_req and total_exp < min_exp_req:
+            if min_exp_bulan > 0 and total_bulan < min_exp_bulan:
                 reasons.append(
-                    f"Total pengalaman ({int(total_exp)} tahun) "
+                    f"Total pengalaman ({_bulan_to_label(total_bulan)}) "
                     f"masih kurang dari syarat minimum loker "
-                    f"({min_exp_req} tahun)."
+                    f"({_bulan_to_label(min_exp_bulan)})."
                 )
 
         # 6. BAHASA
         if biodata_flags:
             lang_missing = biodata_flags.get('lang_missing', [])
-            req_langs    = req.get('required_langs', [])
+            lang_found   = biodata_flags.get('lang_found', [])
 
-            if req_langs and not lang_missing:
+            if lang_found and not lang_missing:
                 reasons.append(
                     f"Kemampuan bahasa yang disyaratkan loker "
-                    f"({', '.join(req_langs)}) "
-                    f"ditemukan di profil pelamar."
+                    f"({', '.join(lang_found)}) ditemukan di profil pelamar."
                 )
             elif lang_missing:
                 reasons.append(
-                    f"Loker mensyaratkan kemampuan "
-                    f"{', '.join(lang_missing)}, "
+                    f"Loker mensyaratkan kemampuan {', '.join(lang_missing)}, "
                     f"namun tidak ditemukan di profil pelamar. "
                     f"Verifikasi saat interview disarankan."
                 )
 
-        # 7. NILAI TAMBAH (nice_to_have dari parser)
-        if nice and matched_skills:
-            # Cek apakah ada skill pelamar yang relate ke nice-to-have
-            # (heuristic: kalau skill match dan ada nice-to-have → sebut)
-            nice_preview = nice[0][:80] if nice else ''
-            if nice_preview:
-                reasons.append(
-                    f"Catatan nilai tambah yang relevan dari loker: "
-                    f'"{nice_preview}{"..." if len(nice[0]) > 80 else ""}"'
-                )
-
-        # 8. CATATAN DATA TIPIS
+        # 7. CATATAN DATA TIPIS
         data_tipis = []
         if not pelamar.deskripsidiri:
             data_tipis.append('deskripsi diri kosong')
         if not pelamar.skills:
             data_tipis.append('skill tidak diisi')
-        if len(pelamar.skills or []) == 1:
+        elif len(pelamar.skills) == 1:
             data_tipis.append('hanya 1 skill tercantum')
 
         if len(data_tipis) >= 2:
             reasons.append(
-                f"Catatan: profil pelamar masih tipis "
-                f"({', '.join(data_tipis)}). "
-                f"Skor mungkin tidak merepresentasikan kemampuan "
-                f"sebenarnya — verifikasi manual disarankan."
+                f"Catatan: profil pelamar masih tipis ({', '.join(data_tipis)}). "
+                f"Skor mungkin tidak merepresentasikan kemampuan sebenarnya — "
+                f"verifikasi manual disarankan."
             )
 
         return reasons
 
-    # PARSE DESC — helper untuk dipanggil dari RankerService
     @staticmethod
-    def parse_lowongan(lowongan) -> dict:
-        """
-        Parse deskripsi lowongan dan return dict terstruktur.
-        Dipanggil sekali per lowongan di RankerService.
-        """
-        return _parser.parse(lowongan.deskripsi or '')
-
-    @staticmethod
-    def build_biodata_flags(
-        pelamar,
-        hard_requirements: dict,
-    ) -> dict:
-        """
-        Build biodata validation flags untuk satu pelamar.
-        Dipanggil per pelamar di RankerService.
-        """
-        # Ambil kategori pendidikan tertinggi
+    def build_biodata_flags(pelamar, lowongan) -> dict:
         edu_tertinggi = _get_edu_tertinggi(pelamar)
         edu_kategori  = edu_tertinggi.kategori if edu_tertinggi else None
+        skill_names   = _get_skills_text(pelamar)
 
-        # Total exp
-        total_exp = _hitung_total_exp(pelamar)
-
-        # Skill names untuk cek bahasa
-        skill_names = _get_skills_text(pelamar)
-
-        # Biodata dict
         biodata = {
             'tanggallahir': getattr(pelamar, 'tanggallahir', None),
             'jeniskelamin': getattr(pelamar, 'jeniskelamin', None),
         }
 
         return _validator.validate(
-            pelamar_biodata      = biodata,
-            hard_requirements    = hard_requirements,
-            pelamar_edu_kategori = edu_kategori,
-            total_exp_years      = total_exp,
-            pelamar_skills_raw   = skill_names,
+            pelamar_biodata        = biodata,
+            lowongan               = lowongan,
+            pelamar_edu_kategori   = edu_kategori,
+            total_pengalaman_bulan = pelamar.total_pengalaman_bulan,
+            pelamar_skills_raw     = skill_names,
         )
-    
-    @staticmethod
-    def generate_tags_rekomendasi(
-        pelamar,
-        job_vec,
-        embedding_service,
-        parsed_desc: dict = None,
-        biodata_flags: dict = None,
-    ) -> list:
-        tags = []
-        req  = (parsed_desc or {}).get('hard_requirements', {})
-
-        # TAG 1 — BIODATA (hanya kalau loker mensyaratkan)
-        if biodata_flags:
-            gm = biodata_flags.get('gender_match')
-            um = biodata_flags.get('usia_match')
-
-            if gm is True:
-                tags.append({'type': 'success', 'text': 'Gender sesuai'})
-            elif gm is False:
-                tags.append({'type': 'danger', 'text': 'Gender tidak sesuai'})
-
-            if um is True:
-                usia = biodata_flags.get('usia')
-                tags.append({'type': 'success', 'text': f'Usia {usia} thn sesuai'})
-            elif um is False:
-                tags.append({'type': 'danger', 'text': 'Usia tidak memenuhi syarat'})
-
-        # TAG 2 — SKILL (selalu muncul, singkat)
-        matched_skills, _ = _get_matched_skills(pelamar, job_vec, embedding_service)
-
-        if not pelamar.skills:
-            tags.append({'type': 'warning', 'text': 'Belum ada skill'})
-        elif matched_skills:
-            tags.append({'type': 'success', 'text': 'Skill relevan'})
-        else:
-            tags.append({'type': 'warning', 'text': 'Skill kurang sesuai'})
-
-        # TAG 3 — BAHASA (hanya kalau loker mensyaratkan)
-        if biodata_flags:
-            lang_missing = biodata_flags.get('lang_missing', [])
-            req_langs    = req.get('required_langs', [])
-            if req_langs:
-                if lang_missing:
-                    tags.append({
-                        'type': 'danger',
-                        'text': f'Perlu {", ".join(lang_missing)}'
-                    })
-                else:
-                    tags.append({
-                        'type': 'success',
-                        'text': f'Bahasa {", ".join(req_langs)} ✓'
-                    })
-
-        # TAG 4 — PENDIDIKAN (kontekstual)
-        edu_tertinggi = _get_edu_tertinggi(pelamar)
-        min_edu_req   = req.get('min_edu', 0)
-
-        if not pelamar.pendidikans:
-            tags.append({'type': 'warning', 'text': 'Data pendidikan kosong'})
-        else:
-            edu_level = _edu_level_from_str(edu_tertinggi.kategori)
-            if min_edu_req == 0:
-                tags.append({'type': 'info', 'text': 'Pendidikan tidak disyaratkan'})
-            elif edu_level >= min_edu_req:
-                tags.append({'type': 'success', 'text': f'Pendidikan {edu_tertinggi.kategori} ✓'})
-            else:
-                edu_label_map = {
-                    10:'S3', 8:'S2', 6:'S1/D4', 5:'D3',
-                    4:'D1/D2', 3:'SMA/SMK', 2:'SMP', 1:'SD'
-                }
-                req_label = edu_label_map.get(min_edu_req, str(min_edu_req))
-                tags.append({
-                    'type': 'danger',
-                    'text': f'Pendidikan di bawah syarat {req_label}'
-                })
-
-        # TAG 5 — PENGALAMAN (relevansi + fresh grad check)
-        min_exp_req       = req.get('min_exp_years')
-        best_exp, best_sim = _get_most_relevant_exp(pelamar, job_vec, embedding_service)
-        total_exp         = _hitung_total_exp(pelamar)
-
-        if not pelamar.pengalamans:
-            if min_exp_req == 0:
-                tags.append({'type': 'success', 'text': 'Fresh graduate welcome'})
-            elif min_exp_req and min_exp_req > 0:
-                tags.append({
-                    'type': 'danger',
-                    'text': f'Perlu pengalaman min. {min_exp_req} thn'
-                })
-            else:
-                tags.append({'type': 'warning', 'text': 'Belum ada pengalaman'})
-        else:
-            if min_exp_req == 0:
-                tags.append({'type': 'success', 'text': 'Fresh graduate welcome'})
-            elif min_exp_req and total_exp < min_exp_req:
-                tags.append({
-                    'type': 'warning',
-                    'text': f'Pengalaman {int(total_exp)} thn (min. {min_exp_req} thn)'
-                })
-            elif best_sim >= 0.45:
-                tags.append({'type': 'success', 'text': 'Pengalaman relevan'})
-            elif best_sim >= 0.30:
-                tags.append({'type': 'warning', 'text': 'Pengalaman cukup relevan'})
-            else:
-                tags.append({'type': 'warning', 'text': 'Pengalaman kurang relevan'})
-
-        return tags

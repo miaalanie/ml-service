@@ -6,8 +6,9 @@ from .reasoning import ReasoningService
 
 class RankerService:
 
-    def __init__(self):
-        self.embedding_service = EmbeddingService()
+    def __init__(self, embedding_service=None):
+        from .embedding import EmbeddingService
+        self.embedding_service = embedding_service or EmbeddingService()
 
     def rank(self, payload) -> dict:
         lowongan = payload.lowongan
@@ -48,12 +49,13 @@ class RankerService:
                 pelamar_vec, job_vec
             )
 
-            # STEP 5 — S2: SKILL SCORE
-            skill = ScoringService.skill_score(
+            # STEP 5 — Compute skill match SEKALI (dipakai scoring + reasoning)
+            skill_match = ScoringService.compute_skill_match(
                 pelamar.skills,
                 lowongan.skills,
                 self.embedding_service
             )
+            skill = skill_match[0]
 
             # STEP 6 — S3: EDUCATION SCORE
             edu = ScoringService.education_score(
@@ -63,7 +65,14 @@ class RankerService:
                 self.embedding_service
             )
 
-            # STEP 7 — S4: EXPERIENCE SCORE
+            # STEP 7 — Compute exp for reasoning SEKALI (dipakai tags + reasons)
+            exp_reasoning = ScoringService.compute_exp_for_reasoning(
+                pelamar.pengalamans,
+                job_vec,
+                self.embedding_service
+            )
+
+            # STEP 8 — S4: EXPERIENCE SCORE (tetap pakai namalowongan vector)
             exp = ScoringService.experience_score(
                 pelamar.pengalamans,
                 pelamar.total_pengalaman_bulan,
@@ -71,16 +80,15 @@ class RankerService:
                 self.embedding_service
             )
 
-            # STEP 8 — FINAL SCORE
-            # w = [0.50, 0.10, 0.15, 0.25]
+            # STEP 9 — FINAL SCORE
             final = ScoringService.final_score(semantic, skill, edu, exp)
 
-            # STEP 9 — CLASSIFY & LABEL
+            # STEP 10 — CLASSIFY & LABEL
             label      = ScoringService.classify(final)
             color      = ScoringService.determine_color(final)
             percentage = ScoringService.percentage(final)
 
-            # STEP 10 — EXPLAINABILITY
+            # STEP 11 — EXPLAINABILITY (pass hasil yg sudah dihitung)
             scores_dict = {
                 'semantic': semantic,
                 'skill':    skill,
@@ -90,13 +98,17 @@ class RankerService:
 
             tags = ReasoningService.generate_tags(
                 pelamar, lowongan, job_vec, self.embedding_service, final,
-                biodata_flags=biodata_flags
+                biodata_flags=biodata_flags,
+                skill_match=skill_match,
+                exp_reasoning=exp_reasoning,
             )
 
             reasons = ReasoningService.generate_reasons(
                 pelamar, lowongan, job_vec, self.embedding_service,
                 scores_dict,
-                biodata_flags=biodata_flags
+                biodata_flags=biodata_flags,
+                skill_match=skill_match,
+                exp_reasoning=exp_reasoning,
             )
 
             results.append({

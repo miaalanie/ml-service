@@ -4,6 +4,7 @@ from .schemas import (
     MatchRequestSchema,
     RankApplicantsRequestSchema
 )
+from .embedding import EmbeddingService
 from .matcher import MatcherService
 from .ranker import RankerService
 
@@ -48,8 +49,9 @@ app.add_middleware(
 # ============================================================
 # LOAD SERVICE SEKALI SAAT STARTUP
 # ============================================================
-matcher = MatcherService()
-ranker_service = RankerService()
+embedding_service = EmbeddingService()   # model load SEKALI, cache shared
+matcher           = MatcherService(embedding_service)
+ranker_service    = RankerService(embedding_service)
 
 
 # ============================================================

@@ -2,6 +2,7 @@ from datetime import date, datetime
 from sklearn.metrics.pairwise import cosine_similarity
 
 from .preprocess import TextPreprocessor, SKILL_THRESHOLD
+from .scoring import ScoringService
 from .biodata_validator import BiodataValidator
 
 _validator = BiodataValidator()
@@ -26,45 +27,6 @@ def _bulan_to_label(bulan: int) -> str:
     return f'±{tahun} tahun {sisa} bulan'
 
 
-def _get_matched_skills(pelamar, lowongan, embedding_service) -> tuple:
-    """
-    Iterasi dari sisi skill LOKER.
-    matched   = [(nama_skill_loker, nama_skill_pelamar_terbaik, keterangan), ...]
-    unmatched = [nama_skill_loker yang tidak ter-cover, ...]
-    """
-    matched   = []
-    unmatched = []
-
-    if not lowongan.skills:
-        return matched, unmatched
-
-    for loker_skill in lowongan.skills:
-        loker_vec = embedding_service.encode(
-            TextPreprocessor.normalize_text(loker_skill.nama)
-        )
-
-        best_sim  = 0.0
-        best_name = ''
-        best_ket  = ''
-
-        for s in (pelamar.skills or []):
-            s_vec = embedding_service.encode(
-                TextPreprocessor.normalize_text(s.namaskill)
-            )
-            sim = float(cosine_similarity([s_vec], [loker_vec])[0][0])
-            if sim > best_sim:
-                best_sim  = sim
-                best_name = s.namaskill
-                best_ket  = s.keterangan
-
-        if best_sim >= SKILL_THRESHOLD:
-            matched.append((loker_skill.nama, best_name, best_ket))
-        else:
-            unmatched.append(loker_skill.nama)
-
-    return matched, unmatched
-
-
 def _get_edu_tertinggi(pelamar):
     if not pelamar.pendidikans:
         return None
@@ -72,26 +34,6 @@ def _get_edu_tertinggi(pelamar):
         pelamar.pendidikans,
         key=lambda p: TextPreprocessor.get_pendidikan_level(p.kategori)
     )
-
-
-def _get_most_relevant_exp(pelamar, job_vec, embedding_service):
-    if not pelamar.pengalamans:
-        return None, 0.0
-
-    best_exp = None
-    best_sim = -1.0
-
-    for exp in pelamar.pengalamans:
-        posisi_text = TextPreprocessor.normalize_text(
-            f"pengalaman kerja sebagai {exp.posisi}"
-        )
-        posisi_vec = embedding_service.encode(posisi_text)
-        sim = float(cosine_similarity([posisi_vec], [job_vec])[0][0])
-        if sim > best_sim:
-            best_sim = sim
-            best_exp = exp
-
-    return best_exp, best_sim
 
 
 def _get_skills_text(pelamar) -> list:
@@ -115,6 +57,8 @@ class ReasoningService:
         embedding_service,
         final_score: float,
         biodata_flags: dict = None,
+        skill_match: tuple = None,
+        exp_reasoning: tuple = None,
     ) -> list:
         tags = []
 
@@ -146,8 +90,12 @@ class ReasoningService:
                     'text': biodata_flags.get('usia_note', 'Usia tidak memenuhi syarat')
                 })
 
-        # TAG 2 — SKILL
-        matched_skills, _ = _get_matched_skills(pelamar, lowongan, embedding_service)
+        # TAG 2 — SKILL (gunakan skill_match yang sudah dihitung)
+        if skill_match is None:
+            skill_match = ScoringService.compute_skill_match(
+                pelamar.skills, lowongan.skills, embedding_service
+            )
+        _, matched_skills, _ = skill_match
 
         if not lowongan.skills:
             pass
@@ -191,10 +139,15 @@ class ReasoningService:
             else:
                 tags.append({'type': 'danger', 'text': f'Pendidikan {edu_label} — di bawah syarat minimum'})
 
-        # TAG 5 — PENGALAMAN
-        best_exp, best_sim = _get_most_relevant_exp(pelamar, job_vec, embedding_service)
-        total_bulan        = pelamar.total_pengalaman_bulan
-        min_exp_bulan      = lowongan.minimal_pengalaman_bulan or 0
+        # TAG 5 — PENGALAMAN (gunakan exp_reasoning yang sudah dihitung)
+        if exp_reasoning is None:
+            exp_reasoning = ScoringService.compute_exp_for_reasoning(
+                pelamar.pengalamans, job_vec, embedding_service
+            )
+        best_exp, best_sim = exp_reasoning
+
+        total_bulan   = pelamar.total_pengalaman_bulan
+        min_exp_bulan = lowongan.minimal_pengalaman_bulan or 0
 
         if not pelamar.pengalamans:
             if min_exp_bulan > 0:
@@ -222,8 +175,8 @@ class ReasoningService:
             else:
                 tags.append({'type': rel_type, 'text': f'Pengalaman {dur_label} ({rel_label})'})
 
-        return tags
-
+        return tags    
+   
     @staticmethod
     def generate_tags_rekomendasi(
         pelamar,
@@ -231,6 +184,8 @@ class ReasoningService:
         job_vec,
         embedding_service,
         biodata_flags: dict = None,
+        skill_match: tuple = None,
+        exp_reasoning: tuple = None,
     ) -> list:
         tags = []
 
@@ -251,7 +206,11 @@ class ReasoningService:
                 tags.append({'type': 'danger', 'text': 'Usia tidak memenuhi syarat'})
 
         # TAG 2 — SKILL
-        matched_skills, _ = _get_matched_skills(pelamar, lowongan, embedding_service)
+        if skill_match is None:
+            skill_match = ScoringService.compute_skill_match(
+                pelamar.skills, lowongan.skills, embedding_service
+            )
+        _, matched_skills, _ = skill_match
 
         if not lowongan.skills:
             pass
@@ -285,12 +244,17 @@ class ReasoningService:
                 tags.append({'type': 'success', 'text': f'Pendidikan {edu_tertinggi.kategori} ✓'})
             else:
                 req_label = EDU_LABEL_MAP.get(min_edu_req, str(min_edu_req))
-                tags.append({'type': 'danger', 'text': f'Pendidikan di bawah syarat {req_label}'})
+                tags.append({'type': 'danger', 'text': f'Pendidikan Anda di bawah syarat {req_label}'})
 
         # TAG 5 — PENGALAMAN
-        best_exp, best_sim = _get_most_relevant_exp(pelamar, job_vec, embedding_service)
-        total_bulan        = pelamar.total_pengalaman_bulan
-        min_exp_bulan      = lowongan.minimal_pengalaman_bulan or 0
+        if exp_reasoning is None:
+            exp_reasoning = ScoringService.compute_exp_for_reasoning(
+                pelamar.pengalamans, job_vec, embedding_service
+            )
+        best_exp, best_sim = exp_reasoning
+
+        total_bulan   = pelamar.total_pengalaman_bulan
+        min_exp_bulan = lowongan.minimal_pengalaman_bulan or 0
 
         if not pelamar.pengalamans:
             if min_exp_bulan == 0:
@@ -316,7 +280,7 @@ class ReasoningService:
                 tags.append({'type': 'warning', 'text': 'Pengalaman kurang relevan'})
 
         return tags
-
+   
     @staticmethod
     def generate_reasons(
         pelamar,
@@ -325,6 +289,8 @@ class ReasoningService:
         embedding_service,
         scores: dict,
         biodata_flags: dict = None,
+        skill_match: tuple = None,
+        exp_reasoning: tuple = None,
     ) -> list:
         reasons = []
 
@@ -360,7 +326,7 @@ class ReasoningService:
             if um is False:
                 reasons.append(biodata_flags['usia_note'] + '.')
             if gm is True and um is True:
-                usia      = biodata_flags.get('usia')
+                usia       = biodata_flags.get('usia')
                 gender_val = getattr(pelamar, 'jeniskelamin', '') or ''
                 reasons.append(
                     f"Pelamar memenuhi syarat biodata loker: "
@@ -372,10 +338,12 @@ class ReasoningService:
                     f"Usia pelamar ({usia} tahun) sesuai dengan ketentuan loker ini."
                 )
 
-        # 3. SKILL
-        matched_skills, unmatched_skills = _get_matched_skills(
-            pelamar, lowongan, embedding_service
-        )
+        # 3. SKILL (gunakan skill_match yang sudah dihitung)
+        if skill_match is None:
+            skill_match = ScoringService.compute_skill_match(
+                pelamar.skills, lowongan.skills, embedding_service
+            )
+        _, matched_skills, unmatched_skills = skill_match
 
         if not lowongan.skills:
             reasons.append(
@@ -435,10 +403,15 @@ class ReasoningService:
                     f"Pertimbangkan ini sebagai faktor seleksi awal."
                 )
 
-        # 5. PENGALAMAN
-        best_exp, best_sim = _get_most_relevant_exp(pelamar, job_vec, embedding_service)
-        total_bulan        = pelamar.total_pengalaman_bulan
-        min_exp_bulan      = lowongan.minimal_pengalaman_bulan or 0
+        # 5. PENGALAMAN (gunakan exp_reasoning yang sudah dihitung)
+        if exp_reasoning is None:
+            exp_reasoning = ScoringService.compute_exp_for_reasoning(
+                pelamar.pengalamans, job_vec, embedding_service
+            )
+        best_exp, best_sim = exp_reasoning
+
+        total_bulan   = pelamar.total_pengalaman_bulan
+        min_exp_bulan = lowongan.minimal_pengalaman_bulan or 0
 
         if not pelamar.pengalamans:
             if min_exp_bulan == 0:
@@ -452,8 +425,8 @@ class ReasoningService:
                     f"mensyaratkan minimal {_bulan_to_label(min_exp_bulan)} pengalaman."
                 )
         else:
-            bln_awal  = int(getattr(best_exp, 'bulanawal', 0) or 1)
-            thn_awal  = int(best_exp.tahunawal)
+            bln_awal = int(getattr(best_exp, 'bulanawal', 0) or 1)
+            thn_awal = int(best_exp.tahunawal)
 
             if best_exp.aktif == 1 or best_exp.tahunselesai is None:
                 today     = date.today()
@@ -536,6 +509,8 @@ class ReasoningService:
             )
 
         return reasons
+
+
 
     @staticmethod
     def build_biodata_flags(pelamar, lowongan) -> dict:

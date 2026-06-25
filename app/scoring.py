@@ -7,19 +7,18 @@ CURRENT_YEAR = datetime.now().year
 
 # BOBOT WEIGHTED SCORING
 W_SEMANTIC = 0.25
-W_SKILL = 0.25
-W_EDU = 0.25
-W_EXP = 0.25
+W_SKILL    = 0.25
+W_EDU      = 0.25
+W_EXP      = 0.25
 
 # THRESHOLD COSINE UNTUK SKILL MATCH
-SKILL_THRESHOLD = 0.50  # sesuai definisi: >= 0.50
+SKILL_THRESHOLD = 0.50
 
 
 class ScoringService:
 
     # ============================================================
     # S1 — SEMANTIC SCORE
-    # Kemiripan teks profil pelamar vs teks loker secara keseluruhan
     # ============================================================
     @staticmethod
     def semantic_similarity(cv_vec: np.ndarray, job_vec: np.ndarray) -> float:
@@ -28,6 +27,12 @@ class ScoringService:
         score = cosine_similarity([cv_vec], [job_vec])[0][0]
         return round(float(score), 4)
 
+    # ============================================================
+    # CORE — SKILL MATCH (dihitung SEKALI, dipakai scoring + reasoning)
+    # Returns: (score: float, matched: list, unmatched: list)
+    # matched  = [(nama_loker, nama_pelamar, keterangan), ...]
+    # unmatched = [nama_skill_loker yang tidak ter-cover, ...]
+    # ============================================================
     @staticmethod
     def compute_skill_match(
         pelamar_skills,
@@ -35,15 +40,12 @@ class ScoringService:
         embedding_service,
         threshold: float = SKILL_THRESHOLD,
     ) -> tuple:
-        """
-        Hitung skill matching SEKALI — return (score, matched, unmatched).
-        Dipakai scoring dan reasoning, tidak perlu komputasi ulang.
-        """
         if not lowongan_skills:
             return 0.0, [], []
         if not pelamar_skills:
             return 0.0, [], [s.nama for s in lowongan_skills]
 
+        # Encode semua skill pelamar sekali
         pelamar_encoded = [
             (s, embedding_service.encode(TextPreprocessor.normalize_text(s.namaskill)))
             for s in pelamar_skills
@@ -59,6 +61,7 @@ class ScoringService:
             loker_vec = embedding_service.encode(
                 TextPreprocessor.normalize_text(loker_skill.nama)
             )
+            # Batch cosine: semua skill pelamar vs satu skill loker sekaligus
             sims     = cosine_similarity(p_matrix, [loker_vec]).flatten()
             best_idx = int(np.argmax(sims))
             best_sim = float(sims[best_idx])
@@ -72,19 +75,24 @@ class ScoringService:
 
         return round(matched_score / total_skill, 4), matched, unmatched
 
+    # ============================================================
+    # CORE — EXP FOR REASONING (dihitung SEKALI, dipakai tags + reasons)
+    # Returns: (best_exp, best_sim)
+    # ============================================================
     @staticmethod
-    def compute_exp_for_reasoning(pengalamans, job_vec, embedding_service) -> tuple:
-        """
-        Cari pengalaman paling relevan vs job_vec untuk reasoning.
-        Returns (best_exp, best_sim). Dipakai generate_tags DAN
-        generate_reasons — hitung sekali, pass hasilnya.
-        """
+    def compute_exp_for_reasoning(
+        pengalamans,
+        job_vec: np.ndarray,
+        embedding_service,
+    ) -> tuple:
         if not pengalamans:
             return None, 0.0
 
         posisi_vecs = [
             embedding_service.encode(
-                TextPreprocessor.normalize_text(f"pengalaman kerja sebagai {exp.posisi}")
+                TextPreprocessor.normalize_text(
+                    f"pengalaman kerja sebagai {exp.posisi}"
+                )
             )
             for exp in pengalamans
         ]
@@ -94,11 +102,7 @@ class ScoringService:
         return pengalamans[best_idx], round(float(sims[best_idx]), 4)
 
     # ============================================================
-    # S2 — SKILL SCORE
-    # Dari semua skill yang DIMINTA loker, berapa persen ter-cover
-    # skill_score = total bobot skill match / total skill diminta loker
-    # Match = cosine skill pelamar vs nama skill loker >= 0.50
-    # Bobot: Kurang=0.25, Cukup=0.50, Baik=0.75, Sangat Baik=1.00
+    # S2 — SKILL SCORE (thin wrapper atas compute_skill_match)
     # ============================================================
     @staticmethod
     def skill_score(
@@ -115,15 +119,6 @@ class ScoringService:
     # ============================================================
     # S3 — EDUCATION SCORE
     # edu_score = (0.5 x level_score) + (0.5 x jurusan_score)
-    #
-    # level_score:
-    #   - Ada syarat minimal → level pelamar / level minimal (cap 1.0)
-    #   - Tidak ada syarat   → level pelamar / 9
-    #
-    # jurusan_score:
-    #   - Ada jurusan loker  → cosine jurusan pelamar vs jurusan loker
-    #   - Tidak ada jurusan loker → cosine jurusan pelamar vs teks loker
-    #   - Pelamar tidak punya jurusan (SD/SMP) → 0.3 netral
     # ============================================================
     @staticmethod
     def education_score(
@@ -157,15 +152,13 @@ class ScoringService:
         jurusan_pelamar = TextPreprocessor.get_jurusan_pelamar(pendidikans)
 
         if jurusan_pelamar is None:
-            # SD/SMP tidak punya jurusan → netral rendah
             jurusan_score = 0.3
         else:
             jurusan_text = TextPreprocessor.normalize_text(f"jurusan {jurusan_pelamar}")
-            jurusan_vec = embedding_service.encode(jurusan_text)
+            jurusan_vec  = embedding_service.encode(jurusan_text)
 
             if lowongan.jurusans:
-                # Bandingkan dengan jurusan yang diminta loker
-                # Ambil skor tertinggi dari semua jurusan loker
+                # Batch cosine: jurusan pelamar vs semua jurusan loker sekaligus
                 loker_jurusan_vecs = [
                     embedding_service.encode(
                         TextPreprocessor.normalize_text(f"jurusan {lj.nama}")
@@ -176,14 +169,12 @@ class ScoringService:
                 sims          = cosine_similarity([jurusan_vec], l_matrix).flatten()
                 jurusan_score = round(float(np.max(sims)), 4)
             else:
-                # Loker tidak minta jurusan spesifik →
-                # bandingkan dengan teks loker secara umum
                 if job_vec is not None:
                     jurusan_score = round(
                         float(cosine_similarity([jurusan_vec], [job_vec])[0][0]), 4
                     )
                 else:
-                    jurusan_score = 0.5  # netral
+                    jurusan_score = 0.5
 
         edu_score = (0.5 * level_score) + (0.5 * jurusan_score)
         return round(edu_score, 4)
@@ -191,11 +182,6 @@ class ScoringService:
     # ============================================================
     # S4 — EXPERIENCE SCORE
     # exp_score = (0.5 x posisi_score) + (0.5 x durasi_score)
-    #
-    # posisi_score  = cosine posisi PALING COCOK pelamar vs nama loker
-    # durasi_score:
-    #   - Ada syarat minimal (bulan) → total_bulan / minimal (cap 1.0)
-    #   - Fresh grad boleh (minimal=0) → 1.0 untuk semua
     # ============================================================
     @staticmethod
     def experience_score(
@@ -203,12 +189,14 @@ class ScoringService:
     ) -> float:
         minimal_bulan = lowongan.minimal_pengalaman_bulan or 0
 
+        # --- durasi_score ---
         if minimal_bulan == 0:
             durasi_score = 1.0
         else:
             durasi_score = min(total_pengalaman_bulan / minimal_bulan, 1.0)
         durasi_score = round(durasi_score, 4)
 
+        # --- posisi_score ---
         if not pengalamans:
             posisi_score = 0.0
         else:
@@ -217,7 +205,9 @@ class ScoringService:
             )
             posisi_vecs = [
                 embedding_service.encode(
-                    TextPreprocessor.normalize_text(f"pengalaman kerja sebagai {exp.posisi}")
+                    TextPreprocessor.normalize_text(
+                        f"pengalaman kerja sebagai {exp.posisi}"
+                    )
                 )
                 for exp in pengalamans
             ]
@@ -226,6 +216,7 @@ class ScoringService:
             posisi_score = round(float(np.max(sims)), 4)
 
         return round(0.5 * posisi_score + 0.5 * durasi_score, 4)
+
     # ============================================================
     # FINAL SCORE — Weighted Linear Combination
     # ============================================================
@@ -237,17 +228,8 @@ class ScoringService:
     # ============================================================
     # CLASSIFY — Label kecocokan
     # ============================================================
-
-
     @staticmethod
     def classify(score: float) -> str:
-        """
-        Threshold berdasarkan riset cosine similarity rekrutmen:
-        - >= 0.80 : Sangat Cocok  → high confidence match
-        - >= 0.65 : Cocok         → actionable threshold (industri: 0.65–0.72)
-        - >= 0.50 : Cukup Cocok   → ada relevansi, perlu review manual
-        - <  0.50 : Kurang Cocok  → tidak direkomendasikan
-        """
         if score >= 0.80:
             return "Sangat Cocok"
         if score >= 0.65:
@@ -256,14 +238,8 @@ class ScoringService:
             return "Cukup Cocok"
         return "Kurang Cocok"
 
-
     @staticmethod
     def determine_color(score: float) -> str:
-        """
-        Green  : >= 0.65 (layak diproses)
-        Yellow : >= 0.50 (perlu pertimbangan)
-        Red    : <  0.50 (tidak cocok)
-        """
         if score >= 0.65:
             return "green"
         if score >= 0.50:

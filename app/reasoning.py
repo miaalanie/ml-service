@@ -1,7 +1,6 @@
 from datetime import date, datetime
-from sklearn.metrics.pairwise import cosine_similarity
 
-from .preprocess import TextPreprocessor, SKILL_THRESHOLD
+from .preprocess import TextPreprocessor
 from .scoring import ScoringService
 from .biodata_validator import BiodataValidator
 
@@ -47,8 +46,12 @@ def _get_min_edu_req(lowongan) -> int:
         )
     return 0
 
+
 class ReasoningService:
 
+    # ============================================================
+    # TAGS — untuk /rank-applicants (company view)
+    # ============================================================
     @staticmethod
     def generate_tags(
         pelamar,
@@ -90,7 +93,7 @@ class ReasoningService:
                     'text': biodata_flags.get('usia_note', 'Usia tidak memenuhi syarat')
                 })
 
-        # TAG 2 — SKILL (gunakan skill_match yang sudah dihitung)
+        # TAG 2 — SKILL
         if skill_match is None:
             skill_match = ScoringService.compute_skill_match(
                 pelamar.skills, lowongan.skills, embedding_service
@@ -139,7 +142,7 @@ class ReasoningService:
             else:
                 tags.append({'type': 'danger', 'text': f'Pendidikan {edu_label} — di bawah syarat minimum'})
 
-        # TAG 5 — PENGALAMAN (gunakan exp_reasoning yang sudah dihitung)
+        # TAG 5 — PENGALAMAN
         if exp_reasoning is None:
             exp_reasoning = ScoringService.compute_exp_for_reasoning(
                 pelamar.pengalamans, job_vec, embedding_service
@@ -158,12 +161,14 @@ class ReasoningService:
             else:
                 tags.append({'type': 'warning', 'text': 'Belum ada pengalaman kerja'})
         else:
-            if best_sim >= 0.55:
-                rel_label, rel_type = 'sangat relevan', 'success'
-            elif best_sim >= 0.40:
-                rel_label, rel_type = 'cukup relevan', 'success'
+            if best_sim >= 0.80:
+                rel_label, rel_type = "sangat relevan", "success"
+            elif best_sim >= 0.65:
+                rel_label, rel_type = "relevan", "success"
+            elif best_sim >= 0.50:
+                rel_label, rel_type = "cukup relevan", "warning"
             else:
-                rel_label, rel_type = 'kurang relevan', 'warning'
+                rel_label, rel_type = "kurang relevan", "warning"
 
             dur_label = _bulan_to_label(total_bulan)
 
@@ -175,8 +180,11 @@ class ReasoningService:
             else:
                 tags.append({'type': rel_type, 'text': f'Pengalaman {dur_label} ({rel_label})'})
 
-        return tags    
-   
+        return tags
+
+    # ============================================================
+    # TAGS — untuk /match (job seeker view)
+    # ============================================================
     @staticmethod
     def generate_tags_rekomendasi(
         pelamar,
@@ -280,7 +288,10 @@ class ReasoningService:
                 tags.append({'type': 'warning', 'text': 'Pengalaman kurang relevan'})
 
         return tags
-   
+
+    # ============================================================
+    # REASONS — dipakai kedua endpoint
+    # ============================================================
     @staticmethod
     def generate_reasons(
         pelamar,
@@ -296,23 +307,29 @@ class ReasoningService:
 
         # 1. SEMANTIC
         sem = scores.get('semantic', 0)
-        if sem >= 0.55:
+        if sem >= 0.80:
             reasons.append(
                 f"Profil pelamar secara keseluruhan sangat sesuai dengan "
                 f"deskripsi lowongan {lowongan.namalowongan} "
-                f"(kecocokan semantik {round(sem * 100)}%)."
+                f"(tingkat kesesuaian {round(sem * 100)}%)."
             )
-        elif sem >= 0.40:
+        elif sem >= 0.65:
+            reasons.append(
+                f"Profil pelamar sesuai dengan deskripsi lowongan "
+                f"{lowongan.namalowongan} "
+                f"(tingkat kesesuaian {round(sem * 100)}%)."
+            )
+        elif sem >= 0.50:
             reasons.append(
                 f"Profil pelamar cukup sesuai dengan deskripsi lowongan "
                 f"{lowongan.namalowongan} "
-                f"(kecocokan semantik {round(sem * 100)}%)."
+                f"(tingkat kesesuaian {round(sem * 100)}%)."
             )
         else:
             reasons.append(
-                f"Kecocokan profil pelamar dengan deskripsi lowongan "
+                f"Kesesuaian profil pelamar dengan deskripsi lowongan "
                 f"{lowongan.namalowongan} masih rendah "
-                f"(kecocokan semantik {round(sem * 100)}%). "
+                f"(tingkat kesesuaian {round(sem * 100)}%). "
                 f"Profil pelamar mungkin perlu dilengkapi lebih lanjut."
             )
 
@@ -338,7 +355,7 @@ class ReasoningService:
                     f"Usia pelamar ({usia} tahun) sesuai dengan ketentuan loker ini."
                 )
 
-        # 3. SKILL (gunakan skill_match yang sudah dihitung)
+        # 3. SKILL
         if skill_match is None:
             skill_match = ScoringService.compute_skill_match(
                 pelamar.skills, lowongan.skills, embedding_service
@@ -348,7 +365,7 @@ class ReasoningService:
         if not lowongan.skills:
             reasons.append(
                 f"Loker {lowongan.namalowongan} tidak mencantumkan daftar skill "
-                f"yang dibutuhkan. Penilaian skill dilakukan secara semantik."
+                f"yang dibutuhkan."
             )
         elif not pelamar.skills:
             reasons.append(
@@ -369,7 +386,7 @@ class ReasoningService:
                 )
         else:
             reasons.append(
-                f"Tidak ditemukan skill pelamar yang cocok dengan kebutuhan "
+                f"Tidak ditemukan skill pelamar yang sesuai dengan kebutuhan "
                 f"loker {lowongan.namalowongan}. "
                 f"Skill yang dibutuhkan: {', '.join(s.nama for s in lowongan.skills[:3])}."
             )
@@ -403,7 +420,7 @@ class ReasoningService:
                     f"Pertimbangkan ini sebagai faktor seleksi awal."
                 )
 
-        # 5. PENGALAMAN (gunakan exp_reasoning yang sudah dihitung)
+        # 5. PENGALAMAN
         if exp_reasoning is None:
             exp_reasoning = ScoringService.compute_exp_for_reasoning(
                 pelamar.pengalamans, job_vec, embedding_service
@@ -440,12 +457,14 @@ class ReasoningService:
                 (thn_akhir - thn_awal) * 12 + (bln_akhir - bln_awal), 0
             )
 
-            if best_sim >= 0.55:
+            if best_sim >= 0.80:
                 rel_desc = "sangat relevan"
-            elif best_sim >= 0.40:
+            elif best_sim >= 0.65:
+                rel_desc = "relevan"
+            elif best_sim >= 0.50:
                 rel_desc = "cukup relevan"
             else:
-                rel_desc = "kurang relevan secara langsung"
+                rel_desc = "kurang relevan"
 
             status_str = (
                 "masih aktif"
@@ -510,8 +529,9 @@ class ReasoningService:
 
         return reasons
 
-
-
+    # ============================================================
+    # BUILD BIODATA FLAGS
+    # ============================================================
     @staticmethod
     def build_biodata_flags(pelamar, lowongan) -> dict:
         edu_tertinggi = _get_edu_tertinggi(pelamar)

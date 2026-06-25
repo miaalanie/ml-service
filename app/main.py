@@ -47,9 +47,9 @@ app.add_middleware(
 )
 
 # ============================================================
-# LOAD SERVICE SEKALI SAAT STARTUP
+# LOAD SERVICE SEKALI SAAT STARTUP — shared embedding instance
 # ============================================================
-embedding_service = EmbeddingService()   # model load SEKALI, cache shared
+embedding_service = EmbeddingService()
 matcher           = MatcherService(embedding_service)
 ranker_service    = RankerService(embedding_service)
 
@@ -82,7 +82,6 @@ def match(payload: MatchRequestSchema):
     """
     Endpoint utama job matching.
     """
-
     try:
         logger.info("========== /match REQUEST ==========")
 
@@ -146,7 +145,6 @@ async def rank_applicants(
     """
     Ranking pelamar yang apply ke satu lowongan.
     """
-
     try:
         logger.info(
             "========== /rank-applicants REQUEST =========="
@@ -154,9 +152,6 @@ async def rank_applicants(
 
         payload_dict = payload.model_dump()
 
-        # ====================================================
-        # LOG PAYLOAD MASUK DARI LARAVEL
-        # ====================================================
         logger.info(
             "Payload:\n%s",
             json.dumps(
@@ -186,14 +181,8 @@ async def rank_applicants(
             len(payload_dict.get("pelamars", []))
         )
 
-        # ====================================================
-        # PROSES RANKING
-        # ====================================================
         result = ranker_service.rank(payload)
 
-        # ====================================================
-        # LOG RESPONSE
-        # ====================================================
         logger.info(
             "========== /rank-applicants RESPONSE =========="
         )
@@ -208,11 +197,7 @@ async def rank_applicants(
             )
         )
 
-        # Ringkasan top ranking
-        ranked = result.get(
-            "ranked_applicants",
-            []
-        )
+        ranked = result.get("ranked_applicants", [])
 
         logger.info(
             "Total hasil ranking: %s",
@@ -244,16 +229,12 @@ async def rank_applicants(
                     item.get("experience_score", 0)
                 )
 
-        logger.info(
-            "========== REQUEST SELESAI =========="
-        )
+        logger.info("========== REQUEST SELESAI ==========")
 
         return result
 
     except Exception as e:
-        logger.exception(
-            "ERROR SAAT RANKING APPLICANTS"
-        )
+        logger.exception("ERROR SAAT RANKING APPLICANTS")
 
         raise HTTPException(
             status_code=500,

@@ -7,7 +7,6 @@ from .reasoning import ReasoningService
 class RankerService:
 
     def __init__(self, embedding_service=None):
-        from .embedding import EmbeddingService
         self.embedding_service = embedding_service or EmbeddingService()
 
     def rank(self, payload) -> dict:
@@ -34,22 +33,67 @@ class RankerService:
         ]
         pelamar_vecs = self.embedding_service.encode_batch(pelamar_texts)
 
+        # STEP 3 — PRE-ENCODE SEMUA TEKS UNIK SEBELUM LOOP
+        # Kumpulkan semua teks dari loker + seluruh pelamar,
+        # encode sekaligus dalam satu batch → loop jadi pure cache hit
+        texts_to_prefetch = set()
+
+        # Loker skills
+        for ls in (lowongan.skills or []):
+            texts_to_prefetch.add(
+                TextPreprocessor.normalize_text(ls.nama)
+            )
+
+        # Loker jurusans
+        for lj in (lowongan.jurusans or []):
+            texts_to_prefetch.add(
+                TextPreprocessor.normalize_text(f"jurusan {lj.nama}")
+            )
+
+        # Namalowongan (dipakai experience_score)
+        texts_to_prefetch.add(
+            TextPreprocessor.normalize_text(lowongan.namalowongan)
+        )
+
+        # Semua pelamar — skills, pengalaman, jurusan
+        for p in pelamars:
+            for s in (p.skills or []):
+                texts_to_prefetch.add(
+                    TextPreprocessor.normalize_text(s.namaskill)
+                )
+            for exp in (p.pengalamans or []):
+                texts_to_prefetch.add(
+                    TextPreprocessor.normalize_text(
+                        f"pengalaman kerja sebagai {exp.posisi}"
+                    )
+                )
+            jurusan = TextPreprocessor.get_jurusan_pelamar(p.pendidikans)
+            if jurusan:
+                texts_to_prefetch.add(
+                    TextPreprocessor.normalize_text(f"jurusan {jurusan}")
+                )
+
+        # Satu batch call → isi semua cache
+        if texts_to_prefetch:
+            self.embedding_service.encode_batch(list(texts_to_prefetch))
+
+        # STEP 4 — LOOP PER PELAMAR (semua encode = cache hit)
         results = []
 
         for i, pelamar in enumerate(pelamars):
             pelamar_vec = pelamar_vecs[i]
 
-            # STEP 3 — BIODATA FLAGS (hard requirements langsung dari lowongan)
+            # BIODATA FLAGS
             biodata_flags = ReasoningService.build_biodata_flags(
                 pelamar, lowongan
             )
 
-            # STEP 4 — S1: SEMANTIC SCORE
+            # S1: SEMANTIC SCORE
             semantic = ScoringService.semantic_similarity(
                 pelamar_vec, job_vec
             )
 
-            # STEP 5 — Compute skill match SEKALI (dipakai scoring + reasoning)
+            # SKILL MATCH SEKALI (score + reasoning)
             skill_match = ScoringService.compute_skill_match(
                 pelamar.skills,
                 lowongan.skills,
@@ -57,7 +101,7 @@ class RankerService:
             )
             skill = skill_match[0]
 
-            # STEP 6 — S3: EDUCATION SCORE
+            # S3: EDUCATION SCORE
             edu = ScoringService.education_score(
                 pelamar.pendidikans,
                 lowongan,
@@ -65,14 +109,14 @@ class RankerService:
                 self.embedding_service
             )
 
-            # STEP 7 — Compute exp for reasoning SEKALI (dipakai tags + reasons)
+            # EXP FOR REASONING SEKALI (tags + reasons)
             exp_reasoning = ScoringService.compute_exp_for_reasoning(
                 pelamar.pengalamans,
                 job_vec,
                 self.embedding_service
             )
 
-            # STEP 8 — S4: EXPERIENCE SCORE (tetap pakai namalowongan vector)
+            # S4: EXPERIENCE SCORE
             exp = ScoringService.experience_score(
                 pelamar.pengalamans,
                 pelamar.total_pengalaman_bulan,
@@ -80,15 +124,15 @@ class RankerService:
                 self.embedding_service
             )
 
-            # STEP 9 — FINAL SCORE
+            # FINAL SCORE
             final = ScoringService.final_score(semantic, skill, edu, exp)
 
-            # STEP 10 — CLASSIFY & LABEL
+            # CLASSIFY & LABEL
             label      = ScoringService.classify(final)
             color      = ScoringService.determine_color(final)
             percentage = ScoringService.percentage(final)
 
-            # STEP 11 — EXPLAINABILITY (pass hasil yg sudah dihitung)
+            # EXPLAINABILITY
             scores_dict = {
                 'semantic': semantic,
                 'skill':    skill,
@@ -115,7 +159,6 @@ class RankerService:
                 'pelamar_id':       pelamar.id,
                 'namalengkap':      pelamar.namalengkap,
 
-                # Score breakdown
                 'match_percentage': percentage,
                 'label':            label,
                 'color':            color,
@@ -125,12 +168,11 @@ class RankerService:
                 'education_score':  round(edu, 4),
                 'experience_score': round(exp, 4),
 
-                # Explainability
                 'tags':    tags,
                 'reasons': reasons,
             })
 
-        # STEP 11 — SORT DESCENDING + ASSIGN RANK
+        # SORT DESCENDING + ASSIGN RANK
         results.sort(key=lambda x: x['final_score'], reverse=True)
 
         for idx, r in enumerate(results):

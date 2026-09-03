@@ -530,7 +530,7 @@ Content-Type: application/json
 }
 
 
-2026-06-08 22:47:09,812 | INFO | Payload:
+2026-06-08 22:47:09,812 | INFO |  
 {
   "lowongan": {
     "id": 14,
@@ -1118,3 +1118,69 @@ Batches: 100%|██████████████████████
     }
   ]
 }
+
+
+
+# ------------------ INI HASIL TERBARU
+"lowongan": {
+    "id": 14,
+    "namalowongan": "Staf Penjualan / Merchandiser",
+    "deskripsi": "<p><strong>Tanggung Jawab Pekerjaan:</strong></p><ul><li>Mengembangkan pelanggan baru sekaligus menjaga hubungan dengan pelanggan yang sudah ada untuk meningkatkan kepuasan dan loyalitas;</li><li>Bertanggung jawab atas analisis kebutuhan sampel, pengembangan desain, serta pengelolaan penawaran harga;</li><li>Mengawasi pelaksanaan produksi dan mengendalikan seluruh proses pesanan;</li><li>Mengoordinasikan jadwal produksi;</li><li>Melakukan evaluasi terhadap standar pengujian produk;</li><li>Memantau dan menelusuri perkembangan pesanan;</li><li>Menjaga komunikasi yang efektif dengan tim internal dan pelanggan.</li></ul><p><strong>Kualifikasi Pekerjaan:</strong></p><ul><li>Fasih berbahasa Mandarin, Inggris, dan Indonesia, baik lisan maupun tulisan;</li><li>Memiliki kemampuan administrasi dan tindak lanjut pesanan yang baik;</li><li>Mampu bekerja secara teliti serta menangani banyak tugas (multitasking);</li><li>Terbuka untuk lulusan baru (fresh graduate);</li><li>Memiliki pengalaman di bidang penjualan, merchandising, penanganan pelanggan, atau manajemen pesanan menjadi nilai tambah.</li></ul>",
+    "kategori": {
+      "id": 21,
+      "nama": "Sales / Account Executive"
+    },
+    "kategorilokasi": "Dalam Negeri",
+    "gaji_awal": 15000000.0,
+    "gaji_akhir": 20000000.0,
+    "minimal_pendidikan": {
+      "kode": 6,
+      "nama": "D3"
+    },
+    "minimal_pengalaman_bulan": 12,
+    "preferensi_gender": "Semua",
+    "usia_min": 20,
+    "usia_max": 35,
+    "skills": [
+      {
+        "id": 5,
+        "nama": "Bahasa Mandarin"
+      },
+      {
+        "id": 6,
+        "nama": "Bahasa Inggris"
+      },
+      {
+        "id": 7,
+        "nama": "Komunikasi"
+      },
+      {
+        "id": 11,
+        "nama": "Multitasking"
+      },
+      {
+        "id": 12,
+        "nama": "Penjualan"
+      },
+      {
+        "id": 61,
+        "nama": "Administrasi"
+      }
+    ],
+    "jurusans": [
+      {
+        "id": 10,
+        "nama": "Pemasaran"
+      },
+      {
+        "id": 107,
+        "nama": "Marketing"
+      },
+      {
+        "id": 108,
+        "nama": "Komunikasi"
+      }
+    ],
+    "perusahaan_nama": "TalentLink Indonesia",
+    "perusahaan_logo": "company_logos/wQS3KsQr4JP0ucrsFnDGL6hnSMfCorRgrxgnf1Eo.png"
+  },

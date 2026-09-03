@@ -10,17 +10,27 @@ from .ranker import RankerService
 
 import logging
 import json
+import os
 
 # ============================================================
 # LOGGER CONFIG
 # ============================================================
+
+os.makedirs("logs", exist_ok=True)
+
 logging.basicConfig(
     level=logging.INFO,
-    format="%(asctime)s | %(levelname)s | %(message)s"
+    format="%(asctime)s | %(levelname)s | %(message)s",
+    handlers=[
+        logging.StreamHandler(),
+        logging.FileHandler(
+            "logs/ml-ranking.log",
+            encoding="utf-8"
+        )
+    ]
 )
 
 logger = logging.getLogger("ml-ranking")
-
 # ============================================================
 # FASTAPI APP
 # ============================================================
@@ -30,8 +40,6 @@ app = FastAPI(
         "Content-Based Job Recommendation menggunakan "
         "Multilingual Sentence Embedding + "
         "Multi-Criteria Weighted Scoring. "
-        "Bobot ditentukan via ablation study "
-        "(NDCG@10 = 0.76963)."
     ),
     version="2.0.0"
 )

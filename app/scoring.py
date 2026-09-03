@@ -101,20 +101,6 @@ class ScoringService:
         best_idx = int(np.argmax(sims))
         return pengalamans[best_idx], round(float(sims[best_idx]), 4)
 
-    # ============================================================
-    # S2 — SKILL SCORE (thin wrapper atas compute_skill_match)
-    # ============================================================
-    @staticmethod
-    def skill_score(
-        pelamar_skills,
-        lowongan_skills,
-        embedding_service,
-        threshold: float = SKILL_THRESHOLD,
-    ) -> float:
-        score, _, _ = ScoringService.compute_skill_match(
-            pelamar_skills, lowongan_skills, embedding_service, threshold
-        )
-        return score
 
     # ============================================================
     # S3 — EDUCATION SCORE
@@ -144,7 +130,8 @@ class ScoringService:
                 else level_pelamar / 9
             )
         else:
-            level_score = level_pelamar / 9
+            # Jika lowongan bebas pendidikan, semua pelamar otomatis dapet nilai sempurna (1.0)
+            level_score = 1.0
 
         level_score = round(min(level_score, 1.0), 4)
 
@@ -174,7 +161,7 @@ class ScoringService:
                         float(cosine_similarity([jurusan_vec], [job_vec])[0][0]), 4
                     )
                 else:
-                    jurusan_score = 0.5
+                    jurusan_score = 1.00
 
         edu_score = (0.5 * level_score) + (0.5 * jurusan_score)
         return round(edu_score, 4)

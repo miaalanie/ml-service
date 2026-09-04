@@ -21,62 +21,9 @@ class MatcherService:
                 'recommendations': []
             }
 
-        # STEP 1 — BUILD & ENCODE TEKS PELAMAR
-        pelamar_text = TextPreprocessor.build_pelamar_text(pelamar)
-        pelamar_vec  = self.embedding_service.encode(pelamar_text)
+        pelamar_vec = ScoringService.vector_for(pelamar)
+        lowongan_vecs = [ScoringService.vector_for(lo) for lo in lowongans]
 
-        # STEP 2 — ENCODE SEMUA LOKER (batch)
-        lowongan_texts = [
-            TextPreprocessor.build_lowongan_text(lo)
-            for lo in lowongans
-        ]
-        lowongan_vecs = self.embedding_service.encode_batch(lowongan_texts)
-
-        # STEP 3 — PRE-ENCODE SEMUA TEKS UNIK SEBELUM LOOP
-        # Pelamar sama untuk semua loker, encode skill/exp/jurusan sekali
-        # Loker berbeda-beda, encode semua skills + jurusans seluruh loker
-        texts_to_prefetch = set()
-
-        # Pelamar skills
-        for s in (pelamar.skills or []):
-            texts_to_prefetch.add(
-                TextPreprocessor.normalize_text(s.namaskill)
-            )
-
-        # Pelamar pengalaman
-        for exp in (pelamar.pengalamans or []):
-            texts_to_prefetch.add(
-                TextPreprocessor.normalize_text(
-                    f"pengalaman kerja sebagai {exp.posisi}"
-                )
-            )
-
-        # Pelamar jurusan
-        jurusan = TextPreprocessor.get_jurusan_pelamar(pelamar.pendidikans)
-        if jurusan:
-            texts_to_prefetch.add(
-                TextPreprocessor.normalize_text(f"jurusan {jurusan}")
-            )
-
-        # Semua loker — skills, jurusans, namalowongan
-        for lo in lowongans:
-            texts_to_prefetch.add(
-                TextPreprocessor.normalize_text(lo.namalowongan)
-            )
-            for ls in (lo.skills or []):
-                texts_to_prefetch.add(
-                    TextPreprocessor.normalize_text(ls.nama)
-                )
-            for lj in (lo.jurusans or []):
-                texts_to_prefetch.add(
-                    TextPreprocessor.normalize_text(f"jurusan {lj.nama}")
-                )
-
-        # Satu batch call → isi semua cache
-        if texts_to_prefetch:
-            self.embedding_service.encode_batch(list(texts_to_prefetch))
-
-        # STEP 4 — LOOP PER LOKER (semua encode = cache hit)
         results = []
 
         for i, lowongan in enumerate(lowongans):

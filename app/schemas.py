@@ -7,6 +7,7 @@ class SkillSchema(BaseModel):
     id: Optional[int] = None
     namaskill: str
     keterangan: str  # 'Kurang' | 'Cukup' | 'Baik' | 'Sangat Baik'
+    embedding: Optional[List[float]] = None
 
 
 # PENDIDIKAN — sesuai tabel pelamarpendidikans
@@ -16,6 +17,7 @@ class PendidikanSchema(BaseModel):
     jurusan: Optional[str] = None
     tahunawal: Optional[int] = None
     tahunselesai: Optional[int] = None
+    embedding: Optional[List[float]] = None
 
 
 # PENGALAMAN — sesuai tabel pelamarpengalamen
@@ -28,6 +30,7 @@ class PengalamanSchema(BaseModel):
     bulanselesai: int = 0   # 0 = tidak diketahui
     tahunselesai: Optional[int] = None
     aktif: int = 0          # 1 = masih bekerja
+    embedding: Optional[List[float]] = None
 
 
 # PELAMAR — sesuai tabel pelamars + relasi
@@ -42,6 +45,7 @@ class PelamarSchema(BaseModel):
     pendidikans: List[PendidikanSchema] = []
     pengalamans: List[PengalamanSchema] = []
     total_pengalaman_bulan: int = 0
+    embedding: Optional[List[float]] = None
 
 
 # KATEGORI LOKER — sesuai tabel kategorilowongans
@@ -61,12 +65,14 @@ class MinimalPendidikanSchema(BaseModel):
 class LowonganSkillSchema(BaseModel):
     id: int
     nama: str
+    embedding: Optional[List[float]] = None
 
 
 # JURUSAN LOWONGAN — dari tabel lowonganjurusans → masterjurusans
 class LowonganJurusanSchema(BaseModel):
     id: int
     nama: str
+    embedding: Optional[List[float]] = None
 
 
 # LOWONGAN — sesuai tabel lowongans + kolom tambahan
@@ -92,6 +98,8 @@ class LowonganSchema(BaseModel):
 
     perusahaan_nama: Optional[str] = None
     perusahaan_logo: Optional[str] = None
+    embedding: Optional[List[float]] = None
+    title_embedding: Optional[List[float]] = None
 
 class LowonganEmbeddingRequestSchema(BaseModel):
     lowongan: LowonganSchema

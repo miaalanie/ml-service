@@ -22,62 +22,9 @@ class RankerService:
                 'ranked_applicants': []
             }
 
-        # STEP 1 — BUILD & ENCODE LOKER (sekali, reuse semua pelamar)
-        lowongan_text = TextPreprocessor.build_lowongan_text(lowongan)
-        job_vec       = self.embedding_service.encode(lowongan_text)
+        job_vec = ScoringService.vector_for(lowongan)
+        pelamar_vecs = [ScoringService.vector_for(p) for p in pelamars]
 
-        # STEP 2 — ENCODE SEMUA PELAMAR (batch)
-        pelamar_texts = [
-            TextPreprocessor.build_pelamar_text(p)
-            for p in pelamars
-        ]
-        pelamar_vecs = self.embedding_service.encode_batch(pelamar_texts)
-
-        # STEP 3 — PRE-ENCODE SEMUA TEKS UNIK SEBELUM LOOP
-        # Kumpulkan semua teks dari loker + seluruh pelamar,
-        # encode sekaligus dalam satu batch → loop jadi pure cache hit
-        texts_to_prefetch = set()
-
-        # Loker skills
-        for ls in (lowongan.skills or []):
-            texts_to_prefetch.add(
-                TextPreprocessor.normalize_text(ls.nama)
-            )
-
-        # Loker jurusans
-        for lj in (lowongan.jurusans or []):
-            texts_to_prefetch.add(
-                TextPreprocessor.normalize_text(f"jurusan {lj.nama}")
-            )
-
-        # Namalowongan (dipakai experience_score)
-        texts_to_prefetch.add(
-            TextPreprocessor.normalize_text(lowongan.namalowongan)
-        )
-
-        # Semua pelamar — skills, pengalaman, jurusan
-        for p in pelamars:
-            for s in (p.skills or []):
-                texts_to_prefetch.add(
-                    TextPreprocessor.normalize_text(s.namaskill)
-                )
-            for exp in (p.pengalamans or []):
-                texts_to_prefetch.add(
-                    TextPreprocessor.normalize_text(
-                        f"pengalaman kerja sebagai {exp.posisi}"
-                    )
-                )
-            jurusan = TextPreprocessor.get_jurusan_pelamar(p.pendidikans)
-            if jurusan:
-                texts_to_prefetch.add(
-                    TextPreprocessor.normalize_text(f"jurusan {jurusan}")
-                )
-
-        # Satu batch call → isi semua cache
-        if texts_to_prefetch:
-            self.embedding_service.encode_batch(list(texts_to_prefetch))
-
-        # STEP 4 — LOOP PER PELAMAR (semua encode = cache hit)
         results = []
 
         for i, pelamar in enumerate(pelamars):

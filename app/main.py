@@ -2,10 +2,13 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from .schemas import (
     MatchRequestSchema,
-    RankApplicantsRequestSchema
+    RankApplicantsRequestSchema,
+    PelamarEmbeddingRequestSchema,
+    LowonganEmbeddingRequestSchema,
 )
 from .embedding import EmbeddingService
 from .matcher import MatcherService
+from .preprocess import TextPreprocessor
 from .ranker import RankerService
 
 import logging
@@ -80,6 +83,110 @@ def root():
 @app.get("/health")
 def health():
     return {"status": "ok"}
+
+
+@app.post("/embeddings/pelamar")
+def create_pelamar_embeddings(payload: PelamarEmbeddingRequestSchema):
+    """Build canonical applicant texts and return vectors for Laravel to persist."""
+    try:
+        pelamar = payload.pelamar
+        records = [("pelamar_cv", pelamar.id, TextPreprocessor.build_pelamar_text(pelamar))]
+
+        records.extend(
+            ("pelamar_skill", skill.id, TextPreprocessor.normalize_text(skill.namaskill))
+            for skill in pelamar.skills
+            if skill.id is not None and skill.namaskill.strip()
+        )
+
+        jurusan = TextPreprocessor.get_jurusan_pelamar(pelamar.pendidikans)
+        if jurusan:
+            pendidikan = TextPreprocessor._get_pendidikan_tertinggi(pelamar.pendidikans)
+            if pendidikan and pendidikan.id is not None:
+                records.append((
+                    "pelamar_education",
+                    pendidikan.id,
+                    TextPreprocessor.normalize_text(f"jurusan {jurusan}"),
+                ))
+
+        records.extend(
+            (
+                "pelamar_pengalaman",
+                pengalaman.id,
+                TextPreprocessor.normalize_text(
+                    f"pengalaman kerja sebagai {pengalaman.posisi}"
+                ),
+            )
+            for pengalaman in pelamar.pengalamans
+            if pengalaman.id is not None and pengalaman.posisi.strip()
+        )
+
+        texts = [text for _, _, text in records]
+        vectors = embedding_service.encode_batch(texts)
+
+        return {
+            "success": True,
+            "model_version": EmbeddingService.MODEL_NAME,
+            "embedding_dimension": 384,
+            "embeddings": [
+                {
+                    "embeddable_type": entity_type,
+                    "embeddable_id": entity_id,
+                    "source_text": source_text,
+                    "vector": vector.astype(float).tolist(),
+                }
+                for (entity_type, entity_id, source_text), vector in zip(records, vectors)
+            ],
+        }
+    except Exception as e:
+        logger.exception("ERROR SAAT MEMBUAT EMBEDDING PELAMAR")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.post("/embeddings/lowongan")
+def create_lowongan_embeddings(payload: LowonganEmbeddingRequestSchema):
+    """Build canonical vacancy texts and return vectors for Laravel to persist."""
+    try:
+        lowongan = payload.lowongan
+        records = [
+            ("lowongan_requirement", lowongan.id, TextPreprocessor.build_lowongan_text(lowongan)),
+            ("lowongan_title", lowongan.id, TextPreprocessor.normalize_text(lowongan.namalowongan)),
+        ]
+
+        records.extend(
+            ("lowongan_skill", skill.id, TextPreprocessor.normalize_text(skill.nama))
+            for skill in lowongan.skills
+            if skill.nama.strip()
+        )
+        records.extend(
+            (
+                "lowongan_education",
+                jurusan.id,
+                TextPreprocessor.normalize_text(f"jurusan {jurusan.nama}"),
+            )
+            for jurusan in lowongan.jurusans
+            if jurusan.nama.strip()
+        )
+
+        texts = [text for _, _, text in records]
+        vectors = embedding_service.encode_batch(texts)
+
+        return {
+            "success": True,
+            "model_version": EmbeddingService.MODEL_NAME,
+            "embedding_dimension": 384,
+            "embeddings": [
+                {
+                    "embeddable_type": entity_type,
+                    "embeddable_id": entity_id,
+                    "source_text": source_text,
+                    "vector": vector.astype(float).tolist(),
+                }
+                for (entity_type, entity_id, source_text), vector in zip(records, vectors)
+            ],
+        }
+    except Exception as e:
+        logger.exception("ERROR SAAT MEMBUAT EMBEDDING LOWONGAN")
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 # ============================================================

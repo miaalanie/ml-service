@@ -98197,3 +98197,9 @@
   ]
 }
 2026-09-03 08:54:45,211 | INFO | ========== /match SELESAI ==========
+2026-09-04 09:32:22,877 | INFO | Use pytorch device_name: cpu
+2026-09-04 09:32:22,877 | INFO | Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2026-09-04 09:37:26,065 | INFO | Use pytorch device_name: cpu
+2026-09-04 09:37:26,066 | INFO | Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2026-09-04 09:37:42,930 | INFO | Use pytorch device_name: cpu
+2026-09-04 09:37:42,930 | INFO | Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2

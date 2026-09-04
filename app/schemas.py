@@ -4,12 +4,14 @@ from typing import List, Optional
 
 # SKILL — sesuai tabel pelamarskills
 class SkillSchema(BaseModel):
+    id: Optional[int] = None
     namaskill: str
     keterangan: str  # 'Kurang' | 'Cukup' | 'Baik' | 'Sangat Baik'
 
 
 # PENDIDIKAN — sesuai tabel pelamarpendidikans
 class PendidikanSchema(BaseModel):
+    id: Optional[int] = None
     kategori: str
     jurusan: Optional[str] = None
     tahunawal: Optional[int] = None
@@ -19,6 +21,7 @@ class PendidikanSchema(BaseModel):
 # PENGALAMAN — sesuai tabel pelamarpengalamen
 # bulanawal & bulanselesai ditambah sesuai ALTER TABLE
 class PengalamanSchema(BaseModel):
+    id: Optional[int] = None
     posisi: str
     bulanawal: int = 0      # 0 = tidak diketahui
     tahunawal: int
@@ -90,11 +93,18 @@ class LowonganSchema(BaseModel):
     perusahaan_nama: Optional[str] = None
     perusahaan_logo: Optional[str] = None
 
+class LowonganEmbeddingRequestSchema(BaseModel):
+    lowongan: LowonganSchema
+
 
 # PAYLOAD /match
 class MatchRequestSchema(BaseModel):
     pelamar: PelamarSchema
     lowongans: List[LowonganSchema]
+
+
+class PelamarEmbeddingRequestSchema(BaseModel):
+    pelamar: PelamarSchema
 
 
 # PAYLOAD /rank-applicants

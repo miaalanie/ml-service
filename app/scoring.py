@@ -220,8 +220,14 @@ class ScoringService:
     # FINAL SCORE — Weighted Linear Combination
     # ============================================================
     @staticmethod
-    def final_score(semantic: float, skill: float, edu: float, exp: float) -> float:
-        score = W_SEMANTIC * semantic + W_SKILL * skill + W_EDU * edu + W_EXP * exp
+    def final_score(semantic: float, skill: float, edu: float, exp: float, config=None) -> float:
+        config = config or {}
+        score = (
+            config.get('semantic_weight', W_SEMANTIC) * semantic
+            + config.get('skill_weight', W_SKILL) * skill
+            + config.get('education_weight', W_EDU) * edu
+            + config.get('experience_weight', W_EXP) * exp
+        )
         return round(score, 4)
 
     # ============================================================

@@ -12,6 +12,7 @@ class MatcherService:
     def match(self, payload) -> dict:
         pelamar   = payload.pelamar
         lowongans = payload.lowongans
+        scoring_config = payload.scoring_config.model_dump()
 
         if not lowongans:
             return {
@@ -43,7 +44,8 @@ class MatcherService:
             skill_match = ScoringService.compute_skill_match(
                 pelamar.skills,
                 lowongan.skills,
-                self.embedding_service
+                self.embedding_service,
+                threshold=scoring_config['skill_threshold']
             )
             skill = skill_match[0]
 
@@ -71,7 +73,7 @@ class MatcherService:
             )
 
             # FINAL SCORE
-            final = ScoringService.final_score(semantic, skill, edu, exp)
+            final = ScoringService.final_score(semantic, skill, edu, exp, scoring_config)
 
             # CLASSIFY & LABEL
             label      = ScoringService.classify(final)
@@ -132,5 +134,6 @@ class MatcherService:
             'total':           len(results),
             'pelamar_id':      pelamar.id,
             'pelamar_nama':    pelamar.namalengkap,
+            'scoring_config':  scoring_config,
             'recommendations': results
         }

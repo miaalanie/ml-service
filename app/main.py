@@ -85,6 +85,23 @@ def health():
     return {"status": "ok"}
 
 
+@app.get("/health/detailed")
+def detailed_health():
+    """Return actionable service diagnostics for the admin health page."""
+    try:
+        model_loaded = embedding_service.model is not None
+        return {
+            "status": "ok" if model_loaded else "degraded",
+            "model": EmbeddingService.MODEL_NAME,
+            "model_loaded": model_loaded,
+            "embedding_dimension": 384,
+            "scoring_engine": "weighted-linear-v2",
+        }
+    except Exception as exc:
+        logger.exception("HEALTH CHECK DETAIL GAGAL")
+        raise HTTPException(status_code=503, detail=str(exc))
+
+
 @app.post("/embeddings/pelamar")
 def create_pelamar_embeddings(payload: PelamarEmbeddingRequestSchema):
     """Build canonical applicant texts and return vectors for Laravel to persist."""

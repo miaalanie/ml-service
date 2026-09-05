@@ -1,5 +1,29 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, model_validator
 from typing import List, Optional
+
+
+class ScoringConfigSchema(BaseModel):
+    semantic_weight: float = 0.25
+    skill_weight: float = 0.25
+    education_weight: float = 0.25
+    experience_weight: float = 0.25
+    skill_threshold: float = 0.50
+
+    @model_validator(mode='after')
+    def validate_weights(self):
+        weights = (
+            self.semantic_weight,
+            self.skill_weight,
+            self.education_weight,
+            self.experience_weight,
+        )
+        if any(weight < 0 or weight > 1 for weight in weights):
+            raise ValueError('Bobot harus berada di antara 0 dan 1.')
+        if abs(sum(weights) - 1.0) > 0.0001:
+            raise ValueError('Total bobot harus sama dengan 1.0.')
+        if not 0 <= self.skill_threshold <= 1:
+            raise ValueError('Skill threshold harus berada di antara 0 dan 1.')
+        return self
 
 
 # SKILL — sesuai tabel pelamarskills
@@ -109,6 +133,7 @@ class LowonganEmbeddingRequestSchema(BaseModel):
 class MatchRequestSchema(BaseModel):
     pelamar: PelamarSchema
     lowongans: List[LowonganSchema]
+    scoring_config: ScoringConfigSchema = ScoringConfigSchema()
 
 
 class PelamarEmbeddingRequestSchema(BaseModel):
@@ -119,3 +144,4 @@ class PelamarEmbeddingRequestSchema(BaseModel):
 class RankApplicantsRequestSchema(BaseModel):
     lowongan: LowonganSchema
     pelamars: List[PelamarSchema]
+    scoring_config: ScoringConfigSchema = ScoringConfigSchema()

@@ -12,6 +12,7 @@ class RankerService:
     def rank(self, payload) -> dict:
         lowongan = payload.lowongan
         pelamars = payload.pelamars
+        scoring_config = payload.scoring_config.model_dump()
 
         if not pelamars:
             return {
@@ -44,7 +45,8 @@ class RankerService:
             skill_match = ScoringService.compute_skill_match(
                 pelamar.skills,
                 lowongan.skills,
-                self.embedding_service
+                self.embedding_service,
+                threshold=scoring_config['skill_threshold']
             )
             skill = skill_match[0]
 
@@ -72,7 +74,7 @@ class RankerService:
             )
 
             # FINAL SCORE
-            final = ScoringService.final_score(semantic, skill, edu, exp)
+            final = ScoringService.final_score(semantic, skill, edu, exp, scoring_config)
 
             # CLASSIFY & LABEL
             label      = ScoringService.classify(final)
@@ -130,5 +132,6 @@ class RankerService:
             'total':             len(results),
             'lowongan_id':       lowongan.id,
             'namalowongan':      lowongan.namalowongan,
+            'scoring_config':    scoring_config,
             'ranked_applicants': results
         }

@@ -1,8 +1,11 @@
+import logging
 from datetime import date, datetime
 
 from .preprocess import TextPreprocessor
 from .scoring import ScoringService
 from .biodata_validator import BiodataValidator
+
+logger = logging.getLogger("ml-ranking")
 
 _validator = BiodataValidator()
 
@@ -287,6 +290,13 @@ class ReasoningService:
             else:
                 tags.append({'type': 'warning', 'text': 'Pengalaman kurang relevan'})
 
+        logger.info(
+            "TAGS_SUMMARY | pelamar_id=%s | lowongan_id=%s | tag_count=%s | preview=%s",
+            getattr(pelamar, 'id', None),
+            getattr(lowongan, 'id', None),
+            len(tags),
+            tags[:3],
+        )
         return tags
 
     # ============================================================
@@ -527,6 +537,13 @@ class ReasoningService:
                 f"verifikasi manual disarankan."
             )
 
+        logger.info(
+            "REASONING_SUMMARY | pelamar_id=%s | lowongan_id=%s | reason_count=%s | preview=%s",
+            getattr(pelamar, 'id', None),
+            getattr(lowongan, 'id', None),
+            len(reasons),
+            reasons[:3],
+        )
         return reasons
 
     # ============================================================
@@ -543,10 +560,17 @@ class ReasoningService:
             'jeniskelamin': getattr(pelamar, 'jeniskelamin', None),
         }
 
-        return _validator.validate(
+        result = _validator.validate(
             pelamar_biodata        = biodata,
             lowongan               = lowongan,
             pelamar_edu_kategori   = edu_kategori,
             total_pengalaman_bulan = pelamar.total_pengalaman_bulan,
             pelamar_skills_raw     = skill_names,
         )
+        logger.info(
+            "BIODATA | pelamar_id=%s | lowongan_id=%s | result=%s",
+            getattr(pelamar, 'id', None),
+            getattr(lowongan, 'id', None),
+            result,
+        )
+        return result

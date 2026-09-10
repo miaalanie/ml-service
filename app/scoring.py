@@ -1,7 +1,11 @@
+import logging
+
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 
 from .preprocess import TextPreprocessor
+
+logger = logging.getLogger("ml-ranking")
 
 # BOBOT WEIGHTED SCORING
 W_SEMANTIC = 0.25
@@ -228,7 +232,16 @@ class ScoringService:
             + config.get('education_weight', W_EDU) * edu
             + config.get('experience_weight', W_EXP) * exp
         )
-        return round(score, 4)
+        final_score = round(score, 4)
+        logger.info(
+            "FINAL SCORE | semantic=%.4f | skill=%.4f | edu=%.4f | exp=%.4f | final=%.4f",
+            semantic,
+            skill,
+            edu,
+            exp,
+            final_score,
+        )
+        return final_score
 
     # ============================================================
     # CLASSIFY — Label kecocokan

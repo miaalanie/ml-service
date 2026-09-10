@@ -19,21 +19,25 @@ import os
 # LOGGER CONFIG
 # ============================================================
 
-os.makedirs("logs", exist_ok=True)
-
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s | %(levelname)s | %(message)s",
-    handlers=[
-        logging.StreamHandler(),
-        logging.FileHandler(
-            "logs/ml-ranking.log",
-            encoding="utf-8"
-        )
-    ]
-)
+base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+log_dir = os.path.join(base_dir, "logs")
+os.makedirs(log_dir, exist_ok=True)
+log_path = os.path.join(log_dir, "ml-ranking.log")
 
 logger = logging.getLogger("ml-ranking")
+logger.setLevel(logging.INFO)
+logger.propagate = False
+
+if not logger.handlers:
+    formatter = logging.Formatter("%(asctime)s | %(levelname)s | %(message)s")
+
+    file_handler = logging.FileHandler(log_path, encoding="utf-8")
+    file_handler.setFormatter(formatter)
+    logger.addHandler(file_handler)
+
+    stream_handler = logging.StreamHandler()
+    stream_handler.setFormatter(formatter)
+    logger.addHandler(stream_handler)
 # ============================================================
 # FASTAPI APP
 # ============================================================
@@ -215,23 +219,12 @@ def match(payload: MatchRequestSchema):
     Endpoint utama job matching.
     """
     try:
-        logger.info("========== /match REQUEST ==========")
-
-        payload_dict = payload.model_dump()
-
         logger.info(
-            "Payload:\n%s",
-            json.dumps(
-                payload_dict,
-                indent=2,
-                ensure_ascii=False,
-                default=str
-            )
-        )
-
-        logger.info(
-            "Jumlah lowongan: %s",
-            len(payload_dict.get("lowongans", []))
+            "MATCH_REQUEST | pelamar_id=%s | pelamar_nama=%s | lowongan_count=%s | scoring_config=%s",
+            getattr(payload.pelamar, 'id', None),
+            getattr(payload.pelamar, 'namalengkap', '-'),
+            len(payload.lowongans),
+            payload.scoring_config.model_dump(),
         )
 
         if not payload.lowongans:
@@ -242,19 +235,16 @@ def match(payload: MatchRequestSchema):
 
         result = matcher.match(payload)
 
-        logger.info("========== /match RESPONSE ==========")
-
         logger.info(
-            "Response:\n%s",
-            json.dumps(
-                result,
-                indent=2,
-                ensure_ascii=False,
-                default=str
-            )
+            "MATCH_RESPONSE | pelamar_id=%s | pelamar_nama=%s | total=%s | top_lowongan_id=%s | top_lowongan_nama=%s | top_final=%.4f | top_label=%s",
+            result.get("pelamar_id"),
+            result.get("pelamar_nama", "-"),
+            result.get("total"),
+            result.get("recommendations", [{}])[0].get("lowongan_id", "-") if result.get("recommendations") else "-",
+            result.get("recommendations", [{}])[0].get("namalowongan", "-") if result.get("recommendations") else "-",
+            result.get("recommendations", [{}])[0].get("final_score", 0.0) if result.get("recommendations") else 0.0,
+            result.get("recommendations", [{}])[0].get("label", "-") if result.get("recommendations") else "-",
         )
-
-        logger.info("========== /match SELESAI ==========")
 
         return result
 
@@ -279,89 +269,36 @@ async def rank_applicants(
     """
     try:
         logger.info(
-            "========== /rank-applicants REQUEST =========="
-        )
-
-        payload_dict = payload.model_dump()
-
-        logger.info(
-            "Payload:\n%s",
-            json.dumps(
-                payload_dict,
-                indent=2,
-                ensure_ascii=False,
-                default=str
-            )
-        )
-
-        logger.info(
-            "Lowongan: %s",
-            payload_dict
-            .get("lowongan", {})
-            .get("namalowongan", "Unknown")
-        )
-
-        logger.info(
-            "Lowongan ID: %s",
-            payload_dict
-            .get("lowongan", {})
-            .get("id", "-")
-        )
-
-        logger.info(
-            "Jumlah pelamar: %s",
-            len(payload_dict.get("pelamars", []))
+            "RANK_REQUEST | lowongan_id=%s | lowongan=%s | pelamar_count=%s | pelamar_preview=%s | scoring_config=%s",
+            getattr(payload.lowongan, 'id', None),
+            getattr(payload.lowongan, 'namalowongan', '-'),
+            len(payload.pelamars),
+            [getattr(p, 'namalengkap', '-') for p in payload.pelamars[:3]],
+            payload.scoring_config.model_dump(),
         )
 
         result = ranker_service.rank(payload)
 
-        logger.info(
-            "========== /rank-applicants RESPONSE =========="
-        )
-
-        logger.info(
-            "Response:\n%s",
-            json.dumps(
-                result,
-                indent=2,
-                ensure_ascii=False,
-                default=str
-            )
-        )
-
         ranked = result.get("ranked_applicants", [])
 
-        logger.info(
-            "Total hasil ranking: %s",
-            len(ranked)
-        )
-
         if ranked:
-            logger.info("========== TOP 10 ==========")
-
-            for item in ranked[:10]:
-                logger.info(
-                    (
-                        "Rank #%s | "
-                        "Pelamar ID=%s | "
-                        "Nama=%s | "
-                        "Score=%.4f | "
-                        "Semantic=%.4f | "
-                        "Skill=%.4f | "
-                        "Edu=%.4f | "
-                        "Exp=%.4f"
-                    ),
-                    item.get("rank"),
-                    item.get("pelamar_id"),
-                    item.get("namalengkap"),
-                    item.get("final_score", 0),
-                    item.get("semantic_score", 0),
-                    item.get("skill_score", 0),
-                    item.get("education_score", 0),
-                    item.get("experience_score", 0)
-                )
-
-        logger.info("========== REQUEST SELESAI ==========")
+            top = ranked[0]
+            logger.info(
+                "RANK_RESPONSE | lowongan_id=%s | lowongan_nama=%s | total=%s | top_rank=%s | top_pelamar_id=%s | top_pelamar_nama=%s | final=%.4f | semantic=%.4f | skill=%.4f | edu=%.4f | exp=%.4f",
+                result.get("lowongan_id"),
+                result.get("namalowongan", "-"),
+                len(ranked),
+                top.get("rank"),
+                top.get("pelamar_id"),
+                top.get("namalengkap", "-"),
+                top.get("final_score", 0.0),
+                top.get("semantic_score", 0.0),
+                top.get("skill_score", 0.0),
+                top.get("education_score", 0.0),
+                top.get("experience_score", 0.0),
+            )
+        else:
+            logger.info("RANK_RESPONSE | lowongan_id=%s | total=0", result.get("lowongan_id"))
 
         return result
 

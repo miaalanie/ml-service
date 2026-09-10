@@ -1,7 +1,11 @@
+import logging
+
 from .preprocess import TextPreprocessor
 from .embedding import EmbeddingService
 from .scoring import ScoringService
 from .reasoning import ReasoningService
+
+logger = logging.getLogger("ml-ranking")
 
 
 class MatcherService:
@@ -39,6 +43,14 @@ class MatcherService:
             semantic = ScoringService.semantic_similarity(
                 pelamar_vec, job_vec
             )
+            logger.info(
+                "S1 | pelamar_id=%s | pelamar_nama=%s | lowongan_id=%s | lowongan_nama=%s | semantic=%.4f",
+                pelamar.id,
+                getattr(pelamar, 'namalengkap', '-'),
+                lowongan.id,
+                getattr(lowongan, 'namalowongan', '-'),
+                semantic,
+            )
 
             # SKILL MATCH SEKALI (score + reasoning)
             skill_match = ScoringService.compute_skill_match(
@@ -48,6 +60,16 @@ class MatcherService:
                 threshold=scoring_config['skill_threshold']
             )
             skill = skill_match[0]
+            logger.info(
+                "S2 | pelamar_id=%s | pelamar_nama=%s | lowongan_id=%s | lowongan_nama=%s | skill=%.4f | matched=%s | unmatched=%s",
+                pelamar.id,
+                getattr(pelamar, 'namalengkap', '-'),
+                lowongan.id,
+                getattr(lowongan, 'namalowongan', '-'),
+                skill,
+                skill_match[1],
+                skill_match[2],
+            )
 
             # S3: EDUCATION SCORE
             edu = ScoringService.education_score(
@@ -55,6 +77,14 @@ class MatcherService:
                 lowongan,
                 job_vec,
                 self.embedding_service
+            )
+            logger.info(
+                "S3 | pelamar_id=%s | pelamar_nama=%s | lowongan_id=%s | lowongan_nama=%s | edu=%.4f",
+                pelamar.id,
+                getattr(pelamar, 'namalengkap', '-'),
+                lowongan.id,
+                getattr(lowongan, 'namalowongan', '-'),
+                edu,
             )
 
             # EXP FOR REASONING SEKALI (tags + reasons)
@@ -70,6 +100,16 @@ class MatcherService:
                 pelamar.total_pengalaman_bulan,
                 lowongan,
                 self.embedding_service
+            )
+            logger.info(
+                "S4 | pelamar_id=%s | pelamar_nama=%s | lowongan_id=%s | lowongan_nama=%s | exp=%.4f | best_exp=%s | best_sim=%.4f",
+                pelamar.id,
+                getattr(pelamar, 'namalengkap', '-'),
+                lowongan.id,
+                getattr(lowongan, 'namalowongan', '-'),
+                exp,
+                getattr(exp_reasoning[0], 'posisi', None) if exp_reasoning and exp_reasoning[0] else None,
+                exp_reasoning[1] if exp_reasoning else 0.0,
             )
 
             # FINAL SCORE
@@ -94,6 +134,13 @@ class MatcherService:
                 skill_match=skill_match,
                 exp_reasoning=exp_reasoning,
             )
+            logger.info(
+                "MATCH_TAGS | pelamar_id=%s | lowongan_id=%s | tag_count=%s | preview=%s",
+                pelamar.id,
+                lowongan.id,
+                len(tags),
+                tags[:3],
+            )
 
             reasons = ReasoningService.generate_reasons(
                 pelamar, lowongan, job_vec, self.embedding_service,
@@ -101,6 +148,13 @@ class MatcherService:
                 biodata_flags=biodata_flags,
                 skill_match=skill_match,
                 exp_reasoning=exp_reasoning,
+            )
+            logger.info(
+                "MATCH_REASONING | pelamar_id=%s | lowongan_id=%s | reason_count=%s | preview=%s",
+                pelamar.id,
+                lowongan.id,
+                len(reasons),
+                reasons[:3],
             )
 
             results.append({

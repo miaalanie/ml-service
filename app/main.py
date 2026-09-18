@@ -25,7 +25,7 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s | %(levelname)s | %(message)s",
     handlers=[
-        logging.StreamHandler(),
+        # logging.StreamHandler(),
         logging.FileHandler(
             "logs/ml-ranking.log",
             encoding="utf-8"
@@ -105,8 +105,14 @@ def detailed_health():
 @app.post("/embeddings/pelamar")
 def create_pelamar_embeddings(payload: PelamarEmbeddingRequestSchema):
     """Build canonical applicant texts and return vectors for Laravel to persist."""
+    import time
     try:
+        start_time = time.time()
         pelamar = payload.pelamar
+
+        # raw text mentah sebelum diproses, buat pembanding di TA
+        raw_records = [("pelamar_cv", pelamar.id, pelamar.deskripsidiri or "")]
+
         records = [("pelamar_cv", pelamar.id, TextPreprocessor.build_pelamar_text(pelamar))]
 
         records.extend(
@@ -140,15 +146,20 @@ def create_pelamar_embeddings(payload: PelamarEmbeddingRequestSchema):
         texts = [text for _, _, text in records]
         vectors = embedding_service.encode_batch(texts)
 
+        elapsed_ms = round((time.time() - start_time) * 1000, 2)
+
         return {
             "success": True,
             "model_version": EmbeddingService.MODEL_NAME,
             "embedding_dimension": 384,
+            "processing_time_ms": elapsed_ms,
+            "total_records": len(records),
             "embeddings": [
                 {
                     "embeddable_type": entity_type,
                     "embeddable_id": entity_id,
                     "source_text": source_text,
+                    "vector_preview": vector.astype(float).tolist()[:5],  # 5 nilai pertama aja buat preview
                     "vector": vector.astype(float).tolist(),
                 }
                 for (entity_type, entity_id, source_text), vector in zip(records, vectors)
@@ -158,12 +169,14 @@ def create_pelamar_embeddings(payload: PelamarEmbeddingRequestSchema):
         logger.exception("ERROR SAAT MEMBUAT EMBEDDING PELAMAR")
         raise HTTPException(status_code=500, detail=str(e))
 
-
 @app.post("/embeddings/lowongan")
 def create_lowongan_embeddings(payload: LowonganEmbeddingRequestSchema):
     """Build canonical vacancy texts and return vectors for Laravel to persist."""
+    import time
     try:
+        start_time = time.time()
         lowongan = payload.lowongan
+
         records = [
             ("lowongan_requirement", lowongan.id, TextPreprocessor.build_lowongan_text(lowongan)),
             ("lowongan_title", lowongan.id, TextPreprocessor.normalize_text(lowongan.namalowongan)),
@@ -187,15 +200,20 @@ def create_lowongan_embeddings(payload: LowonganEmbeddingRequestSchema):
         texts = [text for _, _, text in records]
         vectors = embedding_service.encode_batch(texts)
 
+        elapsed_ms = round((time.time() - start_time) * 1000, 2)
+
         return {
             "success": True,
             "model_version": EmbeddingService.MODEL_NAME,
             "embedding_dimension": 384,
+            "processing_time_ms": elapsed_ms,
+            "total_records": len(records),
             "embeddings": [
                 {
                     "embeddable_type": entity_type,
                     "embeddable_id": entity_id,
                     "source_text": source_text,
+                    "vector_preview": vector.astype(float).tolist()[:5],
                     "vector": vector.astype(float).tolist(),
                 }
                 for (entity_type, entity_id, source_text), vector in zip(records, vectors)
@@ -204,7 +222,6 @@ def create_lowongan_embeddings(payload: LowonganEmbeddingRequestSchema):
     except Exception as e:
         logger.exception("ERROR SAAT MEMBUAT EMBEDDING LOWONGAN")
         raise HTTPException(status_code=500, detail=str(e))
-
 
 # ============================================================
 # MATCH JOB ENDPOINT
@@ -218,11 +235,12 @@ def match(payload: MatchRequestSchema):
         logger.info("========== /match REQUEST ==========")
 
         payload_dict = payload.model_dump()
+        payload_for_log = truncate_embeddings_for_log(payload_dict)
 
         logger.info(
             "Payload:\n%s",
             json.dumps(
-                payload_dict,
+                payload_for_log,
                 indent=2,
                 ensure_ascii=False,
                 default=str
@@ -283,11 +301,12 @@ async def rank_applicants(
         )
 
         payload_dict = payload.model_dump()
+        payload_for_log = truncate_embeddings_for_log(payload_dict)
 
         logger.info(
             "Payload:\n%s",
             json.dumps(
-                payload_dict,
+                payload_for_log,
                 indent=2,
                 ensure_ascii=False,
                 default=str
@@ -372,3 +391,22 @@ async def rank_applicants(
             status_code=500,
             detail=str(e)
         )
+        
+def truncate_embeddings_for_log(data, max_len: int = 5):
+    """Recursively truncate any field whose key contains 'embedding'
+    so logs stay readable instead of dumping 384 floats."""
+    if isinstance(data, dict):
+        result = {}
+        for key, value in data.items():
+            if "embedding" in key.lower() and isinstance(value, list):
+                result[key] = {
+                    "preview": value[:max_len],
+                    "total_dim": len(value),
+                }
+            else:
+                result[key] = truncate_embeddings_for_log(value, max_len)
+        return result
+    elif isinstance(data, list):
+        return [truncate_embeddings_for_log(item, max_len) for item in data]
+    else:
+        return data      

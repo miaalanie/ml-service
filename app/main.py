@@ -14,6 +14,8 @@ from .ranker import RankerService
 import logging
 import json
 import os
+import time
+import uuid
 
 # ============================================================
 # LOGGER CONFIG
@@ -34,6 +36,26 @@ logging.basicConfig(
 )
 
 logger = logging.getLogger("ml-ranking")
+
+
+def log_request_metrics(endpoint: str, request_type: str, started_at, **extra):
+    """Write a compact, structured performance record for each request."""
+    duration_ms = round((time.perf_counter() - started_at) * 1000, 2)
+    payload = {
+        "request_id": extra.get("request_id") or uuid.uuid4().hex,
+        "request_type": request_type,
+        "endpoint": endpoint,
+        "duration_ms": duration_ms,
+        "status": extra.get("status", "success"),
+        "model_version": extra.get("model_version"),
+        "embedding_dimension": extra.get("embedding_dimension"),
+        "total_records": extra.get("total_records"),
+        "pelamar_id": extra.get("pelamar_id"),
+        "lowongan_id": extra.get("lowongan_id"),
+        "records_count": extra.get("records_count"),
+        "extra": extra.get("extra") or {},
+    }
+    logger.info("REQUEST_METRICS %s", json.dumps(payload, ensure_ascii=False, default=str))
 # ============================================================
 # FASTAPI APP
 # ============================================================
@@ -105,9 +127,9 @@ def detailed_health():
 @app.post("/embeddings/pelamar")
 def create_pelamar_embeddings(payload: PelamarEmbeddingRequestSchema):
     """Build canonical applicant texts and return vectors for Laravel to persist."""
-    import time
+    started_at = time.perf_counter()
+    request_id = uuid.uuid4().hex
     try:
-        start_time = time.time()
         pelamar = payload.pelamar
 
         # raw text mentah sebelum diproses, buat pembanding di TA
@@ -146,10 +168,11 @@ def create_pelamar_embeddings(payload: PelamarEmbeddingRequestSchema):
         texts = [text for _, _, text in records]
         vectors = embedding_service.encode_batch(texts)
 
-        elapsed_ms = round((time.time() - start_time) * 1000, 2)
-
-        return {
+        elapsed_ms = round((time.perf_counter() - started_at) * 1000, 2)
+        result = {
             "success": True,
+            "request_id": request_id,
+            "request_type": "embedding_pelamar",
             "model_version": EmbeddingService.MODEL_NAME,
             "embedding_dimension": 384,
             "processing_time_ms": elapsed_ms,
@@ -165,16 +188,43 @@ def create_pelamar_embeddings(payload: PelamarEmbeddingRequestSchema):
                 for (entity_type, entity_id, source_text), vector in zip(records, vectors)
             ],
         }
+        log_request_metrics(
+            "/embeddings/pelamar",
+            "embedding_pelamar",
+            started_at,
+            request_id=request_id,
+            status="success",
+            model_version=EmbeddingService.MODEL_NAME,
+            embedding_dimension=384,
+            total_records=len(records),
+            pelamar_id=pelamar.id,
+            extra={
+                "skills_count": len(pelamar.skills),
+                "pendidikans_count": len(pelamar.pendidikans),
+                "pengalamans_count": len(pelamar.pengalamans),
+                "is_update": pelamar.id is not None,
+            },
+        )
+        return result
     except Exception as e:
+        log_request_metrics(
+            "/embeddings/pelamar",
+            "embedding_pelamar",
+            started_at,
+            request_id=request_id,
+            status="error",
+            pelamar_id=getattr(payload, "pelamar", None).id if getattr(payload, "pelamar", None) else None,
+            extra={"error": str(e)},
+        )
         logger.exception("ERROR SAAT MEMBUAT EMBEDDING PELAMAR")
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.post("/embeddings/lowongan")
 def create_lowongan_embeddings(payload: LowonganEmbeddingRequestSchema):
     """Build canonical vacancy texts and return vectors for Laravel to persist."""
-    import time
+    started_at = time.perf_counter()
+    request_id = uuid.uuid4().hex
     try:
-        start_time = time.time()
         lowongan = payload.lowongan
 
         records = [
@@ -200,10 +250,11 @@ def create_lowongan_embeddings(payload: LowonganEmbeddingRequestSchema):
         texts = [text for _, _, text in records]
         vectors = embedding_service.encode_batch(texts)
 
-        elapsed_ms = round((time.time() - start_time) * 1000, 2)
-
-        return {
+        elapsed_ms = round((time.perf_counter() - started_at) * 1000, 2)
+        result = {
             "success": True,
+            "request_id": request_id,
+            "request_type": "embedding_lowongan",
             "model_version": EmbeddingService.MODEL_NAME,
             "embedding_dimension": 384,
             "processing_time_ms": elapsed_ms,
@@ -219,7 +270,33 @@ def create_lowongan_embeddings(payload: LowonganEmbeddingRequestSchema):
                 for (entity_type, entity_id, source_text), vector in zip(records, vectors)
             ],
         }
+        log_request_metrics(
+            "/embeddings/lowongan",
+            "embedding_lowongan",
+            started_at,
+            request_id=request_id,
+            status="success",
+            model_version=EmbeddingService.MODEL_NAME,
+            embedding_dimension=384,
+            total_records=len(records),
+            lowongan_id=lowongan.id,
+            extra={
+                "skills_count": len(lowongan.skills),
+                "jurusans_count": len(lowongan.jurusans),
+                "is_update": lowongan.id is not None,
+            },
+        )
+        return result
     except Exception as e:
+        log_request_metrics(
+            "/embeddings/lowongan",
+            "embedding_lowongan",
+            started_at,
+            request_id=request_id,
+            status="error",
+            lowongan_id=getattr(payload, "lowongan", None).id if getattr(payload, "lowongan", None) else None,
+            extra={"error": str(e)},
+        )
         logger.exception("ERROR SAAT MEMBUAT EMBEDDING LOWONGAN")
         raise HTTPException(status_code=500, detail=str(e))
 
@@ -231,6 +308,8 @@ def match(payload: MatchRequestSchema):
     """
     Endpoint utama job matching.
     """
+    started_at = time.perf_counter()
+    request_id = uuid.uuid4().hex
     try:
         logger.info("========== /match REQUEST ==========")
 
@@ -260,6 +339,11 @@ def match(payload: MatchRequestSchema):
 
         result = matcher.match(payload)
 
+        result["request_id"] = request_id
+        result["request_type"] = "match"
+        if "processing_time_ms" not in result:
+            result["processing_time_ms"] = round((time.perf_counter() - started_at) * 1000, 2)
+
         logger.info("========== /match RESPONSE ==========")
 
         logger.info(
@@ -273,10 +357,32 @@ def match(payload: MatchRequestSchema):
         )
 
         logger.info("========== /match SELESAI ==========")
+        log_request_metrics(
+            "/match",
+            "match",
+            started_at,
+            request_id=request_id,
+            status="success",
+            total_records=len(payload.lowongans or []),
+            pelamar_id=getattr(payload.pelamar, "id", None),
+            extra={
+                "total_lowongans_sent": len(payload.lowongans or []),
+                "total_recommendations": len(result.get("recommendations", [])),
+            },
+        )
 
         return result
 
     except Exception as e:
+        log_request_metrics(
+            "/match",
+            "match",
+            started_at,
+            request_id=request_id,
+            status="error",
+            total_records=len(payload.lowongans or []),
+            extra={"error": str(e)},
+        )
         logger.exception("ERROR SAAT MATCHING")
 
         raise HTTPException(
@@ -295,6 +401,8 @@ async def rank_applicants(
     """
     Ranking pelamar yang apply ke satu lowongan.
     """
+    started_at = time.perf_counter()
+    request_id = uuid.uuid4().hex
     try:
         logger.info(
             "========== /rank-applicants REQUEST =========="
@@ -381,10 +489,33 @@ async def rank_applicants(
                 )
 
         logger.info("========== REQUEST SELESAI ==========")
+        log_request_metrics(
+            "/rank-applicants",
+            "rank_applicants",
+            started_at,
+            request_id=request_id,
+            status="success",
+            total_records=len(payload.pelamars or []),
+            lowongan_id=getattr(payload.lowongan, "id", None),
+            extra={
+                "total_pelamars_sent": len(payload.pelamars or []),
+                "total_ranked": len(ranked),
+            },
+        )
 
         return result
 
     except Exception as e:
+        log_request_metrics(
+            "/rank-applicants",
+            "rank_applicants",
+            started_at,
+            request_id=request_id,
+            status="error",
+            total_records=len(payload.pelamars or []),
+            lowongan_id=getattr(payload.lowongan, "id", None),
+            extra={"error": str(e)},
+        )
         logger.exception("ERROR SAAT RANKING APPLICANTS")
 
         raise HTTPException(
